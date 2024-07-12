@@ -15,8 +15,9 @@ Realizar uma auditoria de segurança de rede utilizando a ferramenta Nmap e alin
    - Selecionar os sistemas e redes a serem auditados.
      - **Sugestão**: instalar, configurar e auditar os seguintes serviços e sistemas.
        - Servidor SSH (porta 22) usando [OpenSSH for Windows](https://learn.microsoft.com/pt-br/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui#install-openssh-for-windows)   
-       - Servidor FTP (portas 20/21) usando [Filezilla Server](https://filezilla-project.org/download.php?type=server)
-       - Servidor SAMBA (portas 137-139 e 445) do Windows, para isso ative o protocolo  [SMB v1 e v2 seguindo esse passo-a-passo](https://www.techtudo.com.br/dicas-e-tutoriais/2017/05/como-ativar-e-desativar-o-smb-no-windows.ghtml) e ative o compartilhamento de uma pasta no Windows seguindo [esse tutorial](https://tecnoblog.net/responde/como-compartilhar-uma-pasta-na-rede-e-encontra-la-no-windows-10/)
+       - Servidor FTP (portas 20/21) usando [Filezilla Server](https://filezilla-project.org/download.php?type=server)       
+       - Servidor SAMBA (portas 137-139 e 445) do Windows, para isso ative o compartilhamento de uma pasta no Windows seguindo [esse tutorial](https://tecnoblog.net/responde/como-compartilhar-uma-pasta-na-rede-e-encontra-la-no-windows-10/)
+       - Servidor Web com Banco de dados SQL (portas 80/443 e 3306) usando [XAMPP](https://sourceforge.net/projects/xampp/files/latest/download)
      - **OBS**: Demais serviços e sistemas em execução do Windows, mesmo aqueles que vocês nao tenham instalado e configurado, também devem ser investigados. Para isso faça uma varredura das portas 0-1024 da máquina alvo.
 
 3. **Execução da Auditoria:**
