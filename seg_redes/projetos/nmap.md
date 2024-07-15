@@ -13,18 +13,23 @@ Realizar uma auditoria de segurança de rede utilizando a ferramenta Nmap e alin
    - Definir o escopo da auditoria.
    - Estabelecer objetivos e critérios de auditoria baseados nas normas ISO 27001/27002.
    - Selecionar os sistemas e redes a serem auditados.
-     - **Sugestão**: instalar, configurar e auditar os seguintes serviços e sistemas.
-       - Servidor SSH (porta 22) usando [OpenSSH for Windows](https://learn.microsoft.com/pt-br/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui#install-openssh-for-windows)   
-       - Servidor FTP (portas 20/21) usando [Filezilla Server](https://filezilla-project.org/download.php?type=server)       
-       - Servidor SAMBA (portas 137-139 e 445) do Windows, para isso ative o compartilhamento de uma pasta no Windows seguindo [esse tutorial](https://tecnoblog.net/responde/como-compartilhar-uma-pasta-na-rede-e-encontra-la-no-windows-10/)
-       - Servidor Web com Banco de dados SQL (portas 80/443 e 3306) usando [XAMPP](https://sourceforge.net/projects/xampp/files/latest/download)
-     - **OBS**: Demais serviços e sistemas em execução do Windows, mesmo aqueles que vocês nao tenham instalado e configurado, também devem ser investigados. Para isso faça uma varredura das portas 0-1024 da máquina alvo.
+     - **Sugestão**: instale, configure e audite os seguintes serviços e sistemas.
+       - Servidor SSH (porta 22)  
+       - Servidor FTP (portas 20/21)   
+       - Servidor SAMBA (portas 137-139 e 445)
+       - Servidor Web Apache com Banco de dados MySQL (portas 80/443 e 3306)
+     - **OBS**: Demais serviços e sistemas em execução, mesmo aqueles que vocês nao tenham instalado e configurado, também devem ser investigados. Para isso faça uma varredura das portas 0-1024 da máquina alvo.
 
 3. **Execução da Auditoria:**
    - Configurar o ambiente de testes e preparar a execução do Nmap.
      - Para isso, instale e configure os serviços e sistemas em uma das máquinas que vocês pretendem auditar.
-     - A outra máquina deve possuir o NMAP instalado, conforme instruções contidas [neste video tutorial](https://www.youtube.com/watch?v=4p8Eq2Ldxy4).
+       - **Sugestão:** Baixe e configure a máquina virtual [Metasploitable 2](https://sourceforge.net/projects/metasploitable/files/latest/download) no [VirtualBox](https://www.virtualbox.org/wiki/Downloads). 
+       - Veja como instalar o VirtualBox [nesse video tutorial](https://www.youtube.com/watch?v=8RU-UQU1cDo).
+       - Veja como configurar o Metasploitable 2 no VirtualBox [nesse vídeo tutorial](https://www.youtube.com/watch?v=g1JnLIfTjzM).
+     - Em outra máquina, instale o [NMAP](https://nmap.org/download.html#windows)
+       - Veja como instalar o NMAP no Windows 10 [neste video tutorial](https://www.youtube.com/watch?v=4p8Eq2Ldxy4).        
    - Realizar varreduras de rede utilizando o Nmap para identificar ativos de rede, portas abertas, serviços em execução e o sistema operacional em execuçao na máquina alvo.
+     - Veja como utilizar NMAP no Windows [neste video tutorial](https://www.youtube.com/watch?v=4t4kBkMsDbQ).        
    - Documentar os resultados das varreduras, incluindo vulnerabilidades identificadas.
      - Utilize bases de dados como o [Exploit-DB](https://www.exploit-db.com/) ou outros similares para ajudar em sua documentação.
 
