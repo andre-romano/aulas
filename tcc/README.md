@@ -9,7 +9,10 @@
   - [4. Orientação e Feedback](#4-orientação-e-feedback)
   - [5. Apresentação do TCC](#5-apresentação-do-tcc)
   - [6. Exemplos de Estrutura para TCC](#6-exemplos-de-estrutura-para-tcc)
-  - [7. Considerações Finais](#7-considerações-finais)
+  - [7. Ferramenta de Edição de Texto](#7-ferramenta-de-edição-de-texto)
+    - [Word, LibreOffice ou Similares](#word-libreoffice-ou-similares)
+    - [LaTeX](#latex)
+  - [8. Considerações Finais](#8-considerações-finais)
 
 ## 1. Escolha do Tema
 
@@ -53,7 +56,6 @@ Um trabalho de conclusão de curso (TCC) possui os seguintes capítulos, seçõe
     - **Ex**:
       - Reduzir tráfego de rede de Internet das Coisas (IoT)
       - Aumentar a autonomia de bateria de um dispositivo IoT.
-      - Prover 
     - **IMPORTANTE 01**: Esta seção deve possui APENAS a descrição do que se deseja alcançar com o trabalho, e nada mais. Aqui nao é o local para descrever a metodologia usada no trabalho (ex: "realizar a revisão de literatura", "construir ou implementar a solução", "comparar a solução proposta com XYZ"). Isto é, o "passo-a-passo" realizado ao longo do trabalho pertence a seção de metodologia e nao aos objetivos.
     - **IMPORTANTE 02**: Nesta seção (objetivos gerais e específicos) evite verbos que gerem ambiguidade ou que sejam difíceis de avaliar, tais como, "compreender", "estudar", "facilitar a compreensão", "avaliar a compreensão de", "interpretar", dentre outros. Os verbos devem ser sempre claros, sem ambiguidade, e que possam ser avaliados com objetividade na seção de *Resultados e Discussão*.
     
@@ -119,7 +121,48 @@ Um trabalho de conclusão de curso (TCC) possui os seguintes capítulos, seçõe
   - **Resultados e Discussão**: Análise dos resultados obtidos com o sistema.
   - **Conclusão**: Resumo dos principais achados e sugestões para futuros aprimoramentos.
 
-## 7. Considerações Finais
+## 7. Ferramenta de Edição de Texto
+
+Existem varias ferramentas para edição, correção ortográfica e semântica de texto. As mais utilizadas são o Word (ou LibreOffice) ou LaTeX ([Overleaf](www.overleaf.com)).
+
+### Word, LibreOffice ou Similares
+
+Permitem editar e visualizar rapidamente o documento. O usuário consegue ver a formatação e layout do documento final conforme ele é editado.
+
+- **Vantagens**:
+  - Praticidade.
+  - Facilidade de uso.
+  - Extensa documentação online sobre como utilizar.
+  
+- **Desvantagens**:
+  - Dificuldade para criação de sumários e listas de figuras.
+  - Dificuldade para organizar as referências de um trabalho científico (TCC, artigos, etc).
+  - Dificuldade para numerar figuras e tabelas (o usuário deve numerá-los manualmente).
+  - Nao fornece suporte a citações ABNT (o usuário deve criar as citações manualmente, seguindo as normas da ABNT).
+
+### LaTeX
+
+O LaTeX (se fala: "latech") permite editar um documento de texto, sem se preocupar com aspectos estéticos, estilísticos, de layout, de formatação, de numeração ou de organização (de seções, figuras ou tabelas). Isto é, o foco está no conteúdo do texto, sendo que o restante é realizado pela ferramenta LaTeX através de modelos previamente definidos.
+
+- **Vantagens**:
+  - Facilidade para organizar o texto em capítulos, seções, e subseções.
+  - Facilidade para numerar figuras, tabelas, algoritmos e anexos.
+  - Facilidade para inserir trechos de código.
+  - Facilidade para inserir fórmulas, equações ou funções matemáticas.
+  - Extensa documentação online sobre como utilizar.
+  
+- **Desvantagens**:
+  - É necessário compilar o documento para visualizar seu layout e formatação finais.
+  - O documento gerado é em formato PDF.
+  - Requer uma curva de aprendizado para utilizar a linguagem de edição de texto LaTeX.
+
+Quem desejar utilizar o LaTeX em seu TCC pode visualizar exemplos de código no arquivo [exemplos_latex](exemplos_latex). 
+  - Lembrando que o modelo LaTeX utilizado deve estar de acordo com as normas e modelo fornecido pela instituição.
+  - A ferramenta mais fácil para compilar documentos LaTeX é o [Overleaf](www.overleaf.com). Trata-se de um editor de texto LaTeX online que permite que grupos de pessoas possam editar o mesmo documento LaTeX. 
+    - É necessário fazer um cadastro na plataforma para utilizá-la.
+    - Veja [esse tutorial](https://www.youtube.com/watch?v=YhHAlfeysxg&list=PLBTAWVWo60AsrO5ulDb3ZF_kk0z1uKo2_) para aprender como utilizá-la.
+
+## 8. Considerações Finais
 
 Um trabalho de conclusão de curso (TCC) segue uma estrutura e estilo de escrita similar, independente de ser para um curso de nível técnico, de graduaçao, ou de pós-graduaçao. Contudo, podem existir algumas diferenças. 
 
