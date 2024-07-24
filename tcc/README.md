@@ -159,8 +159,7 @@ O LaTeX (se fala: "latech") permite editar um documento de texto, sem se preocup
 Quem desejar utilizar o LaTeX em seu TCC pode visualizar exemplos de código no arquivo [exemplos_latex](exemplos_latex). 
   - Lembrando que o modelo LaTeX utilizado deve estar de acordo com as normas e modelo fornecido pela instituição.
   - A ferramenta mais fácil para compilar documentos LaTeX é o [Overleaf](http://www.overleaf.com). Trata-se de um editor de texto LaTeX online que permite que grupos de pessoas possam editar o mesmo documento LaTeX. 
-    - É necessário fazer um cadastro na plataforma para utilizá-la.
-    - Veja [esse tutorial](https://www.youtube.com/watch?v=YhHAlfeysxg&list=PLBTAWVWo60AsrO5ulDb3ZF_kk0z1uKo2_) para aprender como utilizá-la.
+    - Vejam os video-tutoriais disponibilizados [aqui](exemplos_latex) para maiores informações.
 
 ## 8. Considerações Finais
 
