@@ -231,9 +231,12 @@ Além desses sites, existem outros que podem ser de grande valia para buscar aju
 
 ## Tutoriais
 
-Existem vários tutoriais de como utilizar o Overleaf e LaTeX:
+Existem vários tutoriais de como utilizar o Overleaf e LaTeX.
+Cada tutorial abaixo possui vários vídeos explicando como usar essas tecnologias:
 
 1. [Tutorial 01 do Oveleaf e LaTeX (em Português)](https://www.youtube.com/watch?v=YhHAlfeysxg&list=PLBTAWVWo60AsrO5ulDb3ZF_kk0z1uKo2_)
 2. [Tutorial 02 do Overleaf e LaTeX (em Português)](https://www.youtube.com/watch?v=zR-QuNf3agQ&list=PLb735fZHArLamJiCIXsQT6BiHM1IgYQ43)
 3. [Tutorial 03 do Overleaf e LaTeX (em Ingles)](https://www.youtube.com/watch?v=Jp0lPj2-DQA&list=PLHXZ9OQGMqxcWWkx2DMnQmj5os2X5ZR73)
 4. [Tutorial 04 - SOMENTE LaTeX (em Português)](https://www.youtube.com/watch?v=xQ3yYqLlHcQ&list=PLa_2246N48_p9ndUHlO255uvKtSR8mshE)
+
+**Sugestão**: Cada tutorial foi feito por uma pessoa diferente, usando técnicas de ensino diferentes. Dessa forma, recomendo que escolha um dos tutoriais acima para você acompanhar. 

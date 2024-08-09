@@ -114,9 +114,9 @@ Um trabalho de conclusão de curso (TCC) possui os seguintes capítulos, seçõe
 
 ## 6. Exemplos de Estrutura para TCC
 - **Exemplo 1: Área de Ciências Exatas**
-  - **Título**: "Desenvolvimento de um Sistema de Monitoramento de Rede Utilizando Nmap e Conformidade com as Normas ISO 27001 e 27002"
+  - **Título**: "Desenvolvimento de um Sistema de Monitoramento de Rede Utilizando NMAP e Conformidade com as Normas ISO 27001 e 27002"
   - **Introdução**: Contextualização da importância da segurança de redes.
-  - **Revisão de Literatura**: Estudos sobre Nmap e normas ISO 27001 e 27002.
+  - **Revisão de Literatura**: Estudos sobre NMAP e normas ISO 27001 e 27002.
   - **Metodologia**: Descrição do desenvolvimento do sistema e testes realizados.
   - **Resultados e Discussão**: Análise dos resultados obtidos com o sistema.
   - **Conclusão**: Resumo dos principais achados e sugestões para futuros aprimoramentos.
@@ -163,7 +163,7 @@ Quem desejar utilizar o LaTeX em seu TCC pode visualizar exemplos de código no 
 
 ## 8. Considerações Finais
 
-Um trabalho de conclusão de curso (TCC) segue uma estrutura e estilo de escrita similar, independente de ser para um curso de nível técnico, de graduaçao, ou de pós-graduaçao. Contudo, podem existir algumas diferenças. 
+Um trabalho de conclusão de curso (TCC) segue uma estrutura e estilo de escrita similar, independente de ser para um curso de nível técnico, de graduação, ou de pós-graduação. Contudo, podem existir algumas diferenças. 
 
 Assim, veja os modelos de TCC contidos nas pastas [COINF](coinf) (para alunos do curso técnico em informática), e [ADS_COMPUT](ads_comput) (para os alunos dos cursos superiores em Análise e Desenvolvimento de Sistemas e Licenciatura em Computação).
 
