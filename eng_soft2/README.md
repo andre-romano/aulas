@@ -25,6 +25,7 @@ Esta página contém as aulas e demais o conteúdos auxiliares da disciplina.
 ### Controle de versionamento
 
 - [Git](https://www.youtube.com/watch?v=Zwv9qRyVeU4)
+- [SVN (subversion)](https://www.youtube.com/watch?v=6jP6k71qe0c)
 
 ### Automação de deployment
 
