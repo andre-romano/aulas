@@ -11,6 +11,7 @@
     - [Tabelas com células mescladas (*Multirow* e *Multicolumn*)](#tabelas-com-células-mescladas-multirow-e-multicolumn)
   - [Notas de Rodapé](#notas-de-rodapé)
   - [Citações](#citações)
+  - [Pseudocódigo](#pseudocódigo)
 - [Documentações e Tutoriais](#documentações-e-tutoriais)
   - [Documentação](#documentação)
   - [Tutoriais](#tutoriais)
@@ -216,6 +217,41 @@ Se a citação NÃO pertencer ao texto, use o seguinte:
 
 ```latex
 Este conceito foi discutido por \cite{autor2023}.
+```
+
+## Pseudocódigo
+
+Você precisará incluir os pacotes `algorithm` e `algpseudocode` no seu documento LaTeX. Vejo o exemplo abaixo:
+
+```latex
+\documentclass{article}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\begin{document}
+
+\begin{algorithm}
+\caption{Algoritmo de Exemplo com IF e FOR}
+\begin{algorithmic}[1] % O [1] indica que as linhas serão numeradas
+    \State $a \gets 0$ \Comment{Inicializa a variável $a$ com 0}
+    \State $b \gets 1$ \Comment{Inicializa a variável $b$ com 1}
+    \State $n \gets 10$ \Comment{Define o número de iterações do loop}
+    
+    \For{$i \gets 1$ \textbf{to} $n$} \Comment{Inicia um loop de 1 até $n$}
+        \If{$a < b$} \Comment{Condição IF: verifica se $a$ é menor que $b$}
+            \State $c \gets a + b$ \Comment{Se a condição for verdadeira, calcula $c = a + b$}
+        \Else
+            \State $c \gets a - b$ \Comment{Se a condição for falsa, calcula $c = a - b$}
+        \EndIf
+        \State $a \gets b$ \Comment{Atualiza $a$ para o valor de $b$}
+        \State $b \gets c$ \Comment{Atualiza $b$ para o valor de $c$}
+    \EndFor
+
+    \State \textbf{return} $b$ \Comment{Retorna o valor final de $b$}
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}
 ```
 
 # Documentações e Tutoriais

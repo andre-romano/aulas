@@ -43,6 +43,7 @@ Realizar uma auditoria de segurança de rede utilizando a ferramenta Nmap e alin
      - Descrição dos ativos de rede auditados.
      - Análise das vulnerabilidades identificadas.
      - Recomendações para mitigação de vulnerabilidades e melhoria da segurança conforme as normas ISO 27001/27002.
+   - Veja um modelo de relatório no arquivo [nmap_relatorio.md](./nmap_relatorio.md)
 
 6. **Apresentação dos Resultados:**
    - Apresentar os resultados da auditoria em formato de seminário ou apresentação para os colegas e professores.
