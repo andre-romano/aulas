@@ -1,4 +1,12 @@
 {
+    "editor.wordWrap": "off",
+    "editor.wrappingIndent": "deepIndent",
+    "editor.wordWrapColumn": 80,
+    "editor.snippetSuggestions": "top",
+    "remote.SSH.enableX11Forwarding": true,
+    "update.showReleaseNotes": false,
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "php.validate.executablePath": "C:\\xampp\\php\\php\\php.exe",
     "cSpell.language": "en, pt_br, pt-br, pt",
     "editor.formatOnSave": true
 }

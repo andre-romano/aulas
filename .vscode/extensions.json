@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "yzhang.markdown-all-in-one",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "bmewburn.vscode-intelephense-client",
+        "cschlosser.doxdocgen",
+        "ms-vscode-remote.remote-ssh",
+        "Gruntfuggly.todo-tree",
+        "streetsidesoftware.code-spell-checker-portuguese-brazilian",
+        "streetsidesoftware.code-spell-checker",
+        "MS-CEINTL.vscode-language-pack-pt-BR",
+    ]
+}
