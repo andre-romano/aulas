@@ -17,6 +17,8 @@
 
 **Observações:**
 - O trabalho deve ser original. Qualquer evidência de plágio resultará na desqualificação da atividade.
-- Recomenda-se o uso de softwares de modelagem como BrModelo, Draw.io ou similar para a criação do diagrama E-R.
+- Recomenda-se o uso de softwares de modelagem como BrModelo, Draw.io ou similar para a criação do diagrama E-R. O diagrama deve ser entregue em formato PDF ou imagem (PNG ou JPG).
+  - Para exportar o diagrama no **BrModelo**, acesse o menu `Arquivo -> Exportar`. Ele irá exportar o modelo como uma imagem.
+  - Para exportar o diagrama no **Draw.io**, selecione todos os elementos do seu diagrama usando o mouse, e depois acesse o menu `Ficheiro -> Exportar como -> JPEG`. Marque a opção `Seleccionar somente` e clique no botão `Exportar`.
 
 Boa sorte e bom trabalho!
