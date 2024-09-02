@@ -31,13 +31,3 @@
 
 - **LEMBRE-SE**: Entidades, atributos e relacionamentos NÃO PODEM ter caracteres especiais (acentos, hífen, e outros) ou espaços.
   - O único caractere especial permitido é o underline ( _ ).
-
-#### Entidades (sugestão)
-
-- **Usuário**: ID do usuário, nome, e-mail, senha, data de nascimento, data de registro, tipo de assinatura (gratuita, HD, 4K premium, etc).
-- **Vídeo**: ID do vídeo, título, descrição, duração, data de upload, categoria. 
-- **Categoria**: ID da categoria, nome da categoria, descrição.
-- **Avaliação**: ID da avaliação, ID do vídeo, ID do usuário, pontuação (de 1 a 5 estrelas), data da avaliação.
-- **Visualização**: ID da visualização, ID do usuário, ID do vídeo, data e hora da visualização, duração assistida.
-
-- **LEMBRE-SE**: Essas sao SOMENTE sugestões, que podem ou não estar de acordo com a 3FN. Ajuste
