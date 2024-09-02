@@ -15,8 +15,8 @@
       - [7.1.2. Modelos para COINF (curso integrado)](#712-modelos-para-coinf-curso-integrado)
     - [7.2. LaTeX](#72-latex)
       - [7.2.1. IDE para edição e compilação LaTeX](#721-ide-para-edição-e-compilação-latex)
-      - [7.2.2. Documentos para Defesa de TCC (IFBA Valença)](#722-documentos-para-defesa-de-tcc-ifba-valença)
-      - [7.2.3. Modelo de TCC (IFBA Valença)](#723-modelo-de-tcc-ifba-valença)
+      - [7.2.2. Documentos para Defesa de TCC](#722-documentos-para-defesa-de-tcc)
+      - [7.2.3. Modelo de TCC](#723-modelo-de-tcc)
       - [7.2.4. Documentações e Tutoriais](#724-documentações-e-tutoriais)
   - [8. Considerações Finais](#8-considerações-finais)
 
@@ -191,15 +191,15 @@ O Overleaf permite a compilação e edição de:
   - Slides
   - Entre outros
 
-#### 7.2.2. Documentos para Defesa de TCC (IFBA Valença)
+#### 7.2.2. Documentos para Defesa de TCC
 
-Para acessar o modelo LaTeX para criar os documentos necessários para a defesa de TCC do IFBA campus Valença (Ata de defesa, Termo de Aprovação, Carta convite para membros da banca, entre outros), siga as instruções contidas no repositório do GitHub abaixo:
+Para acessar o modelo LaTeX para criar os documentos necessários para a defesa de TCC do IFBA *campus* Valença (Ata de defesa, Termo de Aprovação, Carta convite para membros da banca, entre outros), siga as instruções contidas no repositório do GitHub abaixo:
 
 [https://github.com/andre-romano/ifba_val_defesa/](https://github.com/andre-romano/ifba_val_defesa/)
 
-#### 7.2.3. Modelo de TCC (IFBA Valença)
+#### 7.2.3. Modelo de TCC
 
-Para acessar o modelo LaTeX para TCC do IFBA campus Valença, siga as instruções contidas no repositório do GitHub abaixo:
+Para acessar o modelo LaTeX para TCC do IFBA *campus* Valença, siga as instruções contidas no repositório do GitHub abaixo:
 
 [https://github.com/andre-romano/ifba_val_latex/](https://github.com/andre-romano/ifba_val_latex/)
 
