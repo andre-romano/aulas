@@ -3,7 +3,7 @@
 **Sumário**:
 
 - [Exemplos em LaTeX](#exemplos-em-latex)
-  - [Exemplo de TCC](#exemplo-de-tcc)
+  - [Modelo de TCC (IFBA Valença)](#modelo-de-tcc-ifba-valença)
   - [Referências (Padrão ABNT)](#referências-padrão-abnt)
   - [Figuras](#figuras)
     - [Sub-figuras (várias figuras, uma após a outra)](#sub-figuras-várias-figuras-uma-após-a-outra)
@@ -17,63 +17,11 @@
   - [Tutoriais](#tutoriais)
 
 
-## Exemplo de TCC
+## Modelo de TCC (IFBA Valença)
 
-O modelo de TCC abaixo é apenas um guia. Ele **NÃO ESTÁ** de acordo com as normas, modelos, layout e formatação exigidos pela instituição. Você precisará ajustar ele para a sua necessidade (i.e., TCC de Análise e Desenvolvimento de Sistemas, Licenciatura em Computação, Curso Integrado de Informática ) e para o formato da instituição (IFBA).
+Para acessar o modelo LaTeX para TCC do IFBA campus Valença, baixe o seguinte repositório do GitHub:
 
-Para criar um documento LaTeX, crie um arquivo ``main.tex`` com o seguinte conteúdo:
-
-```latex
-\documentclass[a4paper,12pt]{report}
-\usepackage[brazil]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{float}
-\usepackage{caption}
-\usepackage{cite}
-\usepackage{abntex2cite} % Para referências no padrão ABNT
-\usepackage{subfigure} % pacote subfigura
-\usepackage{graphicx} % pacote figura
-\usepackage{multirow} % Pacote para multirow
-\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
-
-\begin{document}
-
-% Capa
-\title{Título do Trabalho}
-\author{Seu Nome}
-\date{Mês e Ano}
-\maketitle
-
-% Resumo
-\begin{abstract}
-    Este é o resumo do trabalho, descrevendo brevemente o objetivo, metodologia, resultados e conclusões.
-\end{abstract}
-
-% Sumário
-\tableofcontents
-
-\chapter{Introdução}
-Aqui você escreve a introdução do seu TCC.
-
-\chapter{Revisão de Literatura}
-Aqui você escreve a revisão de literatura.
-
-\chapter{Metodologia}
-Aqui você descreve a metodologia utilizada.
-
-\chapter{Resultados e Discussão}
-Aqui você apresenta os resultados e os discute.
-
-\chapter{Conclusão}
-Aqui você escreve a conclusão do seu TCC.
-
-% Referências
-\bibliographystyle{abntex2-alf}
-\bibliography{referencias}
-
-\end{document}
-```
+[https://github.com/andre-romano/ifba_val_latex/](https://github.com/andre-romano/ifba_val_latex/)
 
 ## Referências (Padrão ABNT)
 
