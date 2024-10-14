@@ -16,7 +16,7 @@
     - [7.2. LaTeX](#72-latex)
       - [7.2.1. IDE para edição e compilação LaTeX](#721-ide-para-edição-e-compilação-latex)
       - [7.2.2. Documentos para Defesa de TCC](#722-documentos-para-defesa-de-tcc)
-      - [7.2.3. Modelo de TCC](#723-modelo-de-tcc)
+      - [7.2.3. Modelo de TCC (LaTeX)](#723-modelo-de-tcc-latex)
       - [7.2.4. Documentações e Tutoriais](#724-documentações-e-tutoriais)
   - [8. Considerações Finais](#8-considerações-finais)
 
@@ -158,10 +158,15 @@ Permitem editar e visualizar rapidamente o documento. O usuário consegue ver a 
 
 Modelos (formato DOC / DOCX) para escrita da monografia, bem como demais documentos necessários para defesa (Ata de defesa, Termo de aprovação, etc) de TCC de ADS/COMPUT podem ser encontrados na pasta [./ads_comput/](./ads_comput/).
 
+- **ATENCAO:** Sinta-se livre para utilizar o modelo como desejar, PORÉM ele pode ou não estar adaptado aos padrões mais atuais da ABNT! 
+  - **É responsabilidade do DISCENTE**, autor do trabalho de conclusão de curso (TCC), garantir que o seu trabalho esta de acordo com as normas da ABNT mais recentes.
 
 #### 7.1.2. Modelos para COINF (curso integrado)
 
 Modelos (formato DOC / DOCX) para escrita da monografia, bem como demais documentos necessários para defesa de TCC de COINF (curso integrado em Informática) podem ser encontrados na pasta [./coinf/](./coinf/).
+
+- **ATENCAO:** Sinta-se livre para utilizar o modelo como desejar, PORÉM ele pode ou não estar adaptado aos padrões mais atuais da ABNT! 
+  - **É responsabilidade do DISCENTE**, autor do trabalho de conclusão de curso (TCC), garantir que o seu trabalho esta de acordo com as normas da ABNT mais recentes.
 
 ### 7.2. LaTeX
 
@@ -197,11 +202,14 @@ Para acessar o modelo LaTeX para criar os documentos necessários para a defesa 
 
 [https://github.com/andre-romano/ifba_val_defesa/](https://github.com/andre-romano/ifba_val_defesa/)
 
-#### 7.2.3. Modelo de TCC
+#### 7.2.3. Modelo de TCC (LaTeX)
 
 Para acessar o modelo LaTeX para TCC do IFBA *campus* Valença, siga as instruções contidas no repositório do GitHub abaixo:
 
 [https://github.com/andre-romano/ifba_val_latex/](https://github.com/andre-romano/ifba_val_latex/)
+
+- **ATENCAO:** Sinta-se livre para utilizar o modelo como desejar, PORÉM ele pode ou não estar adaptado aos padrões mais atuais da ABNT! 
+  - **É responsabilidade do DISCENTE**, autor do trabalho de conclusão de curso (TCC), garantir que o seu trabalho esta de acordo com as normas da ABNT mais recentes.
 
 #### 7.2.4. Documentações e Tutoriais
 
