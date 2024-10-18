@@ -10,8 +10,14 @@
   - [5. Apresentação do TCC](#5-apresentação-do-tcc)
   - [6. Exemplos de Estrutura para TCC](#6-exemplos-de-estrutura-para-tcc)
   - [7. Ferramenta de Edição de Texto](#7-ferramenta-de-edição-de-texto)
-    - [Word, LibreOffice ou Similares](#word-libreoffice-ou-similares)
-    - [LaTeX](#latex)
+    - [7.1. Word, LibreOffice, Google Docs ou Similares](#71-word-libreoffice-google-docs-ou-similares)
+      - [7.1.1. Modelos para ADS/COMPUT (cursos superiores)](#711-modelos-para-adscomput-cursos-superiores)
+      - [7.1.2. Modelos para COINF (curso integrado)](#712-modelos-para-coinf-curso-integrado)
+    - [7.2. LaTeX](#72-latex)
+      - [7.2.1. IDE para edição e compilação LaTeX](#721-ide-para-edição-e-compilação-latex)
+      - [7.2.2. Documentos para Defesa de TCC](#722-documentos-para-defesa-de-tcc)
+      - [7.2.3. Modelo de TCC (LaTeX)](#723-modelo-de-tcc-latex)
+      - [7.2.4. Documentações e Tutoriais](#724-documentações-e-tutoriais)
   - [8. Considerações Finais](#8-considerações-finais)
 
 ## 1. Escolha do Tema
@@ -108,7 +114,15 @@ Um trabalho de conclusão de curso (TCC) possui os seguintes capítulos, seçõe
 ## 5. Apresentação do TCC
 - **Preparação**: Prepare uma apresentação clara e concisa do seu trabalho, destacando os pontos principais.
 - **Slides**: Use os modelos de slides propostos para apoiar sua apresentação, evitando excesso de texto.
-  - Os slides devem estar em formato de tópicos, contendo figuras que facilitem o entendimento da discussão.
+  - Os slides devem estar em formato de tópicos, contendo figuras que facilitem o entendimento da discussão. Veja a sugestão abaixo de ordem de apresentação de cada tópico:
+    - **Introdução / Contextualização**
+    - **Problema**
+    - **Trabalhos relacionados**
+    - **Justificativa**
+    - **Proposta**
+    - **Objetivos e Metodologia**
+    - **Discussão e Resultados**
+    - **Conclusão**
 - **Prática**: Pratique a apresentação várias vezes para ganhar confiança e fluência. 
   - **Tempo de Apresentação:** Se atente ao tempo de apresentação para nao exceder o limite máximo previsto no regimento da instituição.
 
@@ -125,7 +139,7 @@ Um trabalho de conclusão de curso (TCC) possui os seguintes capítulos, seçõe
 
 Existem varias ferramentas para edição, correção ortográfica e semântica de texto. As mais utilizadas são o Word (ou LibreOffice) ou LaTeX ([Overleaf](http://www.overleaf.com)).
 
-### Word, LibreOffice ou Similares
+### 7.1. Word, LibreOffice, Google Docs ou Similares
 
 Permitem editar e visualizar rapidamente o documento. O usuário consegue ver a formatação e layout do documento final conforme ele é editado.
 
@@ -140,26 +154,75 @@ Permitem editar e visualizar rapidamente o documento. O usuário consegue ver a 
   - Dificuldade para numerar figuras e tabelas (o usuário deve numerá-los manualmente).
   - Nao fornece suporte a citações ABNT (o usuário deve criar as citações manualmente, seguindo as normas da ABNT).
 
-### LaTeX
+#### 7.1.1. Modelos para ADS/COMPUT (cursos superiores)
 
-O LaTeX (se fala: "latech") permite editar um documento de texto, sem se preocupar com aspectos estéticos, estilísticos, de layout, de formatação, de numeração ou de organização (de seções, figuras ou tabelas). Isto é, o foco está no conteúdo do texto, sendo que o restante é realizado pela ferramenta LaTeX através de modelos previamente definidos.
+Modelos (formato DOC / DOCX) para escrita da monografia, bem como demais documentos necessários para defesa (Ata de defesa, Termo de aprovação, etc) de TCC de ADS/COMPUT podem ser encontrados na pasta [./ads_comput/](./ads_comput/).
+
+- **ATENCAO:** Sinta-se livre para utilizar o modelo como desejar, PORÉM ele pode ou não estar adaptado aos padrões mais atuais da ABNT! 
+  - **É responsabilidade do DISCENTE**, autor do trabalho de conclusão de curso (TCC), garantir que o seu trabalho esta de acordo com as normas da ABNT mais recentes.
+
+#### 7.1.2. Modelos para COINF (curso integrado)
+
+Modelos (formato DOC / DOCX) para escrita da monografia, bem como demais documentos necessários para defesa de TCC de COINF (curso integrado em Informática) podem ser encontrados na pasta [./coinf/](./coinf/).
+
+- **ATENCAO:** Sinta-se livre para utilizar o modelo como desejar, PORÉM ele pode ou não estar adaptado aos padrões mais atuais da ABNT! 
+  - **É responsabilidade do DISCENTE**, autor do trabalho de conclusão de curso (TCC), garantir que o seu trabalho esta de acordo com as normas da ABNT mais recentes.
+
+### 7.2. LaTeX
+
+O LaTeX (se fala: "*latech*") permite editar um documento de texto, sem se preocupar com aspectos estéticos, estilísticos, de layout, de formatação, de numeração, de organização (de seções, figuras ou tabelas), ou de citação (ABNT, Chicago, Vancouver, etc). Isto é, o foco está no conteúdo do texto, sendo que o restante é realizado pela ferramenta LaTeX através de comandos e modelos previamente definidos.
 
 - **Vantagens**:
   - Facilidade para organizar o texto em capítulos, seções, e subseções.
-  - Facilidade para numerar figuras, tabelas, algoritmos e anexos.
-  - Facilidade para inserir trechos de código.
+  - Facilidade para numerar figuras, tabelas, algoritmos, diagramas e anexos.
+  - Facilidade para inserir citações e referencial bibliográfico padronizado (ABNT, IEEE, etc).
+  - Facilidade para inserir trechos de códigos (Python, Java, etc).
   - Facilidade para inserir fórmulas, equações ou funções matemáticas.
   - Extensa documentação online sobre como utilizar.
   
 - **Desvantagens**:
   - É necessário compilar o documento para visualizar seu layout e formatação finais.
-  - O documento gerado é em formato PDF.
-  - Requer uma curva de aprendizado para utilizar a linguagem de edição de texto LaTeX.
+  - O documento gerado é em formato PDF ou EPS.
+  - Requer uma curva de aprendizado para utilizar a linguagem de edição de texto LaTeX, que em muitos aspectos é parecida com uma linguagem de programação convencional.
 
-Quem desejar utilizar o LaTeX em seu TCC pode visualizar exemplos de código no arquivo [exemplos_latex.md](exemplos_latex.md). 
-  - Lembrando que o modelo LaTeX utilizado deve estar de acordo com as normas e modelo fornecido pela instituição.
-  - A ferramenta mais fácil para compilar documentos LaTeX é o [Overleaf](http://www.overleaf.com). Trata-se de um editor de texto LaTeX online que permite que grupos de pessoas possam editar o mesmo documento LaTeX. 
-    - Vejam os video-tutoriais disponibilizados [aqui](exemplos_latex.md) para maiores informações.
+#### 7.2.1. IDE para edição e compilação LaTeX
+
+A ferramenta [Overleaf](http://www.overleaf.com) é a IDE LaTeX mais simples e fácil de utilizar.  Trata-se de um editor de texto LaTeX online que facilita a escrita e compilação de textos acadêmicos, permitindo que uma ou mais pessoas editem o mesmo documento LaTeX simultaneamente. 
+  
+O Overleaf permite a compilação e edição de:
+  - Monografias
+  - Trabalhos acadêmicos
+  - Relatórios
+  - Slides
+  - Entre outros
+
+#### 7.2.2. Documentos para Defesa de TCC
+
+Para acessar o modelo LaTeX para criar os documentos necessários para a defesa de TCC do IFBA *campus* Valença (Ata de defesa, Termo de Aprovação, Carta convite para membros da banca, entre outros), siga as instruções contidas no repositório do GitHub abaixo:
+
+[https://github.com/andre-romano/ifba_val_defesa/](https://github.com/andre-romano/ifba_val_defesa/)
+
+#### 7.2.3. Modelo de TCC (LaTeX)
+
+Para acessar o modelo LaTeX para TCC do IFBA *campus* Valença, siga as instruções contidas no repositório do GitHub abaixo:
+
+[https://github.com/andre-romano/ifba_val_latex/](https://github.com/andre-romano/ifba_val_latex/)
+
+- **ATENCAO:** Sinta-se livre para utilizar o modelo como desejar, PORÉM ele pode ou não estar adaptado aos padrões mais atuais da ABNT! 
+  - **É responsabilidade do DISCENTE**, autor do trabalho de conclusão de curso (TCC), garantir que o seu trabalho esta de acordo com as normas da ABNT mais recentes.
+
+#### 7.2.4. Documentações e Tutoriais
+
+- **Documentação**:
+  - [Documentação oficial do Overleaf e LaTeX](https://www.overleaf.com/learn)
+  - [Documentação (breve) do LaTeX](https://en.wikibooks.org/wiki/LaTeX)
+- **Tutoriais**:
+  1. [Oveleaf e LaTeX (em Português)](https://www.youtube.com/watch?v=YhHAlfeysxg&list=PLBTAWVWo60AsrO5ulDb3ZF_kk0z1uKo2_)
+  2. [Overleaf e LaTeX (em Português)](https://www.youtube.com/watch?v=zR-QuNf3agQ&list=PLb735fZHArLamJiCIXsQT6BiHM1IgYQ43)
+  3. [Overleaf e LaTeX (em Ingles)](https://www.youtube.com/watch?v=Jp0lPj2-DQA&list=PLHXZ9OQGMqxcWWkx2DMnQmj5os2X5ZR73)
+  4. [SOMENTE LaTeX (em Português)](https://www.youtube.com/watch?v=xQ3yYqLlHcQ&list=PLa_2246N48_p9ndUHlO255uvKtSR8mshE)
+
+**Sugestão**: Cada tutorial foi feito por uma pessoa diferente, usando técnicas de ensino diferentes. Dessa forma, recomendo que escolha um dos tutoriais acima para você acompanhar. 
 
 ## 8. Considerações Finais
 
