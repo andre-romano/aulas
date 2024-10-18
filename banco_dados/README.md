@@ -1,10 +1,10 @@
 # Banco de Dados
 
-Esta página contem as aulas e demais o conteúdos auxiliares da disciplina.
+Esta página contem as aulas, planos de ensino e demais o conteúdos auxiliares da disciplina.
 
 ## Projetos
 
-Os projetos da disciplina estão localizados [aqui](https://github.com/andre-romano/tutorial_php).
+Os projetos da disciplina estão localizados no arquivo[PROJETOS.MD](./PROJETOS.md).
 
 ## Tutoriais e Video-aulas
 

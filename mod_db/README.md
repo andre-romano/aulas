@@ -4,7 +4,7 @@ Esta página contem as aulas e demais o conteúdos auxiliares da disciplina.
 
 ## Projetos
 
-Os projetos da disciplina estão localizados [aqui](https://github.com/andre-romano/tutorial_php/tree/master/projetos).
+Os projetos da disciplina estão localizados [aqui](../banco_dados/PROJETOS.md).
 
 ## Ferramentas de Modelagem de Bancos de Dados
 
