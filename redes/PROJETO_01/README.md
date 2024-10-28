@@ -41,20 +41,31 @@ Segue a descrição das redes LAN domésticas e WAN (provedor de serviço).
 - Dispositivos de camadas diferentes devem usar cabeamento STRAIGHT-THROUGH
 
 **DICA 02:** A conexão entre enlaces cabeados está OK se um triangulo verde aparecer em ambas as extremidades do enlace (Figura 2).
-- Círculos laranja nas extremidades indicam que os dispositivos estão tentando se conectar (Figura 3a).
-- Triângulos vermelhos indicam erro na conexão (Figura 3b).
+- Círculos laranja nas extremidades indicam que os dispositivos estão tentando se conectar (Figura 3).
+- Triângulos vermelhos indicam erro na conexão (Figura 4).
 
-<center>
-  <img alt="" src="./img/enlaces_ok_.jpg" style="text-align: center; width: 100px;"> 
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+  <img alt="" src="./img/enlaces_ok.jpg" style="text-align: center; width: 100px;"> 
   <p style="text-align: center;"><b>Figura 2:</b> Enlaces com Conexão OK.</p>
-</center>
+</div>
 
-<center>
-  <img alt="" src="./img/conecting.jpg" style="text-align: center; width: 100px;"> <img alt="" src="./img/falha.jpg" style="text-align: center; width: 100px;">
-  <p style="text-align: center;"><b>Figuras 3a e 3b:</b> Enlaces se conectando e falha nos enlaces, respectivamente.</p>
-</center>
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+  <img alt="" src="./img/conecting.jpg" style="text-align: center; width: 100px;"> 
+  <p style="text-align: center;"><b>Figura 3:</b> Enlaces em configuração (''se conectando'').</p>
+</div>
 
-**DICA 03:** Enlaces wireless aparecem como uma sequencia de linhas paralelas entre dois dispositivos sem fio. 
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<img alt="" src="./img/falha.jpg" style="text-align: center; width: 100px;">
+  <p style="text-align: center;"><b>Figura 4:</b> Enlace com falha.</p>
+</div>
+
+
+**DICA 03:** Enlaces wireless aparecem como uma sequencia de linhas paralelas entre dois dispositivos sem fio (Figura 5). 
+
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+  <img alt="" src="./img/enlaces_wireless.jpg" style="text-align: center; width: 220px;"> 
+  <p style="text-align: center;"><b>Figura 5:</b> Enlaces wireless com Conexão OK.</p>
+</div>
 
 ### Rede LAN 01 (DOMÍNIO AMARELO)
 
