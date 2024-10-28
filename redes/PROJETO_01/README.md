@@ -1,32 +1,11 @@
-<style>
-    figure {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      max-width: 100vw;
-      margin: 0 auto;
-    }
-    img {
-      width: 100%;
-      height: auto;
-      border: 1px;
-    }
-    figcaption {
-      margin-top: 5px;
-      /* font-size: 1em; */
-      /* color: #FFF; */
-    }
-</style>
-
 # Projeto - Interconexão de redes locais com Packet Tracer
 
 **Descrição:** Instalar e configurar a topologia descrita na Figura 1, de forma a permitir que dispositivos das diferentes redes se comuniquem entre si. 
 
-<figure>
-  <img src="./topologia.jpg" alt="">
-  <figcaption><b>Figura 1:</b> Topologia da Rede</figcaption>
-</figure>
+<center>
+  <img alt="" src="./topologia.jpg" style="text-align: center; width: 100vw;">
+  <p style="text-align: center;"><b>Figura 1:</b> Topologia da Rede</p>
+</center>
 
 **Objetivos**:
 - Permitir a comunicação entre dispositivos de redes distintas
