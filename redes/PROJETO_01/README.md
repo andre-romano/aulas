@@ -3,7 +3,7 @@
 **Descrição:** Instalar e configurar a topologia descrita na Figura 1, de forma a permitir que dispositivos das diferentes redes se comuniquem entre si. 
 
 <center>
-  <img alt="" src="./topologia.jpg" style="text-align: center; width: 100vw;">
+  <img alt="" src="./img/topologia.jpg" style="text-align: center; width: 100vw;">
   <p style="text-align: center;"><b>Figura 1:</b> Topologia da Rede</p>
 </center>
 
@@ -39,6 +39,22 @@ Segue a descrição das redes LAN domésticas e WAN (provedor de serviço).
 **DICA:** Preste atenção aos cabeamentos utilizados para instalar cada enlace cabeado. 
 - Dispositivos da mesma camada de rede devem ser interconectados com cabeamento CROSS-OVER
 - Dispositivos de camadas diferentes devem usar cabeamento STRAIGHT-THROUGH
+
+**DICA 02:** A conexão entre enlaces cabeados está OK se um triangulo verde aparecer em ambas as extremidades do enlace (Figura 2).
+- Círculos laranja nas extremidades indicam que os dispositivos estão tentando se conectar (Figura 3a).
+- Triângulos vermelhos indicam erro na conexão (Figura 3b).
+
+<center>
+  <img alt="" src="./img/enlaces_ok.jpg" style="text-align: center; width: 100px;"> 
+  <p style="text-align: center;"><b>Figura 2:</b> Enlaces com Conexão OK.</p>
+</center>
+
+<center>
+  <img alt="" src="./img/conecting.jpg" style="text-align: center; width: 100px;"> <img alt="" src="./img/falha.jpg" style="text-align: center; width: 100px;">
+  <p style="text-align: center;"><b>Figuras 3a e 3b:</b> Enlaces se conectando e falha nos enlaces, respectivamente.</p>
+</center>
+
+**DICA 03:** Enlaces wireless aparecem como uma sequencia de linhas paralelas entre dois dispositivos sem fio. 
 
 ### Rede LAN 01 (DOMÍNIO AMARELO)
 
