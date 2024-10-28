@@ -45,7 +45,7 @@ Segue a descrição das redes LAN domésticas e WAN (provedor de serviço).
 - Triângulos vermelhos indicam erro na conexão (Figura 3b).
 
 <center>
-  <img alt="" src="./img/enlaces_ok.jpg" style="text-align: center; width: 100px;"> 
+  <img alt="" src="./img/enlaces_ok_.jpg" style="text-align: center; width: 100px;"> 
   <p style="text-align: center;"><b>Figura 2:</b> Enlaces com Conexão OK.</p>
 </center>
 
