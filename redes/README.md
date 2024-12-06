@@ -14,6 +14,7 @@ Esta página contém as aulas e demais o conteúdos auxiliares da disciplina.
 Os seguintes projetos podem ser passados para você no decorrer da disciplina:
 
 - [Projeto 01 - Topologia LAN-WAN-LAN usando Packet Tracer](./PROJETO_01/)
+- [Projeto 02 - Aplicação de Chat Cliente-Servidor](./PROJETO_02/)
 
 ## Ferramentas
 - [Download do Cisco Packet Tracer](https://www.netacad.com/resources/lab-downloads?courseLang=en-US)
