@@ -45,7 +45,7 @@
        valor DECIMAL(10,2)
    );
    ```
-2. Insira 100.000 registros na tabela:
+2. Insira 500.000 registros na tabela:
    ```sql
    DELIMITER $$
 
@@ -54,7 +54,7 @@
       DECLARE i INT DEFAULT 1;
       
       START TRANSACTION;
-      WHILE i <= 100000 DO
+      WHILE i <= 500000 DO
          INSERT INTO pedidos (cliente, data_pedido, valor)
          VALUES (
                CONCAT('Cliente ', FLOOR(RAND() * 10000)),  -- Nome aleatório
