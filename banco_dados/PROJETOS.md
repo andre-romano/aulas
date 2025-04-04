@@ -13,17 +13,16 @@ Este arquivo contem os projetos de bancos de dados (DBs) que podem ser passados 
     - [1. Sistema de Gestão de Biblioteca](#1-sistema-de-gestão-de-biblioteca)
     - [2. Sistema de Gestão de Restaurante](#2-sistema-de-gestão-de-restaurante)
     - [3. Sistema de Gerenciamento de Projetos](#3-sistema-de-gerenciamento-de-projetos)
-    - [4. Sistema de Controle de Estoque](#4-sistema-de-controle-de-estoque)
-    - [5. Sistema de Gestão Escolar](#5-sistema-de-gestão-escolar)
-    - [6. Sistema de Reserva de Quartos de Hotel](#6-sistema-de-reserva-de-quartos-de-hotel)
-    - [7. Sistema de Vendas Online](#7-sistema-de-vendas-online)
-    - [8. Sistema de Agendamento de Consultas Médicas](#8-sistema-de-agendamento-de-consultas-médicas)
-    - [9. Sistema de Controle de Manutenção de Veículos](#9-sistema-de-controle-de-manutenção-de-veículos)
-    - [10. Sistema de Gestão de Imóveis](#10-sistema-de-gestão-de-imóveis)
-    - [11. Sistema de Controle de Frequência Escolar](#11-sistema-de-controle-de-frequência-escolar)
-    - [12. Sistema de Gestão de Academia](#12-sistema-de-gestão-de-academia)
-    - [13. Sistema de Gestão de Eventos](#13-sistema-de-gestão-de-eventos)
-    - [14. Sistema de Gestão de Transportadora](#14-sistema-de-gestão-de-transportadora)
+    - [4. Sistema de Gestão Escolar](#4-sistema-de-gestão-escolar)
+    - [5. Sistema de Reserva de Quartos de Hotel](#5-sistema-de-reserva-de-quartos-de-hotel)
+    - [6. Sistema de Vendas Online](#6-sistema-de-vendas-online)
+    - [7. Sistema de Agendamento de Consultas Médicas](#7-sistema-de-agendamento-de-consultas-médicas)
+    - [8. Sistema de Controle de Manutenção de Veículos](#8-sistema-de-controle-de-manutenção-de-veículos)
+    - [9. Sistema de Gestão de Imóveis](#9-sistema-de-gestão-de-imóveis)
+    - [10. Sistema de Controle de Frequência Escolar](#10-sistema-de-controle-de-frequência-escolar)
+    - [11. Sistema de Gestão de Academia](#11-sistema-de-gestão-de-academia)
+    - [12. Sistema de Gestão de Eventos](#12-sistema-de-gestão-de-eventos)
+    - [13. Sistema de Gestão de Transportadora](#13-sistema-de-gestão-de-transportadora)
 
 ## Instruções Importantes
 
@@ -140,8 +139,10 @@ Um sistema para gerenciar o empréstimo de livros em uma biblioteca.
 
 **Funcionalidades:**
 - Cadastro de livros (título, autor, editora, ano de publicação, ISBN)
+  - Gerenciamento de exemplares individuais com identificação única (código de barras)
+  - Histórico de aquisições de livros (data, livro, fornecedor, valor)
 - Cadastro de usuários (nome, endereço, telefone, email)
-- Empréstimo / devolução de livros (data de empréstimo, data de devolução, status)
+- Empréstimo / devolução de livros (data de empréstimo, data de devolução, funcionario, status)
 - Pesquisa de livros e usuários
 - Relatórios de empréstimos em andamento e históricos
 
@@ -156,8 +157,10 @@ Um sistema para gerenciar o empréstimo de livros em uma biblioteca.
 Um sistema para gerenciar pedidos, mesas e cardápio de um restaurante. 
 
 **Funcionalidades:**
-- Cadastro de pratos (nome, descrição, preço)
-- Cadastro de mesas (número da mesa, capacidade)
+- Cadastro de pratos e bebidas (nome, descrição, preço, tempo de preparo, ingredientes utilizados)
+  - Cadastro de Ingredientes (coentro, cominho, frango, glúten, lactose, etc.)  
+  - Cadastro de Categorias (entradas, pratos principais, sobremesas, drinks, refrigerantes, etc)
+- Cadastro de mesas (número da mesa, capacidade, status de ocupacao)
 - Registro de pedidos (mesa, prato, quantidade, status do pedido)
 - Controle de pagamento e fechamento de conta
 - Relatórios de vendas (diárias, semanais e mensais)
@@ -170,6 +173,8 @@ Um sistema para gerenciar pedidos, mesas e cardápio de um restaurante.
   - **Ex**: 
     - `Pratos.nome` deve ser uma sequencia de caracteres nao NULA
     - `Pedidos.quantidade` deve ser inteiro e maior do que 0
+    - ``Pratos.preco`` deve ser maior que 0
+    - ``Pratos.tempo_preparo`` em minutos, maior que 0
     - Demais restrições / condições do seu projeto
 
 ### 3. Sistema de Gerenciamento de Projetos
@@ -177,9 +182,9 @@ Um sistema para gerenciar pedidos, mesas e cardápio de um restaurante.
 Um sistema para gerenciar projetos, tarefas e membros da equipe.
 
 **Funcionalidades:**
-- Cadastro de projetos (nome, descrição, data de início, data de término, status)
+- Cadastro de projetos (nome, descrição, data de início, data de término, status, nível de prioridade, orçamento, risco, cliente)
 - Cadastro de tarefas (nome, descrição, data de início, data de término, status, projeto relacionado)
-- Cadastro de membros da equipe (nome, função, email)
+- Cadastro de membros da equipe (nome, função, email, carga horaria)
 - Atribuição de tarefas aos membros da equipe
 - Relatórios de progresso dos projetos e tarefas
 
@@ -190,33 +195,20 @@ Um sistema para gerenciar projetos, tarefas e membros da equipe.
 - Lembre-se de incluir as restrições de integridade, domínio e demais condições do seu projeto, conforme necessário. Seguem alguns exemplos ilustrativos abaixo.
   - **Ex**: 
     - `Projetos.nome` deve ser uma sequencia de caracteres nao NULA
+    - ``data_inicio <= data_fim`` tanto para ``Projetos`` quanto para ``Tarefas``
     - `Tarefas.status` deve ser do tipo booleano, nao NULO, que aceita somente "true" (tarefa concluida) ou "false" (tarefa pendente)
+    - `Tarefas.progresso` deve estar entre 0 e 100
     - Demais restrições / condições do seu projeto
 
-### 4. Sistema de Controle de Estoque
-**Descrição:**
-Um sistema para gerenciar o estoque de uma loja ou armazém. 
-
-**Funcionalidades:**
-- Cadastro de produtos (nome, descrição, quantidade, preço de custo, preço de venda, categoria do produto)
-- Registro de entrada/saída de produtos (produto, quantidade, data, movimentação)
-- Relatórios de estoque atual, produtos mais vendidos e produtos com baixo estoque
-
-**Condições e Restrições:**
-- Lembre-se de incluir as restrições de integridade, domínio e demais condições do seu projeto, conforme necessário. Seguem alguns exemplos ilustrativos abaixo.
-  - **Ex**: 
-    - A inserção de um registro de saída de produtos so pode ocorrer se houver quantidade suficiente para realizar a operação (``Produto.quantidade > 0``).
-    - A quantidade de produtos em estoque deve ser atualizada automaticamente conforme cada registro de entrada/saída for realizado.
-    - Demais restrições / condições do seu projeto
-
-### 5. Sistema de Gestão Escolar
+### 4. Sistema de Gestão Escolar
 **Descrição:**
 Um sistema para gerenciar informações de alunos, turmas, professores e notas.
 
 **Funcionalidades:**
-- Cadastro de alunos (nome, data de nascimento, endereço, telefone, turma)
-- Cadastro de disciplinas (nome, professor)
-- Cadastro de turmas (nome da turma, ano letivo, disciplinas)
+- Cadastro de alunos (nome, data de nascimento, endereço, telefone, turma, deficiencias / alergias / condicoes medicas)
+- Cadastro de disciplinas (nome, professor, carga horaria)
+- Cadastro de professor (nome, data de nascimento, turmas que leciona, carga horaria de trabalho)
+- Cadastro de turmas (nome da turma, ano letivo, sala de aula, disciplinas vinculadas a turma)
 - Lançamento de notas (aluno, turma, disciplina, unidade, nota)
 - Relatórios de desempenho dos alunos por turma e disciplina
 
@@ -226,20 +218,21 @@ Um sistema para gerenciar informações de alunos, turmas, professores e notas.
   - **Ex**: 
     - O aluno pode ser submetido a um número N qualquer de avaliações por disciplina.
       - Considere pesos iguais para cada avaliação (media aritmética simples).
-    - Um aluno será REPROVADO em uma disciplina se média < 6,0 (na disciplina em questão).
+    - Um aluno será REPROVADO se ``média < 6,0`` (na disciplina em questão).
+    - ``carga_horaria > 0`` tanto para ``professor`` quanto para ``disciplinas``
     - Demais restrições / condições do seu projeto
 
-
-
-### 6. Sistema de Reserva de Quartos de Hotel
+### 5. Sistema de Reserva de Quartos de Hotel
 **Descrição:**
 Um sistema para gerenciar a reserva de quartos de um hotel. 
 
 **Funcionalidades:**
-- Cadastro de quartos (número do quarto, tipo, status)
-- Cadastro de tipos de quartos (tipo, preço)
+- Cadastro de quartos (número do quarto, andar, comodidades, status)
+- Cadastro de comodidades dos quartos (nome, descricao)
+  - **Ex**: TV, frigobar, ar-condicionado, etc
+- Cadastro de tipos de quartos (tipo, configuracao de camas, capacidade maxima de hospedes, preço)
 - Cadastro de hóspedes (nome, endereço, telefone, email)
-- Registro de entrada/saída (quarto, hóspede, data, entrada / saída)
+- Registro de reserva (quarto, hóspede, data de reserva, data de entrada, data de saída)
 - Relatórios de ocupação de quartos e de reservas, por período e por tipo informados pelo usuário.
 
 **Condições e Restrições:**
@@ -249,36 +242,43 @@ Um sistema para gerenciar a reserva de quartos de um hotel.
     - Pode existir vários quartos de um mesmo tipo (ex: standard com cama de solteiro, duplo com cama de casal, premium).
       - Quartos de um mesmo tipo tem o mesmo preço de diária.
     - O status do quarto (ocupado ou livre) deve ser atualizado automaticamente conforme cada registro de entrada/saída for realizado.
+    - ``Quarto.numero`` deve ser inteiro, nao nulo, atributo determinante
+    - ``tipo_quarto.preco`` > 0
+    - ``tipo_quarto.capacidade`` >= 1
+    - ``reserva.data_entrada < reserva.data_saida``
     - Demais restrições / condições do seu projeto
 
-### 7. Sistema de Vendas Online
+### 6. Sistema de Vendas Online
 **Descrição:**
 Um sistema para gerenciar vendas de produtos online. 
 
 **Funcionalidades:**
-- Cadastro de produtos (nome, descrição, preco custo, preço venda, quantidade)
-- Cadastro de clientes (nome, endereço, telefone, email)
+- Cadastro de produtos (nome, descrição, categoria, SKU, preco custo, preço venda, quantidade em estoque)
+- Cadastro de categorias (nome, descrição)
+- Cadastro de clientes (cpf / cnpj, nome, endereço, telefone, email)
 - Registro de pedidos (cliente, produto, quantidade, data, status)
-- Controle de envio de pedidos
+- Controle de envio de pedidos (codigo de rastreio, status)
 - Relatórios de status de pedidos e de vendas, por período e produto
 
 **Condições e Restrições:**
 - Lembre-se de incluir as restrições de integridade, domínio e demais condições do seu projeto, conforme necessário. Seguem alguns exemplos ilustrativos abaixo.
   - **Ex**:     
     - Um produto so pode ser vendido caso a loja tenha estoque dele (``Produtos.quantidade > 0``).
-    - O DB deve garantir que ``Produtos.quantidade >= 0`` e que este atributo é aceita apenas números inteiros.
     - Quando um pedido for inserido no sistema, o DB deve ajustar automaticamente o estoque do produto.
+    - ``quantidade >= 0`` e inteiro, para `produtos` e `pedidos`.
+    - ``preco_venda > preco_custo`` em ``produtos``
+    - `SKU` deve ser atributo determinante, nao nulo
     - Demais restrições / condições do seu projeto
 
-### 8. Sistema de Agendamento de Consultas Médicas
+### 7. Sistema de Agendamento de Consultas Médicas
 **Descrição:**
 Um sistema para gerenciar agendamentos de consultas em uma clínica médica.
 
 **Funcionalidades:**
-- Cadastro de médicos (nome, especialidades, horário de atendimento)
+- Cadastro de médicos (CRM, nome, especialidades, horário de atendimento)
 - Cadastro de especialidades (nome, custo da consulta)
-- Cadastro de pacientes (nome, endereço, telefone, email)
-- Agendamento de consultas (paciente, médico, data, hora, status)
+- Cadastro de pacientes (nome, endereço, telefone, email, medicacoes em uso, alergias, patologias do paciente)
+- Agendamento de consultas (paciente, médico, tipo, data do agendamento, data da consulta, hora de inicio, hora de fim, status)  
 - Relatório de consultas realizadas e de receita bruta da clinica
 
 **Condições e Restrições:**
@@ -286,61 +286,77 @@ Um sistema para gerenciar agendamentos de consultas em uma clínica médica.
   - **Ex**:     
     - Não é possível realizar várias consultas com o mesmo  médico no mesmo dia e horário.
       - O DB deve garantir que essa condição seja sempre satisfeita.
-    - O DB deve garantir que ``Especialidades.custo_consulta > 0`` e que este atributo é aceita apenas números fracionários.
-    - O fornecedor deve ser notificado automaticamente conforme o estoque do produto caia para níveis críticos, definidos pelo usuário.
+    - ``Especialidades.custo_consulta > 0``
+    - ``horario_inicio < horario_fim`` em `consultas`
+    - `consultas.data` deve ser uma data futura (em relacao a data atual) no momento do cadastro da consulta 
+    - ``consultas.tipo`` deve ser igual a: 'Primeira consulta', 'Retorno', ou 'Acompanhamento'
+    - ``consultas.status`` deve ser igual a: 'agendada', 'confirmada', 'realizada', ou 'cancelada'
+    - ``consultas.status`` deve ser alterada de 'agendada' para 'cancelada' automaticamente, quando a data e hora atual for igual a data e hora do inicio da consulta (isto é, o paciente nao compareceu)
     - Demais restrições / condições do seu projeto
 
-### 9. Sistema de Controle de Manutenção de Veículos
+### 8. Sistema de Controle de Manutenção de Veículos
 **Descrição:**
 Um sistema para gerenciar a manutenção de veículos em uma oficina mecânica.
 
 **Funcionalidades:**
-- Cadastro de veículos (marca, modelo, ano, placa, status)
+- Cadastro de veículos (modelo, ano, placa, chassi, status)
+- Cadastro de modelo   (nome, marca)
+- Cadastro de peças    (nome, custo de compra, custo de venda)
 - Cadastro de clientes (nome, endereço, telefone)
-- Cadastro de serviços (nome, custo)
-- Registro de ordens de serviço (veículo, cliente, serviço, data, status)
+- Cadastro de serviços (nome, custo, tempo medio de execucao)
+- Registro de ordens de serviço (veículo, cliente, serviço, data_hora de entrada, data_hora de saida, status)
 - Relatórios de receita bruta, de serviços realizados, e de manutenção por veículo e por período.
 
 **Condições e Restrições:**
 - Lembre-se de incluir as restrições de integridade, domínio e demais condições do seu projeto, conforme necessário. Seguem alguns exemplos ilustrativos abaixo.
   - **Ex**:     
     - ``Serviços.custo > 0`` e este atributo aceita apenas números fracionários
-    - ``Veiculo.status`` assume os valores EM MANUTENÇÃO ou FINALIZADO.
-      - ``Veiculo.status`` deve ser igual a MANUTENÇÃO, se existir ao menos uma ordem de serviço com ``OrdensServico.status = MANUTENÇÃO``
-      - ``Veiculo.status`` deve ser igual a FINALIZADO, se todas as ordem de serviço possuírem ``OrdensServico.status = FINALIZADO``
+    - ``Veiculo.status`` assume os valores: 'AGUARDANDO', 'EM EXECUCAO' ou 'FINALIZADO'.
+      - ``Veiculo.status`` deve ser igual a 'EM EXECUCAO', se existir ao menos uma ordem de serviço com ``OrdensServico.status = 'EM EXECUCAO'``
+      - ``Veiculo.status`` deve ser igual a 'FINALIZADO', se todas as ordem de serviço possuírem ``OrdensServico.status = FINALIZADO``
+      - Do contrario ``Veiculo.status`` deve ser igual a 'AGUARDANDO'
     - ``Veiculo.status`` deve ser atualizado automaticamente pelo DB conforme os registros de ordens de serviço forem atualizados.
+    - ``OrdensServico.status =`` 'ORÇAMENTO', 'AUTORIZADA', 'EM EXECUÇÃO', ou 'FINALIZADA'
+    - `custo_compra < custo_venda` em `pecas`
+    - `placa` e `chassi` devem ser atributos determinantes, nao nulos
+    - ``data_hora_entrada <= data_hora_saida`` (quando data_saida for preenchida)
     - Demais restrições / condições do seu projeto
 
-### 10. Sistema de Gestão de Imóveis
+### 9. Sistema de Gestão de Imóveis
 **Descrição:**
 Um sistema para gerenciar a venda e locação de imóveis.
 
 **Funcionalidades:**
-- Cadastro de imóveis (endereço, tipo, status)
-- Cadastro de proprietários (nome, endereço, telefone)
-- Cadastro de inquilinos/compradores (nome, endereço, telefone)
-- Cadastro de contratos de venda e locação (operacao, imovel, proprietario, inquilino ou comprador, valor, data, valor, status)
+- Cadastro de imóveis (matrícula, endereço, tipo, area util, qtd de dormitorios, vagas de garagem, status)
+- Cadastro de proprietários (nome, endereço, telefones)
+- Cadastro de corretores (CRECI, nome, endereço, telefones)
+- Cadastro de inquilinos/compradores (nome, endereço, telefones, faixa de valor procurada, bairros de interesse)
+- Agenda de visitacao (inquilino ou comprador, imovel, data da visita, hora da visita, corretor)
+- Cadastro de contratos de venda e locação (operacao, imovel, proprietario, inquilino ou comprador, valor da operacao, data, status)
 - Relatórios de imóveis disponíveis e ocupados, e de pagamentos de aluguel
 
 **Condições e Restrições:**
 - Lembre-se de incluir as restrições de integridade, domínio e demais condições do seu projeto, conforme necessário. Seguem alguns exemplos ilustrativos abaixo.
   - **Ex**:     
-    - ``Imoveis.status`` é igual a DISPONIVEL, ou INDISPONIVEL.
     - ``Contratos.operacao`` é igual a LOCACAO ou VENDA.
     - ``Contratos.valor > 0`` e esse atributo é um número fracionário.
     - ``Contratos.status`` é igual a CONTRATO ABERTO, ou CONTRATO EFETIVADO.
+    - ``Imoveis.status`` é igual a DISPONIVEL, ou INDISPONIVEL.
     - ``Imoveis.status`` deve ser atualizado automaticamente pelo DB conforme um contrato é cadastrado ou removido do sistema.
       - Quando o contrato é cadastrado, o DB deve fazer ``Imoveis.status = INDISPONIVEL``
       - Quando o contrato é removido, o DB deve fazer ``Imoveis.status = DISPONIVEL``
+      - Nao e possivel inserir um novo contrato se ja houver um contrato vinculado ao imovel
     - Demais restrições / condições do seu projeto
 
-### 11. Sistema de Controle de Frequência Escolar
+### 10. Sistema de Controle de Frequência Escolar
 **Descrição:**
 Um sistema para gerenciar a frequência de alunos em uma escola. 
 
 **Funcionalidades:**
-- Cadastro de turmas (nome, ano letivo)
-- Cadastro de disciplina (nome, professor)
+- Cadastro de periodo letivo (ano ou semestre, data de inicio, data de fim, ferias)
+- Cadastro de periodo de ferias (periodo letivo, data de inicio, data de fim)
+- Cadastro de turmas (nome, periodo letivo)
+- Cadastro de disciplina (nome, carga horaria, tipo)
 - Cadastro de alunos (nome, data de nascimento, endereço)
 - Registro de frequência (aluno, turma, disciplina, data, status de presença)
 - Registro de status do aluno (aluno, disciplina, status de reprovacao)
@@ -349,66 +365,87 @@ Um sistema para gerenciar a frequência de alunos em uma escola.
 **Condições e Restrições:**
 - Lembre-se de incluir as restrições de integridade, domínio e demais condições do seu projeto, conforme necessário. Seguem alguns exemplos ilustrativos abaixo.
   - **Ex**:     
-    - ``Frequencia.status`` é igual a PRESENTE, ou AUSENTE.  
+    - ``Frequencia.status`` é igual a 'PRESENTE', 'AUSENTE JUSTIFICADA', 'AUSENTE NAO JUSTIFICADA'.  
     - ``StatusAluno.status`` é igual a REPROVADO, ou APROVADO.  
     - ``StatusAluno.status`` deve ser atualizado automaticamente pelo DB conforme a frequência dele é registrada no sistema.
       - ``StatusAluno.status`` será igual a REPROVADO se o número de faltas do aluno for igual ou superior a 25% do total de aulas. Do contrário, considere o aluno como APROVADO.
+    - Somente permita o registro de frequencia se `Frequencia.data` estiver fora do periodo de ferias letivas (isto é, `Frequencia.data < Ferias.data_inicio` e `Frequencia.data < Ferias.data_fim`)
     - Demais restrições / condições do seu projeto
     
-### 12. Sistema de Gestão de Academia
+### 11. Sistema de Gestão de Academia
 **Descrição:**
 Um sistema para gerenciar membros e treinos em uma academia. 
 
 **Funcionalidades:**
-- Cadastro de membros (nome, endereço, telefone)
-- Criação de planos de treino (nome, descrição, duração, custo)
-- Atribuição de planos de treino aos membros (membro, plano, data, instrutor)
-- Registro de pagamentos de mensalidades e frequência do membro
+- Cadastro de membros (CPF, nome, endereço, telefone, data de nascimento, genero, condicoes medicas, plano de mensalidade, status)
+- Cadastro de planos de mensalidade (nome, descrição, custo)
+- Cadastro de planos de treino (nome, descrição, duração)
+- Execicios no treino (treino, exercicio, qtd de series, qtd de repeticoes)
+- Atribuição de planos de treino aos membros (data, instrutor, membro, plano de treino)
+- Controle de frequência do membro (membro, data)
+- Registro de pagamentos de mensalidades 
 - Relatórios de frequência dos membros e pagamentos
 
 **Condições e Restrições:**
 - Lembre-se de incluir as restrições de integridade, domínio e demais condições do seu projeto, conforme necessário. Seguem alguns exemplos ilustrativos abaixo.
   - **Ex**:       
-    - ``Plano.custo > 0`` e esse atributo é um número fracionário.  
-    - ``Plano.duracao > 00:00:00`` e o atributo é do tipo TEMPO.  
+    - ``Membro.cpf`` determinante e nao nulo
+    - ``Membro.status`` = 'ATIVO', ou 'INATIVO'
+    - ``PlanoMensalidade.custo > 0`` 
+    - ``PlanoTreino.duracao >= 1`` do tipo DATA.  
+    - ``AtribuicaoPlanoMembro.data >= HOJE()``.  
+    - ``ExerciciosTreino.series >= 1`` e ``ExerciciosTreino.repeticoes >= 1``.  
+    - O aluno nao pode registrar frequencia (entrar na academia) se ele estiver INATIVO (inadimplente, ou com cadastro desativado).
     - Demais restrições / condições do seu projeto
 
-### 13. Sistema de Gestão de Eventos
+### 12. Sistema de Gestão de Eventos
 **Descrição:**
 Um sistema para gerenciar eventos, incluindo cadastro de eventos, participantes e controle de inscrições.
 
 **Funcionalidades:**
-- Cadastro de eventos (nome, data, local, descrição, custo do ingresso)
+- Cadastro de eventos (nome, data_hora de inicio, data_hora de fim, local, descrição, custo do ingresso)
+- Cadastro de local (nome, endereco, capacidade maxima de pessoas)
 - Cadastro de participantes (nome, email, telefone)
-- Registro de inscrições em eventos (participante, evento)
-- Controle de presença nos eventos (id, participante, evento, presenca)
-- Relatórios de eventos e participantes inscritos e ocupação do espaço (qtd de inscritos vs capacidade total do espaço)
+- Registro de inscrições em eventos (participante, evento, politica de reembolso, data de inscricao, data de cancelamento)
+- Cadastro de politica de reembolso (nome, percentual reembolsado, antecedencia minima)
+- Controle de presença nos eventos (participante, evento)
+- Relatórios de eventos, participantes inscritos, percentual de cancelamentos, e ocupação do espaço (qtd de inscritos vs capacidade total do espaço)
 
 **Condições e Restrições:**
 - Lembre-se de incluir as restrições de integridade, domínio e demais condições do seu projeto, conforme necessário. Seguem alguns exemplos ilustrativos abaixo.
   - **Ex**:           
-    - ``Eventos.custo > 0`` e esse atributo é um número fracionário.  
-    - ``Presenca.presenca`` é igual a AUSENTE, ou PRESENTE.  
+    - ``Eventos.custo > 0``
+    - ``PoliticaReembolso.percentual`` deve estar entre 0 e 100.  
+    - ``PoliticaReembolso.antecedencia_minima >= 0``
+    - ``Eventos.data_hora_inicio <= Eventos.data_hora_fim``
     - O DB deve rejeitar múltiplos registros de PRESENÇA de um mesmo participante em um mesmo evento.
       - Isto é, nao podemos ter dois registros com as mesmas informações (participante, evento, PRESENTE).
+    - O registros de PRESENÇA de um participante que cancelou sua inscricao (`InscricaoEventos.data_cancelamento <> NULL`).
     - Demais restrições / condições do seu projeto
     
-### 14. Sistema de Gestão de Transportadora
+### 13. Sistema de Gestão de Transportadora
 **Descrição:**
 Um sistema para gerenciar entregas e frotas de uma transportadora. 
 
 **Funcionalidades:**
-- Cadastro de veículos (marca, modelo, placa, status)
-- Cadastro de motoristas (nome, telefone, categoria da CNH, status)
-- Registro de entregas (veículo, motorista, endereco origem, endereco destino, data saida, status)
+- Cadastro de veículos (marca, modelo, ano, placa, quilometragem, capacidade maxima em kg, status)
+- Cadastro de motoristas (CNH, nome, telefone, categoria da habilitacao, status)
+- Cadastro de enderecos (rua, numero, complemento, bairro, cidade, estado)
+- Registro de entregas (veículo, motorista, endereco origem, endereco destino, data_hora de saida, data_hora de chegada, carga em kg, custo, status)
 - Relatório de entregas pro período
 - Relatório de disponibilidade de motoristas e de veículos por período
 
 **Condições e Restrições:**
 - Lembre-se de incluir as restrições de integridade, domínio e demais condições do seu projeto, conforme necessário. Seguem alguns exemplos ilustrativos abaixo.
   - **Ex**:                 
-    - ``Veiculo.status`` é igual a DISPONIVEL, ou INDISPONIVEL.  
-    - ``Motorista.status`` é igual a DISPONIVEL, ou INDISPONIVEL.  
-    - ``Entrega.status`` é igual a A CAMINHO, ou ENTREGUE.
-    - ``Motorista.categoriaCNH`` é igual a A, B, C, D ou E
+    - ``Veiculo.status`` = DISPONÍVEL, EM MANUTENÇÃO, ou INDISPONÍVEL
+    - ``Motorista.status`` = DISPONIVEL, ou INDISPONIVEL.  
+    - ``Entrega.status`` = A CAMINHO, ou ENTREGUE.
+    - ``Entrega.data_hora_saida = AGORA()`` com tipo DATETIME.
+    - ``Entrega.data_hora_chegada >= AGORA()`` com tipo DATETIME.
+    - ``Motorista.categoriaCNH`` = A, B, C, D ou E
+    - ``Veiculo.status = INDISPONÍVEL`` quando: 
+      - ``Veiculo.quilometragem >= 200000``
+      - Há ``Entrega.status = A CAMINHO`` vinculada ao veiculo 
+    - O DB nao deve permitir o registro de uma entrega se `Entrega.carga_kg > Veiculo.capacidade_kg`
     - Demais restrições / condições do seu projeto
