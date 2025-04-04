@@ -64,4 +64,3 @@ Cada grupo deve incluir os artefatos gerados no repositório do projeto semestra
 ## 4. Conclusão e Discussão Final
 - Reflexão sobre os desafios encontrados no uso das ferramentas.  
 - Discussão sobre como essas ferramentas podem ser utilizadas no mercado de trabalho.  
-- Sugestões para aprofundamento no uso de Ferramentas CASE ao longo do semestre.  
