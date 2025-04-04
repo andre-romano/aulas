@@ -30,12 +30,12 @@ Discutir em grupo quais são as vantagens e desvantagens das ferramentas apresen
 
 ### 1.2 Principais Ferramentas CASE 
 - Escolha um representante de cada grupo de ferramentas abaixo para realizar sua analise:
-  - GitHub, GitLab, Bitbucket (para controle de versão e colaboração).  
   - draw.io, Lucidchart, Astah (para modelagem UML).  
   - BrModelo, MySQL Workbench, phpMyAdmin (para modelagem e gerenciamento de banco de dados).  
   - Doxygen, Sphinx, JavaDoc, pdoc (para geração automatizada de documentação)
   - unittest, JUnit, phpunit, Selenium (para testes automatizados).  
   - Pip, NPM, PHP Composer, Conan (para gerenciamento de dependências de software).  
+  - CMake, Ninja, Make, Gradle, Maven, Ant, WAF (para automação de compilação).  
 
 ---
 
@@ -44,7 +44,6 @@ Discutir em grupo quais são as vantagens e desvantagens das ferramentas apresen
 Em grupo, escolham **dois grupos de ferramentas** listados abaixo para gerar artefatos para seu projeto.  
 - Cada grupo deve apresentar as saídas das ferramentas (diagramas e scripts) e justificar suas escolhas com base nos requisitos do projeto.  
 - Os artefatos gerados devem ser incluídos nos entregáveis do projeto.
-
 
 ### 2.1 Geração Automatizada de Documentação  
 - Criar documentação (formato HTML, Markdown ou PDF) para o projeto, utilizando uma ferramenta CASE adequada aos requisitos e à linguagem de programação adotada nesse trabalho.
