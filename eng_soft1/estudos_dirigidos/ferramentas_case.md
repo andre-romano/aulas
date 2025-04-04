@@ -25,6 +25,7 @@ Discutir em grupo quais são as vantagens e desvantagens das ferramentas apresen
 ### 1.1 Conceitos Fundamentais 
 - Pesquisar sobre:
   - Definição de Ferramentas CASE
+  - Tipos de Ferramentas CASE
   - Benefícios do uso de Ferramentas CASE no desenvolvimento de software.  
 
 ### 1.2 Principais Ferramentas CASE 
