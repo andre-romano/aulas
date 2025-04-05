@@ -52,10 +52,12 @@ Vocês devem, em grupo, elaborar um **relatório técnico** contendo:
    - O que os futuros engenheiros de software podem aprender com esse caso?
 
 5. **Incorporacao no projeto:**
-Acerca do projeto da discplina:
-    - Incorporem as técnicas apreendidas nele.
-    - Criem os artefatos para gerenciamento esse projeto melhor.
-    - Incluam os artefatos criados nos relatórios e slides do projeto.
+
+Acerca do projeto da disciplina:
+
+ - Incorporem as técnicas apreendidas nele.
+ - Criem os artefatos para gerenciamento esse projeto melhor.
+ - Incluam os artefatos criados nos relatórios e slides do projeto.
 
 ---
 
