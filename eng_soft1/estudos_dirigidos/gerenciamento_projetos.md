@@ -51,13 +51,10 @@ Vocês devem, em grupo, elaborar um **relatório técnico** contendo:
    - Como o uso de boas práticas de gerenciamento de projetos pode ter prevenido os problemas enfrentados?
    - O que os futuros engenheiros de software podem aprender com esse caso?
 
-5. **Incorporacao no projeto:**
-
-Acerca do projeto da disciplina:
-
- - Incorporem as técnicas apreendidas nele.
- - Criem os artefatos para gerenciamento esse projeto melhor.
- - Incluam os artefatos criados nos relatórios e slides do projeto.
+5. **Incorporacao no projeto da disciplina:**
+    - Incorporem as técnicas apreendidas no projeto da disciplina.
+    - Criem os artefatos para melhor gerenciamento do projeto.
+    - Incluam os artefatos criados nos relatórios e slides do projeto.
 
 ---
 
