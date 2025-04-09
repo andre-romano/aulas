@@ -1,8 +1,8 @@
 
-## 📘 Estudo Dirigido / Estudo de Caso: Falhas em Sistemas Sociotécnicos - Análise Crítica, Diagnóstico e Recomendações
+## Estudo Dirigido / Estudo de Caso: Falhas em Sistemas Sociotécnicos - Análise Crítica, Diagnóstico e Recomendações
 
 **Sumário**:
-- [📘 Estudo Dirigido / Estudo de Caso: Falhas em Sistemas Sociotécnicos - Análise Crítica, Diagnóstico e Recomendações](#-estudo-dirigido--estudo-de-caso-falhas-em-sistemas-sociotécnicos---análise-crítica-diagnóstico-e-recomendações)
+- [Estudo Dirigido / Estudo de Caso: Falhas em Sistemas Sociotécnicos - Análise Crítica, Diagnóstico e Recomendações](#estudo-dirigido--estudo-de-caso-falhas-em-sistemas-sociotécnicos---análise-crítica-diagnóstico-e-recomendações)
   - [Objetivos](#objetivos)
   - [Conteúdo Recomendado](#conteúdo-recomendado)
   - [Estrutura da Atividade](#estrutura-da-atividade)
