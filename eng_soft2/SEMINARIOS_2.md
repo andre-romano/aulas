@@ -12,9 +12,10 @@ Este arquivo contem os seminários que podem ser passados para você no decorrer
     - [3. Ferramentas de Integração Contínua (CI)](#3-ferramentas-de-integração-contínua-ci)
     - [4. Implantação Contínua (CD) com Docker](#4-implantação-contínua-cd-com-docker)
     - [5. Análise de Qualidade de Código com SonarQube](#5-análise-de-qualidade-de-código-com-sonarqube)
-    - [6. Engenharia Reversa de Software](#6-engenharia-reversa-de-software)
+    - [6. Automação de Documentação de Software](#6-automação-de-documentação-de-software)
     - [7. Análise e Melhoria de Performance de Software](#7-análise-e-melhoria-de-performance-de-software)
     - [8. Testes de Usabilidade e UX em Sistemas de Software](#8-testes-de-usabilidade-e-ux-em-sistemas-de-software)
+    - [9. Engenharia reversa de software](#9-engenharia-reversa-de-software)
 
 ## Objetivos da Atividade
 
@@ -80,15 +81,15 @@ Seguem abaixo as especificações de cada tópico de seminário. Leia cada instr
 - Analisar um projeto real (que você possua permissão de acesso ao código fonte -- ou software open source)
   - Interpretar métricas como cobertura de testes, bugs e vulnerabilidades.
 
-### 6. Engenharia Reversa de Software
-**Descrição:** Explorar técnicas e ferramentas para engenharia reversa de sistemas legados.
+### 6. Automação de Documentação de Software
+**Descrição:** Explorar técnicas e ferramentas para automatização de documentação de sistemas.
 
 **Subtópicos:**
-- Escolher um software open source e gerar diagramas de classes automáticos.
-  - Ferramentas sugeridas: Enterprise Architect, StarUML, Visual Paradigm.
-- Gerar grafos de dependência entre módulos / classes.
-  - Ferramentas sugeridas: Doxygen, Graphviz, Pyreverse.
-- Interpretar resultados, Discutir limitações e aplicações práticas.
+- Escolher um software open source
+- Gere diagramas de classes automáticos.
+- Gere grafos de dependência entre módulos / classes.
+- Ferramentas sugeridas: Doxygen, Graphviz, StarUML, Visual Paradigm.
+- Interpretar resultados, discutir limitações e aplicações práticas.
 
 ### 7. Análise e Melhoria de Performance de Software
 **Descrição:** Mostrar ferramentas e práticas para identificar e corrigir gargalos de desempenho.
@@ -106,5 +107,12 @@ Seguem abaixo as especificações de cada tópico de seminário. Leia cada instr
 - Conduzir um pequeno teste de usabilidade com colegas.
 - Apresentar resultados e melhorias propostas.
 
+### 9. Engenharia reversa de software
+**Descrição:** Explorar as técnicas, ferramentas e processos utilizados para a análise, entendimento e reconstrução da estrutura de sistemas de software(a partir do código-fonte existente ou, em alguns casos, apenas de binários).
 
-
+**Subtópicos:**
+- Importancia da engenharia reversa (manutenção de sistemas legados, auditorias de segurança e reengenharia de software).
+- Técnicas Utilizadas na Engenharia Reversa de softwares compilados (descompilação, análise de *binários* e *bytecode*)  
+- Exemplo prático de descompilação de um software (binário) e interpretar o que foi recuperado.
+  - Ferramentas para Engenharia Reversa sugeridas: HxD, Ghidra (NSA), IDA Pro, Radare2.
+- Limitações e Aspectos Éticos da Engenharia Reversa (licenciamento, propriedade intelectual, restrições corporativas, boas praticas de engenharia reversa, etc).
