@@ -37,20 +37,22 @@ Seguem abaixo as especificações de cada tópico de seminário. Leia cada instr
 **ATENÇÃO**: A interpretação da atividade é parte integral da avaliação.
 
 ### 1. Práticas de Refatoração de Código
-Descrição: Explorar as práticas de refatoração de código para melhorar a legibilidade, manutenção e desempenho do software.
-Subtópicos:
-Conceitos de refatoração
-Técnicas comuns de refatoração
-Ferramentas de suporte à refatoração (IntelliJ, Eclipse)
-Exemplos práticos de refatoração
+**Descrição**: Explorar as práticas de refatoração de código para melhorar a legibilidade, manutenção e desempenho do software.
+
+**Subtópicos**:
+- Conceitos de refatoração
+- Técnicas comuns de refatoração
+- Ferramentas de suporte à refatoração (IntelliJ, Eclipse)
+- Exemplos práticos de refatoração
 
 ### 2. Engenharia de Software Dirigida por Testes (TDD)
-Descrição: Discutir a abordagem de desenvolvimento dirigido por testes e seus benefícios para a qualidade do software.
-Subtópicos:
-Conceitos de TDD e tipos de testes automatizados (unitário, sistema)
-Ciclo TDD (Red-Green-Refactor)
-Ferramentas para TDD (JUnit, Mockito)
-Ferramentas de automação de testes (Selenium, JUnit)
+**Descrição**: Discutir a abordagem de desenvolvimento dirigido por testes e seus benefícios para a qualidade do software.
+
+**Subtópicos:**
+- Conceitos de TDD e tipos de testes automatizados (unitário, sistema)
+- Ciclo TDD (Red-Green-Refactor)
+- Ferramentas para TDD (JUnit, Mockito)
+- Ferramentas de automação de testes (Selenium, JUnit)
 
 ### 3. Desenvolvimento de Software Orientado a Serviços (SOA)
 
@@ -83,19 +85,21 @@ Ferramentas de automação de testes (Selenium, JUnit)
 - Exemplos de aplicações em tempo real (controle de tráfego aéreo, sistemas de manufatura)
 
 ### 6. Engenharia de Software Dirigida por Modelos (MDE)
-Descrição: Abordar o desenvolvimento de software utilizando modelos como principais artefatos, incluindo os benefícios e desafios dessa abordagem.
-Subtópicos:
-Conceitos de MDE
-Ferramentas de modelagem (Eclipse Modeling Framework, Enterprise Architect)
-Transformações de modelos
-Casos de uso e exemplos práticos
+**Descrição**: Abordar o desenvolvimento de software utilizando modelos como principais artefatos, incluindo os benefícios e desafios dessa abordagem.
+
+**Subtópicos:**
+- Conceitos de MDE
+- Ferramentas de modelagem (Eclipse Modeling Framework, Enterprise Architect)
+- Transformações de modelos
+- Casos de uso e exemplos práticos
 
 ### 7. Engenharia de Software Baseada em Componentes
-Descrição: Discutir a abordagem baseada em componentes para o desenvolvimento de software e seus benefícios para a modularidade e reuso.
-Subtópicos:
-Conceitos de software baseado em componentes
-Design e implementação de componentes
-Ferramentas e frameworks (EJB, OSGi)
-Exemplo de sistemas baseados em componentes
+**Descrição**: Discutir a abordagem baseada em componentes para o desenvolvimento de software e seus benefícios para a modularidade e reuso.
+
+**Subtópicos:**
+- Conceitos de software baseado em componentes
+- Design e implementação de componentes
+- Ferramentas e frameworks (EJB, OSGi)
+- Exemplo de sistemas baseados em componentes
 
 

@@ -16,4 +16,5 @@ Esta página contém as aulas e demais o conteúdos auxiliares da disciplina.
 ## Tutoriais e Conteúdo Complementar
 
 - [Padrões de projeto de software](https://refactoring.guru/pt-br/design-patterns/)
+- [Porque o software de aeronaves nao sao atualizados?](https://youtube.com/shorts/3BKdisR7EoY?si=2EKmroql05AbqSlt)
 
