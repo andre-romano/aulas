@@ -9,17 +9,24 @@
 
 **Objetivos**:
 - Permitir a comunicação entre dispositivos de redes distintas
-  - Todos os dispositivos devem responder a pacotes ICMP enviados por quaisquer outros dispositivos finais
+  - Todos os dispositivos devem responder a pacotes ICMP enviados por quaisquer outros dispositivos finais (dentro da rede atual e dentro da rede do provedor)
   - Configurar parâmetros das redes LAN e WAN
   - Instalar e configurar enlaces e parâmetros wireless e cabeados
-- Todos os dispositivos devem ser capazes de acessar os servidores DHCP, DNS e HTTP
-- Configurar serviço HTTP
+- Todos os dispositivos devem ser capazes de acessar os servidores DHCP, DNS, HTTP e de EMAIL (SMTP + POP3) do provedor
+- Somente o servidor HTTP da rede amarela deve estar acessível para dispositivos finais externos das demais (rede azul e vermelha). Os demais dispositivos da rede amarela nao devem estar acessíveis para as demais redes.
+- Os dispositivos da rede vermelha nao devem estar acessíveis para os dispositivos da rede amarela. 
+- Configurar serviços HTTP
   - Somente o servidor HTTP deve fornecer este serviço
 - Configurar serviço DHCP nas redes LAN e WAN
 - Configurar serviço DNS nas redes LAN e WAN
-  - **Nos servidores DNS primário e secundário do provedor de internet:**
-    - Criar registros DNS do tipo A e CNAME que apontem para o servidor HTTP
-    - Criar registros DNS do tipo NS que apontem para os servidores DNS
+  - Criar registros DNS do tipo A e CNAME que apontem para o servidor HTTP
+  - Criar registros DNS do tipo NS que apontem para o servidor DNS
+- Configurar serviços de EMAIL
+  - Criar e configurar servidor POP3 e SMTP
+  - Criar e configurar usuários (emails) no servidor
+- Vocês devem usar pacotes ICMP (comando PING ou mensagens simuladas do Cisco Packet Tracer), e os sniffers da rede para identificar e corrigir falhas de conexão e de configuração das redes
+
+**Lembrete**: Para testar o DNS, você deve verificar se o acesso ao IP do servidor funciona e se esse acesso pelo nome do servidor também funciona. Se o acesso via IP funcionar porém via nome nao funcionar, isso indica falha de configuração no DNS.
 
 **Sumário**
 - [Projeto - Interconexão de redes locais com Packet Tracer](#projeto---interconexão-de-redes-locais-com-packet-tracer)
@@ -72,8 +79,9 @@ Segue a descrição das redes LAN domésticas e WAN (provedor de serviço).
 - **Topologia**: Estrela
 - **Equipamentos:**
   - 01 Roteador SOHO (Small-Office / Home-Office)  
+  - 01 Servidor HTTP local
   - Pelo menos 01 dispositivo wireless    
-  - Pelo menos 01 dispositivo cabeado 
+  - Pelo menos 01 dispositivo cabeado (Laptop)
 - **Enlaces:**
   - Enlaces wireless (802.11n ou 802.11ac)    
   - Enlaces cabeados (Fast Ethernet ou Gigabit)
@@ -86,6 +94,8 @@ Segue a descrição das redes LAN domésticas e WAN (provedor de serviço).
   - **Rede**: 192.168.1.0/24
   - **Gateway / DHCP**: 192.168.1.1
   - **DNS**: 192.168.254.2
+  - **IP do Laptop**: 192.168.1.4 (reservado no servidor DHCP)
+  - **IP do Servidor HTTP local**: 192.168.1.200 (configuração de IP estática no servidor)
 - **Configurações Wireless 2.4 / 5 GHz**: 
   - **Segurança:** WPA2-PSK (AES)
   - **SSID**: CASA 1
@@ -97,7 +107,7 @@ Segue a descrição das redes LAN domésticas e WAN (provedor de serviço).
 - **Equipamentos:**
   - 01 Roteador SOHO (Small-Office / Home-Office)  
   - Pelo menos 01 dispositivo wireless    
-  - Pelo menos 01 dispositivo cabeado 
+  - Pelo menos 01 dispositivo cabeado (PC)
 - **Enlaces:**
   - Enlaces wireless (802.11n ou 802.11ac)    
   - Enlaces cabeados (Fast Ethernet ou Gigabit)
@@ -110,6 +120,7 @@ Segue a descrição das redes LAN domésticas e WAN (provedor de serviço).
   - **Rede**: 192.168.2.0/24
   - **Gateway / DHCP**: 192.168.2.1
   - **DNS**: 192.168.254.2
+  - **IP do PC**: 192.168.2.4 (reservado no servidor DHCP)
 - **Configurações Wireless 2.4 / 5 GHz**: 
   - **Segurança:** WPA2-PSK (AES)
   - **SSID**: CASA 2
@@ -119,9 +130,10 @@ Segue a descrição das redes LAN domésticas e WAN (provedor de serviço).
 
 - **Equipamentos:**
   - 02 Switches (de rack)  
-  - 02 Servidores DNS (primário e secundário)
+  - 01 Servidor DNS (primário)
   - 01 Servidor DHCP
   - 01 Servidor HTTP
+  - 01 Servidor EMAIL (POP3 + SMTP)
 - **Enlaces:**
   - Enlaces cabeados (Fast Ethernet ou Gigabit)
 - **Cabeamento (para enlaces cabeados):** 
@@ -130,25 +142,17 @@ Segue a descrição das redes LAN domésticas e WAN (provedor de serviço).
 - **Configurações da LAN:** 
   - **Rede**: 192.168.254.0/24
   - **Gateway / DHCP**: 192.168.254.1
-  - **DNS**: 
-    - 192.168.254.2 (primário)
-    - 192.168.254.3 (secundário)
+  - **DNS**: 192.168.254.2 (primário)
+  - **EMAIL (POP3 + SMTP)**: 192.168.254.3
   - **HTTP**: 192.168.254.4
+- **Configurações de DNS:** 
+  - **Nome do domínio DNS**: ufba.br
+  - **Nome do servidor DNS**: ns1.ufba.br
+  - **Nome do servidor EMAIL (POP e SMTP)**: mx.ufba.br
+  - **Nome do servidor HTTP**: ufba.br
+  - **Alias para o servidor HTTP**: portal.ufba.br 
 
-<figure>
-  
-  **Exemplo de Configuração de DNS:**
-  
-  | Nome        | Tipo  | Valor         |
-  | ----------- | ----- | ------------- |
-  | ns1.ufba.br | A     | 192.168.254.2 |
-  | ns2.ufba.br | A     | 192.168.254.3 |
-  | ufba.br     | A     | 192.168.254.4 |
-  | ufba.br     | NS    | ns1.ufba.br   |
-  | ufba.br     | NS    | ns2.ufba.br   |
-  | cisco.srv   | CNAME | ufba.br       |
-
-</figure>
+**DICA**: Para configurar o DNS, estudem os tipos de registro (A, CNAME, e NS). O Cisco Packet Tracer nao possui o registro do tipo MX, porém isso nao afeta o funcionamento dos serviços no simulador.
 
 ## Instruções
 
@@ -157,10 +161,11 @@ Segue a descrição das redes LAN domésticas e WAN (provedor de serviço).
 3) Coloque os dispositivos e equipamentos de rede
 4) Conecte-os usando os enlaces apropriados
 5) Configure as redes e serviços
-6) Teste a configuração IP, enlaces e conexões de redes usando pacotes ICMP
+6) Teste a configuração IP, enlaces e conexões de redes usando pacotes ICMP e os sniffers da rede
 7) Teste os serviços DHCP (adicione dispositivos e verifique se eles se configuram automaticamente na rede)
 8) Teste o serviço DNS (faça um ping para o domínio `ufba.br` e `cisco.srv`)
-9) Teste o serviço HTTP (altere o arquivo ``index.html`` e verifique se as alterações visualizadas em outros dispositivos de rede)
+9) Teste o serviço HTTP do provedor (altere o arquivo ``index.html`` e verifique se as alterações visualizadas em outros dispositivos de rede)
+   1)  Faça o mesmo teste para o serviço HTTP local da rede amarela (acesso pelos dispositivos da rede amarela e acesso por dispositivos externos)
 
 ## Entregáveis
 
