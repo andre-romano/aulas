@@ -1,5 +1,5 @@
 
-## Código com Erros (Para Testes de Release)
+## Código com Erros 
 
 ```python
 class Pedido:
@@ -28,7 +28,7 @@ class Pedido:
 
 ---
 
-## 🧾 Requisitos e Cenários de Teste (Testes de Release)
+## 🧾 Requisitos e Cenários de Teste
 
 1. **\[REQ1]** O total do pedido deve refletir corretamente o somatório dos itens.
 2. **\[REQ2]** O desconto deve ser aplicado corretamente apenas uma vez.
