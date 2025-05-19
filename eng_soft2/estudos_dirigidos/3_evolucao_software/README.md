@@ -1,123 +1,232 @@
+# Estudo Dirigido Prático: Evolução de software
 
-## Estudo Dirigido Prático – Avaliação Crítica de Código e Manutenibilidade
+## 1. Leis de Lehman
 
-**Tema:** Avaliação de Código Python segundo Leis de Lehman, Tipos de Defeitos, Manutenibilidade e Reengenharia
-
-**Objetivo Geral:** Desenvolver nos alunos a capacidade de identificar problemas de manutenção, evolução e qualidade de software, com base em código legado, utilizando critérios da Engenharia de Software.
-
----
-
-### Código legado com problemas
+**Exercício:** Analise um sistema de gestão de tarefas que está evoluindo e identifique como as Leis de Lehman se aplicam.
 
 ```python
-class SistemaNotas:
+class SistemaTarefas:
     def __init__(self):
-        self.alunos = []  # lista de tuplas (nome, [notas])
-
-    def adicionar_aluno(self, nome, notas):
-        self.alunos.append((nome, notas))
-
-    def media_geral(self):
-        total = 0
-        count = 0
-        for aluno in self.alunos:
-            for nota in aluno[1]:
-                total += nota
-                count += 1
-        return total / count
-
-    def status_aprovacao(self):
-        for aluno in self.alunos:
-            media = sum(aluno[1]) / len(aluno[1])
-            if media >= 6:
-                print(f"{aluno[0]}: Aprovado")
-            else:
-                print(f"{aluno[0]}: Reprovado")
-
-    def imprimir_relatorio(self):
-        for aluno in self.alunos:
-            print(f"Aluno: {aluno[0]}")
-            print("Notas:", aluno[1])
-            print("Média:", sum(aluno[1]) / len(aluno[1]))
-            if sum(aluno[1]) / len(aluno[1]) >= 6:
-                print("Situação: Aprovado")
-            else:
-                print("Situação: Reprovado")
-            print("---")
+        self.tarefas = []
+    
+    # Versão inicial simples
+    def adicionar_tarefa(self, nome):
+        self.tarefas.append({"nome": nome, "concluida": False})
+    
+    # Evolução: complexidade crescente
+    def adicionar_tarefa_completa(self, nome, prioridade, prazo):
+        self.tarefas.append({
+            "nome": nome,
+            "prioridade": prioridade,  # Novo campo
+            "prazo": prazo,           # Novo campo
+            "concluida": False
+        })
+    
+    # Tarefa: Analise como cada lei de Lehman se aplica:
+    # 1. Mudança contínua
+    # 2. Complexidade crescente
+    # 3. Auto-regulação
+    # 4. Conservação da estabilidade
+    # 5. Conservação da familiaridade
+    # 6. Crescimento continuado
+    # 7. Qualidade decrescente
+    # 8. Feedback system
 ```
 
----
+## 2. Correção de Erros de Diferentes Custos
 
-## Etapas do Estudo Dirigido
+**Exercício:** Implemente um sistema bancário simples e identifique tipos de erros.
 
-### Etapa 1 – Leitura Crítica do Código (30 min)
+```python
+class ContaBancaria:
+    def __init__(self, saldo_inicial=0):
+        self.saldo = saldo_inicial
+    
+    # Erro de codificação (fácil corrigir)
+    def depositar(self, valor):
+        self.saldo -= valor  # Erro: deveria ser +=
+    
+    # Erro de projeto (mais custoso)
+    def sacar(self, valor):
+        # Faltou verificar saldo suficiente
+        self.saldo -= valor
+    
+    # Erro de requisitos (muito custoso)
+    # O cliente não pediu extrato, mas é necessário
 
-**Atividade em grupo:**
+# Tarefa:
+# 1. Corrija o erro de codificação
+# 2. Melhore o método sacar para tratar saldo insuficiente
+# 3. Adicione funcionalidade de extrato (erro de requisitos)
+```
 
-Em **DUPLA**:
-* Analise o código fornecido.
-* Discuta sua estrutura, legibilidade, repetição de lógica, modularidade e clareza de propósito.
+## 3. Fatores que Interferem na Manutenção
 
-**Questões:**
+**Exercício:** Analise um código mal escrito e identifique problemas de manutenção.
 
-1. O código é fácil de entender? Por quê?
-2. Quais funcionalidades estão misturadas em um mesmo método?
-3. Há repetição de lógica ou má separação de responsabilidades?
+```python
+# Código com problemas de manutenção
+class ProcessadorDados:
+    def __init__(self):
+        self.d = []  # Nome ruim para dados
+    
+    def p(self, x):  # Método mal nomeado
+        # Lógica complexa e não documentada
+        r = []
+        for i in range(len(self.d)):
+            if self.d[i] > x:
+                r.append(self.d[i]*2.5)
+            else:
+                r.append(self.d[i]/2.5)
+        return sum(r)/len(r) if len(r) > 0 else 0
 
----
+# Tarefa: Identifique:
+# 1. Problemas de nomes ruins
+# 2. Falta de documentação
+# 3. Complexidade desnecessária
+# 4. Sugira melhorias para cada problema encontrado
+```
 
-### Etapa 2 – Avaliação com base nas Leis de Lehman (30 min)
+## 4. Reengenharia de Software
 
-Relacione o código com pelo menos **4 Leis de Lehman**. Exemplos:
+**Exercício:** Reescreva um sistema legado com nova arquitetura.
 
-* **Lei da Mudança Contínua**: esse sistema é preparado para evoluir com novos critérios de avaliação?
-* **Lei do Crescimento**: o código cresce mantendo ou perdendo sua estrutura?
-* **Lei da Complexidade Crescente**: o sistema parece se tornar mais complexo a cada adição?
-* **Lei da Estabilidade Organizacional**: o ritmo de desenvolvimento se mantém ou depende da experiência da equipe?
+```python
+# Sistema legado - tudo em uma função
+def processar_pedido(itens, cliente, pagamento):
+    # Lógica complexa e acoplada
+    total = sum(item['preco'] * item['quantidade'] for item in itens)
+    # ... muitas linhas de código ...
+    return {"status": "sucesso", "total": total}
 
-**Registro:**
-Responder em folha ou documento digital quais leis foram analisadas e como se manifestam no código.
+# Tarefa:
+# 1. Divida em classes especializadas (Pedido, Item, Cliente, Pagamento)
+# 2. Aplique princípios SOLID
+# 3. Mantenha a mesma funcionalidade com melhor estrutura
+```
 
----
+## 5. Refatoração de Software
 
-### Etapa 3 – Classificação dos Defeitos (40 min)
+**Exercício:** Refatore um código com problemas comuns.
 
-Identificar e propor correções nos defeitos do código.
+```python
+# Código para refatorar
+def calcular(valores, op, extra=None):
+    r = []
+    if op == "soma":
+        for v in valores:
+            r.append(v + (extra if extra else 0))
+    elif op == "multi":
+        for v in valores:
+            r.append(v * (extra if extra else 1))
+    elif op == "quad":
+        for v in valores:
+            r.append(v ** 2)
+    return r
 
-- **Ex:** mistura de código de *view* com lógica 
-  - **Correção**: separação de responsabilidades em classes distintas
+# Tarefa:
+# 1. Elimine código duplicado
+# 2. Divida em funções menores
+# 3. Melhore a legibilidade
+```
 
----
+## 6. Problemas Comuns de Código
 
-### Etapa 4 – Fatores que Afetam a Manutenção (30 min)
+**Exercício:** Corrija problemas específicos em trechos de código.
 
-Discutir como os seguintes fatores poderiam impactar a manutenção desse código:
+### 6.1 Código Duplicado
+```python
+# Versão com duplicação
+def calcular_area_retangulo(l, a):
+    return l * a
 
-1. Estabilidade da equipe
-2. Más práticas de desenvolvimento
-3. Qualificação do pessoal
-4. Idade do programa
-5. Estrutura de dados e modularidade
+def calcular_perimetro_retangulo(l, a):
+    return 2 * (l + a)
 
+def calcular_area_circulo(r):
+    return 3.14 * r * r
 
----
+def calcular_perimetro_circulo(r):
+    return 2 * 3.14 * r
 
-### Etapa 5 – Reengenharia e Refatoração (40 min)
+# Tarefa: Elimine a duplicação de constantes e lógica comum
+```
 
-Reescrever parte ou todo o sistema aplicando:
+### 6.2 Métodos Longos
+```python
+def processar_relatorio(dados):
+    # Cálculos
+    total = sum(dados)
+    media = total / len(dados)
+    maximo = max(dados)
+    minimo = min(dados)
+    
+    # Formatação
+    relatorio = "RELATÓRIO FINAL\n"
+    relatorio += f"Total: {total}\n"
+    relatorio += f"Média: {media:.2f}\n"
+    relatorio += f"Maximo: {maximo}\n"
+    relatorio += f"Minimo: {minimo}\n"
+    
+    # Filtros
+    acima = [d for d in dados if d > media]
+    abaixo = [d for d in dados if d < media]
+    
+    relatorio += f"Acima da média: {len(acima)}\n"
+    relatorio += f"Abaixo da média: {len(abaixo)}\n"
+    
+    return relatorio
 
-* Princípios de **SOLID** e boas práticas
-* Criação de uma classe `Aluno`
-* Separação de lógica de apresentação e regra de negócio
-* Modularização
+# Tarefa: Divida em métodos menores com única responsabilidade
+```
 
----
+### 6.3 Aglutinação de Dados
+```python
+# Classe com muitos campos não relacionados
+class Funcionario:
+    def __init__(self):
+        self.nome = ""
+        self.salario = 0
+        self.departamento = ""
+        self.endereco = ""
+        self.telefone = ""
+        self.tipo_contrato = ""
+        self.horas_extras = 0
+        self.equipamento = ""
 
-### 📈 Etapa 6 – Discussão em sala (30 min)
+# Tarefa: Aplique o princípio da responsabilidade única e divida em classes
+```
 
-Cada grupo deve apresentar:
+### 6.4 Generalidade Especulativa
+```python
+# Código com funcionalidades não usadas
+class CalculadoraEstatistica:
+    def media(self, dados):
+        return sum(dados)/len(dados)
+    
+    def moda(self, dados):
+        # Implementação complexa nunca usada
+        from collections import Counter
+        freq = Counter(dados)
+        return freq.most_common(1)[0][0]
+    
+    def fatorial(self, n):
+        # Por que isso está aqui?
+        if n == 0:
+            return 1
+        return n * self.fatorial(n-1)
 
-* Principais defeitos identificados
-* Leis de Lehman relacionadas
-* Refatorações aplicadas
-* O que aprenderam sobre manutenibilidade e reengenharia
+# Tarefa: Remova funcionalidades não utilizadas e documente decisões
+```
+
+## Como Executar o Estudo Dirigido:
+1. Para cada seção, analise o código fornecido
+2. Implemente as melhorias sugeridas
+3. Compare as versões antes/depois
+4. Documente as decisões tomadas
+
+**Dicas:**
+- Sempre execute testes após modificações
+- Faça mudanças incrementais
+- Documente o racional para cada decisão
+- Priorize os problemas que mais impactam a manutenibilidade

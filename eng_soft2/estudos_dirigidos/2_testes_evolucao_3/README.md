@@ -1,16 +1,6 @@
 
 ## Estudo Dirigido / Estudo de Caso: Testes e Evolução de Software - Estratégias, Desafios e Impacto na Qualidade de Sistemas em Produção
 
-**Sumário**
-- [Estudo Dirigido / Estudo de Caso: Testes e Evolução de Software - Estratégias, Desafios e Impacto na Qualidade de Sistemas em Produção](#estudo-dirigido--estudo-de-caso-testes-e-evolução-de-software---estratégias-desafios-e-impacto-na-qualidade-de-sistemas-em-produção)
-  - [Objetivos](#objetivos)
-  - [Conteúdo Recomendado](#conteúdo-recomendado)
-  - [Estrutura da Atividade](#estrutura-da-atividade)
-    - [Parte 1 – Estudo de Caso: Aplicativo de Transporte Urbano Fictício (GoCity)](#parte-1--estudo-de-caso-aplicativo-de-transporte-urbano-fictício-gocity)
-    - [Parte 2 – Discussão e Apresentações](#parte-2--discussão-e-apresentações)
-      - [Perguntas norteadoras para discussão:](#perguntas-norteadoras-para-discussão)
-  - [Avaliação da Atividade](#avaliação-da-atividade)
-
 ### Objetivos
 
 - Compreender o papel dos testes no ciclo de vida do software.
@@ -79,12 +69,3 @@ Cada grupo apresentará suas propostas (10–20 minutos), e em seguida seguida t
 - Como balancear velocidade de entrega com cobertura de testes?
 - Até que ponto vale a pena automatizar testes em sistemas que mudam frequentemente?
 - Quais métricas (além da cobertura) podem indicar a confiabilidade dos testes?
-
----
-
-### Avaliação da Atividade
-
-- Participação e comprometimento (20%)
-- Clareza e organização das análises (20%)
-- Adequação técnica das propostas de teste e evolução (40%)
-- Qualidade da apresentação oral (20%)

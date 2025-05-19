@@ -1,16 +1,6 @@
 
 ### Estudo Dirigido / Estudo de Caso: Gerenciamento da Qualidade de Software - Modelos, Métricas e Decisões Estratégicas em Projetos Reais
 
-**Sumário**:
-- [Estudo Dirigido / Estudo de Caso: Gerenciamento da Qualidade de Software - Modelos, Métricas e Decisões Estratégicas em Projetos Reais](#estudo-dirigido--estudo-de-caso-gerenciamento-da-qualidade-de-software---modelos-métricas-e-decisões-estratégicas-em-projetos-reais)
-- [Objetivos](#objetivos)
-- [Conteúdo Recomendado](#conteúdo-recomendado)
-- [Estrutura da Atividade](#estrutura-da-atividade)
-  - [Parte 1 – Estudo de Caso: Plataforma Fictícia de Agendamento Médico Digital para o SUS ("SaúdeCerta")\*\*](#parte-1--estudo-de-caso-plataforma-fictícia-de-agendamento-médico-digital-para-o-sus-saúdecerta)
-  - [Parte 2 – Apresentação e Discussão](#parte-2--apresentação-e-discussão)
-- [Avaliação da Atividade](#avaliação-da-atividade)
-
-
 ### Objetivos
 
 - Compreender os princípios do gerenciamento da qualidade de software.
@@ -93,11 +83,3 @@ Cada grupo apresenta suas análises e plano (10–30 minutos), seguidas por:
 - Como medir qualidade em equipes ágeis que não documentam formalmente?
 - Até que ponto as métricas de qualidade refletem a experiência do usuário?
 
----
-
-### Avaliação da Atividade
-
-- Qualidade da análise dos problemas de qualidade (25%)
-- Aderência do plano de qualidade a padrões e boas práticas (30%)
-- Clareza e viabilidade das métricas e indicadores propostos (25%)
-- Comunicação e estrutura da apresentação (20%)

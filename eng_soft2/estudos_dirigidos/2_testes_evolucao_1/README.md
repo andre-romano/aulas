@@ -1,126 +1,198 @@
 
-## Código com Erros 
+## Estudo Dirigido 
 
+### 1. Desenvolvimento Incremental (TDD)
+
+**Exemplo Inicial:**
 ```python
-import math
+# test_string_utils.py
+import unittest
+from string_utils import inverter_string
 
-class Function:
-    def __init__(self, name):
-        self.name = name
+class TestStringUtils(unittest.TestCase):
+    def test_inverter_string(self):
+        self.assertEqual(inverter_string("abc"), "cba")
+        self.assertEqual(inverter_string(""), "")
 
-    def evaluate(self, x):
-        raise NotImplementedError(
-            "This function must be implemented in subclass")
-
-class LinearFunction(Function):
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
-
-    def evaluate(self, x):
-        return a * x + b
-
-class QuadraticFunction(Function):
-    def __init__(self, a, b, c):
-        super().__init__("Sine")
-        self.a = a
-        self.b = b
-        self.c = c
-
-    def evaluate(self):
-        return self.a * x**2 + self.b * x + self.c
-
-class SineFunction(Function):
-    def __init__(self):
-        super().__init__("Sine")
-
-    def evaluate(self, x):
-        return math.sin(x)
-
-class FunctionCalculator:
-    def __init__(self):
-        self.functions = []
-
-    def add_function(self, f):
-        self.functions.append(f)
-
-    def calculate_all(self, x):
-        result = {}
-        for f in self.functions:
-            try:
-                result[f.name] = f.evaluate()
-            except Exception as e:
-                result[f.name] = f"Error: {e}"
-        return result
-
-# Código de execução (testes manuais)
-if __name__ == "__main__":
-    calc = FunctionCalculator()
-    calc.add_function(LinearFunction(2, 3))
-    calc.add_function(QuadraticFunction(1, -2, 1))
-    calc.add_function(SineFunction())
-
-    results = calc.calculate_all(2)
-    print(results)
+# string_utils.py
+def inverter_string(s):
+    # Implemente aqui para fazer os testes passarem
+    pass
 ```
 
----
+**Tarefa:** 
+1. Implemente `inverter_string(s)` para passar nos testes
+2. Adicione a função `contar_vogais(s)` seguindo TDD:
+   - Primeiro escreva os testes
+   - Depois implemente a função
 
-### 📘 Roteiro de Estudo Dirigido (Testes unitários, de componentes e de sistemas)
+### 2. Teste de Validação vs Defeitos
 
-**Tema:** Diagnóstico e Correção de Erros em Código com Aplicação de Testes em Engenharia de Software
+**Exemplo Inicial:**
+```python
+# validadores.py
+def validar_idade(idade):
+    # Implemente a validação (idade entre 0 e 120)
+    pass
+```
 
-**Objetivo:** Desenvolver a capacidade de identificar erros de projeto, implementação e integração em um sistema orientado a objetos, aplicando diferentes níveis de testes de software.
+**Tarefa:**
+```python
+# test_validadores.py
+class TestValidarIdade(unittest.TestCase):
+    # Testes de validação (2 casos)
+    def test_idade_valida_1(self):
+        # Complete aqui
+    
+    # Testes de defeitos (3 casos)
+    def test_idade_negativa(self):
+        # Complete aqui
+```
 
-#### Etapa 1 – Compreensão do Código (20 min)
+### 3. Teste Caixa-Preta vs Caixa-Branca
 
-* Leitura atenta do código Python fornecido nesta página.
-* Identificação da estrutura de classes e suas responsabilidades.
-* Identificação das funcionalidades esperadas.
+**Exemplo Inicial:**
+```python
+# math_utils.py
+def eh_quadrado_perfeito(n):
+    # Implemente a função
+    pass
+```
 
-#### Etapa 2 – Identificação dos Erros (20 min)
+**Tarefa:**
+```python
+# test_math_utils.py
+class TestQuadradoPerfeito(unittest.TestCase):
+    # Testes caixa-preta (3 casos)
+    def test_numero_quadrado_perfeito(self):
+        # Complete aqui
+    
+    # Testes caixa-branca (2 casos baseados na implementação)
+    def test_numero_zero(self):
+        # Complete aqui
+```
 
-Em duplas, responder:
+### 4. Mock Object
 
-* Quais erros você encontra no código? Classifique-os como:
+**Exemplo Inicial:**
+```python
+# sistema_arquivos.py
+class GerenciadorArquivos:
+    def __init__(self, sistema_operacional):
+        self.so = sistema_operacional
+    
+    def criar_arquivo(self, nome):
+        return self.so.criar(nome)
+```
 
-  * Erro de lógica
-  * Erro de sintaxe
-  * Erro de projeto (design)
-  * Erro de integração/comunicação entre classes
+**Tarefa:**
+```python
+# test_sistema_arquivos.py
+from unittest.mock import Mock
 
-*Dica: execute o código e leia cuidadosamente as mensagens de erro.*
+class TestGerenciadorArquivos(unittest.TestCase):
+    def test_criar_arquivo_sucesso(self):
+        # Crie um mock para sistema_operacional
+        # Configure o mock para retornar True
+        # Teste o cenário de sucesso
+        pass
+```
 
-#### Etapa 3 – Proposição de Correções (20 min)
+### 5. Testes Unitários
 
-* Corrija os erros identificados em uma nova cópia do código.
-* Mantenha o uso de herança e polimorfismo.
-* Comente no código corrigido o que foi alterado e por quê.
+**Exemplo Inicial:**
+```python
+# banco.py
+class ContaCorrente:
+    def __init__(self, saldo=0):
+        self.saldo = saldo
+    
+    def depositar(self, valor):
+        pass  # Implemente
+```
 
-#### Etapa 4 – Desenvolvimento de Testes (40 min)
+**Tarefa:**
+```python
+# test_banco.py
+class TestContaCorrente(unittest.TestCase):
+    def test_depositar_valor_positivo(self):
+        # Complete aqui
+    
+    def test_depositar_valor_negativo(self):
+        # Complete aqui (como deve se comportar?)
 
-Verifique se os erros foram eliminados corretamente através de testes automatizados.
+    def test_depositar_valor_nao_numerico(self):
+        # Complete aqui (como deve se comportar?)
+```
 
-Para isso, crie os seguintes testes:
+### 6. Testes de Componentes
 
-**a) Testes Unitários**
+**Exemplo Inicial:**
+```python
+# estoque.py
+class Estoque:
+    def __init__(self):
+        self.itens = {}
+    
+    def adicionar_item(self, nome, quantidade):
+        pass  # Implemente
 
-- Para cada classe concreta (`LinearFunction`, `QuadraticFunction`, etc), escreva testes com `unittest`.
+# pedidos.py
+class ProcessadorPedidos:
+    def __init__(self, estoque):
+        self.estoque = estoque
+    
+    def fazer_pedido(self, item, quantidade):
+        pass  # Implemente
+```
 
-**b) Testes de Componente**
+**Tarefa:**
+```python
+# test_pedidos.py
+class TestIntegracaoPedidosEstoque(unittest.TestCase):
+    def test_pedido_com_estoque_suficiente(self):
+        # Complete aqui (teste o fluxo completo)
+    
+    def test_pedido_sem_estoque(self):
+        # Complete aqui
+```
 
-- Teste a classe `FunctionCalculator` isoladamente, simulando funções mockadas (crie ``MockObjects`` conforme necessário).
+### 7. Testes de Sistema 
 
-**c) Testes de Sistema**
+**Exemplo Inicial:**
+```python
+# sistema.py
+class SistemaCadastro:
+    def __init__(self):
+        self.usuarios = []
+    
+    def cadastrar(self, nome, email):
+        # Implemente (não permita emails duplicados)
+        pass
+    
+    def listar_usuarios(self):
+        return self.usuarios
+```
 
-- Execute um teste *end-to-end* que adicione funções e avalie os resultados de `calculate_all`.
+**Tarefa:**
+```python
+# test_sistema.py
+class TestSistemaCadastro(unittest.TestCase):
+    def test_fluxo_completo(self):
+        # Teste desde o cadastro até a listagem
+        sistema = SistemaCadastro()
+        # Complete o teste
+```
 
-#### Etapa 5 – Reflexão Final (30 min)
+## Como Executar:
 
-Em grupo, discuta:
+1. Para cada arquivo de teste, complete os testes e implementações
+2. Execute os testes com:
+```bash
+python -m unittest discover -s . -p "test_*.py"
+```
 
-- Como os testes ajudaram na identificação dos erros?
-- Qual o impacto de uma herança mal implementada?
-- Quais boas práticas poderiam ter evitado esses erros?
-- Como a modularidade e a separação de responsabilidades ajudam na testabilidade?
-
+**DICA: Estude os princípios abaixo.**
+- *RED-GREEN-REFACTOR* (TDD)
+- Um teste = uma verificação
+- Teste comportamentos, não implementações
