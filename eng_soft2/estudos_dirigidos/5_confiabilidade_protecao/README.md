@@ -1,16 +1,6 @@
 
 ## Estudo Dirigido / Estudo de Caso: Confiabilidade, Proteção, Gestão e Especificação de Confiança e Segurança em Sistemas Computacionais Críticos
 
-**Sumário:**
-- [Estudo Dirigido / Estudo de Caso: Confiabilidade, Proteção, Gestão e Especificação de Confiança e Segurança em Sistemas Computacionais Críticos](#estudo-dirigido--estudo-de-caso-confiabilidade-proteção-gestão-e-especificação-de-confiança-e-segurança-em-sistemas-computacionais-críticos)
-  - [Objetivos](#objetivos)
-  - [Conteúdo Recomendado](#conteúdo-recomendado)
-  - [Estrutura da Atividade](#estrutura-da-atividade)
-    - [Parte 1 – Estudo de Caso: Vazamento de Dados Críticos em Plataforma de Governo Digital (e-Cidadão)](#parte-1--estudo-de-caso-vazamento-de-dados-críticos-em-plataforma-de-governo-digital-e-cidadão)
-    - [Parte 2 – Discussão e Apresentações](#parte-2--discussão-e-apresentações)
-  - [Avaliação da Atividade](#avaliação-da-atividade)
-
-
 ### Objetivos
 
 - Compreender os conceitos de confiabilidade, proteção, confiança e segurança na Engenharia de Software.
@@ -80,12 +70,3 @@ Cada grupo apresentará suas conclusões (20-30 minutos) com slides, quadro ou m
 - Quais os limites práticos da confiabilidade em sistemas altamente conectados?
 - Como alinhar segurança e usabilidade em sistemas de larga escala?
 - O que deve ser especificado como requisitos não funcionais de segurança em projetos reais?
-
----
-
-### Avaliação da Atividade
-
-- Participação individual e colaboração (20%)
-- Qualidade e profundidade da análise (30%)
-- Coerência e aplicabilidade das propostas (30%)
-- Clareza e objetividade na apresentação (20%)

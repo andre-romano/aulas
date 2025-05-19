@@ -1,17 +1,6 @@
 
 ## Estudo Dirigido / Estudo de Caso: Falhas em Sistemas Sociotécnicos - Análise Crítica, Diagnóstico e Recomendações
 
-**Sumário**:
-- [Estudo Dirigido / Estudo de Caso: Falhas em Sistemas Sociotécnicos - Análise Crítica, Diagnóstico e Recomendações](#estudo-dirigido--estudo-de-caso-falhas-em-sistemas-sociotécnicos---análise-crítica-diagnóstico-e-recomendações)
-  - [Objetivos](#objetivos)
-  - [Conteúdo Recomendado](#conteúdo-recomendado)
-  - [Estrutura da Atividade](#estrutura-da-atividade)
-    - [Parte 1 – Estudo de Caso: Colapso do Sistema de Saúde durante a Pandemia em Nova Esperança (cidade fictícia)](#parte-1--estudo-de-caso-colapso-do-sistema-de-saúde-durante-a-pandemia-em-nova-esperança-cidade-fictícia)
-    - [Parte 2 – Discussão e Apresentação](#parte-2--discussão-e-apresentação)
-      - [**Pontos a serem discutidos:**](#pontos-a-serem-discutidos)
-  - [Avaliação da Atividade](#avaliação-da-atividade)
-
-
 ### Objetivos
 
 - Compreender a natureza complexa dos sistemas sociotécnicos.
@@ -79,13 +68,4 @@ Cada grupo deve apresentar suas conclusões em sala (10-20 minutos).
 - Como falhas em sistemas sociotécnicos desafiam os limites da engenharia tradicional?
 - Quais métodos da Engenharia de Software poderiam mitigar essas falhas?
 - A importância da empatia com o usuário e a compreensão do contexto organizacional.
-
----
-
-### Avaliação da Atividade
-
-- Participação e engajamento (20%)
-- Profundidade da análise de falhas (30%)
-- Coerência das propostas de solução (30%)
-- Clareza na apresentação oral (20%)
 

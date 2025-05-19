@@ -1,121 +1,205 @@
+# Estudo Dirigido Prático: Técnicas de Teste e Depuração
 
-## Código com Erros 
+## Objetivo
+Este estudo dirigido visa avaliar o aprendizado sobre técnicas avançadas de teste e depuração através de exercícios práticos em Python.
 
+### 1. Testes Baseados em Requisitos
+
+**Contexto:** Implemente uma função que valide senhas conforme os requisitos:
+- Mínimo 8 caracteres
+- Pelo menos 1 letra maiúscula
+- Pelo menos 1 número
+- Pelo menos 1 caractere especial (@#$%^&*)
+
+**Tarefa:**
 ```python
-class Pedido:
-    def __init__(self, cliente, itens):
-        self.cliente = cliente
-        self.itens = itens  # Lista de tuplas (nome, quantidade, preço_unitário)
-        self.status = "aberto"
-        self.total = 0
+def validar_senha(senha):
+    """Implemente baseado nos requisitos acima"""
+    pass
 
-    def calcular_total(self):
-        for item in self.itens:
-            nome, quantidade, preco = item
-            self.total += quantidade * preco  
-        return self.total
-
-    def aplicar_desconto(self, percentual):        
-        if self.total == 0:
-            self.calcular_total()
-        self.total = self.total - self.total * percentual
-        return self.total
-
-    def finalizar_pedido(self):        
-        self.status = "finalizado"
-        return True
+# Teste baseado nos requisitos
+def test_validar_senha():
+    # Caso válido
+    assert validar_senha("Senha123@") == True
+    
+    # Adicione mais 4 testes que cobrem cada requisito individualmente
+    # 1. Teste para tamanho mínimo
+    # 2. Teste para letra maiúscula
+    # 3. Teste para número
+    # 4. Teste para caractere especial
+    pass
 ```
 
----
+### 2. Testes de Cenário
 
-## Requisitos e Cenários de Teste
+**Contexto:** Implemente um sistema simples de empréstimo de livros com as classes:
+- `Biblioteca` (gerencia livros e empréstimos)
+- `Usuario` (representa um usuário)
+- `Livro` (representa um livro)
 
-1. **\[REQ1]** O total do pedido deve refletir corretamente o somatório dos itens.
-2. **\[REQ2]** O desconto deve ser aplicado corretamente apenas uma vez.
-3. **\[REQ3]** O pedido não pode ser finalizado se o valor total for menor ou igual a zero.
-4. **\[REQ4]** O método `calcular_total()` pode ser chamado múltiplas vezes sem alterar o resultado total final.
-
----
-
-## Estudo Dirigido em Sala: "Depuração Baseada em Requisitos"
-
-### Objetivo da Atividade
-
-Identificar e depurar erros escondidos no código usando estratégias de força bruta, *backtracking* e eliminação de causa, com base em testes simulando o comportamento real do sistema.
-
----
-
-### Etapa 1 – Leitura e Interpretação do Código (20 min)
-
-* Em DUPLAS, leiam o código do sistema de pedidos.
-* Identifiquem as responsabilidades de cada método.
-* Discutam: onde podem surgir problemas se múltiplas chamadas forem feitas em sequência?
-
----
-
-### Etapa 2 – Testes Baseados em Requisitos (30 min)
-
-Com base nos requisitos acima, escreva **cenários de uso manuais ou automatizados (usando `assert`)** para testar:
-
+**Tarefa:**
 ```python
-p = Pedido("Alice", [("Caneta", 2, 1.5), ("Caderno", 1, 10)])
+class Livro:
+    def __init__(self, titulo, autor, copias):
+        pass  # Implemente
 
-# Cenário 1 – Total correto
-assert p.calcular_total() == 13.0
+class Usuario:
+    def __init__(self, nome):
+        pass  # Implemente
 
-# Cenário 2 – Desconto aplicado uma vez
-assert p.aplicar_desconto(0.1) == 11.7
+class Biblioteca:
+    def __init__(self):
+        self.livros = []
+        self.emprestimos = []
+    
+    def emprestar_livro(self, usuario, livro):
+        """Implemente a lógica de empréstimo"""
+        pass
 
-# Cenário 3 – Tentativa de finalizar deve funcionar
-assert p.finalizar_pedido() == True
-
-# Cenário 4 – Novo total não pode mudar ao chamar calcular_total de novo
-assert p.calcular_total() == 13.0  # ← Isso deve falhar
+# Crie testes que cubram os seguintes cenários:
+def test_cenarios_emprestimo():
+    # 1. Empréstimo bem-sucedido
+    # 2. Tentativa de empréstimo com livro indisponível
+    # 3. Tentativa de empréstimo com usuário que já tem livro emprestado
+    # 4. Devolução de livro
+    pass
 ```
 
-* Pergunta: Qual(is) requisito(s) falharam?
-* Quais cenários não se comportaram como esperado?
-* Em quais linhas/métodos os erros provavelmente estão?
+### 3. Testes de Desempenho
 
----
+**Contexto:** Compare duas funções que calculam números primos (uma ingênua e uma otimizada)
 
-### Etapa 3 – Depuração Guiada (40 min)
+**Tarefa:**
+```python
+import time
 
-Cada grupo deve depurar o código usando uma das abordagens:
+def eh_primo_ingenuo(n):
+    """Implementação ingênua O(n)"""
+    pass
 
-#### Grupo A – Força Bruta
+def eh_primo_otimizado(n):
+    """Implementação otimizada O(√n)"""
+    pass
 
-* Inserir `print()`s em todos os métodos para rastrear valores internos (variáveis, estado).
-* Reexecutar os testes após cada `print()` adicionado.
-* Chegar ao erro a partir da observação dos valores.
+def testar_desempenho():
+    numeros_grandes = [1000003, 2000003, 4000037]
+    
+    # Teste a função ingênua
+    inicio = time.time()
+    for n in numeros_grandes:
+        eh_primo_ingenuo(n)
+    print(f"Tempo ingênuo: {time.time() - inicio}")
+    
+    # Implemente o mesmo teste para a versão otimizada
+    # e compare os resultados
+    pass
+```
 
-#### Grupo B – Backtracking
+### 4. Depuração por Força Bruta
 
-* Executar o código até a falha.
-* Voltar etapa a etapa, observando onde o valor esperado começou a divergir do obtido.
-* Usar ferramentas de depuração (IDE) ou `breakpoint()`.
+**Contexto:** Uma função de login está com problemas. Use força bruta para testar combinações.
 
-#### Grupo C – Eliminação de Causa
+**Tarefa:**
+```python
+def login(usuario, senha):
+    """Função com bug (sempre retorna False)"""
+    # Implementação correta deveria ser:
+    # return usuario == "admin" and senha == "12345"
+    return False
 
-* Formular hipóteses sobre as causas dos erros (ex: "talvez o erro esteja no calculo do total acumulado").
-* Alterar ou isolar o comportamento para testar as hipóteses.
-* Confirmar/descartar causas e refinar hipóteses.
+def forca_bruta_login():
+    usuarios = ["admin", "user", "teste"]
+    senhas = ["12345", "senha", "admin"]
+    
+    # Teste todas combinações
+    # até encontrar a correta (admin/12345)
+    # Pare quando encontrar e mostre a combinação correta
+    pass
+```
 
----
+### 5. Depuração por Rastreamento (Backtracking)
 
-### Etapa 4 – Correção e Justificativa (20 min)
+**Contexto:** Uma função recursiva de Fibonacci está com problemas.
 
-Cada grupo deve:
+**Tarefa:**
+```python
+def fibonacci(n, profundidade=0):
+    """Função com bug (não trata casos base corretamente)"""
+    print(f"{'  '*profundidade}fib({n})")
+    if n == 0:
+        return 1
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n, profundidade+1) + fibonacci(n-1, profundidade+1)
 
-* Apresentar o erro encontrado.
-* Apresentar a **linha exata ou método** causador do erro.
-* Sugerir uma **correção funcional e justificável** (seguindo os requisitos).
-* Explicar como sua abordagem de depuração ajudou.
+# Use os prints de rastreamento para:
+# 1. Identificar onde está o bug
+# 2. Corrigir a função
+# 3. Mostre o rastreamento para fib(3) antes e depois da correção
+```
 
----
+### 6. Depuração por Eliminação da Causa
 
-### Etapa 5 – Encerramento e Discussão (15 min)
+**Contexto:** Uma função que processa dados está falhando em alguns casos.
 
-* Qual abordagem foi mais eficiente? Por quê?
-* Como os testes baseados em requisitos ajudaram a identificar os erros?
-* Qual a importância da previsibilidade de métodos públicos em sistemas orientados a objetos?
+**Tarefa:**
+```python
+def calcular_media(valores):
+    """
+    Calcula a média de uma lista de valores com os seguintes requisitos:
+    - Ignora valores None
+    - Retorna None se a lista estiver vazia ou só contiver None
+    - Caso contrário, retorna a média dos valores válidos
+    """
+    soma = 0
+    contagem = 0
+    
+    for valor in valores:
+        if valor is not None:
+            soma == valor  # Bug 1: Operador errado
+            contagem += 1
+    
+    if contagem > 0:
+        return soma / contagem  # Bug 2: Divisão por zero possível?
+    else:
+        return None
+```
+
+**Passo 1**: Identificar Comportamento Incorreto
+
+```python
+def testar_calcular_media():
+    # Caso 1: Teste com lista vazia (revele algum bug?)
+    # Caso 2: Teste lista normal
+    # Caso 3: Teste com valores None na lista
+    # Caso 4: Teste com todos os valores None
+    pass
+```
+
+**Passo 2**: Isolar as Causas
+
+1. Primeiro execute os testes e observe qual falha
+2. Para cada teste que falhar:
+   - Adicione prints estratégicos para ver o fluxo de execução
+   - Verifique os valores das variáveis em pontos-chave
+   - Reduza o problema ao mínimo necessário para reproduzir o bug
+
+**Passo 3**: Corrigir os Bugs 
+- Realizar as correções no código
+
+**Passo 4**: Verificar as Correções
+- Reexecutar testes 
+
+## Como Executar:
+
+1. Para cada seção, implemente as funções e testes
+2. Execute os testes manualmente (ex: `python3 -i estudo_dirigido.py`)
+3. Para testes de desempenho, execute diretamente as funções
+4. Para depuração, use print statements ou o debugger básico do IDE
+
+**Dicas:**
+- Para força bruta, use loops aninhados
+- Para *backtracking*, analise a árvore de chamadas (stack trace)
+- Para eliminação, isole partes do código
+- Documente cada bug encontrado e como foi corrigido
