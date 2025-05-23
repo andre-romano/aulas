@@ -51,7 +51,8 @@ INSERT INTO cursos (nome) VALUES
 
 INSERT INTO professores (nome) VALUES
 ('Prof. Silva'),
-('Prof. Oliveira')
+('Prof. Oliveira'),
+('Prof. Eustáquio')
 ;
 
 INSERT INTO alunos (nome, id_curso) VALUES
@@ -65,7 +66,8 @@ INSERT INTO disciplinas (nome, id_professor) VALUES
 ('Matemática', 1),
 ('Física', 1),
 ('Direito Constitucional', 2),
-('Fisiopatologia', 1)
+('Fisiopatologia', 2),
+('Banco de dados', null)
 ;
 
 INSERT INTO matriculas (id_aluno, id_disciplina) VALUES
