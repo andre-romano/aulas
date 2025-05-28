@@ -3,6 +3,8 @@
 ## 1. Avaliação e Classificação de Riscos
 
 ### 1.1 Sistema de Classificação de Riscos
+
+**Exemplo:**
 ```python
 class ClassificadorRisco:
     def __init__(self):
@@ -25,7 +27,7 @@ class ClassificadorRisco:
         else:
             return "ACEITÁVEL"
 
-# Tarefa: Complete a análise para os seguintes cenários
+# Tarefa: Execute a análise para os seguintes cenários
 analisador = ClassificadorRisco()
 cenarios = [
     {"impacto": 1500000, "probabilidade": 0.2},  # Explosão em planta
@@ -52,7 +54,9 @@ class AnaliseRisco:
                 "Falha de Rede"
             ],
             "Falha de Hardware": [
-                "CPU", "Memória", "Armazenamento"
+                "CPU", 
+                "Memória", 
+                "Armazenamento"
             ]
         }
         return riscos.get(risco_principal, [])
@@ -156,11 +160,11 @@ class MetricasConfiabilidade:
     def __init__(self):
         self.tempos_falha = []  # Registro de tempos entre falhas (horas)
     
-    def adicionar_falha(self, tempo_operacao):
-        self.tempos_falha.append(tempo_operacao)
+    def adicionar_falha(self, tempo_falha):
+        self.tempos_falha.append(tempo_falha)
     
     def mttf(self):
-        """Mean Time To Failure"""
+        """Mean Time To Failure (tempo medio entre falhas)"""
         if not self.tempos_falha:
             return 0
         return sum(self.tempos_falha) / len(self.tempos_falha)
@@ -172,7 +176,6 @@ class MetricasConfiabilidade:
     
     # Tarefa: Implemente mais métricas:
     # 1. Taxa de falha (failures por hora operacional)
-    # 2. Confiabilidade R(t) = e^(-λt)
 
 # Teste as métricas
 metricas = MetricasConfiabilidade()

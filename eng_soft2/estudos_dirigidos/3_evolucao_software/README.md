@@ -1,39 +1,6 @@
 # Estudo Dirigido Prático: Evolução de software
 
-## 1. Leis de Lehman
-
-**Exercício:** Analise um sistema de gestão de tarefas que está evoluindo e identifique como as Leis de Lehman se aplicam.
-
-```python
-class SistemaTarefas:
-    def __init__(self):
-        self.tarefas = []
-    
-    # Versão inicial simples
-    def adicionar_tarefa(self, nome):
-        self.tarefas.append({"nome": nome, "concluida": False})
-    
-    # Evolução: complexidade crescente
-    def adicionar_tarefa_completa(self, nome, prioridade, prazo):
-        self.tarefas.append({
-            "nome": nome,
-            "prioridade": prioridade,  # Novo campo
-            "prazo": prazo,           # Novo campo
-            "concluida": False
-        })
-    
-    # Tarefa: Analise como cada lei de Lehman se aplica:
-    # 1. Mudança contínua
-    # 2. Complexidade crescente
-    # 3. Auto-regulação
-    # 4. Conservação da estabilidade
-    # 5. Conservação da familiaridade
-    # 6. Crescimento continuado
-    # 7. Qualidade decrescente
-    # 8. Feedback system
-```
-
-## 2. Correção de Erros de Diferentes Custos
+## 1. Correção de Erros de Diferentes Custos
 
 **Exercício:** Implemente um sistema bancário simples e identifique tipos de erros.
 
@@ -60,7 +27,7 @@ class ContaBancaria:
 # 3. Adicione funcionalidade de extrato (erro de requisitos)
 ```
 
-## 3. Fatores que Interferem na Manutenção
+## 2. Fatores que Interferem na Manutenção
 
 **Exercício:** Analise um código mal escrito e identifique problemas de manutenção.
 
@@ -87,7 +54,7 @@ class ProcessadorDados:
 # 4. Sugira melhorias para cada problema encontrado
 ```
 
-## 4. Reengenharia de Software
+## 3. Reengenharia de Software
 
 **Exercício:** Reescreva um sistema legado com nova arquitetura.
 
@@ -105,7 +72,7 @@ def processar_pedido(itens, cliente, pagamento):
 # 3. Mantenha a mesma funcionalidade com melhor estrutura
 ```
 
-## 5. Refatoração de Software
+## 4. Refatoração de Software
 
 **Exercício:** Refatore um código com problemas comuns.
 
@@ -130,11 +97,11 @@ def calcular(valores, op, extra=None):
 # 3. Melhore a legibilidade
 ```
 
-## 6. Problemas Comuns de Código
+## 5. Problemas Comuns de Código
 
 **Exercício:** Corrija problemas específicos em trechos de código.
 
-### 6.1 Código Duplicado
+### 5.1 Código Duplicado
 ```python
 # Versão com duplicação
 def calcular_area_retangulo(l, a):
@@ -152,7 +119,7 @@ def calcular_perimetro_circulo(r):
 # Tarefa: Elimine a duplicação de constantes e lógica comum
 ```
 
-### 6.2 Métodos Longos
+### 5.2 Métodos Longos
 ```python
 def processar_relatorio(dados):
     # Cálculos
@@ -180,7 +147,7 @@ def processar_relatorio(dados):
 # Tarefa: Divida em métodos menores com única responsabilidade
 ```
 
-### 6.3 Aglutinação de Dados
+### 5.3 Aglutinação de Dados
 ```python
 # Classe com muitos campos não relacionados
 class Funcionario:
@@ -197,7 +164,7 @@ class Funcionario:
 # Tarefa: Aplique o princípio da responsabilidade única e divida em classes
 ```
 
-### 6.4 Generalidade Especulativa
+### 5.4 Generalidade Especulativa
 ```python
 # Código com funcionalidades não usadas
 class CalculadoraEstatistica:
