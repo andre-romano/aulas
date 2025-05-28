@@ -49,7 +49,6 @@ class Usuario:
 
 class Biblioteca:
     def __init__(self):
-        self.livros = []
         self.emprestimos = []
     
     def emprestar_livro(self, usuario, livro):
@@ -103,8 +102,8 @@ def testar_desempenho():
 ```python
 def login(usuario, senha):
     """Função com bug (sempre retorna False)"""
-    # Implementação correta deveria ser:
-    # return usuario == "admin" and senha == "12345"
+    # Implementação correta deveria testar se:
+    # usuario == "admin" E senha == "12345"
     return False
 
 def forca_bruta_login():
@@ -157,11 +156,11 @@ def calcular_media(valores):
     
     for valor in valores:
         if valor is not None:
-            soma == valor  # Bug 1: Operador errado
+            soma == valor  
             contagem += 1
     
     if contagem > 0:
-        return soma / contagem  # Bug 2: Divisão por zero possível?
+        return soma / contagem  
     else:
         return None
 ```
