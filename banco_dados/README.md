@@ -2,14 +2,14 @@
 
 Esta página contem as aulas, planos de ensino e demais o conteúdos auxiliares da disciplina.
 
-## Projetos
-
-Os projetos da disciplina estão localizados no arquivo[PROJETOS.MD](./PROJETOS.md).
-
 ## Tutoriais e Video-aulas
 
 - [Instalação e uso do BrModelo](https://www.youtube.com/playlist?list=PLGjBx0p9zRN80PxihrVk_G1a_ANaNNRy9)
 - [Curso de Banco de Dados SQL com XAMPP](https://www.youtube.com/playlist?list=PLGjBx0p9zRN8ZtnCpGC35OqnQVdcP0gp6)
+
+## Projetos
+
+Os projetos da disciplina estão localizados no arquivo [PROJETOS.MD](./PROJETOS.md).
 
 ## Bancos de Dados SQL Online
 
