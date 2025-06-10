@@ -2,9 +2,12 @@
 
 Esta página contem as aulas e demais o conteúdos auxiliares da disciplina.
 
-## Projetos
-
-Os projetos da disciplina estão localizados [aqui](../banco_dados/PROJETOS.md).
+**Sumário:**
+- [Modelagem de Banco de Dados](#modelagem-de-banco-de-dados)
+  - [Ferramentas de Modelagem de Bancos de Dados](#ferramentas-de-modelagem-de-bancos-de-dados)
+    - [BrModelo](#brmodelo)
+    - [Draw.io (ONLINE)](#drawio-online)
+  - [Vídeo-Aulas](#vídeo-aulas)
 
 ## Ferramentas de Modelagem de Bancos de Dados
 
@@ -23,3 +26,8 @@ O [Draw.io](http://draw.io) e uma ferramenta de diagramação online que permite
 http://draw.io
 
 Para enviar os seus modelos do **Draw.io** em uma das atividades do Google Classroom, selecione todos os elementos do seu diagrama usando o mouse, e depois acesse o menu `Ficheiro -> Exportar como -> JPEG`. Marque a opção `Seleccionar somente` e clique no botão `Exportar`. Em seguida, envie esse arquivo `.JPG` na atividade do Classroom.
+
+## Vídeo-Aulas
+
+- [Curso de Modelagem de Banco de dados](https://www.youtube.com/playlist?list=PLGjBx0p9zRN80__ydMmBZWUnyFyDrOD6Y)
+- [Instalação e uso do BrModelo](https://www.youtube.com/playlist?list=PLGjBx0p9zRN80PxihrVk_G1a_ANaNNRy9)

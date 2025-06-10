@@ -8,8 +8,8 @@ Os projetos da disciplina estão localizados no arquivo[PROJETOS.MD](./PROJETOS.
 
 ## Tutoriais e Video-aulas
 
-- [[PORTUGUES] Tutorial (breve) de PHP, MySQL e PHPMyAdmin ](https://www.youtube.com/watch?v=qzIo43NtJI4&list=PLWd_VnthxxLcX9LFVyYZfv8oVSExDOHEs&index=2)
-- [[INGLES] Tutorial de PHP e MySQL (usando biblioteca ``mysqli``)](https://www.youtube.com/watch?v=pWG7ajC_OVo)
+- [Instalação e uso do BrModelo](https://www.youtube.com/playlist?list=PLGjBx0p9zRN80PxihrVk_G1a_ANaNNRy9)
+- [Curso de Banco de Dados SQL com XAMPP](https://www.youtube.com/playlist?list=PLGjBx0p9zRN8ZtnCpGC35OqnQVdcP0gp6)
 
 ## Bancos de Dados SQL Online
 
