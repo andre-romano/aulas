@@ -2,7 +2,7 @@
 
 Esta página contem as aulas e demais o conteúdos auxiliares da disciplina.
 
-## Vídeo-Aulas
+## Tutoriais e Vídeo-Aulas
 
 - [Instalação e uso do BrModelo](https://www.youtube.com/playlist?list=PLGjBx0p9zRN80PxihrVk_G1a_ANaNNRy9)
 - [Curso de Modelagem de Banco de dados](https://www.youtube.com/playlist?list=PLGjBx0p9zRN80__ydMmBZWUnyFyDrOD6Y)
