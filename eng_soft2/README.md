@@ -5,6 +5,7 @@ Esta página contém as aulas e demais o conteúdos auxiliares da disciplina.
 **Sumário**
 - [Engenharia de Software II](#engenharia-de-software-ii)
   - [Tutoriais e Video-aulas](#tutoriais-e-video-aulas)
+    - [Curso completo](#curso-completo)
     - [Teste unitário](#teste-unitário)
     - [Controle de versionamento](#controle-de-versionamento)
     - [Automação de deployment](#automação-de-deployment)
@@ -16,6 +17,10 @@ Esta página contém as aulas e demais o conteúdos auxiliares da disciplina.
 
 
 ## Tutoriais e Video-aulas
+
+### Curso completo
+
+- [Curso completo de Eng. Soft. II](https://www.youtube.com/playlist?list=PLGjBx0p9zRN-XJVa2Iaq_fYbQmfxMrExa)
 
 ### Teste unitário
 

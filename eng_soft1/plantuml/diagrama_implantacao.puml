@@ -1,0 +1,31 @@
+@startuml
+skinparam componentStyle rectangle
+
+' Cliente
+node "Cliente\n(Navegador Web)" as Client {
+    artifact "Interface Web" as WebUI
+}
+
+' Servidor de Aplicação
+node "Servidor de Aplicação\n(Ubuntu + Tomcat)" as AppServer {
+    component "Aplicação Web (.war)" as App
+}
+
+' Servidor de Banco de Dados
+node "Servidor de Banco de Dados\n(PostgreSQL)" as DBServer {
+    database "Banco de Dados\nPedidosDB" as DB
+}
+
+' Conexões
+Client --> App : HTTP/HTTPS
+App --> DB : JDBC/PostgreSQL
+
+' Nota explicativa
+note right of App
+  Aplicação Java EE implantada no Tomcat
+end note
+
+note right of DB
+  Contém tabelas de pedidos, usuários e produtos
+end note
+@enduml

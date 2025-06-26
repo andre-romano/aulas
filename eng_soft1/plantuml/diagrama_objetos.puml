@@ -1,0 +1,46 @@
+@startuml
+object cliente1 {
+  nome = "João Silva"
+  email = "joao@email.com"
+}
+
+object pedido101 {
+  numero = 101
+  data = "2025-06-26"
+  status = "PENDENTE"
+}
+
+object item1 {
+  produto = "Notebook"
+  quantidade = 1
+  precoUnitario = 3500.00
+}
+
+object item2 {
+  produto = "Mouse"
+  quantidade = 2
+  precoUnitario = 80.00
+}
+
+object enderecoEntrega {
+  rua = "Rua das Flores, 123"
+  cidade = "Salvador"
+  cep = "40000-000"
+}
+
+' Relacionamentos
+cliente1 --> pedido101 : fez
+pedido101 --> item1 : contém
+pedido101 --> item2 : contém
+cliente1 --> enderecoEntrega : usa como entrega
+pedido101 --> enderecoEntrega : entrega em
+
+' Notas explicativas
+note right of pedido101
+  Representa uma instância concreta da classe Pedido
+end note
+
+note right of item1
+  Cada item refere-se a um produto e sua quantidade
+end note
+@enduml

@@ -1,0 +1,50 @@
+@startuml
+skinparam componentStyle rectangle
+
+package "Camada de Apresentação" {
+  [WebApp] <<component>>
+}
+
+package "Camada de Aplicação" {
+  [PedidoController] <<component>>
+  [PagamentoController] <<component>>
+}
+
+package "Camada de Domínio" {
+  [ServicoDePedidos] <<component>>
+  [ServicoDePagamentos] <<component>>
+  [ValidadorDePedido] <<component>>
+}
+
+package "Camada de Persistência" {
+  [RepositorioDePedidos] <<component>>
+  [RepositorioDeProdutos] <<component>>
+  [Banco de Dados] <<database>>
+}
+
+' Interfaces fornecidas
+[ServicoDePedidos] - [IPedidoService] : <<interface>>
+[ServicoDePagamentos] - [IPagamentoService] : <<interface>>
+
+' Dependências e comunicação
+[WebApp] --> [PedidoController]
+[WebApp] --> [PagamentoController]
+
+[PedidoController] --> [ServicoDePedidos]
+[PagamentoController] --> [ServicoDePagamentos]
+
+[ServicoDePedidos] --> [RepositorioDePedidos]
+[ServicoDePedidos] --> [RepositorioDeProdutos]
+[ServicoDePedidos] --> [ValidadorDePedido]
+
+[ServicoDePagamentos] --> [Banco de Dados]
+
+' Notas explicativas
+note right of [WebApp]
+  Componente responsável pela interface web com o usuário
+end note
+
+note right of [Banco de Dados]
+  PostgreSQL gerenciado externamente
+end note
+@enduml
