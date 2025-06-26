@@ -1,0 +1,24 @@
+@startgantt
+Project starts the 2025-07-01
+
+' Fase de Planejamento
+[Planejamento] lasts 5 days
+
+' Fase de Desenvolvimento com subtarefas
+[Desenvolvimento] lasts 10 days
+[Análise de Requisitos] starts at [Planejamento]'s end and lasts 3 days
+[Design] starts at [Análise de Requisitos]'s end and lasts 2 days
+[Implementação] starts at [Design]'s end and lasts 5 days
+
+' Fase de Testes
+[Testes] starts at [Implementação]'s end and lasts 4 days
+
+' Entrega Final
+[Entrega] starts at [Testes]'s end and lasts 1 day
+
+' Dependências opcionais (linhas entre tarefas)
+[Análise de Requisitos] -> [Design]
+[Design] -> [Implementação]
+[Implementação] -> [Testes]
+[Testes] -> [Entrega]
+@endgantt

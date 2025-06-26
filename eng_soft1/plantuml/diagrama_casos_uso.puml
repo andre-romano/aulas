@@ -1,0 +1,41 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+' Delimitador do sistema
+rectangle "Sistema de Pedidos Online" {
+    
+    ' Casos de uso principais
+    (Realizar Pedido) as RP
+    (Selecionar Produto) as SP
+    (Adicionar ao Carrinho) as AC
+    (Efetuar Pagamento) as EP
+    (Autenticar Usuário) as AU
+    (Acompanhar Pedido) as AP
+    (Cancelar Pedido) as CP
+
+    ' Relacionamentos
+    RP --> (Selecionar Produto)
+    RP --> (Adicionar ao Carrinho)
+    RP --> (Efetuar Pagamento)
+
+    EP --> (Autenticar Usuário) : <<include>>
+    CP --> (Autenticar Usuário) : <<include>>
+    AP --> (Autenticar Usuário) : <<include>>
+    RP <|-- CP : <<extend>>
+}
+
+' Atores
+actor Cliente
+actor Administrador
+
+' Relacionamentos com atores
+Cliente --> RP
+Cliente --> AP
+Cliente --> CP
+
+Administrador --> (Cancelar Pedido)
+Administrador --> (Acompanhar Pedido)
+
+@enduml

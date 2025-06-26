@@ -1,0 +1,27 @@
+@startuml
+|Usuário|
+start
+
+:Selecionar produtos;
+:Adicionar ao carrinho;
+:Visualizar carrinho;
+
+partition "Sistema" {
+    :Calcular valor total;
+    
+    if (Carrinho vazio?) then (Sim)
+        stop
+    else (Não)
+        :Escolher forma de pagamento;
+        
+        if (Pagamento aprovado?) then (Sim)
+            :Gerar pedido;
+            :Enviar e-mail de confirmação;
+        else (Não)
+            :Exibir erro de pagamento;
+        endif
+    endif
+}
+
+stop
+@enduml

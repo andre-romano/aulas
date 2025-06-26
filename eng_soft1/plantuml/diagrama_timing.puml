@@ -1,0 +1,21 @@
+@startuml
+robust "Sinal CLK" as CLK
+robust "Sinal ENABLE" as ENABLE
+
+@0
+CLK is LOW
+ENABLE is LOW
+
+@3
+CLK is HIGH
+
+@5
+ENABLE is HIGH
+
+@7
+CLK is LOW
+
+@9
+ENABLE is LOW
+
+@enduml

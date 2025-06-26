@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+package "Semestre 1" {
+    [Matemática I]
+    [Programação I]
+}
+
+package "Semestre 2" {
+    [Matemática I] --> [Matemática II] 
+    [Programação I] --> [Programação II] 
+}
+@enduml

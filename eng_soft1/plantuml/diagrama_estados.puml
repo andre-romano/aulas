@@ -1,0 +1,34 @@
+@startuml
+[*] --> Criado
+
+state Criado {
+    [*] --> AguardandoPagamento
+    AguardandoPagamento --> Pago : pagamento aprovado
+    AguardandoPagamento --> Cancelado : pagamento expirado
+}
+
+Pago --> Processando : iniciar separação
+Processando --> Enviado : pedido embalado
+Enviado --> Entregue : entregue ao cliente
+Enviado --> Devolvido : devolução solicitada
+
+Cancelado --> [*]
+Entregue --> [*]
+Devolvido --> [*]
+
+' Estado final para pedidos completados
+state Entregue #green
+
+' Estado final para pedidos cancelados
+state Cancelado #red
+
+' Notas explicativas
+note right of Criado
+  Estado inicial ao realizar um novo pedido
+end note
+
+note right of Cancelado
+  O pedido pode ser cancelado antes do pagamento
+  ou se o pagamento expirar.
+end note
+@enduml

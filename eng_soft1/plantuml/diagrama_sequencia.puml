@@ -1,0 +1,66 @@
+@startuml
+actor Cliente
+participant "Tela de Pedido" as UI
+participant "Controlador de Pedido" as Controller
+participant "Serviço de Pagamento" as Pagamento
+participant "Banco de Dados" as DB
+
+== Início do processo ==
+
+Cliente -> UI : clicar em "Finalizar Pedido"
+activate UI
+
+UI -> Controller : processarPedido(dados)
+deactivate UI
+activate Controller
+
+alt Pedido válido
+    Controller -> DB : salvarPedido(pedido)
+    activate DB
+    DB --> Controller : confirmação
+    deactivate DB
+
+    Controller -> Pagamento : processarPagamento(pedido)
+    activate Pagamento
+    Pagamento --> Controller : pagamentoAprovado
+    deactivate Pagamento
+
+    Controller --> UI : mostrarConfirmacao()
+    activate UI
+    UI --> Cliente : mostrar "Pedido realizado com sucesso"
+    deactivate UI
+
+else Pedido inválido
+    Controller --> UI : mostrarErro("Dados inválidos")
+    activate UI
+    UI --> Cliente : mostrar "Erro ao finalizar pedido"
+    deactivate UI
+end
+
+deactivate Controller
+
+== Fim do processo ==
+
+note right of Cliente
+  🧍 Ator humano que inicia o processo.
+end note
+
+note right of UI
+  💻 Interface que coleta os dados do cliente.
+end note
+
+note right of Controller
+  🎯 Camada de controle que orquestra
+  a lógica de negócio.
+end note
+
+note right of Pagamento
+  💳 Serviço externo ou interno
+  responsável por processar pagamentos.
+end note
+
+note right of DB
+  🗃️ Persistência dos dados do pedido.
+end note
+
+@enduml

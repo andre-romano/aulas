@@ -1,0 +1,93 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+'=======================
+' ENUM
+'=======================
+enum StatusPedido {
+  PENDENTE
+  PROCESSANDO
+  CONCLUIDO
+  CANCELADO
+}
+
+'=======================
+' INTERFACE
+'=======================
+interface IPagavel {
+  +realizarPagamento(): void
+}
+
+'=======================
+' CLASSE ABSTRATA
+'=======================
+abstract class Pessoa {
+  -id: int
+  -nome: string
+  #email: string
+  +getNome(): string
+  +setNome(nome: string): void
+}
+
+'=======================
+' SUBCLASSES
+'=======================
+class Cliente extends Pessoa {
+  -enderecos: List<Endereco>
+  +realizarPedido(): Pedido
+}
+
+class Funcionario extends Pessoa {
+  -salario: float
+  +calcularSalario(): float
+}
+
+'=======================
+' COMPOSIÇÃO: Pedido → ItemPedido
+'=======================
+class Pedido {
+  -itens: List<ItemPedido>
+  -status: StatusPedido
+  +adicionarItem(item: ItemPedido): void
+  +getTotal(): float
+}
+
+class ItemPedido {
+  -produto: Produto
+  -quantidade: int
+  +getSubtotal(): float
+}
+
+Pedido *-- "1..*" ItemPedido : contém
+
+'=======================
+' AGREGAÇÃO: Cliente → Pedido
+'=======================
+Cliente o-- "0..*" Pedido : possui
+
+'=======================
+' Produto implementa IPagavel
+'=======================
+class Produto implements IPagavel {
+  -id: int
+  -nome: string
+  -preco: float
+  +realizarPagamento(): void
+}
+
+'=======================
+' Classe auxiliar: Endereco
+'=======================
+class Endereco {
+  -rua: string
+  -cidade: string
+  -estado: string
+  -cep: string
+  +getEnderecoCompleto(): string
+}
+
+'=======================
+' Cliente possui vários Enderecos (composição)
+'=======================
+Cliente *-- "1..*" Endereco : possui
+@enduml
