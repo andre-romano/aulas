@@ -19,5 +19,6 @@ def test_dividir():
 
 
 def test_dividir_por_zero():
-    with pytest.raises(ValueError, match="Divisão por zero não é permitida"):
-        dividir(10, 0)
+    # TODO: REMOVA O COMENTÁRIO ABAIXO PARA TESTAR A EXCEÇÃO NO PYTEST
+    # with pytest.raises(ValueError, match="Divisão por zero não é permitida"):
+    dividir(10, 0)
