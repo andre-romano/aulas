@@ -8,5 +8,8 @@
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "php.validate.executablePath": "C:\\xampp\\php\\php\\php.exe",
     "cSpell.language": "en, pt_br, pt-br, pt",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "cSpell.words": [
+        "pylance"
+    ]
 }
