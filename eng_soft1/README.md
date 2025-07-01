@@ -6,7 +6,7 @@ Esta página contém as aulas e demais o conteúdos auxiliares da disciplina.
 - [Engenharia de Software I](#engenharia-de-software-i)
   - [Video-aulas](#video-aulas)
   - [Tutoriais e Conteúdo Complementar](#tutoriais-e-conteúdo-complementar)
-  - [Ferramentas](#ferramentas)
+  - [Ferramentas e Documentos](#ferramentas-e-documentos)
 
 ## Video-aulas
 
@@ -17,8 +17,8 @@ Esta página contém as aulas e demais o conteúdos auxiliares da disciplina.
 - [Padrões de projeto de software](https://refactoring.guru/pt-br/design-patterns/)
 - [Porque o software de aeronaves nao sao atualizados?](https://youtube.com/shorts/3BKdisR7EoY?si=2EKmroql05AbqSlt)
 
-## Ferramentas
+## Ferramentas e Documentos
 
-- [PlantUML (diagramas UML)](./plantuml/)
-- Pyright (linter)
-- Pytest (unit test)
+- [Documento de Especificação Funcional (DEF)](./especificacao_funcional/) (modelos de especificação funcional)
+- [PlantUML](./plantuml/) (diagramas UML)
+- [PDoc](./pdoc/) (gerador de documentação automatizado)
