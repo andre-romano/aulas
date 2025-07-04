@@ -19,7 +19,7 @@
 O modelo conceitual (também chamado de ``modelo entidade-relacionamento`` ou ``modelo E-R``) é uma representação abstrata e de alto nível da estrutura de um banco de dados. Ele descreve, de forma independente da tecnologia de implementação, os principais elementos e relacionamentos.
 
 ## Objetivo do modelo
-- *"Descrever quais dados precisam ser armazenados no sistema para que eles seja capaz de realizar as funções/requisitos descritos no projeto".*
+- *"Descrever quais dados precisam ser armazenados no sistema para que ele seja capaz de realizar as funções/requisitos descritos no projeto".*
 
 ## Componentes
 
