@@ -42,7 +42,7 @@ São as **propriedades** ou características que descrevem uma entidade.
 
 Por exemplo, um ``Cliente`` pode ter atributos como ``CPF`` (atributo identificador), ``nome``, ``data_nascimento`` e ``endereço`` (vide imagem abaixo).
 
-![alt](./atributos.jpg)
+![alt](./atributos_exemplo.jpg)
 
 ``Atributos identificadores`` sao aqueles que identificam de maneira única uma entidade específica. Eles devem estar marcados com um **circulo totalmente preenchido** (vide `CPF` na imagem acima).
 
