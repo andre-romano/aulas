@@ -9,7 +9,10 @@
       - [2.2. Atributos de Valor Único vs Multi-valorado](#22-atributos-de-valor-único-vs-multi-valorado)
       - [2.2. Atributos Determinantes vs Não-determinantes](#22-atributos-determinantes-vs-não-determinantes)
     - [3. Relacionamentos (com cardinalidades)](#3-relacionamentos-com-cardinalidades)
-      - [3.1. Generalização e Especialização](#31-generalização-e-especialização)
+      - [3.1. Relacionamentos 1:1 (Um para Um)](#31-relacionamentos-11-um-para-um)
+      - [3.2. Relacionamentos 1:N (Um para Muitos)](#32-relacionamentos-1n-um-para-muitos)
+      - [3.3. Relacionamentos N:N (Muitos para Muitos)](#33-relacionamentos-nn-muitos-para-muitos)
+    - [4. Generalização e Especialização](#4-generalização-e-especialização)
 - [Exemplos de Modelos Conceituais](#exemplos-de-modelos-conceituais)
 
 # Modelo conceitual
@@ -20,7 +23,7 @@ O modelo conceitual (também chamado de ``modelo entidade-relacionamento`` ou ``
 
 ## Componentes
 
-![alt](./entidade_relacionamento.jpg)
+<img width="420px" src="entidade_relacionamento.jpg" alt="">
 
 ### 1. Entidades
 
@@ -42,7 +45,7 @@ São as **propriedades** ou características que descrevem uma entidade.
 
 Por exemplo, um ``Cliente`` pode ter atributos como ``CPF`` (atributo identificador), ``nome``, ``data_nascimento`` e ``endereço`` (vide imagem abaixo).
 
-![alt](./atributos_exemplo.jpg)
+<img width="200px" src="atributos_exemplo.jpg" alt="">
 
 ``Atributos identificadores`` sao aqueles que identificam de maneira única uma entidade específica. Eles devem estar marcados com um **circulo totalmente preenchido** (vide `CPF` na imagem acima).
 
@@ -59,7 +62,7 @@ Os atributos podem ser classificados de diversas maneiras, conforme descrito aba
 
 Em geral, um bom banco de dados **evita o uso de atributos compostos**, fazendo uso de atributos simples em seu lugar (vide imagem abaixo).
 
-![alt](atributos_compostos.jpg)
+<img width="550px" src="atributos_compostos.jpg" alt="">
 
 #### 2.2. Atributos de Valor Único vs Multi-valorado
 
@@ -73,8 +76,7 @@ Em geral, um bom banco de dados **evita o uso de atributos multi-valorados**. Pa
 - Criar uma nova entidade para o atributo multi-valorado
 - Conectar esse nova entidade com a entidade anterior, usando um relacionamento (veja imagem abaixo)
 
-![alt](atributos_multivalorados_correcao.jpg)
-
+<img width="700px" src="atributos_multivalorados_correcao.jpg" alt="">
 
 #### 2.2. Atributos Determinantes vs Não-determinantes
 
@@ -96,21 +98,31 @@ Além disso, relacionamentos **não representam funcionalidades do sistema**, ma
 Relacionamentos podem conter **cardinalidades** (mínimas e máximas), que indicam quantos registros de cada entidade estão associados entre si (veja imagens abaixo).
 
 A depender da cardinalidade MÁXIMA, podemos classificar os  relacionamentos como:
-- **Um para Um (1:1)**: Um registro de uma entidade interage com no máximo um registro de outra entidade.
+- **Relacionamento 1:1** (Um para Um)
+- **Relacionamento 1:N** (Um para Muitos)
+- **Relacionamento N:N** (Muitos para Muitos)
 
-![alt](relacionamento_um_para_um.jpg)
+#### 3.1. Relacionamentos 1:1 (Um para Um)
 
-- **Um para Muitos (1:N)**: Um registro de uma entidade interage com vários (N) registros da outra entidade.
+Ocorre quando um registro de uma entidade interage com no máximo um registro de outra entidade.
 
-![alt](relacionamento_um_para_n.jpg)
+<img width="450px" src="relacionamento_um_para_um.jpg" alt="">
 
-- **Muitos para Muitos (N:N)**: Vários registros (N) de uma entidade podem se relacionar com vários outros (N) registros de outra entidade.
+#### 3.2. Relacionamentos 1:N (Um para Muitos)
 
-![alt](relacionamento_n_para_n.jpg)
+Ocorre quando um registro de uma entidade interage com vários (N) registros da outra entidade.
 
-#### 3.1. Generalização e Especialização
+<img width="450px" src="relacionamento_um_para_n.jpg" alt="">
 
-![alt](generalizacao_especializacao.jpg)
+#### 3.3. Relacionamentos N:N (Muitos para Muitos)
+
+Ocorre quando vários registros (N) de uma entidade podem se relacionar com vários outros (N) registros de outra entidade.
+
+<img width="450px" src="relacionamento_n_para_n.jpg" alt="">
+
+### 4. Generalização e Especialização
+
+<img width="450px" src="generalizacao_especializacao.jpg" alt="">
 
 - **Generalização**: é o processo de abstrair características comuns de duas ou mais entidades distintas, agrupando-as em uma entidade mais genérica.
   - **Ex**: ``Pessoa_Fisica`` e ``Pessoa_Juridica`` podem ser generalizadas em uma entidade mais genérica chamada ``Cliente``, que contém os atributos comuns como ``nome``.
