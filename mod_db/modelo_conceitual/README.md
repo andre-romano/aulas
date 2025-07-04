@@ -80,10 +80,10 @@ Em geral, um bom banco de dados **evita o uso de atributos multi-valorados**. Pa
 
 #### 2.2. Atributos Determinantes vs Não-determinantes
 
-| Atributo Determinante                                 | Atributo Não-determinante                                   |
-| ----------------------------------------------------- | ----------------------------------------------------------- |
-| Há apenas um registo com o mesmo valor deste atributo | Pode existir vário registros com um mesmo valor do atributo |
-| **Ex**: cpf, rg, chassi_carro                         | **Ex**: nome, data_nascimento, modelo_carro                 |
+| Atributo Determinante                                 | Atributo Não-determinante                                    |
+| ----------------------------------------------------- | ------------------------------------------------------------ |
+| Há apenas um registo com o mesmo valor deste atributo | Pode existir vários registros com um mesmo valor do atributo |
+| **Ex**: cpf, rg, chassi_carro                         | **Ex**: nome, data_nascimento, modelo_carro                  |
 
 ### 3. Relacionamentos (com cardinalidades)
 
