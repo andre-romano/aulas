@@ -33,3 +33,4 @@ Para enviar os seus modelos do **BrModelo** em uma das atividades do Google Clas
 
 Vejam exemplos de como construir os modelos (conceituais e lógicos) para um projeto nas seguintes pastas:
 - [exemplo_streaming](exemplo_streaming) (sistema de streaming de vídeo)
+- [exemplo_chat](exemplo_chat) (sistema de chat similar ao WhatsApp)

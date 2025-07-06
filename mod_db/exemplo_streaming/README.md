@@ -22,3 +22,9 @@ O sistema oferece funcionalidades para gerenciamento de usuários, vídeos, gên
 ![alt](modelo_conceitual.png)
 
 Abra o arquivo do BrModelo [./modelo_conceitual.brM3](./modelo_conceitual.brM3) para maiores detalhes.
+
+### Modelo lógico (completo)
+
+![alt](modelo_logico.png)
+
+Abra o arquivo do BrModelo [./modelo_logico.brM3](./modelo_logico.brM3) para maiores detalhes.
