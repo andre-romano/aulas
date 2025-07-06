@@ -23,7 +23,7 @@ O modelo conceitual (também chamado de ``modelo entidade-relacionamento`` ou ``
 
 ## Componentes
 
-<img width="450px" src="entidade_relacionamento.jpg" alt="">
+<img width="450px" src="img/entidade_relacionamento.jpg" alt="">
 
 ### 1. Entidades
 
@@ -45,7 +45,7 @@ São as **propriedades** ou características que descrevem uma entidade.
 
 Por exemplo, um ``Cliente`` pode ter atributos como ``CPF`` (atributo identificador), ``nome``, ``data_nascimento`` e ``endereço`` (vide imagem abaixo).
 
-<img width="200px" src="atributos_exemplo.jpg" alt="">
+<img width="200px" src="img/atributos_exemplo.jpg" alt="">
 
 ``Atributos identificadores`` sao aqueles que identificam de maneira única uma entidade específica. Eles devem estar marcados com um **circulo totalmente preenchido** (vide `CPF` na imagem acima).
 
@@ -62,7 +62,7 @@ Os atributos podem ser classificados de diversas maneiras, conforme descrito aba
 
 Em geral, um bom banco de dados **evita o uso de atributos compostos**, fazendo uso de atributos simples em seu lugar (vide imagem abaixo).
 
-<img width="550px" src="atributos_compostos.jpg" alt="">
+<img width="550px" src="img/atributos_compostos.jpg" alt="">
 
 #### 2.2. Atributos de Valor Único vs Multi-valorado
 
@@ -76,7 +76,7 @@ Em geral, um bom banco de dados **evita o uso de atributos multi-valorados**. Pa
 - Criar uma nova entidade para o atributo multi-valorado
 - Conectar esse nova entidade com a entidade anterior, usando um relacionamento (veja imagem abaixo)
 
-<img width="800px" src="atributos_multivalorados_correcao.jpg" alt="">
+<img width="800px" src="img/atributos_multivalorados_correcao.jpg" alt="">
 
 #### 2.2. Atributos Determinantes vs Não-determinantes
 
@@ -105,24 +105,24 @@ A depender da cardinalidade MÁXIMA, podemos classificar os  relacionamentos com
 #### 3.1. Relacionamentos 1:1 (Um para Um)
 
 Ocorre quando um registro de uma entidade interage com no máximo um registro de outra entidade.
-
-<img width="550px" src="relacionamento_um_para_um.jpg" alt="">
+ 
+<img width="550px" src="img/relacionamento_um_para_um.jpg" alt="">
 
 #### 3.2. Relacionamentos 1:N (Um para Muitos)
 
 Ocorre quando um registro de uma entidade interage com vários (N) registros da outra entidade.
 
-<img width="550px" src="relacionamento_um_para_n.jpg" alt="">
+<img width="550px" src="img/relacionamento_um_para_n.jpg" alt="">
 
 #### 3.3. Relacionamentos N:N (Muitos para Muitos)
 
 Ocorre quando vários registros (N) de uma entidade podem se relacionar com vários outros (N) registros de outra entidade.
 
-<img width="550px" src="relacionamento_n_para_n.jpg" alt="">
+<img width="550px" src="img/relacionamento_n_para_n.jpg" alt="">
 
 ### 4. Generalização e Especialização
 
-<img width="550px" src="generalizacao_especializacao.jpg" alt="">
+<img width="550px" src="img/generalizacao_especializacao.jpg" alt="">
 
 - **Generalização**: é o processo de abstrair características comuns de duas ou mais entidades distintas, agrupando-as em uma entidade mais genérica.
   - **Ex**: ``Pessoa_Fisica`` e ``Pessoa_Juridica`` podem ser generalizadas em uma entidade mais genérica chamada ``Cliente``, que contém os atributos comuns como ``nome``.
