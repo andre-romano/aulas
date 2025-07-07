@@ -11,23 +11,18 @@ Esta página contem as aulas e demais o conteúdos auxiliares da disciplina.
 
 ## Tutoriais e Vídeo-Aulas
 
+Conjunto de video-aulas para auxilia-los no estudo da disciplina:
 - [Curso de Modelagem de Banco de dados](https://www.youtube.com/playlist?list=PLGjBx0p9zRN80__ydMmBZWUnyFyDrOD6Y)
 
 ## BrModelo (ferramenta de modelagem de banco de dados)
 
-O brModelo  é uma ferramenta para construcao de modelos conceituais e lógicos de bancos de dados. 
+O BrModelo  é uma ferramenta para construção de modelos conceituais e lógicos de bancos de dados. 
 
-Voce encontrará uma explicacao mais detalhada de como instalar e usar a ferramenta nas video-aulas do curso e nos roteiros abaixo:
-- [Modelo Conceitual](modelo_conceitual)
-- [Modelo Lógico](modelo_logico)
+Você encontrará uma explicação mais detalhada de [como instalar e usar o BrModelo aqui](./brmodelo/).
 
-Para enviar os seus modelos do **BrModelo** em uma das atividades do Google Classroom, faça:
-- Acesse o menu `Arquivo -> Exportar`
-- Escolha o formato PNG para salvar o arquivo
-- Escolha o local a ser salvo. 
-- Envie esse arquivo `.PNG` na atividade do Classroom
-
-**OBS:** Voce também pode enviar o arquivo ``.brM3`` do BrModelo, ao invés da imagem PNG.
+ Para aprender a utilizar o BrModelo para criar cada modelo especificamente, veja as video-aulas e os roteiros abaixo:
+- [Modelo Conceitual (roteiro)](modelo_conceitual)
+- [Modelo Lógico (roteiro)](modelo_logico)
 
 ## Exemplos de modelos conceituais e lógicos
 
