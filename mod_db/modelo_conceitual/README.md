@@ -13,6 +13,8 @@
       - [3.2. Relacionamentos 1:N (Um para Muitos)](#32-relacionamentos-1n-um-para-muitos)
       - [3.3. Relacionamentos N:N (Muitos para Muitos)](#33-relacionamentos-nn-muitos-para-muitos)
     - [4. Generalização e Especialização](#4-generalização-e-especialização)
+  - [O que um bom modelo conceitual deve conter](#o-que-um-bom-modelo-conceitual-deve-conter)
+    - [1. Dados, não ações](#1-dados-não-ações)
 
 # Modelo conceitual
 O modelo conceitual (também chamado de ``modelo entidade-relacionamento`` ou ``modelo E-R``) é uma representação abstrata e de alto nível da estrutura de um banco de dados. Ele descreve, de forma independente da tecnologia de implementação, os principais elementos e relacionamentos.
@@ -128,3 +130,29 @@ Ocorre quando vários registros (N) de uma entidade podem se relacionar com vár
 
 - **Especialização** é o processo inverso: a partir de uma entidade genérica, identificam-se subconjuntos que possuem características específicas, criando assim entidades especializadas.
   - **Ex:** a entidade ``Cliente`` pode ser especializada em ``Pessoa_Fisica`` e `Pessoa_Juridica`, cada uma com atributos ou relacionamentos próprios, como `Pessoa_Fisica.cpf` e `Pessoa_Juridica.cnpj`.
+
+## O que um bom modelo conceitual deve conter
+
+### 1. Dados, não ações
+
+- **Modelo conceitual**: representa a **estrutura** do sistema
+  - Possui SOMENTE dados (entidades, atributos e relacionamentos)
+- **Requisitos ou funcionalidades de um sistema:** representa o **comportamento** do sistema 
+  - Descreve ações (funcionalidades, comportamentos, e processos)
+
+**Exemplos:**
+
+| **Elemento do sistema** | **Tipo certo**                                      | **Por quê?**                                                                                |
+| ----------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Cliente                 | Entidade                                            | Representa um objeto com dados                                                              |
+| Nome do cliente         | Atributo                                            | É uma característica da entidade Cliente                                                    |
+| Efetuar Compra          | Funcionalidade / Ação                               | É uma **ação** que o sistema realiza, não algo armazenado como dado diretamente             |
+| Compra                  | Entidade (ou Relacionamento com atributos)          | Armazena dados da ação de compra (feita pelo cliente)                                       |
+| Data da compra          | Atributo                                            | É uma característica da entidade Compra                                                     |
+| Login                   | Funcionalidade / requisito                          | É um processo de acesso ao sistema                                                          |
+| Histórico de Compras    | Relatório (requisito funcional ou saída do sistema) | Não é uma entidade. É gerado a partir de dados já modelados (instancias da entidade Compra) |
+| Relatório de vendas     | Relatório (requisito funcional ou saída do sistema) | Não é uma entidade. É gerado a partir de dados já modelados                                 |
+
+**DICA**: Para distinguir melhor dados de funcionalidades, siga a regra abaixo: 
+- **Dado**: é algo que precisa ser **armazenado**.
+- **Funcionalidade**: é algo que o usuário **faz** ou espera que o sistema faça.
