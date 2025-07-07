@@ -16,6 +16,9 @@
     - [9. Diagrama de Atividades](#9-diagrama-de-atividades)
     - [10. Diagrama de Estados (Máquina de Estados Finita - FSM)](#10-diagrama-de-estados-máquina-de-estados-finita---fsm)
     - [11. Diagrama de Timing](#11-diagrama-de-timing)
+    - [12. Diagrama lógico-relacional (modelo lógico - bancos de dados)](#12-diagrama-lógico-relacional-modelo-lógico---bancos-de-dados)
+      - [Cardinalidades](#cardinalidades)
+      - [Chaves primárias e estrangeiras](#chaves-primárias-e-estrangeiras)
 
 
 # PlantUML
@@ -122,3 +125,22 @@ Esta pasta contem vários exemplos de uso do PlantUML, conforme descritos abaixo
 
 - Veja o código em [./diagrama_timing.puml](./diagrama_timing.puml)
 
+### 12. Diagrama lógico-relacional (modelo lógico - bancos de dados)
+
+![alt](./img/diagrama_logico_relacional.png)
+
+- Veja o código em [./diagrama_logico_relacional.puml](./diagrama_logico_relacional.puml)
+
+#### Cardinalidades
+
+Neste diagrama as cardinalidades são escritas no PlantUML usando os comandos:
+- ``o|`` = Cardinalidade (0,1)
+- ``||`` = Cardinalidade (1,1)
+- ``o{`` = Cardinalidade (0,N)
+- ``|{`` = Cardinalidade (1,N)
+
+#### Chaves primárias e estrangeiras
+
+Neste diagrama as chaves são escritas no PlantUML usando os comandos:
+- `*` = Chave primária (circulo preto preenchido)
+- `+` = Chave estrangeira (circulo verde vazado)

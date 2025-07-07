@@ -1,0 +1,60 @@
+@startuml
+
+' Estilo do diagrama (opcional)
+hide circle
+skinparam linetype ortho
+
+' === ENTIDADES ===
+entity "Pessoa" as Pessoa {
+  *id_pessoa : int
+  nome : string
+  data_nasc : date
+}
+
+entity "Cliente" as Cliente {
+  +id_pessoa : int
+  limite_credito : float
+}
+
+entity "Funcionario" as Funcionario {
+  +id_pessoa : int
+  salario : float
+  cargo : string
+}
+
+entity "Pedido" as Pedido {
+  *id_pedido : int
+  data : date
+  +id_cliente : int
+}
+
+entity "Produto" as Produto {
+  *id_produto : int
+  nome : string
+  preco : float
+}
+
+entity "ItemPedido" as ItemPedido {
+  *id_pedido : int
+  *id_produto : int
+  quantidade : int
+  preco_unitario : float
+}
+
+' === RELACIONAMENTOS ===
+
+' Pessoa é generalização de Cliente e Funcionario
+Pessoa <|-- Cliente
+Pessoa <|-- Funcionario
+
+' Cliente realiza Pedido (1:N)
+Cliente ||--o{ Pedido : "realiza"
+
+' Pedido contém Produtos via entidade associativa ItemPedido (N:N)
+Pedido ||--o{ ItemPedido : "contém"
+Produto ||--o{ ItemPedido : "está em"
+
+' Funcionario registra Pedido (1:1)
+Funcionario ||--|| Pedido : "registra"
+
+@enduml
