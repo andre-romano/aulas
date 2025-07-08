@@ -1,5 +1,25 @@
 # Trabalho de Conclusão de Curso
 
+Um trabalho de conclusão de curso (TCC) tem como propósito avaliar o aluno visando atestar se o mesmo possui as competências mínimas necessárias para o desempenho de sua profissão.
+
+Para isso, o TCC é avaliado em duas etapas distintas:
+1. **Qualificação**: momento no qual o andamento do trabalho é avaliado 
+   - **Objetivos**: 
+     - Verificar a qualidade do trabalho (o trabalho esta de acordo com um TCC acadêmico?)
+     - Avaliar o progresso do trabalho (o aluno conseguirá finalizar o trabalho ate a data da defesa?)     
+   - **Entregáveis**: 
+     - Apresentação (20 a 30 min)
+     - Monografia (versão preliminar)
+2. **Defesa**: momento no qual o trabalho, em sua versão final, será defendido pelo aluno para uma banca de professores
+   - **Objetivos**: 
+     - Avaliar qualidade técnica do trabalho (referencial bibliográfico, metodologia, resultados, formatação e normas da ABNT, etc)
+     - Avaliar capacidade de apresentação/defesa oral do trabalho (domínio do tema, atenção ao tempo de apresentação, clareza no discurso, etc)
+   - **Entregáveis**: 
+     - Apresentação (20 a 30 min)
+     - Monografia (versão final)
+
+Abaixo segue uma descrição de cada etapa / seção do TCC.
+
 **Sumário**:
 
 - [Trabalho de Conclusão de Curso](#trabalho-de-conclusão-de-curso)

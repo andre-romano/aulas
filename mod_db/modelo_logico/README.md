@@ -1,4 +1,20 @@
 
+# Modelo logico
+
+O modelo lógico é uma representação estruturada do modelo conceitual, adaptada para um sistema de banco de dados relacional (SGBD).
+
+- Trata-se de uma etapa intermediária entre o modelo conceitual (alto nível e abstrato) e o modelo físico (dependente do SGBD).
+
+O modelo lógico transforma entidades, atributos e relacionamentos em tabelas relacionais (vide imagem abaixo). 
+
+<img width="580px" src="img/entidade_tabelas.jpg" alt="">
+
+Existem varias representações de modelo lógico (tabelas, diagramas UML, representação matemática, etc). 
+
+- No decorrer do curso iremos trabalhar com maior frequência com a representação de **diagrama UML** (vide imagem abaixo), na qual podemos definir os  tipos de dados, chaves primárias e estrangeiras de cada tabela .
+
+<img width="200px" src="img/cliente_uml.jpg" alt="">
+ 
 **Sumário**:
 - [Modelo logico](#modelo-logico)
   - [Objetivo do modelo](#objetivo-do-modelo)
@@ -10,22 +26,6 @@
       - [Chave estrangeira (foreign key ou FK)](#chave-estrangeira-foreign-key-ou-fk)
     - [3. Associações](#3-associações)
 
-# Modelo logico
-
-O modelo lógico é uma representação estruturada do modelo conceitual, adaptada para um sistema de banco de dados relacional (SGBD).
-
-- Trata-se de uma etapa intermediária entre o modelo conceitual (alto nível e abstrato) e o modelo físico (dependente do SGBD).
-
-O modelo lógico transforma entidades, atributos e relacionamentos em tabelas relacionais (vide imagem abaixo). 
-
-<img width="580px" src="img/entidade_tabelas.jpg" alt="">
-
-Existem varias representacoes de modelo lógico (tabelas, diagramas UML, representação matemática, etc). 
-
-- No decorrer do curso iremos trabalhar com maior frequência com a representação de **diagrama UML** (vide imagem abaixo), na qual podemos definir os  tipos de dados, chaves primárias e estrangeiras de cada tabela .
-
-<img width="200px" src="img/cliente_uml.jpg" alt="">
- 
 ## Objetivo do modelo
 - Estruturar os dados de forma normalizada e organizada, garantindo:
   - Integridade referencial
