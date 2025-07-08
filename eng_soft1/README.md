@@ -4,21 +4,22 @@ Esta página contém as aulas e demais o conteúdos auxiliares da disciplina.
 
 **Sumário**
 - [Engenharia de Software I](#engenharia-de-software-i)
-  - [Video-aulas](#video-aulas)
-  - [Tutoriais e Conteúdo Complementar](#tutoriais-e-conteúdo-complementar)
+  - [Aulas e Plano de Ensino](#aulas-e-plano-de-ensino)
+  - [Tutoriais e Video-aulas](#tutoriais-e-video-aulas)
   - [Ferramentas e Documentos](#ferramentas-e-documentos)
 
-## Video-aulas
+## Aulas e Plano de Ensino
 
-- [Curso completo (video-aulas)](https://www.youtube.com/playlist?list=PLGjBx0p9zRN-owPh-lkuV8-CMnMSg5fTu)
+As aulas podem ser acessadas na pasta [./aulas](./aulas)
 
-## Tutoriais e Conteúdo Complementar
+## Tutoriais e Video-aulas
 
-- [Padrões de projeto de software](https://refactoring.guru/pt-br/design-patterns/)
-- [Porque o software de aeronaves nao sao atualizados?](https://youtube.com/shorts/3BKdisR7EoY?si=2EKmroql05AbqSlt)
+- [Video-Aulas - Curso completo](https://www.youtube.com/playlist?list=PLGjBx0p9zRN-owPh-lkuV8-CMnMSg5fTu)
+- [Video - Porque o software de aeronaves nao sao atualizados?](https://youtube.com/shorts/3BKdisR7EoY?si=2EKmroql05AbqSlt)
+- [Tutorial - Padrões de projeto de software](https://refactoring.guru/pt-br/design-patterns/)
 
 ## Ferramentas e Documentos
 
-- [Documento de Especificação Funcional (DEF)](./especificacao_funcional/) (modelos de especificação funcional)
+- [Documento de Especificação Funcional (DEF)](./especificacao_funcional/) (exemplos de especificação funcional)
 - [PlantUML](./plantuml/) (diagramas UML)
 - [PDoc](./pdoc/) (gerador de documentação automatizado)
