@@ -1,4 +1,5 @@
 ## Sistema de Streaming de Video
+
 **Descrição**: Um sistema de streaming digital que permite a usuários assistirem filmes, séries e episódios sob demanda. 
 
 O sistema oferece funcionalidades para gerenciamento de usuários, vídeos, gêneros, diretores, atores, avaliações e controle de progresso de visualização.

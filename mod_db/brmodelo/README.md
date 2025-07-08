@@ -1,3 +1,6 @@
+# BrModelo
+
+O BrModelo  é uma ferramenta para construção de modelos conceituais e lógicos de bancos de dados.
 
 **Sumario:**
 - [BrModelo](#brmodelo)
@@ -7,9 +10,6 @@
     - [2. Salvar um modelo](#2-salvar-um-modelo)
     - [3. Exportar um modelo como imagem](#3-exportar-um-modelo-como-imagem)
   - [Como usar o BrModelo](#como-usar-o-brmodelo)
-
-
-# BrModelo
 
 ## Como instalar 
 

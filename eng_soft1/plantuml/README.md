@@ -1,3 +1,11 @@
+# PlantUML
+
+O PlantUML é uma ferramenta de código aberto que permite a criação de diagramas a partir de uma linguagem textual simples. 
+
+Em vez de usar interfaces gráficas (como arrastar e soltar elementos), você escreve um código em formato de texto, e o PlantUML gera o diagrama automaticamente. 
+
+É amplamente usado para documentação técnica, planejamento de software, modelagem de sistemas, construção de fluxogramas e diagramas.
+
 **Sumário**:
 - [PlantUML](#plantuml)
   - [Como instalar (VS Code) ?](#como-instalar-vs-code-)
@@ -19,15 +27,6 @@
     - [12. Diagrama lógico-relacional (modelo lógico - bancos de dados)](#12-diagrama-lógico-relacional-modelo-lógico---bancos-de-dados)
       - [Cardinalidades](#cardinalidades)
       - [Chaves primárias e estrangeiras](#chaves-primárias-e-estrangeiras)
-
-
-# PlantUML
-
-O PlantUML é uma ferramenta de código aberto que permite a criação de diagramas a partir de uma linguagem textual simples. 
-
-Em vez de usar interfaces gráficas (como arrastar e soltar elementos), você escreve um código em formato de texto, e o PlantUML gera o diagrama automaticamente. 
-
-É amplamente usado para documentação técnica, planejamento de software, modelagem de sistemas, construção de fluxogramas e diagramas.
 
 ## Como instalar (VS Code) ?
 
