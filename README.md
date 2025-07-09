@@ -14,7 +14,9 @@ Este repositório contém as aulas das seguintes disciplinas:
 
 ## Configurações do VSCode
 
-As configurações (e extensões) que uso com maior frequência no VSCode estão contidas na pasta [.vscode](.vscode).
+As configurações (e extensões) que uso com maior frequência no VSCode estão contidas na pasta [``.vscode``](.vscode)
 
-Para usa-las em um projeto qualquer, basta copiar a pasta ``.vscode`` para dentro da pasta do seu projeto.
+Para usa-las em um projeto qualquer, basta:
+1. Criar a pasta ``.vscode`` dentro do seu projeto
+2. Copiar o conteúdo da pasta [``.vscode``](.vscode) para dentro dela
 
