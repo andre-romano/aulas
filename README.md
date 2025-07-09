@@ -10,9 +10,11 @@ Este repositório contém as aulas das seguintes disciplinas:
 - [Redes de Computadores](redes)
 - [Segurança e Auditoria de Redes](seg_redes)
 - [Tecnologia na Educação](tecnologia_escola)
+- [Trabalho de Conclusão de Curso (instruções para escrita/defesa)](tcc)
 
-## Instruções para escrita e defesa de TCC
+## Configurações do VSCode
 
-Instruções para a escrita e defesa de um TCC podem ser encontradas na pasta [./tcc](./tcc/). 
+As configurações (e extensões) que uso com maior frequência no VSCode estão contidas na pasta [.vscode](.vscode).
 
-Essas instruções são validas para os cursos integrado em Informática (COINF) e cursos superiores de computação (ADS / COMPUT).
+Para usa-las em um projeto qualquer, basta copiar a pasta ``.vscode`` para dentro da pasta do seu projeto.
+

@@ -5,11 +5,94 @@
     "editor.snippetSuggestions": "top",
     "remote.SSH.enableX11Forwarding": true,
     "update.showReleaseNotes": false,
+    "remote.SSH.enableX11Forwarding": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "remote.SSH.defaultForwardedPorts": [],
+    "todo-tree.highlights.customHighlight": {
+        "BUG": {
+            "foreground": "#000",
+            "background": "#f5e502",
+            "icon": "alert"
+        },
+        "FIXME": {
+            "foreground": "#000",
+            "background": "#f5e502",
+            "icon": "alert"
+        },
+        "IMPROVE": {
+            "foreground": "#000",
+            "background": "#00eeffe0",
+            "icon": "question"
+        }
+    },
+    "todo-tree.highlights.defaultHighlight": {
+        "foreground": "#000",
+        "background": "#fff",
+        "type": "text"
+    },
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "IMPROVE",
+        "XXX"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "search.useIgnoreFiles": false,
+    "search.useGlobalIgnoreFiles": false,
+    "update.showReleaseNotes": false,
+    "security.workspace.trust.untrustedFiles": "open",
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "php.validate.executablePath": "C:\\xampp\\php\\php\\php.exe",
     "cSpell.language": "en, pt_br, pt-br, pt",
     "editor.formatOnSave": true,
     "cSpell.words": [
         "pylance"
-    ]
+    ],
+    "security.workspace.trust.enabled": false,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "python.languageServer": "Pylance", // Ensure Pylance is being used as the language server
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.supportDocstringTemplate": true,
+    "python.analysis.typeCheckingMode": "basic", // Set the type checking mode: "off", "basic", or "strict"
+    "python.analysis.diagnosticMode": "workspace", // Checks errors only for open files (use "workspace" to check all files)
+    "python.analysis.autoSearchPaths": true, // Automatically adds paths to the environment
+    "python.analysis.useLibraryCodeForTypes": true, // Use type stubs from libraries for better error detection
+    "python.analysis.completeFunctionParens": true, // Show function parameter hints
+    "python.analysis.indexing": true, // Enable indexing for better suggestions
+    "python.analysis.exclude": [
+        "**/venv/**", // Exclude virtual environment folder
+        "**/__pycache__/**", // Exclude __pycache__ folders
+        "**/build/**", // Exclude build folder
+        "**/dist/**", // Exclude dist folder
+        "**/.tox/**", // Exclude tox folder (optional)
+        "**/.nox/**", // Exclude nox folder (optional)
+        "**/.coverage/**", // Exclude coverage files (optional)
+        "**/.mypy_cache/**", // Exclude mypy cache (optional)
+        "**/.pytest_cache/**" // Exclude pytest cache (optional)
+    ],
+    "files.exclude": {
+        "**/venv": true,
+        "**/__pycache__": true,
+        "**/*.egg-info": true,
+        "**/*.egg": true,
+        "node_modules/": true,
+        "dist/": true,
+    },
+    "search.exclude": {
+        "**/venv": true,
+        "**/__pycache__": true,
+    },
+    "files.associations": {
+        "*.yml": "yaml", // for YAML files
+        "*.yaml": "yaml", // for YAML files
+        ".github/workflows/*": "yaml" // Disable linting for GitHub workflows
+    },
+    "plantuml.exportOutDir": ".",
+    "plantuml.exportSubFolder": false,
+    "plantuml.previewAutoUpdate": true,
+    "git.autofetch": true,
+    "diffEditor.ignoreTrimWhitespace": true,
 }
