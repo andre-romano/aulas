@@ -30,12 +30,12 @@ Discutir em grupo quais são as vantagens e desvantagens das ferramentas apresen
 
 ### 1.2 Principais Ferramentas CASE 
 - Escolha um representante de cada grupo de ferramentas abaixo para realizar sua analise:
-  - draw.io, Lucidchart, Astah (para modelagem UML).  
-  - BrModelo, MySQL Workbench, phpMyAdmin (para modelagem e gerenciamento de banco de dados).  
-  - Doxygen, Sphinx, JavaDoc, pdoc (para geração automatizada de documentação)
-  - unittest, JUnit, phpunit, Selenium (para testes automatizados).  
-  - Pip, NPM, PHP Composer, Conan (para gerenciamento de dependências de software).  
-  - CMake, Ninja, Make, Gradle, Maven, Ant, WAF (para automação de compilação).  
+  - draw.io, Lucidchart, Astah, PlantUML, etc (para modelagem UML).  
+  - BrModelo, MySQL Workbench, phpMyAdmin, etc (para modelagem e gerenciamento de banco de dados).  
+  - Doxygen, Sphinx, JavaDoc, pdoc, etc (para geração automatizada de documentação)
+  - unittest, JUnit, phpunit, Selenium, etc (para testes automatizados).  
+  - Pip, Poetry, NPM, PHP Composer, Conan, etc (para gerenciamento de dependências de software).  
+  - CMake, Ninja, Make, Gradle, Maven, Ant, WAF, Setuptools, etc (para automação de compilação).  
 
 ---
 
