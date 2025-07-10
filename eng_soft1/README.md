@@ -18,8 +18,15 @@ As aulas podem ser acessadas na pasta [./aulas](./aulas)
 - [Video - Porque o software de aeronaves nao sao atualizados?](https://youtube.com/shorts/3BKdisR7EoY?si=2EKmroql05AbqSlt)
 
 ## Tutoriais
-- [Tutorial - Padrões de projeto de software](https://refactoring.guru/pt-br/design-patterns/)
-- [TUtorial - Princípios S.O.L.I.D.](https://www.estrategiaconcursos.com.br/blog/principios-solid-tse-ti/)
+**Tutoriais técnicos**:
+- [Padrões de projeto de software](https://refactoring.guru/pt-br/design-patterns/)
+- [Princípios S.O.L.I.D.](https://www.estrategiaconcursos.com.br/blog/principios-solid-tse-ti/)
+
+**Metodologias e métodos:**
+- [Scrum](https://www.cnnbrasil.com.br/tecnologia/scrum/)
+- [6-Sigma](https://sebrae.com.br/sites/PortalSebrae/artigos/seis-sigma-e-ferramenta-de-melhoria-continua-para-as-empresas,688ebbd38f896810VgnVCM1000001b00320aRCRD)
+- [Kanban](https://sebrae.com.br/Sebrae/Portal%20Sebrae/Arquivos/ebook_sebrae_metodo-kanban.pdf)
+- [5S's japoneses](https://www.wizard.com.br/carreira/5s-o-metodo-japones-que-promete-melhorar-a-produtividade-no-trabalho/)
 
 ## Ferramentas e Documentos
 
