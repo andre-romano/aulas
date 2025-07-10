@@ -3,9 +3,6 @@
     "editor.wrappingIndent": "deepIndent",
     "editor.wordWrapColumn": 80,
     "editor.snippetSuggestions": "top",
-    "remote.SSH.enableX11Forwarding": true,
-    "update.showReleaseNotes": false,
-    "remote.SSH.enableX11Forwarding": true,
     "workbench.startupEditor": "newUntitledFile",
     "remote.SSH.defaultForwardedPorts": [],
     "todo-tree.highlights.customHighlight": {
@@ -48,6 +45,7 @@
     "cSpell.language": "en, pt_br, pt-br, pt",
     "editor.formatOnSave": true,
     "cSpell.words": [
+        "Ormatacao",
         "pylance"
     ],
     "security.workspace.trust.enabled": false,
