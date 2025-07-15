@@ -38,35 +38,22 @@ Abra o arquivo do BrModelo [./modelo_logico.brM3](./modelo_logico.brM3) para mai
  
 #### Exemplos de tabelas 
 
-<span style="display:flex;">
+**Diretor**:
 
-  <span>
+| id  | nome            |
+| --- | --------------- |
+| 1   | Charlie Brooker |
+| 2   | Jesse Armstrong |
+| 3   | William Bridges |
+| 4   | Joseph Kosinski |
 
-  **Diretor**:
+**Ator**:
 
-  | id  | nome            |
-  | --- | --------------- |
-  | 1   | Charlie Brooker |
-  | 2   | Jesse Armstrong |
-  | 3   | William Bridges |
-  | 4   | Joseph Kosinski |
-
-  </span>
-  &nbsp&nbsp&nbsp
-  <span>
-
-  **Ator**:
-
-  | id  | nome                |
-  | --- | ------------------- |
-  | 1   | Bryce Dallas Howard |
-  | 2   | Cristin Milioti     |
-  | 3   | Tom Cruise          |
-  
-  </span>
-
-
-</span>
+| id  | nome                |
+| --- | ------------------- |
+| 1   | Bryce Dallas Howard |
+| 2   | Cristin Milioti     |
+| 3   | Tom Cruise          |
 
 **Genero**:
 | id  | nome              |
