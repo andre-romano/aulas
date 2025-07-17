@@ -21,6 +21,7 @@ As aulas podem ser acessadas na pasta [./aulas](./aulas)
 **Tutoriais técnicos**:
 - [Padrões de projeto de software](https://refactoring.guru/pt-br/design-patterns/)
 - [Princípios S.O.L.I.D.](https://www.estrategiaconcursos.com.br/blog/principios-solid-tse-ti/)
+- [Como usar Git + Github](./github/)
 
 **Metodologias e métodos:**
 - [Scrum](https://www.cnnbrasil.com.br/tecnologia/scrum/)
@@ -33,3 +34,4 @@ As aulas podem ser acessadas na pasta [./aulas](./aulas)
 - [Documento de Especificação Funcional (DEF)](./especificacao_funcional/) (exemplos de especificação funcional)
 - [PlantUML](./plantuml/) (diagramas UML)
 - [PDoc](./pdoc/) (gerador de documentação automatizado)
+- [Git + Github](./github/)
