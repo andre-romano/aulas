@@ -13,6 +13,7 @@
       - [5.2 Alterações salvas (JA FOI executado ``git commit``)](#52-alterações-salvas-ja-foi-executado-git-commit)
     - [6. Como criar nomes para os commits do repositorio (``git tag``)](#6-como-criar-nomes-para-os-commits-do-repositorio-git-tag)
   - [Usando GitHub (para gerenciamento de projetos em equipe)](#usando-github-para-gerenciamento-de-projetos-em-equipe)
+    - [0. Como adicionar Colaboradores em um repositório](#0-como-adicionar-colaboradores-em-um-repositório)
     - [1. Como criar ``Issues`` em um repositório](#1-como-criar-issues-em-um-repositório)
     - [2. Como criar ``Milestone`` (marco temporal)](#2-como-criar-milestone-marco-temporal)
     - [3. Como colocar uma ``Issue`` dentro de um ``Milestone``](#3-como-colocar-uma-issue-dentro-de-um-milestone)
@@ -208,6 +209,16 @@ Digamos que voce deseja criar nomes para cada um commit em particular. Nesse cas
     <img width="750px" src="./img/git_tag.jpg"> 
 
 ## Usando GitHub (para gerenciamento de projetos em equipe)
+
+### 0. Como adicionar Colaboradores em um repositório
+
+1. Na página do seu repositório, clique em `Settings`
+2. No menu a esquerda, clique em `Collaborators`
+3. Clique em `Add people`
+
+    <img width="950px" src="./img/github_collaborators.jpg"> 
+
+4. Chegara um email convidando a pessoa para participar no repositório. **A pessoa precisa confirmar a participação no email.**
 
 ### 1. Como criar ``Issues`` em um repositório
 
