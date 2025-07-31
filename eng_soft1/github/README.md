@@ -88,39 +88,43 @@ Depois de salvar arquivos e subpastas dentro da pasta do repositório, voce prec
 
 
 Para salvar as alterações no GitHub, siga os passos abaixo:
-1. No terminal integrado do VSCode, dentro da pasta do repositório, digite os comandos abaixo:
+1. No terminal integrado do VSCode, va para dentro da pasta do repositório, digite os comandos abaixo:
     ```bash    
+    cd PASTA_DO_REPOSITORIO
     git add .
     git status
     ```
-    - Os comandos acima irao marcar os arquivos alterados ou criados para serem salvos no Git.
-    - **ATENCAO**: Esses comandos NAO salvam os arquivos, apenas marcam eles para salvamento.
-2. Após digitar os comandos acima, voce deve ver uma lista de arquivos a serem salvos no Git, com fonte em verde claro.
-    
+
     <img width="550px" src="./img/git_add_status.jpg"> 
-   
-   - Se estiver tudo certo com a lista de arquivos, va para o proximo passo. 
-3. Digite os seguintes comandos para salvar as alterações no seu repositório do Git (local):
+
+    - Ir para a pasta do repositorio (`cd PASTA_DO_REPOSITORIO`)
+    - Marcar arquivos para salvamento (`git add .`)
+      - **ATENCAO**: Esse comando NAO salva os arquivos no repositório.
+    - Mostrar arquivos marcados (`git status`)
+       
+2. Digite os seguintes comandos para salvar as alterações no seu repositório do Git (local):
     ```bash
     git commit -m "Comentario acerca do foi alterado no seu repositorio aqui"
     ```
-   - Este comando ira salvar LOCALMENTE as alterações com o comentário que voce forneceu usando as aspas duplas (`"`). 
-   - Se tudo certo, voce vera uma tela parecida com a seguinte:
+   - Este comando ira salvar LOCALMENTE as alterações com o comentário fornecido. 
+   - Se tudo der certo, voce vera uma tela parecida com a seguinte:
     
     <img width="600px" src="./img/git_commit.jpg"> 
    
-   - **ATENÇÃO**: As alterações AINDA NAO foram enviadas para o GitHub (elas estão apenas no seu computador).
-4. Para enviar as alterações para o GitHub, execute o comando:
+   - **ATENÇÃO**: As alterações AINDA NAO foram enviadas para o GitHub (**elas estão apenas no seu computador**).
+3. Para enviar as alterações para o GitHub, execute o comando:
    ```bash
    git push
    ```
-   - Esse comando PODE pedir que você faça login na sua conta do GitHub, para autorizar o envio das alterações. Para isso, ele irá abrir um navegador Web (Edge, Firefox, Chrome, etc) com uma tela de login do GitHub.
+   - Esse comando PODE pedir que você faça login na sua conta do GitHub. 
+     - Para isso, ele irá abrir um navegador Web (Edge, Firefox, Chrome, etc) com uma tela de login do GitHub.
    - Se tudo der certo, voce vera uma tela parecida com a seguinte:
     
     <img width="600px" src="./img/git_push.jpg"> 
 
 **RESUMO DOS COMANDOS**:
 ```bash
+cd PASTA_DO_REPOSITORIO
 git add .
 git commit -m "cometario aqui"
 git push
