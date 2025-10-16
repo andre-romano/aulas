@@ -18,7 +18,7 @@ pip install bandit
 ### 2. Execute o Bandit neste projeto
 
 ```bash
-bandit -r calculadora
+python -m bandit -r calculadora
 ```
 
 ### 3. Correção das vulnerabilidades identificadas
