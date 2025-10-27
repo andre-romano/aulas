@@ -1,22 +1,30 @@
-# Ignora arquivos PDF da análise de linguagens
-*.pdf linguist-generated=true
+# Disable automatic line ending normalization for all files
+* -text
 
-# Ignora arquivos binários 
-*.exe linguist-generated=true
-*.so linguist-generated=true
-*.dll linguist-generated=true
-*.zip linguist-generated=true
-*.rar linguist-generated=true
-*.7z linguist-generated=true
-*.jar linguist-generated=true
+# === Binary documents ===
+*.pdf  binary linguist-generated=true
+*.odt  binary linguist-generated=true
+*.ods  binary linguist-generated=true
+*.odp  binary linguist-generated=true
+*.doc  binary linguist-generated=true
+*.docx binary linguist-generated=true
+*.xls  binary linguist-generated=true
+*.xlsx binary linguist-generated=true
+*.ppt  binary linguist-generated=true
+*.pptx binary linguist-generated=true
 
-# Ignora arquivos binários de suites Office
-*.odt linguist-generated=true
-*.ods linguist-generated=true
-*.odp linguist-generated=true
-*.doc linguist-generated=true
-*.docx linguist-generated=true
-*.xls linguist-generated=true
-*.xlsx linguist-generated=true
-*.ppt linguist-generated=true
-*.pptx linguist-generated=true
+# === Images ===
+*.png  binary linguist-generated=true
+*.jpg  binary linguist-generated=true
+*.jpeg binary linguist-generated=true
+*.gif  binary linguist-generated=true
+*.ico  binary linguist-generated=true
+
+# === Executables and archives ===
+*.exe  binary linguist-generated=true
+*.so   binary linguist-generated=true
+*.dll  binary linguist-generated=true
+*.zip  binary linguist-generated=true
+*.rar  binary linguist-generated=true
+*.7z   binary linguist-generated=true
+*.jar  binary linguist-generated=true
