@@ -13,19 +13,19 @@ pip install pytest coverage
 ### 2. Execute os testes 
 
 ```bash
-coverage run -m pytest
+python -m coverage run -m pytest
 ```
 
 ### 3. Gere o relatório de cobertura no terminal
 
 ```bash
-coverage report -m
+python -m coverage report -m
 ```
 
 ### 4. Gere um relatório em HTML
 
 ```bash
-coverage html
+python -m coverage html
 ```
 
 Depois, abra o arquivo `htmlcov/index.html` no navegador.

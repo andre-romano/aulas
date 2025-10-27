@@ -13,7 +13,7 @@ pip install pdoc
 ### 2. Gerar documentação HTML
 
 ```bash
-pdoc calculadora --output-dir docs
+python -m pdoc calculadora --output-dir docs
 ```
 
 Isso cria uma pasta `docs` com a documentação do módulo `calculadora`.
