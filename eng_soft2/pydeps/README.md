@@ -42,17 +42,17 @@ pip install pydeps
 Uma vez instalado, o `pydeps` pode ser executado diretamente a partir da linha de comando. Para gerar um gráfico das dependências de um módulo, execute o comando abaixo:
 
 ```bash
-pydeps --output=grafo.png nome_do_modulo.py
+pydeps nome_do_modulo.py
 ```
 
-Isso criará uma imagem `grafo.png`, mostrando todas as dependências desse módulo.
+Isso criará uma imagem `svg`, mostrando todas as dependências desse módulo.
 
 #### **Passo 3: Gerando o gráfico de dependências do projeto inteiro**
 
 Para gerar um gráfico das dependências de um projeto inteiro, basta passar o diretório ou o pacote do projeto como argumento:
 
 ```bash
-pydeps --output=grafo.png meu_projeto/
+pydeps meu_projeto/
 ```
 
 Isso gera um gráfico com todas as dependências entre os módulos do projeto.
@@ -106,3 +106,4 @@ A ferramenta `pydeps` é muito útil para gerar gráficos de dependências e ide
 1. **Prática**: Utilize o `pydeps` para no projeto Python da disciplina. Tente identificar e resolver importações circulares no código.
 
 2. **Discussão em Grupo**: Discuta com seus colegas como as importações circulares podem ser evitadas desde o início de um projeto. Que boas práticas de estruturação de código podem ser aplicadas para minimizar dependências desnecessárias?
+
