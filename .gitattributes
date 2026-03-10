@@ -1,5 +1,4 @@
-# Disable automatic line ending normalization for all files
-* -text
+# .gitattributes
 
 # === Binary documents ===
 *.pdf  binary linguist-generated=true
