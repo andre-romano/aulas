@@ -11,7 +11,7 @@ Esta página contém as aulas e demais o conteúdos auxiliares da disciplina.
 
 ## Aulas e Plano de Ensino
 
-As aulas podem ser acessadas na pasta [./aulas](./aulas)
+As aulas podem ser acessadas [nesta pasta compartilhada](https://drive.google.com/drive/folders/1c5dThA6WFGUOZBVgFSRqx3S4fHmuAAXO)
 
 ## Video-aulas
 - [Video-Aulas - Curso completo](https://www.youtube.com/playlist?list=PLGjBx0p9zRN-owPh-lkuV8-CMnMSg5fTu)
