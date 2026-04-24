@@ -49,9 +49,9 @@
 
 17) Selecione a média das idades dos clientes:
 
-18) Selecione clientes cujo saldo é maior que a média de saldo de todos os clientes
+18) Selecione clientes cujo saldo é maior que a média de saldo de todos os clientes (estude o slide de SUBCONSULTAS SQL para resolver esta questão)
 
-19) Selecione a média de idade por cidade e mostrar apenas cidades com média de idade maior que 30
+19) Selecione a média de idade por cidade e mostrar apenas cidades com média de idade maior que 30 (estude o slide de SUBCONSULTAS SQL para resolver esta questão)
 
 20) Selecione todos os clientes e calcule um saldo atualizado com 10% de acréscimo
 
@@ -61,13 +61,13 @@
 
 23) Selecione todos os clientes que não são de 'Curitiba'
 
-24) Selecione todos os clientes cujo saldo é maior que o saldo de pelo menos um cliente de 'São Paulo'
+24) Selecione todos os clientes cujo saldo é maior que o saldo de pelo menos um cliente de 'São Paulo' (estude o slide de SUBCONSULTAS SQL para resolver esta questão)
 
-25) Selecione todos os clientes cuja idade é menor que a idade de pelo menos um cliente de 'Rio de Janeiro'
+25) Selecione todos os clientes cuja idade é menor que a idade de pelo menos um cliente de 'Rio de Janeiro' (estude o slide de SUBCONSULTAS SQL para resolver esta questão)
 
-26) Selecione todos os clientes cujo saldo é maior que o saldo de todos os clientes de 'Curitiba'
+26) Selecione todos os clientes cujo saldo é maior que o saldo de todos os clientes de 'Curitiba' (estude o slide de SUBCONSULTAS SQL para resolver esta questão)
 
-27) Selecione todos os clientes cuja idade é menor que a idade de todos os clientes de 'Belo Horizonte'
+27) Selecione todos os clientes cuja idade é menor que a idade de todos os clientes de 'Belo Horizonte' (estude o slide de SUBCONSULTAS SQL para resolver esta questão)
 
 ## Solução
 
