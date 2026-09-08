@@ -1,16 +1,8 @@
 ## Aulas das disciplinas
 
-Este repositório contém as aulas das seguintes disciplinas:
+Este repositório contém as aulas de várias disciplinas. 
 
-- [Banco de Dados](banco_dados)
-- [Engenharia de Software I](eng_soft1)
-- [Engenharia de Software II](eng_soft2)
-- [Microsoft Excel - Básico ao Avançado](excel)
-- [Modelagem de Banco de Dados](mod_db)
-- [Redes de Computadores](redes)
-- [Segurança e Auditoria de Redes](seg_redes)
-- [Tecnologia na Educação](tecnologia_escola)
-- [Trabalho de Conclusão de Curso (instruções para escrita/defesa)](tcc)
+Cada pasta contém os arquivos de cada disciplina, incluindo slides, códigos e exercícios.
 
 ## Configurações do VSCode
 
