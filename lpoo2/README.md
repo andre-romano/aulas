@@ -17,6 +17,7 @@ As aulas podem ser acessadas [nesta pasta compartilhada](https://drive.google.co
 
 ## Tutoriais
 **Tutoriais técnicos**:
+- [Conceitos centrais de Programacao Orientada a Objetos](https://www.alura.com.br/artigos/poo-programacao-orientada-a-objetos)
+- [Princípios S.O.L.I.D.](https://www.estrategiaconcursos.com.br/blog/principios-solid-tse-ti/)
 - [Padrões de arquitetura](https://www.alura.com.br/artigos/padroes-arquiteturais-arquitetura-software-descomplicada)
 - [Padrões de projeto](https://refactoring.guru/pt-br/design-patterns/)
-- [Princípios S.O.L.I.D.](https://www.estrategiaconcursos.com.br/blog/principios-solid-tse-ti/)
