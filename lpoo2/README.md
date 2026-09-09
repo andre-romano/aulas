@@ -21,6 +21,8 @@ As aulas podem ser acessadas [nesta pasta compartilhada](https://drive.google.co
 - [4 - Acoplamento, Coesão, Principios DRY / KISS / YAGNI](./4_acoplamento_coesao.md)
 - [5 - Princípios SOLID](./5_solid.md)
 - [6 - Diretrizes e Boas Práticas de Desenvolvimento](./6_boas_praticas.md)
+- [7 - Estilos de Arquiteturas](./7_estilos_de_arquiteturas.md)
+- [8 - Padrões de Arquiteturas](./8_padroes_de_arquiteturas.md)
 
 ## Video-aulas 
 - [1 - Classes e Objetos](https://www.youtube.com/watch?v=8bM9YW7yffI&list=PLqsF5rntN2nYn8urY0JKGif48hqSZwUKM)
