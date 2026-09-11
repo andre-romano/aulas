@@ -23,7 +23,8 @@ As aulas podem ser acessadas [nesta pasta compartilhada](https://drive.google.co
 - [6 - Diretrizes e Boas Práticas de Desenvolvimento](./6_boas_praticas.md)
 - [7 - Estilos de Arquiteturas](./7_estilos_de_arquiteturas.md)
 - [8 - Padrões de Arquiteturas](./8_padroes_de_arquiteturas.md)
-
+- [9 - Padrões de Projeto](./9_padroes_de_projeto.md)
+  
 ## Video-aulas 
 - [1 - Classes e Objetos](https://www.youtube.com/watch?v=8bM9YW7yffI&list=PLqsF5rntN2nYn8urY0JKGif48hqSZwUKM)
 - [2 - Polimorfismo](https://www.youtube.com/watch?v=3fCIb5a81Fk&list=PLqsF5rntN2nbvoqNnrTsvTsp-mNYi5dNV)
