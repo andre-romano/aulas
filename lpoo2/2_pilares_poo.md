@@ -17,11 +17,19 @@
     - [Atributo privado (``__nome_do_atributo``)](#atributo-privado-__nome_do_atributo)
   - [5.2. Getters e Setters](#52-getters-e-setters)
 - [Exercícios para fixação](#exercícios-para-fixação)
-  - [Exercício 1: Herança](#exercício-1-herança)
-  - [Exercício 2: Sistema de veículos](#exercício-2-sistema-de-veículos)
-  - [Exercício 3: Sobreposicao de metodos](#exercício-3-sobreposicao-de-metodos)
-  - [Exercício 4: Funcionário especializado](#exercício-4-funcionário-especializado)
-  - [Exercício 5: Sistema de funcionários](#exercício-5-sistema-de-funcionários)
+  - [Exercício 1](#exercício-1)
+  - [Exercício 2](#exercício-2)
+  - [Exercício 3](#exercício-3)
+  - [Exercício 4](#exercício-4)
+  - [Exercício 5](#exercício-5)
+  - [Exercício 6](#exercício-6)
+- [Estudos de caso (para fixacao do conteudo)](#estudos-de-caso-para-fixacao-do-conteudo)
+  - [Estudo de caso 1](#estudo-de-caso-1)
+  - [Estudo de caso 2](#estudo-de-caso-2)
+  - [Estudo de caso 3](#estudo-de-caso-3)
+  - [Estudo de caso 4](#estudo-de-caso-4)
+  - [Estudo de caso 5](#estudo-de-caso-5)
+- [Solucao dos Exercicios](#solucao-dos-exercicios)
 
 
 # 1. Os 4 pilares da POO
@@ -385,12 +393,9 @@ conta.sacar(200)
 
 No Java ou C++, palavras reservadas sao usadas para indicar quem pode acessar cada atributo ou método. 
 - Essas palavras sao chamadas de **modificadores de acesso**:
-
-```text
-private
-protected
-public
-```
+  - private
+  - protected
+  - public
 
 Porem, **Python nao usa modificadores de acesso**. 
 - Python usa convencoes na hora de nomear atributos e metodos
@@ -574,7 +579,7 @@ pessoa1.set_idade(25)
 
 # Exercícios para fixação
 
-## Exercício 1: Herança
+## Exercício 1
 
 Crie:
 
@@ -585,21 +590,16 @@ Funcionario
 ```
 
 A classe `Funcionario` deve possuir:
-
-```text
-nome
-salario
-```
+- `nome` (protegido)
+- `salario` (protegido)
+- `calcular_beneficio()` (publico, sem implementacao)
 
 Os atributos acima devem ser atributos protegidos.
 
-Cada subclasse deve implementar:
+Cada subclasse deve implementar `calcular_beneficio()`.
 
-```text
-calcular_beneficio()
-```
-
-Crie uma lista de funcionarios usando:
+Crie uma lista de funcionarios usando `funcionarios = []`.
+- Use o método `append()` da lista para adicionar objetos de cada subclasse:
 
 ```python
 funcionarios = []
@@ -613,12 +613,7 @@ funcionarios.append(tecnico)
 # adicione os demais funcionarios aqui, usando metodo .append()
 ```
 
-Em seguida, use polimorfismo e loops para calcular os benefícios de vários funcionários:
-
-```python
-for funcionario in funcionarios:
-    funcinario.calcular_beneficio()
-```
+Em seguida, use polimorfismo e loops para calcular os benefícios de vários funcionários.
 
 Responda o seguinte:
 1. Quem é a classe pai?
@@ -626,135 +621,118 @@ Responda o seguinte:
 3. Os atributos sao publicos, protegidos ou privados? Porque?
 4. As classes filhas tem acesso aos atributos definidos na classe pai? Explique e justifique.
 
-## Exercício 2: Sistema de veículos
+## Exercício 2
 
-Crie uma abstração:
+Crie um classe ``Veiculo``, contendo:
+- ``consumo_km_por_litro`` (atributo privado)
+- ``calcular_consumo(km_rodados)`` (método publico)
 
-```text
-Veiculo
-```
+``calcular_consumo(km_rodados)`` calcula o consumo de combustível do veículo (em Litros), dado a distância percorrida em quilômetros.
+- Considere que a fórmula para calcular o consumo é: 
+  - ``consumo = km_rodados / consumo_km_por_litro``
 
-e as classes:
+E as classes concretas:
+- ``Moto`` (eficiencia de consumo 25 km/l)
+- ``Carro`` (eficiencia de consumo 12 km/l)
+- ``Caminhao`` (eficiencia de consumo 8 km/l)
 
-```text
-Carro
-Moto
-Caminhao
-```
+Peça ao usuário para digitar ao menos um veiculo de cada classe (``Carro``, ``Moto`` e ``Caminhao``).
 
-Todas devem possuir o método:
+Armazene os veiculos em uma lista.
 
-```text
-calcular_consumo()
-```
+Utilize polimorfismo e loop ``for`` para exibir o consumo.
 
-Peça ao usuário para digitar ao menos um veiculo de cada classe (Carro, Moto e Caminhao).
-
-Armazene os veiculos em uma lista e utilize polimorfismo para exibir o consumo.
-
-**LEMBRETE**: Voce precisara de atributos para guardar dados do consumo de cada veiculo.
-
-## Exercício 3: Sobreposicao de metodos
+## Exercício 3
 
 Crie:
 
+```text
 Funcionario
 ├── Professor
 └── Tecnico
+```
 
-A classe Funcionario deve possuir:
+A classe ``Funcionario`` deve possuir:
+- ``nome`` (privado)
+- ``salario`` (protegido)
+- ``calcular_beneficio()`` (publico, sem implementacao)
+- ``mostrar_dados()`` (publico)
 
-nome
-salario
+``mostrar_dados()`` deve mostrar o nome e salario do funcionario.
 
-e o método:
-
-mostrar_dados()
-
-Mostrar_dados() deve mostrar o nome e salario do professor.
-
-As subclasses devem sobrescrever:
-
-calcular_beneficio()
-
-calcular_beneficio() deve calcular um percentual do salario do funcionário, e retornar ele.
-
-Considere:
-
-Professor → benefício = 20% do salário
-Tecnico   → benefício = 10% do salário
+As subclasses devem sobrescrever ``calcular_beneficio()``
+- ``calcular_beneficio()`` deve calcular um percentual do salario do funcionário, e retornar ele, conforme abaixo:
+  - Professor → benefício = 20% do salário
+  - Tecnico   → benefício = 10% do salário
 
 Crie objetos de ambas as classes e teste os métodos.
 
 Faça ``print()`` onde for necessario para testar seus metodos e classes.
 
-## Exercício 4: Funcionário especializado
+Verifique se o método ``mostrar_dados()`` funciona corretamente para ambas as subclasses.
+
+Verifique se é possivel acessar os atributos privados ``nome`` e ``salario`` dentro das classes concretas (``Professor`` e ``Tecnico``).
+
+## Exercício 4
 
 Crie:
 
+```text
 Funcionario
 ├── Professor
 └── Tecnico
+```
 
-Funcionario deve receber:
+A classe ``Funcionario`` deve receber:
+- ``nome`` (protegido)
+- ``salario`` (protegido)
 
-nome
-salario
+``Professor`` deve receber:
+- ``nome`` (protegido)
+- ``salario`` (protegido)
+- ``disciplina`` (privado)
 
-Professor deve receber:
-
-nome
-salario
-disciplina
-
-Tecnico deve receber:
-
-nome
-salario
-setor
+``Tecnico`` deve receber:
+- ``nome`` (protegido)
+- ``salario`` (protegido)
+- ``setor`` (privado)
 
 Os construtores das subclasses devem utilizar ``super()``.
 
 Depois implemente um método ``mostrar_dados()`` em cada classe.
+- O método ``mostrar_dados()`` deve mostrar o nome, salario e disciplina (ou setor) do funcionário.
+- Use `super().mostrar_dados()` para ajudar nesse processo.
 
-## Exercício 5: Sistema de funcionários
+## Exercício 5
 
 Desenvolva um pequeno sistema utilizando os conceitos estudados.
 
 Crie:
 
+```text
 Funcionario
-├── Professor
-└── Tecnico
+├─ Professor
+└─ Tecnico
+```
 
+``Funcionario`` deve possuir:
+- ``nome`` (privado)
+- ``salario`` (privado)
 
-Funcionario deve possuir:
-- nome (atributo protegido)
-- salario (atributo protegido)
+``Funcionario`` tambem possui os métodos:
+- ``get_nome()`` (publico)
+- ``get_salario()`` (publico)
+- ``mostrar_dados()`` (publico)
 
-Os atributos acima devem estar privados.
+``Funcionario`` as classes concretas abaixo devem possuir:
+- ``Professor`` deve possuir:
+  - ``disciplina`` (privado)
+- `Tecnico` deve possuir:
+  - ``setor`` (privado)
 
-Funcionario tambem possui os métodos:
-- get_nome()
-- get_salario()
-- mostrar_dados()
-
-Além dos atributos herdados de Funcionario, Professor deve possuir:
-- disciplina (atributo privado)
-
-Professor deve implementar:
-- calcular_beneficio()
-
-Além dos atributos herdados, o Tecnico deve possuir:
-- setor (atributo privado)
-
-Tecnico deve implementar:
-- calcular_beneficio()
-
-Considere:
-
-Professor → 20%
-Tecnico → 10%
+Ambas as classes concretas devem implementar ``calcular_beneficio()``, considerando os seguintes percentuais de benefício:
+- ``Professor`` → 20%
+- ``Tecnico`` → 10%
 
 Utilize ``super()`` nos construtores.
 
@@ -763,10 +741,230 @@ Depois crie:
 ``funcionarios = []``
 
 Adicione pelo menos:
+- 3 professores
+- 3 técnicos
 
-3 professores
-3 técnicos
+Finalmente, utilize um loop ``for`` e polimorfismo para chamar os métodos apropriados.
 
-Finalmente:
+## Exercício 6
 
-Utilize um loop for e  polimorfismo para chamar os métodos apropriados.
+Considere:
+
+```python
+class Conta:
+    def __init__(self):
+        self.saldo = 0
+
+    def depositar(self, valor):
+        if valor > 0:
+            self.saldo += valor
+
+    def sacar(self, valor):
+        if 0 < valor <= self.saldo:
+            self.saldo -= valor    
+```
+
+Identifique as assertivas corretas (explique e justifique suas respostas):
+
+**I.** Quem usa ``conta.depositar(100)`` precisa conhecer como o ``saldo`` é armazenado internamente. 
+
+**II.** A abstração está relacionada a esconder do usuário da classe os detalhes de implementação de depositar() e sacar(). 
+
+**III.** Se a classe Conta for reescrita internamente (por exemplo, guardando o saldo em centavos), o código que apenas chama conta.depositar(100) não precisa mudar, desde que a interface do método permaneça a mesma. 
+
+**IV.** Abstração e Encapsulamento são exatamente a mesma coisa, apenas com nomes diferentes.
+
+# Estudos de caso (para fixacao do conteudo)
+
+Cada estudo de caso abaixo apresenta um código com problemas. Assim, para cada estudo de caso proposto, faça o que se pede abaixo:
+
+1. Identifique os erros ou problemas presentes no código, bem como violações de princípios de POO.
+2. Refatore o código, corrigindo os problemas encontrados.
+3. Justifique cada correção feita, explicando qual pilar da POO ela está respeitando.
+
+**DICA**: Execute o código antes e depois das correções para verificar se ele funciona corretamente.
+
+## Estudo de caso 1
+
+```python
+class ItemAcervo:
+    def __init__(self, titulo, autor):
+        self.titulo = titulo
+        self.autor = autor
+
+    def emprestar(self):
+        print("Item emprestado")
+
+
+class Livro(ItemAcervo):
+    def __init__(self, titulo, autor, numero_paginas):
+        self.numero_paginas = numero_paginas
+        print("Livro criado")
+
+    def emprestar(self, dias):
+        print("Livro '", self.titulo, "' contem ", self.numero_paginas, " paginas e esta emprestado por ", dias, " dias")
+
+
+class Revista(ItemAcervo):
+    def emprestar(self):
+        print("Revista", self.titulo, "emprestada por 7 dias")
+
+revista1 = Revista("Superinteressante", "Vários autores")
+revista1.emprestar()
+
+livro1 = Livro("Dom Casmurro", "Machado de Assis", 256)
+print(livro1.titulo)
+
+itens_do_acervo = [livro1, revista1]
+for item in itens_do_acervo:
+    item.emprestar()
+```
+
+## Estudo de caso 2
+
+O código abaixo funciona corretamente, porém ele nao faz uso de polimorfismo. 
+
+Indique porque isso seria um problema, e refatore o código para que ele use polimorfismo.
+
+```python
+class Personagem:
+    def __init__(self, nome, tipo):
+        self.nome = nome
+        self.tipo = tipo
+
+
+def atacar(personagem):
+    if personagem.tipo == "guerreiro":
+        print(personagem.nome, "ataca com a espada")
+    elif personagem.tipo == "mago":
+        print(personagem.nome, "ataca com uma bola de fogo")
+    elif personagem.tipo == "arqueiro":
+        print(personagem.nome, "ataca com flechas")
+    else:
+        print(personagem.nome, "não sabe atacar")
+
+
+personagens = [
+    Personagem("Thorin", "guerreiro"),
+    Personagem("Elara", "mago"),
+    Personagem("Robin", "arqueiro"),
+]
+
+for p in personagens:
+    atacar(p)
+```
+
+## Estudo de caso 3 
+
+```python
+class ItemPedido:
+    def __init__(self, produto, quantidade, preco_unitario):
+        self.produto = produto
+        self.quantidade = quantidade
+        self.preco_unitario = preco_unitario
+
+    def calcular_subtotal(self):
+        return self.quantidade * self.preco_unitario
+
+
+item = ItemPedido("Mouse", 2, 50)
+print("Produto:", item.produto,"- Preco: ", item.preco_unitario, " - Quantidade: ", item.quantidade, " - Subtotal: ", item.calcular_subtotal())
+
+item.quantidade = -5
+print("Produto:", item.produto,"- Preco: ", item.preco_unitario, " - Quantidade: ", item.quantidade, " - Subtotal: ", item.calcular_subtotal())
+
+item.preco_unitario = 0
+print("Produto:", item.produto,"- Preco: ", item.preco_unitario, " - Quantidade: ", item.quantidade, " - Subtotal: ", item.calcular_subtotal())
+```
+
+## Estudo de caso 4 
+```python
+class Usuario:
+    def __init__(self, nome, tipo_plano, minutos_assistidos):
+        self.nome = nome
+        self.tipo_plano = tipo_plano
+        self.minutos_assistidos = minutos_assistidos
+
+
+usuario1 = Usuario("Bianca", "premium", 340)
+
+if usuario1.tipo_plano == "premium":
+    limite = 10000
+else:
+    limite = 300
+
+minutos_restantes = limite - usuario1.minutos_assistidos
+print(usuario1.nome, "ainda pode assistir", minutos_restantes, "minutos")
+```
+
+## Estudo de caso 5
+
+Este código combina problemas relacionados aos quatro pilares ao mesmo tempo.
+
+```python
+class Profissional:
+    def __init__(self, nome, registro):
+        self.nome = nome
+        self.registro = registro
+
+    def atender(self, paciente):
+        print(self.nome, "atende", paciente.nome)
+
+
+class Medico(Profissional):
+    def __init__(self, nome, registro, especialidade):
+        self.especialidade = especialidade
+        super().__init__(nome, registro)
+
+
+class Enfermeiro(Profissional):
+    def atender(self, paciente):
+        print(self.nome, "faz triagem de", paciente.nome)
+
+
+class Paciente:
+    def __init__(self, nome, diagnostico):
+        self.nome = nome
+        self.diagnostico = diagnostico
+
+    def get_diagnostico(self):
+        return self.__diagnostico
+
+
+def realizar_atendimento(profissional, paciente):
+    if isinstance(profissional, Medico):
+        print(profissional.nome, "(médico) atende", paciente.nome)
+    elif isinstance(profissional, Enfermeiro):
+        print(profissional.nome, "(enfermeiro) atende", paciente.nome)
+
+
+medico1 = Medico("Dra. Helena", "CRM123", "Cardiologia")
+enfermeiro1 = Enfermeiro("João", "COREN456")
+paciente1 = Paciente("Sr. Ari", "Hipertensão")
+
+realizar_atendimento(medico1, paciente1)
+realizar_atendimento(enfermeiro1, paciente1)
+
+paciente1.diagnostico = "Sem diagnóstico"
+print(paciente1.get_diagnostico())
+```
+
+Responda:
+1. Identifique pelo menos quatro problemas distintos no código acima. Para cada um, indique:
+   1. O trecho de código onde ele ocorre;
+   2. Qual pilar da POO (Abstração, Herança, Polimorfismo ou Encapsulamento) está relacionado ao problema;
+   3. O que exatamente está incorreto ou mal projetado.
+2. Um dos problemas está no construtor de ``Medico``. O que aconteceria se ``Profissional`` tivesse alguma lógica importante de validação dentro do seu ``__init__`` (por exemplo, verificar se registro não está vazio)? Explique o risco de definir ``self.especialidade`` antes de chamar ``super().__init__()``.
+3. A classe ``Paciente`` guarda ``diagnostico`` como atributo público, mas ``get_diagnostico()`` tenta retornar ``self.__diagnostico``. O que acontece ao executar ``print(paciente1.get_diagnostico())``? Isso seria um problema de encapsulamento?
+4. A função ``realizar_atendimento()`` usa ``isinstance()`` para decidir o que imprimir. Reescreva essa função para que ela simplesmente chame ``profissional.atender(paciente)``, aproveitando o polimorfismo já existente entre ``Medico`` e ``Enfermeiro``. O que precisa ser ajustado nas classes para que essa chamada produza as mensagens corretas?
+5. Refatore o código completo, corrigindo todos os problemas identificados nos itens anteriores.
+6. Justifique, pilar a pilar, como a versão refatorada resolve os problemas da versão original:
+   1. Herança
+   2. Polimorfismo
+   3. Encapsulamento
+   4. Abstração
+
+# Solucao dos Exercicios
+
+A solucao dos exercicios e estudos de caso estao disponiveis no arquivo [`2_solucao_exercicios.md`](./2_solucao_exercicios.md) que acompanha este material.
+
