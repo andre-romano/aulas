@@ -19,6 +19,7 @@
     - [3. O bug de get\_diagnostico()](#3-o-bug-de-get_diagnostico)
     - [4. **Reescrevendo ``realizar_atendimento()``**](#4-reescrevendo-realizar_atendimento)
     - [5. Código completo refatorado:](#5-código-completo-refatorado)
+    - [6. Justificativa](#6-justificativa)
 
 
 ## Exercicio 1
@@ -625,3 +626,10 @@ realizar_atendimento(enfermeiro1, paciente1)
 paciente1.set_diagnostico("Sem diagnóstico")
 print(paciente1.get_diagnostico())
 ```
+
+### 6. Justificativa
+
+- **Herança**: ``Medico.__init__()`` agora chama ``super().__init__(nome, registro)`` como primeira instrução, garantindo que a parte herdada do objeto seja inicializada (e eventualmente validada) antes de qualquer atribuição própria da subclasse.
+- **Polimorfismo**: ``realizar_atendimento()`` passou a apenas chamar ``profissional.atender(paciente)``. Isso funciona para ``Medico``, ``Enfermeiro``, ou qualquer nova subclasse de ``Profissional`` criada no futuro, sem exigir nenhuma alteração nessa função.
+- **Encapsulamento**: ``nome`` e ``diagnostico`` de ``Paciente`` viraram atributos privados (``__nome``, ``__diagnostico``), acessados/alterados somente por ``get_nome()``, ``get_diagnostico()`` e ``set_diagnostico()``, corrigindo o ``AttributeError`` original e impedindo que código externo sobrescreva diagnostico sem controle.
+- **Abstração**: ao eliminar o ``isinstance()``, quem chama ``realizar_atendimento()`` não precisa mais saber que existem as classes ``Medico`` e ``Enfermeiro``, só precisa saber que todo ``Profissional`` sabe ``atender()``. A diferença de comportamento fica escondida dentro de cada classe.
