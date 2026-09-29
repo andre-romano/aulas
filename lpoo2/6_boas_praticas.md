@@ -1,8 +1,8 @@
 
-# Diretrizes e Boas Praticas de Desenvolvimento de Software
+# Modulo 6 - Diretrizes e Boas Praticas de Desenvolvimento de Software
 
 **Sumário** 
-- [Diretrizes e Boas Praticas de Desenvolvimento de Software](#diretrizes-e-boas-praticas-de-desenvolvimento-de-software)
+- [Modulo 6 - Diretrizes e Boas Praticas de Desenvolvimento de Software](#modulo-6---diretrizes-e-boas-praticas-de-desenvolvimento-de-software)
 - [1. O que é uma boa classe?](#1-o-que-é-uma-boa-classe)
 - [2. O que evitar](#2-o-que-evitar)
   - [2.1. Classe "Deus"](#21-classe-deus)

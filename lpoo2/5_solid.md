@@ -1,8 +1,8 @@
 
-# Principios SOLID
+# Modulo 5 - Principios SOLID
 
 **Sumário** 
-- [Principios SOLID](#principios-solid)
+- [Modulo 5 - Principios SOLID](#modulo-5---principios-solid)
 - [1. Princípios SOLID](#1-princípios-solid)
   - [1.1. S — Single Responsability Principle (SRP ou Princípio da Responsabilidade Única)](#11-s--single-responsability-principle-srp-ou-princípio-da-responsabilidade-única)
   - [1.2. O — Open/Closed Principle (OCP ou Principio Aberto/Fechado)](#12-o--openclosed-principle-ocp-ou-principio-abertofechado)

@@ -1,7 +1,7 @@
-# Padrões de Projeto em POO
+# Modulo 9 - Padrões de Projeto em POO
 
 **Sumário**
-- [Padrões de Projeto em POO](#padrões-de-projeto-em-poo)
+- [Modulo 9 - Padrões de Projeto em POO](#modulo-9---padrões-de-projeto-em-poo)
   - [1. O que são padrões de projeto?](#1-o-que-são-padrões-de-projeto)
   - [2. Padrões de projeto não são bibliotecas](#2-padrões-de-projeto-não-são-bibliotecas)
   - [3. Padrões arquiteturais versus padrões de projeto](#3-padrões-arquiteturais-versus-padrões-de-projeto)

@@ -1,8 +1,8 @@
 
-# Acoplamento, Coesao e Principios DRY, KISS, YAGNI
+# Modulo 4 - Acoplamento, Coesao e Principios DRY, KISS, YAGNI
 
 **Sumário** 
-- [Acoplamento, Coesao e Principios DRY, KISS, YAGNI](#acoplamento-coesao-e-principios-dry-kiss-yagni)
+- [Modulo 4 - Acoplamento, Coesao e Principios DRY, KISS, YAGNI](#modulo-4---acoplamento-coesao-e-principios-dry-kiss-yagni)
   - [1. Acoplamento](#1-acoplamento)
   - [2. Coesão](#2-coesão)
   - [3. Injeção de dependência](#3-injeção-de-dependência)

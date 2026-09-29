@@ -1,8 +1,8 @@
 
-# Pilares da Programacao Orientada a Objetos (POO)
+# Modulo 2 - Pilares da Programacao Orientada a Objetos (POO)
 
 **Sumário**
-- [Pilares da Programacao Orientada a Objetos (POO)](#pilares-da-programacao-orientada-a-objetos-poo)
+- [Modulo 2 - Pilares da Programacao Orientada a Objetos (POO)](#modulo-2---pilares-da-programacao-orientada-a-objetos-poo)
 - [1. Os 4 pilares da POO](#1-os-4-pilares-da-poo)
 - [2. Abstração](#2-abstração)
 - [3. Herança](#3-herança)

@@ -1,7 +1,7 @@
-# Solucao dos Exercicios
+# Solucao dos Exercicios - Módulo 2 (Pilares de POO)
 
 **Sumário**:
-- [Solucao dos Exercicios](#solucao-dos-exercicios)
+- [Solucao dos Exercicios - Módulo 2 (Pilares de POO)](#solucao-dos-exercicios---módulo-2-pilares-de-poo)
   - [Exercicio 1](#exercicio-1)
   - [Exercicio 2](#exercicio-2)
   - [Exercicio 3](#exercicio-3)

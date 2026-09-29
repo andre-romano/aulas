@@ -1,7 +1,7 @@
-# Classes e Objetos: Guia de Estudos
+# Modulo 1 - Classes e Objetos: Guia de Estudos
 
 **Sumário**
-- [Classes e Objetos: Guia de Estudos](#classes-e-objetos-guia-de-estudos)
+- [Modulo 1 - Classes e Objetos: Guia de Estudos](#modulo-1---classes-e-objetos-guia-de-estudos)
   - [1. O que é Programação Orientada a Objetos?](#1-o-que-é-programação-orientada-a-objetos)
   - [2. Mapa mental](#2-mapa-mental)
   - [3. Classe e objeto](#3-classe-e-objeto)

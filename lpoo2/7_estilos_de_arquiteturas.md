@@ -1,7 +1,7 @@
-# Estilos de Arquitetura de Software
+# Modulo 7 - Estilos de Arquitetura de Software
 
 **Sumário**
-- [Estilos de Arquitetura de Software](#estilos-de-arquitetura-de-software)
+- [Modulo 7 - Estilos de Arquitetura de Software](#modulo-7---estilos-de-arquitetura-de-software)
   - [1. O que é arquitetura de software?](#1-o-que-é-arquitetura-de-software)
   - [2. Estilo de Arquitetura X Padrão Arquitetural X Padrão de projeto](#2-estilo-de-arquitetura-x-padrão-arquitetural-x-padrão-de-projeto)
     - [2.1. Estilo de Arquitetura](#21-estilo-de-arquitetura)
