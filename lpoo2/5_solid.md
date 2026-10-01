@@ -9,6 +9,7 @@
   - [1.3. L — Liskov Substitution Principle (LSP ou Principio de Substituicao de Liskov)](#13-l--liskov-substitution-principle-lsp-ou-principio-de-substituicao-de-liskov)
   - [1.4. I — Interface Segregation Principle (ISP ou Principio de Segregacao de Interfaces)](#14-i--interface-segregation-principle-isp-ou-principio-de-segregacao-de-interfaces)
   - [1.5. D — Dependency Inversion Principle (DIP ou Principio de Inversao de Dependencia)](#15-d--dependency-inversion-principle-dip-ou-principio-de-inversao-de-dependencia)
+  - [1.6. Resumo dos princípios SOLID](#16-resumo-dos-princípios-solid)
 - [Exercícios para fixação](#exercícios-para-fixação)
   - [Exercício 1](#exercício-1)
   - [Exercício 2](#exercício-2)
@@ -88,6 +89,9 @@ O objetivo não é "ter muitas classes".
 O objetivo é ter **RESPONSABILIDADES BEM DEFINIDAS**.
 - *"Cada classe faz uma tarefa bem feita, e uma somente."*
 
+**Exercicios de Fixacao**: 
+- [Exercício 1](#exercício-1)
+
 ## 1.2. O — Open/Closed Principle (OCP ou Principio Aberto/Fechado)
 
 Uma entidade deve estar **aberta para extensão e fechada para modificação**.
@@ -133,6 +137,9 @@ Agora o sistema pode receber diferentes estratégias de desconto sem modificar o
 
 Essa abordagem descrita acima é a base que norteia **padroes de projeto** de engenharia de software avançados, como o ``Startegy`` (que veremos mais a frente no curso).
 
+**Exercicios de Fixacao**: 
+- [Exercício 2](#exercício-2)
+
 ## 1.3. L — Liskov Substitution Principle (LSP ou Principio de Substituicao de Liskov)
 
 O Princípio da Substituição de Liskov estabelece que **objetos de uma subclasse devem poder substituir objetos da classe-base** sem quebrar as expectativas do programa.
@@ -148,6 +155,9 @@ Exemplo:
 A lição principal é:
 
 > Herança deve preservar o comportamento esperado da classe-pai (interface previamente definida).
+
+**Exercicios de Fixacao**: 
+- [Exercício 3](#exercício-3)
 
 ## 1.4. I — Interface Segregation Principle (ISP ou Principio de Segregacao de Interfaces)
 
@@ -201,6 +211,9 @@ class FuncionarioTrabalhaDirige(TrabalharInterface, DirigirInterface):
         print("Eu dirijo")
 ```
 
+**Exercicios de Fixacao**: 
+- [Exercício 4](#exercício-4)
+
 ## 1.5. D — Dependency Inversion Principle (DIP ou Principio de Inversao de Dependencia)
 
 Módulos de alto nível não devem depender diretamente de implementações concretas.
@@ -245,6 +258,32 @@ Exemplo:
 sistema = Sistema(BancoDeDadosDeTeste())
 ```
 
+**Exercicios de Fixacao**: 
+- [Exercício 5](#exercício-5)
+- [Exercício 6](#exercício-6)
+
+## 1.6. Resumo dos princípios SOLID
+
+- **S - Single Responsability Principle (SRP ou Princípio da Responsabilidade Única)**  
+  - Uma classe deve possuir **UMA RESPONSABILIDADE** bem definida.
+  - *"**Sem classes Deus**: usar varias classes pequenas, com responsabilidades bem definidas.*
+- **O - Open/Closed Principle (OCP ou Princípio do Aberto/Fechado)**  
+  - As entidades de software devem estar abertas para extensão, mas fechadas para modificação.
+  - *Um sistema deve, sempre que possivel, **usar interfaces e abstrações** (ex: classes abstratas) para permitir a extensão sem modificar o código existente (classes concretas).*
+- **L - Liskov Substitution Principle (LSP ou Princípio da Substituição de Liskov)**  
+  - Objetos de uma superclasse devem ser substituíveis por objetos de suas subclasses sem que isso afete o funcionamento do programa.
+  - *Herança deve **preservar o comportamento esperado da classe-pai** (interface previamente definida).*
+    - **Exemplo**: Todo ``Quadrado`` é um ``Retangulo``, mas nem todo ``Retangulo`` é um ``Quadrado``.
+- **I - Interface Segregation Principle (ISP ou Principio de Segregacao de Interfaces)**  
+  - *Classes não devem ser obrigados a ter métodos que não sao utilizados*.
+- **D - Dependency Inversion Principle (DIP ou Principio de Inversao de Dependencia)**  
+  - Módulos de alto nível não devem depender diretamente de implementações concretas. Eles devem depender de abstrações.
+  - *Evitar uso direto de classes concretas, **usar sempre que possivel o polimorfismo** (interfaces, classes abstratas, etc).*
+
+**Exercicios de Fixacao**: 
+- [Exercício 7](#exercício-7)
+- [Exercício 8](#exercício-8)
+ 
 # Exercícios para fixação
 
 ## Exercício 1

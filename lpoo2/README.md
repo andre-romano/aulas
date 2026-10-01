@@ -20,10 +20,11 @@ As aulas podem ser acessadas [nesta pasta compartilhada](https://drive.google.co
 - [3 - Classes Abstratas, Associacao e Composicao](./3_classe_abstrata_composicao.md)
 - [4 - Acoplamento, Coesão, Principios DRY / KISS / YAGNI](./4_acoplamento_coesao.md)
 - [5 - Princípios SOLID](./5_solid.md)
-- [6 - Diretrizes e Boas Práticas de Desenvolvimento](./6_boas_praticas.md)
-- [7 - Estilos de Arquiteturas](./7_estilos_de_arquiteturas.md)
+- [6 - Diretrizes e Boas Práticas de Desenvolvimento - PARTE 1](./6_boas_praticas_parte_1.md)
+- [7 - Diretrizes e Boas Práticas de Desenvolvimento - PARTE 2](./7_boas_praticas_parte_2.md)
 - [8 - Padrões de Arquiteturas](./8_padroes_de_arquiteturas.md)
 - [9 - Padrões de Projeto](./9_padroes_de_projeto.md)
+<!-- - [7 - Estilos de Arquiteturas](./7_estilos_de_arquiteturas.md) -->
   
 ## Video-aulas 
 - [1 - Classes e Objetos](https://www.youtube.com/watch?v=8bM9YW7yffI&list=PLqsF5rntN2nYn8urY0JKGif48hqSZwUKM)

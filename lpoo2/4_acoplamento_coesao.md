@@ -16,6 +16,7 @@
     - [Exercício 3](#exercício-3)
     - [Exercício 4](#exercício-4)
     - [Exercício 5](#exercício-5)
+    - [Exercício 6](#exercício-6)
 
 
 ## 1. Acoplamento
@@ -40,6 +41,9 @@ Buscamos, em geral **BAIXO ACOPLAMENTO**.
 - Isto é, tornar o sistema **menos dependente possível de implementacoes concretas, e mais voltado a interfaces/polimorfismo**.
 - **Reduzir hierarquias grandes** (classe A que herda de B que herda de C e assim sucessivamente), e utilizar **mais composicao**.
 - Composição pode ajudar a reduzir o acoplamento porque permite substituir componentes utilizados por um objeto sem precisar alterar a hierarquia de classes.
+
+**Exercicio de Fixacao**
+- [Exercicio 1](#exercício-1)
 
 **Codigo com BAIXO ACOPLAMENTO é mais facil de dar manutencao**
 
@@ -108,6 +112,9 @@ class ContaBancaria:
 Nosso alvo aqui é atingir **ALTA COESAO** em **todas as classes**.
 - Codigo altamente coeso é mais facil de dar manutencao (alterar o codigo, seja pra corrigir bugs ou inserir recursos no sistema)
 
+**Exercicio de Fixacao**
+- [Exercicio 2](#exercício-2)
+
 ## 3. Injeção de dependência
 
 A injeção de dependência acontece quando um objeto recebe externamente os componentes de que necessita.
@@ -144,6 +151,8 @@ Isso reduz o acoplamento e melhora coesao.
 - **Baixo Acoplamento**: ``UsuarioService`` chama ``Repositorio`` pra salvar usuario (``UsuarioService`` nao precisa saber como ``Repositorio`` funciona)
 - **Alta Coesao**: `Repositorio` so salva usuario, `UsuarioService` cadastra e chama `Repositorio` pra salvar.
 
+**Exercicio de Fixacao**
+- [Exercicio 3](#exercício-3)
 
 ## 4. Princípio DRY (Don't Repeat Yourself -- Nao Se Repita)
 
@@ -253,6 +262,9 @@ A pergunta importante é:
 Se duas partes do código representam a mesma regra de negócio, eliminá-la pode ser importante.
 - Do contrário, **se a repetição é apenas superficial**, a abstração pode ser desnecessária e até prejudicial.
 
+**Exercicio de Fixacao**
+- [Exercicio 4](#exercício-4)
+
 ## 5. Principio KISS (Keep It Simple -- Mantenha O Código Simples)
 
 **Prefira soluções simples** quando elas atendem aos requisitos.
@@ -322,6 +334,9 @@ Código **simples não significa** código **desorganizado**
 - Uma classe ainda deve possuir responsabilidades bem definidas.
 
 > O objetivo é utilizar a **menor complexidade necessária para resolver** corretamente o problema.
+
+**Exercicio de Fixacao**
+- [Exercicio 5](#exercício-5)
 
 ## 6. Principio YAGNI (You Aren't Gonna Need It -- Voce Nao Vai Precisar Disso)
 
@@ -409,6 +424,9 @@ sem que exista um requisito para essas formas de pagamento.
 **Primeiro resolva os problemas/requisitos reais.**
 - Quando um novo requisito surgir, o código poderá ser ampliado para dar conta da nova demanda.
 
+**Exercicio de Fixacao**
+- [Exercicio 6](#exercício-6)
+
 ## Exercícios para fixação
 
 ### Exercício 1
@@ -459,6 +477,31 @@ Responda:
 
 ### Exercício 3
 
+Considere o sistema de pedidos abaixo:
+
+```python
+class NotificadorEmail:
+    def enviar(self, mensagem):
+        print("E-mail enviado:", mensagem)
+
+
+class PedidoService:
+    def __init__(self):
+        self.notificador = NotificadorEmail()  # instância criada internamente
+
+    def finalizar_pedido(self, pedido):
+        # lógica de finalização do pedido
+        self.notificador.enviar(f"Pedido {pedido} finalizado")
+```
+
+Responda:
+1. `PedidoService` cria sua própria instância de `NotificadorEmail` dentro do `__init__`. Isso é um exemplo de injeção de dependência, ou o oposto disso? Justifique.
+2. O que aconteceria se, mais tarde, fosse necessário notificar o cliente por SMS em vez de e-mail? O código atual permite essa troca com facilidade?
+3. Refatore `PedidoService` para que ele receba o notificador externamente (pelo construtor), de forma que seja possível trocar `NotificadorEmail` por qualquer outra implementação (ex: `NotificadorSMS`) sem modificar `PedidoService`.
+4. Depois da refatoração, `PedidoService` e o notificador ficaram mais ou menos acoplados entre si? E cada classe ficou mais ou menos coesa? Justifique usando os conceitos das seções 1 (Acoplamento) e 2 (Coesão).
+
+### Exercício 4
+
 Considere:
 
 ```python
@@ -475,15 +518,15 @@ Responda:
 3. Refatore o código acima, criando funções conforme necessário.
 4. A sua solução está de acordo com o princípio DRY? Justifique.
 
-### Exercício 4
+### Exercício 5
 
 Considere:
 
 ```python
-def verificar_maioridade(idade):
+def verificar_saldo_superior(saldo, valor):
     resultado = False
 
-    if idade >= 18:
+    if saldo > valor:
         resultado = True
     else:
         resultado = False
@@ -496,31 +539,40 @@ Responda:
 2. Refatore o código acima, criando funções, classes, metodos, atributos, e outros elementos conforme necessário.
 3. Qual princípio está sendo aplicado na refatoração? Justifique.
 
-### Exercício 5
+### Exercício 6
 
-Um sistema foi solicitado com o seguinte requisito:
-> "Cadastre alunos contendo nome, matrícula e endereço."
+Suponha que o professor peça: 
+> "Crie uma classe `Evento` com nome e data."
 
-O programador criou:
+Um aluno entregou a seguinte implementação:
 
 ```python
-class Aluno:
-    def __init__(
-        self,
-        nome,
-        matricula,
-        cpf,
-        rg,
-        endereco,
-        telefone,
-        email,
-        passaporte,
-        idioma,
-        nacionalidade
-    ):
-        ...
+class Evento:
+    def __init__(self, nome, data, local, capacidade_maxima, lista_palestrantes,
+                 patrocinadores, categorias_ingresso, moeda, taxa_cancelamento,
+                 integracao_pagamento_internacional):
+        self.nome = nome
+        self.data = data
+        self.local = local
+        self.capacidade_maxima = capacidade_maxima
+        self.lista_palestrantes = lista_palestrantes
+        self.patrocinadores = patrocinadores
+        self.categorias_ingresso = categorias_ingresso
+        self.moeda = moeda
+        self.taxa_cancelamento = taxa_cancelamento
+        self.integracao_pagamento_internacional = integracao_pagamento_internacional
+
+    def calcular_preco_com_taxa_cancelamento(self):
+        pass
+
+    def converter_moeda(self, moeda_destino):
+        pass
+
+    def integrar_gateway_pagamento_internacional(self):
+        pass
 ```
+
 Responda:
-1. Qual princípio está sendo desrespeitado?
-2. Como você simplificaria a classe?
-3. Explique por que sua solução é melhor do que a apresentada pelo programador. Justifique.
+1. Qual princípio está sendo violado nessa implementação, considerando que o requisito original pedia apenas nome e data? Justifique.
+2. Reescreva a classe `Evento` contendo apenas o que foi efetivamente solicitado pelo requisito.
+3. Suponha que, meses depois, o sistema realmente passe a precisar suportar múltiplas moedas. Isso significa que incluir `converter_moeda()` desde o início teria sido uma boa decisão? Por que o princípio YAGNI defende esperar até esse momento, mesmo sabendo que a funcionalidade "provavelmente" seria necessária no futuro?

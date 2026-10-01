@@ -42,7 +42,7 @@
     "security.workspace.trust.untrustedFiles": "open",
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "php.validate.executablePath": "C:\\xampp\\php\\php\\php.exe",
-    "cSpell.language": "en, pt_br, pt-br, pt",
+    "cSpell.language": "",
     "editor.formatOnSave": true,
     "cSpell.words": [
         "Ormatacao",

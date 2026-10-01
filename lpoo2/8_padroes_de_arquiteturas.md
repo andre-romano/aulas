@@ -1,132 +1,286 @@
-# Modulo 8 - Padrões de Arquitetura de Software
+# Modulo 7 - Padrões de Arquitetura de Software
 
 **Sumário**
-- [Modulo 8 - Padrões de Arquitetura de Software](#modulo-8---padrões-de-arquitetura-de-software)
-  - [1. Arquitetura em camadas (Layered Architecture)](#1-arquitetura-em-camadas-layered-architecture)
-    - [1.1. Camada de apresentação (Presentation layer)](#11-camada-de-apresentação-presentation-layer)
-    - [1.2. Camada de serviço ou de aplicacao (Service ou Application layer)](#12-camada-de-serviço-ou-de-aplicacao-service-ou-application-layer)
-    - [1.3. Camada de domínio (Domain layer)](#13-camada-de-domínio-domain-layer)
-    - [1.4. Camada de persistência (Persistence layer)](#14-camada-de-persistência-persistence-layer)
-    - [1.5. Vantagens e desvantagens](#15-vantagens-e-desvantagens)
-  - [2. Padrao de Arquitetura MVC (Model-View-Controller)](#2-padrao-de-arquitetura-mvc-model-view-controller)
-    - [2.1. Onde MVC é utilizado?](#21-onde-mvc-é-utilizado)
-    - [2.2. Vantagens e desvantagens](#22-vantagens-e-desvantagens)
-  - [Exercícios de fixação](#exercícios-de-fixação)
-    - [Exercício 1](#exercício-1)
-    - [Exercício 2](#exercício-2)
-    - [Exercício 3](#exercício-3)
-    - [Exercício 4](#exercício-4)
-    - [Exercício 5](#exercício-5)
-    - [Exercício 6](#exercício-6)
-    - [Exercício 7](#exercício-7)
-    - [Exercício 8](#exercício-8)
+- [Modulo 7 - Padrões de Arquitetura de Software](#modulo-7---padrões-de-arquitetura-de-software)
+  - [1. O que é arquitetura de software?](#1-o-que-é-arquitetura-de-software)
+  - [2. Estilo de Arquitetura X Padrão Arquitetural X Padrão de projeto](#2-estilo-de-arquitetura-x-padrão-arquitetural-x-padrão-de-projeto)
+    - [2.1. Estilo de Arquitetura](#21-estilo-de-arquitetura)
+    - [2.2. Padrão arquitetural](#22-padrão-arquitetural)
+    - [2.3. Padrão de projeto](#23-padrão-de-projeto)
+    - [2.4. Como diferenciar estilo de arquitetura, padrão arquitetural e padrão de projeto?](#24-como-diferenciar-estilo-de-arquitetura-padrão-arquitetural-e-padrão-de-projeto)
+  - [3. Por que estilo e arquitetura de software sao importantes?](#3-por-que-estilo-e-arquitetura-de-software-sao-importantes)
+  - [4. Conceitos fundamentais](#4-conceitos-fundamentais)
+    - [4.1. Componentes](#41-componentes)
+    - [4.2. Responsabilidades](#42-responsabilidades)
+    - [4.3. Dependências](#43-dependências)
+    - [4.4. Interfaces](#44-interfaces)
+  - [5. Padrao de Arquitetura MVC (Model-View-Controller)](#5-padrao-de-arquitetura-mvc-model-view-controller)
+    - [5.1. Onde MVC é utilizado?](#51-onde-mvc-é-utilizado)
+    - [5.2. Vantagens e desvantagens](#52-vantagens-e-desvantagens)
+  - [Estudos de casos](#estudos-de-casos)
+    - [Estudo de caso 1](#estudo-de-caso-1)
 
 
-## 1. Arquitetura em camadas (Layered Architecture)
+## 1. O que é arquitetura de software?
 
-Uma das arquiteturas mais conhecidas.
+Arquitetura de software é a **organização de alto nível de um sistema** de software.
 
-O software é organizado em camadas, da seguinte forma:
+Ela define principalmente:
+
+- quais são os **principais componentes** do sistema;
+- quais **responsabilidades** cada componente possui;
+- como os componentes se **relacionam**;
+- como os componentes se **comunicam**;
+- onde ficam determinadas **regras**;
+- como **dependências** são organizadas;
+- como **fluxo de informacoes** pelo sistema.
+
+Podemos pensar em **arquitetura como a estrutura do sistema**.
+
+Considere um sistema acadêmico:
 
 ```text
-┌─────────────────────────────┐
-│       Apresentação          │
-├─────────────────────────────┤
-│       Aplicação/Serviço     │
-├─────────────────────────────┤
-│       Domínio/Negócio       │
-├─────────────────────────────┤
-│       Persistência          │
-├─────────────────────────────┤
-│       Banco de Dados        │
-└─────────────────────────────┘
+Sistema Acadêmico
+    ├── Interface
+    ├── Regras de negócio
+    ├── Acesso ao banco
+    ├── Autenticação
+    └── Relatórios
 ```
 
-Cada camada:
-- se **comunica com as camadas adjacentes**,
-- possui **responsabilidades diferentes** (veja descricao abaixo).
+A arquitetura define como essas partes são organizadas.
+- Porem, há **estilos** e **padrões de arquitetura** diferentes, cada um com suas vantagens e desvantagens.
+- A escolha de um estilo ou padrão de arquitetura depende de varios fatores, como veremos abaixo.
 
-### 1.1. Camada de apresentação (Presentation layer)
+## 2. Estilo de Arquitetura X Padrão Arquitetural X Padrão de projeto
 
-Responsável pela **interação com o usuário**, utilizando para isso:
-- HTML + CSS
-- GUI (Qt, Tkinter, etc)
-- CLI (linha de comando)
-- API REST
-- aplicativo mobile
-- outra tecnologia de interface humano computador, com a qual o usuário interage.
+Esses três conceitos são frequentemente confundidos.
 
-**Convencao de nomes**: para classes de apresentação, é recomendado utilizar o sufixo ``Controller`` (ou ``Controlador`` em português).
-- `Controller` vem de controlador, pois a camada de apresentação controla a interação com o usuário.
+### 2.1. Estilo de Arquitetura
 
-### 1.2. Camada de serviço ou de aplicacao (Service ou Application layer)
+Visa responder:
+> Quantos processos existem (um processo EXE, vários processos, etc.) e como eles se comunicam pela rede (TCP/IP, HTTP, etc.)?
 
-**Coordena operações** da aplicação, orquestrando os recursos das outras camadas.
+Exemplo de estilo de Sistema **Monolítico**, onde o sistema é construido para ser **um unico arquivo EXE executável** (um unico processo no sistema operacional):
+
+```text
+                SISTEMA
+┌─────────────────────────────────────┐
+│ Usuários                            │
+│ Vendas                              │
+│ Pagamentos                          │
+│ Estoque                             │
+│ Relatórios                          │
+└─────────────────────────────────────┘
+                   ↓
+             Banco de Dados
+```
+
+Exemplo de estilo de Sistema baseado em **Microserviços**, onde o sistema é construido para ser **dividido em vários arquivos executáveis (EXE)**:
+
+```text
+                  SISTEMA
+    Processo 1               Processo 2
+┌───────────────┐         ┌───────────────┐
+│ Usuários      │         │ Vendas        │
+│ Pagamentos    │         │ Estoque       │
+└───────────────┘         └───────────────┘
+        ↓                        ↓
+  Banco de Dados            Banco de Dados
+```
+
+- Pense em um sistema de Microserviços como um **conjunto de programas pequenos (EXE), escritos como sistemas monolíticos**, cada um com sua própria arquitetura independente.
+
+![](./img/monolith-vs-microservices.jpg)
+
+### 2.2. Padrão arquitetural
+
+É uma **solução comum**, usada de forma recorrente **para organizar sistemas**.
+
+Exemplos:
+- Arquitetura em camadas
+- Model-View-Controller (MVC)
+- Arquitetura Limpa
+- Arquitetura Hexagonal
+- Arquitetura Orientada a Eventos
+
+### 2.3. Padrão de projeto
+
+É uma solução recorrente normalmente aplicada EM UMA ESCALA MENOR, **dentro de uma arquitetura**.
+
+Exemplos:
+- Strategy
+- Factory
+- Observer
+- Adapter
+- Decorator
+- Singleton
+
+Uma arquitetura pode utilizar vários padrões de projeto.
+
+Por exemplo:
+```text
+Arquitetura MVC
+      ├── Observer
+      ├── Strategy
+      └── Singleton
+```
+
+### 2.4. Como diferenciar estilo de arquitetura, padrão arquitetural e padrão de projeto?
+
+Podemos pensar da seguinte forma:
+- **Estilo de arquitetura**: organiza o sistema em processos e a comunicação entre eles
+- **Padrão arquitetural**: quebra o sistema em componentes
+- **Padrão de projeto**: organiza cada componente.
+
+![](./img/architecture_x_design_pattern.jpg)
+
+## 3. Por que estilo e arquitetura de software sao importantes?
+
+Um programa pequeno pode funcionar sem uma arquitetura claramente definida.
+
+Por exemplo:
+
+```python
+print("Cadastrar aluno")
+print("Salvar no banco")
+print("Enviar email")
+```
+
+Entretanto, conforme o sistema cresce, começam a surgir problemas:
+- muitas classes
+- muitas dependências
+- muitos arquivos
+- regras duplicadas
+- código difícil de testar
+- código difícil de modificar
+
+A arquitetura procura organizar essa complexidade.
+
+Uma arquitetura adequada pode contribuir para:
+- manutenção;
+- reutilização;
+- testabilidade;
+- escalabilidade;
+- segurança;
+- substituição de componentes;
+- desenvolvimento por equipes;
+- evolução do sistema.
+
+## 4. Conceitos fundamentais
+
+### 4.1. Componentes
+
+Um componente é uma parte do sistema que possui uma **responsabilidade bem definida**.
 
 Exemplo:
+```text
+Sistema
+   ├── Autenticacao
+   ├── Usuarios
+   ├── Pagamentos
+   ├── Relatorios
+   └── Banco de dados
+```
+
+Um componente pode ser um (ou uma):
+- classe;
+- módulo;
+- pacote;
+- serviço;
+- processo;
+- servidor;
+- microserviço.
+
+A definição depende do nível de abstração desejado. 
+- Nesta disciplina, como iremos trabalhar com Orientacao a Objetos, vamos considerar **componentes = classes**.   
+
+### 4.2. Responsabilidades
+
+Cada componente deve possuir **responsabilidades definidas, separadas entre si**.
+
+Por exemplo:
 ```python
 class UsuarioService:
-    def __init__(self, repositorio):
-        self.repositorio = repositorio
-
     def cadastrar(self, usuario):
-        self.repositorio.salvar(usuario)
+        ...
 ```
 
-**Convencao de nomes**: para classes de serviço, é recomendado utilizar o sufixo ``Service`` (ou ``Servico`` em português).
+Nesse exemplo, o objetivo do componente ``UsuarioService`` é lidar com operações relacionadas ao cadastro.
 
-### 1.3. Camada de domínio (Domain layer)
+Não seria uma boa ideia colocar nele:
+- ``gerar_pdf()``
+- ``enviar_email()``
+- ``calcular_frete()``
+- ``conectar_mysql()``
 
-**Contém regras de negocio** relacionadas ao problema.
+sem que essas operações façam parte de sua responsabilidade.
+
+### 4.3. Dependências
+
+Uma parte do sistema pode depender de outra.
 
 Exemplo:
-```python
-class ContaDomain:
-    def __init__(self, saldo):
-        self.saldo = saldo
-
-    def sacar(self, valor):
-        if valor > self.saldo:
-            raise ValueError("Saldo insuficiente")
-
-        self.saldo -= valor
+```text
+UsuarioController
+      ↓
+UsuarioModel
+      ↓
+Banco de dados
 ```
-Na pratica, a camada de domínio pode ser composta por várias classes, cada uma com suas próprias regras de negócio.
-- Ela também pode ser mesclada com a camada de serviço, dependendo do tamanho e complexidade do sistema.
 
-**Convencao de nomes**: para classes de domínio, é recomendado utilizar o sufixo ``Domain`` (ou ``Dominio`` em português).
+Quanto mais rígidas forem essas dependências, maior tende a ser o acoplamento.
+- Quanto maior o acoplamento, mais difícil será modificar o sistema (isto é, dar manutencao nele).
 
-### 1.4. Camada de persistência (Persistence layer)
+### 4.4. Interfaces
 
-Responsável pelo armazenamento de dados, implementando as operações de leitura e escrita no sistema de armazenamento (banco de dados SQL, NoSQL, arquivos, etc).
+Uma interface representa um **conjunto de operações esperadas (métodos)**.
+
+Em Python podemos representar isso com **classes abstratas com métodos abstratos** e SEM ATRIBUTOS:
 
 ```python
-class UsuarioRepository:
+from abc import ABC, abstractmethod
+
+class RepositorioInterface(ABC):
+    @abstractmethod
+    def salvar(self, usuario):
+        pass
+```
+
+Outra forma de fazer isso é utilizando **protocolos** (``Protocol``) do módulo ``typing``, que é a forma mais moderna de se criar Interfaces no Python:
+
+```python
+from typing import Protocol
+
+class RepositorioInterface(Protocol):
     def salvar(self, usuario):
         ...
 ```
 
-**Convencao de nomes**: para classes de persistência, é recomendado utilizar o sufixo ``Repository`` (ou ``Repositorio`` em português).
+Nesta disciplina, iremos utilizar **classes abstratas** para representar interfaces, pois:
+1. É a forma mais tradicional e compatível com versões antigas do Python;
+2. Tem **validação em tempo de execução (runtime)**, enquanto Protocols nao tem (Protocols so serve pra IDE identificar a interface, coisa que classes abstratas também fazem).
 
----
+- **Validacao em tempo de execucao (runtime)**: Python testa se uma classe concreta implementa todos os métodos da interface (métodos abstratos), e se caso nao implemente, levanta um erro.
+- **Validacao em tempo de desenvolvimento (IDE)**: IDEs como PyCharm, VSCode, etc. conseguem identificar se uma classe concreta implementa todos os métodos da interface (métodos abstratos), e, caso nao implemente, mostra um aviso na IDE. 
+  - O aviso na IDE, porém, **nao impede a execução do código pelo Python, nem gera nenhum tipo de erro quando o código é executado**. O codigo vai rodar normalmente, sem gerar erros, mesmo que a classe concreta nao implemente todos os métodos da interface. 
+  - Logo, a validacao em tempo de desenvolvimento (IDE) é *"menos confiável"* que a validacao em tempo de execucao (runtime).
 
-### 1.5. Vantagens e desvantagens
+Implementações da interface normalmente sao feitas usando **classes concretas**:
 
-**Vantagens:**
-* simples de entender;
-* bastante conhecida;
-* fácil de ensinar;
-* boa para sistemas pequenos e médios;
-* separa responsabilidades.
+```python
+class RepositorioMySQL(RepositorioInterface):
+    def salvar(self, usuario):
+        print("Salvando no MySQL")
 
-**Desvantagens:**
-* pode adicionar complexidade ao sistema;
-* requer mais código para implementar;
-* regras de negócio espalhadas;
-* camadas gigantes (excesso de classes);
-* pode dar mais trabalho do que o necessário para sistemas simples.
+class RepositorioMemoria(RepositorioInterface):
+    def salvar(self, usuario):
+        print("Salvando em memória")
+```
 
-## 2. Padrao de Arquitetura MVC (Model-View-Controller)
+Dessa forma, sistema depende da abstração ``RepositorioInterface`` e nao das implementações concretas (``RepositorioMySQL``, ``RepositorioMemoria``, e tantas outras que surgirem depois).
+
+## 5. Padrao de Arquitetura MVC (Model-View-Controller)
 
 MVC é **um dos padrões de arquitetura de software mais comuns**, sendo usadas em aplicacoes Web, Desktop, Mobile e até frameworks.
 
@@ -173,7 +327,7 @@ class UsuarioController:
         self.view.mostrar_usuario(usuario)
 ```
 
-### 2.1. Onde MVC é utilizado?
+### 5.1. Onde MVC é utilizado?
 
 
 Exemplo:
@@ -188,7 +342,7 @@ Model
 View
 ```
 
-### 2.2. Vantagens e desvantagens
+### 5.2. Vantagens e desvantagens
 
 **Vantagens:**
 * separação de responsabilidades;
@@ -199,177 +353,207 @@ View
 **Desvantagens:**
 * pode adicionar complexidade ao sistema;
 
-## Exercícios de fixação
+**Estudos de caso para fixação**:
+- [Estudo de caso 1](#estudo-de-caso-1)
 
-### Exercício 1
+## Estudos de casos
 
-Considere um sistema de cadastro de alunos, que possui as seguintes funcionalidades:
-- Cadastrar aluno
-- Consultar aluno
-- Alterar aluno
-- Excluir aluno
+### Estudo de caso 1 
 
-Considere que a equipe responsável pelo desenvolvimento do sistema construiu os seguintes componentes:
-- AlunoController
-- AlunoService
-- AlunoDomain
-- AlunoRepository
-
-Responda:
-1. Identifique o padrao de arquitetura utilizado.
-2. Explique a responsabilidade de cada componente.
-3. Exemplifique como cada componente se comunica com os outros.
-
-### Exercício 2
-
-Considere as operações de um sistema academico para gerencimaneto de alunos:
-
-1. Receber o nome digitado pelo usuário
-2. Verificar se o nome está vazio
-3. Cadastrar o aluno
-4. Salvar o aluno no banco
-5. Exibir mensagem na tela
-6. Calcular a média do aluno
-
-Distribua cada operação entre:
-
-- Presentation
-- Service
-- Domain
-- Persistence
-
-Explique por que uma operação não deve ser colocada em qualquer camada simplesmente porque é mais fácil implementá-la naquele local.
-
-### Exercício 3 
-
-Crie uma classe:
+Seja o sistema de gerenciamento de tarefas abaixo, no qual o usuário pode criar, editar e excluir tarefas:
 
 ```python
-class AlunoDomain:
-    ...
+class TarefaModel:
+    # note o ": str" depois do parametro "descricao" do metodo abaixo.
+    # Ele indica que o parametro descricao é do tipo texto (isto é, 
+    # "string" que no python é representada por "str").
+    def __init__(self, descricao: str):
+        self.__descricao = descricao
+        self.__concluida = False
+
+    # note o "-> str" depois do metodo "get_descricao" abaixo. 
+    #   - Ele indica que o metodo retorna uma string (texto).
+    # Isso nao muda o funcionamento do metodo, mas serve como uma "dica" 
+    # para o programador (e para a IDE, que pode fazer testes no codigo
+    # pra ajudar o programador a evitar erros, antes mesmo de rodar o 
+    # programa). 
+    #   - O mesmo vale pra quando colocamos ": str" depois do parametro 
+    # "descricao" do metodo "__init__" acima (é uma dica pra IDE e para 
+    # o programador).
+    def get_descricao(self) -> str:
+        return self.__descricao
+        
+    # note que temos apenas o get, pois nao faz  sentido ter um set 
+    # para descricao, pois a descricao da tarefa nao deve ser alterada
+    # depois de criada.
+
+    # Nao faz sentido chamar o metodo abaixo de get_concluida, pois o
+    # nome get sugere que ele retorna um valor (string, inteiro, etc), 
+    # mas esse metodo nao retorna um valor. 
+    # Ele apenas verifica se a tarefa foi concluida (True) ou nao (False).
+    def is_concluida(self) -> bool:
+        return self.__concluida
+
+    # define a tarefa como concluida (True)
+    def set_concluida(self):
+        self.__concluida = True
+
+
+class TarefasModel:
+    def __init__(self):
+        self._tarefas: list[TarefaModel] = []
+
+    # criamos o metodo pra evitar de repetir o mesmo codigo de 
+    # validacao de indice em varios metodos (principio DRY - 
+    # Don't Repeat Yourself - Nao Se Repita, em portugues).
+    def __validar_indice(self, indice: int):        
+        if indice < 0 or indice >= len(self._tarefas):
+            # raise ValueError("Índice inválido") é uma forma de 
+            # gerar um erro (excecao) no Python. Quando esse erro é 
+            # gerado, o programa para de executar e mostra uma mensagem 
+            # de erro no terminal.
+            raise ValueError("Índice inválido")
+
+    def adicionar_tarefa(self, tarefa: TarefaModel) -> int:
+        self._tarefas.append(tarefa)
+        # Retorna o índice da tarefa adicionada (pra que o 
+        # possamos saber qual é o índice da tarefa adicionada)
+        return len(self._tarefas) - 1  
+
+    def concluir_tarefa(self, indice: int):
+        # testa indice (se é válido) antes de concluir a tarefa
+        self.__validar_indice(indice)
+        # se chegamos ate aqui, o indice é válido (ou seja, nao 
+        # houve erro/excecao na linha acima)
+        self._tarefas[indice].set_concluida()
+
+    def remover_tarefa(self, indice: int):
+        # testa indice (se é válido) antes de remover a tarefa
+        self.__validar_indice(indice)
+        # se chegamos ate aqui, o indice é válido (ou seja, nao
+        # houve erro/excecao na linha acima)
+        self._tarefas.pop(indice)
+
+    def listar_tarefas(self):
+        # retorna uma copia da lista de tarefas, para que o usuario nao
+        # consiga alterar a lista de tarefas diretamente (o que poderia
+        # quebrar a integridade do sistema - e viola o princípio do 
+        # Encapsulamento de POO).
+        return self._tarefas.copy()
+
+# Abaixo, temos uma classe que representa a interface do usuário (View) 
+# do sistema de gerenciamento de tarefas.
+# Ela é responsável por exibir o menu (mostrar dados na tela) e obter 
+# as opções do usuário (interagir com o usuário).
+#   - Quem usa essa classe é o Controller, que é responsável por coordenar 
+# a operação do sistema.
+class TarefasView:
+    def exibir_menu(self):
+        print("\n=== Gerenciador de Tarefas ===")
+        print("1. Adicionar tarefa")
+        print("2. Concluir tarefa")
+        print("3. Remover tarefa")
+        print("4. Listar tarefas")
+        print("5. Sair")
+
+    def obter_opcao_menu(self) -> str:
+        return input("Escolha uma opção do menu acima: ")
+
+    def obter_descricao_tarefa(self) -> str:
+        return input("Digite a descrição da tarefa: ")
+
+    def obter_indice_tarefa(self) -> int:
+        return int(input("Digite o número da tarefa: "))
+
+    def exibir_tarefas(self, tarefas: list[TarefaModel]):
+        if not tarefas:
+            raise ValueError("Nenhuma tarefa cadastrada.")
+        for i, tarefa in enumerate(tarefas):
+            # note que nao precisamos do "else" aqui, pois se
+            # a tarefa nao estiver concluida, o status ja é "[ ]" 
+            # por padrao.
+            status = "[ ]"
+            if tarefa.is_concluida():
+                status = "[X]"    
+            print(f"{i} - {status} {tarefa['descricao']}")
+
+    def exibir_mensagem(self, mensagem):
+        print(mensagem)
+
+
+class TarefaController:
+    def __init__(self):
+        self.__model = TarefasModel()
+        self.__view = TarefasView()
+
+    def executar(self):
+        # O loop abaixo é infinito, e só vai parar quando o usuário 
+        # escolher a opção de sair (5).
+        while True:
+            self.__view.exibir_menu()
+            opcao = self.__view.obter_opcao_menu()
+
+            if opcao == "1":
+                descricao = self.__view.obter_descricao_tarefa()
+                tarefa = TarefaModel(descricao)
+                self.__model.adicionar_tarefa(tarefa)
+                self.__view.exibir_mensagem("Tarefa adicionada!")
+            elif opcao == "2":
+                indice = self.__view.obter_indice_tarefa()
+                self.__model.concluir_tarefa(indice)
+                self.__view.exibir_mensagem("Tarefa concluída!")
+            elif opcao == "3":
+                indice = self.__view.obter_indice_tarefa()
+                self.__model.remover_tarefa(indice)
+                self.__view.exibir_mensagem("Tarefa removida!")
+            elif opcao == "4":
+                tarefas = self.__model.listar_tarefas()
+                self.__view.exibir_tarefas(tarefas)
+            elif opcao == "5":
+                self.__view.exibir_mensagem("Encerrando...")
+                break
+            else:
+                self.__view.exibir_mensagem("Opção inválida!")
+
+# Abaixo, temos o código que inicia o sistema de gerenciamento de tarefas.
+# O loop abaixo é infinito, pois o sistema deve continuar rodando (mesmo 
+# que ocorra uma exceção, no codigo abaixo). Isto é, o sistema roda até que 
+# o usuário escolha a opção de sair.
+while True:
+    #   - Toda excecao deve ser tratada (com try/except) em algum 
+    # lugar do programa, caso contrario o programa vai parar 
+    # de executar e somente mostrar a mensagem de erro no terminal.
+    #   - Tratar uma excecao significa "pegar" a excecao e fazer algo com ela,
+    # como por exemplo mostrar uma mensagem de erro melhor, mais 
+    # organizada, para o usuario (do que so mostrar "Índice inválido").
+    try:
+        # executar o sistema de gerenciamento de tarefas
+        TarefaController().executar()
+    except Exception as e:
+        # se acontecer algum erro (excecao) no codigo acima, o programa nao 
+        # vai parar de executar.
+        #   - Em vez disso, o programa vai mostrar a mensagem de erro usando 
+        # o print() abaixo        
+        print("Erro no sistema: ", e)
+        # depois de mostrar a mensagem de erro, o programa vai continuar rodando,
+        # e vai voltar pro inicio do loop while True, que vai executar o
+        # sistema de gerenciamento de tarefas novamente.
+        #   - Tente remover o loop while True e veja o que acontece quando ocorre um erro (excecao) no sistema de gerenciamento de tarefas. O programa continua rodando?
+        #   - Em seguida, tente remover o try/except e veja o que acontece quando ocorre um erro (excecao) no sistema de gerenciamento de tarefas. O programa continua rodando, ou mostra o erro e termina?
 ```
 
-Ela deve possuir:
-- ``nome`` 
-- ``matricula``
-- ``validar()``
-
-O método ``validar()`` deve verificar se:
-- o nome não está vazio;
-- a matrícula não está vazia.
-
-Utilize uma exceção quando os dados forem inválidos.
-
-Ems seguida, crie uma classe Controller que utilize a classe AlunoDomain para cadastrar um aluno.
-- Trate a exceção no Controller, exibindo uma mensagem de erro para o usuário.
-
-### Exercício 4
-
-Considere:
-
-```python
-class AlunoController:
-    def cadastrar(self, nome, matricula):
-        if nome == "":
-            print("Nome inválido")
-
-        aluno = {
-            "nome": nome,
-            "matricula": matricula
-        }
-
-        banco = MySQL()
-        banco.salvar(aluno)
-
-        print("Aluno cadastrado")
-```
-
-Identifique as responsabilidades que estão misturadas nesse código.
-
-Classifique cada trecho como:
-- Apresentação
-- Serviço
-- Domínio
-- Persistência
-
-Depois explique por que essa implementação não representa adequadamente uma arquitetura em camadas.
-
-Refatore o código para separar as responsabilidades em classes diferentes, de acordo com o padrão de arquitetura em camadas.
-
-### Exercício 5
-
-Crie:
-```python
-class AlunoModel:
-    ...
-```
-
-Ele deve possuir:
-- nome
-- matricula
-- curso
-- mostrar_dados()
-
-O método ``mostrar_dados()`` deve retornar os dados do aluno.
-
-### Exercício 6
-
-Crie:
-```python
-class AlunoView:
-    ...
-```
-
-Implemente:
-- mostrar_aluno(aluno)
-- mostrar_mensagem(mensagem)
-
-``mostrar_aluno(aluno)`` deve receber um objeto AlunoModel e exibir os dados do aluno usando ``print()``.
-
-``mostrar_mensagem(mensagem)`` deve exibir uma mensagem na tela, usando ``print()``.
-
-Exemplo:
-``view.mostrar_mensagem("Aluno cadastrado")``
-
-### Exercício 7
-
-Crie:
-```python
-class AlunoController:
-    ...
-```
-
-Implemente:
-- ``cadastrar_aluno(nome, matricula, curso)``
-
-O Controller deve utilizar as classes abaixo para realizar o cadastro do aluno:
-- ``AlunoModel``
-- ``AlunoView``
-
-O Controller tambem deve:
-- receber os dados;
-- criar o Model;
-- enviar o Model para a View;
-- apresentar a informação.
-
-### Exercício 8
-
-Observe:
-```python
-class AlunoView:
-
-    def cadastrar(self):
-
-        nome = input("Nome: ")
-        matricula = input("Matrícula: ")
-
-        aluno = AlunoModel(nome, matricula)
-
-        banco = MySQL()
-        banco.salvar(aluno)
-```
-
-Responda:
-1. Identifique os problemas dessa implementação.
-2. As responsabilidades que estao contidas na View estão adequadas? Explique.
-3. Refatore o código, de acordo com o padrão de arquitetura MVC.
+Analise o código acima e responda as perguntas abaixo:
+1. Qual é o padrão de arquitetura utilizado no código acima?
+2. Quais são as responsabilidades de cada componente (Model, View e Controller) no código acima?
+3. Explique o passo-a-passo do fluxo de execução do sistema de gerenciamento de tarefas, desde o momento em que o usuário inicia o programa até o momento em que ele escolhe sair do sistema.
+4. O que acontece quando o usuário tenta concluir ou remover uma tarefa que não existe (ou seja, quando o índice informado é inválido)?
+5. O que acontece quando o usuário tenta listar as tarefas, mas não há nenhuma tarefa cadastrada?
+6. Observe os atributos e métodos de ``TarefasController``. 
+   - Ele guarda uma referência para ``self.__model`` e para ``self.__view``. 
+   - Já olhando para os construtores de ``TarefasModel`` e ``TarefasView``, eles guardam alguma referência um para o outro? Explique por que essa ausência de referência direta entre *Model* e *View* é uma característica esperada (e não um esquecimento) no padrão MVC.
+7. Onde está a lógica de negócio do sistema? 
+   - O método ``concluir_tarefa`` está implementado em ``TarefasModel``, e não em ``TarefasController`` nem em TarefaView. Explique por que faz sentido colocar a lógica de "marcar uma tarefa como concluída" dentro do ``Model``, e não em qualquer uma das outras duas classes.
+8. Onde mora a interação com o usuário? 
+   - Todos os ``input()`` e ``print()`` do sistema estão concentrados em ``TarefasView``. O que aconteceria com a testabilidade e a manutenção do sistema se, em vez disso, esses comandos estivessem espalhados dentro de ``TarefasController`` ou de ``TarefasModel``? Dê um exemplo concreto de problema que isso causaria.
+9. Considere que você precisa adicionar uma nova funcionalidade: ``editar a descrição de uma tarefa existente (opção "6" do menu)``. 
+   - Escreva o código necessário em cada uma das 3 classes (``TarefasModel``, ``TarefasView``, ``TarefasController``), criando metodos se necessario. Em seguida, justifique e explique suas escolhas. Não é permitido que ``TarefasView`` acesse a lista ``self._tarefas`` diretamente (violacao de encapsulamento), nem que ``TarefasModel`` contenha qualquer ``print()`` ou ``input()`` (violacao do princípio da responsabilidade única e da arquitetura MVC).
