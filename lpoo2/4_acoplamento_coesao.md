@@ -442,7 +442,7 @@ class Sistema:
         self.banco = BancoDeDados()
 ```
 Responda:
-1. Qual é as dependências entre classes?
+1. Qual sao as dependências entre classes?
 2. Quem é responsável por criar a instância de ``BancoDeDados``? Justifique.
 3. Existe acoplamento entre ``Sistema`` e ``BancoDeDados``? Ele é baixo ou alto? Justifique.
 4. O que aconteceria se fosse necessário substituir ``BancoDeDados`` por outra implementação? Explique e justifique.
