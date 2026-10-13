@@ -106,8 +106,7 @@ Crie um menu de opções para que o usuário possa interagir com o sistema, como
 
 Use loops ``for`` e estruturas de decisão ``if/else`` para implementar o menu, garantindo que o usuário possa realizar múltiplas operações até decidir encerrar o programa. Exemplo:
 
-python
-```
+```python
 continue = True
 while continue:
     print("Menu:")
