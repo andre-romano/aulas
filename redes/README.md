@@ -4,10 +4,17 @@ Esta página contém as aulas e demais o conteúdos auxiliares da disciplina.
 
 **Sumário**
 - [Redes de Computadores](#redes-de-computadores)
+  - [Guias de Estudo](#guias-de-estudo)
   - [Projetos](#projetos)
   - [Ferramentas](#ferramentas)
   - [Video-aulas](#video-aulas)
   - [Tutoriais e Conteúdo Complementar](#tutoriais-e-conteúdo-complementar)
+
+## Guias de Estudo
+Material de apoio para estudo da disciplina:
+- [1 - Fundamentos de Redes de Computadores - PARTE 1](./1_fundamentos_parte_1.md)
+- [2 - Fundamentos de Redes de Computadores - PARTE 2](./2_fundamentos_parte_2.md)
+- [3 - Fundamentos de Redes de Computadores - PARTE 3](./2_fundamentos_parte_3.md)
 
 ## Projetos
 
@@ -18,6 +25,7 @@ Os seguintes projetos podem ser passados para você no decorrer da disciplina:
 
 ## Ferramentas
 - [Download do Cisco Packet Tracer](https://www.netacad.com/resources/lab-downloads?courseLang=en-US)
+  - Voce precisará criar uma conta na Cisco Networking Academy para baixar o Packet Tracer.
 - [Download do VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 ## Video-aulas
