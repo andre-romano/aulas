@@ -1,8 +1,8 @@
 
-# Fundamentos de Redes de Computadores - Parte 3
+# Formas de Comunicacao, Modos de Transmissao e Métricas de Desempenho
 
 **Sumário**:
-- [Fundamentos de Redes de Computadores - Parte 3](#fundamentos-de-redes-de-computadores---parte-3)
+- [Formas de Comunicacao, Modos de Transmissao e Métricas de Desempenho](#formas-de-comunicacao-modos-de-transmissao-e-métricas-de-desempenho)
 - [1. Formas de comunicação (Unicast, Broadcast e Multicast)](#1-formas-de-comunicação-unicast-broadcast-e-multicast)
   - [1.1. Unicast (comunicacao 1-1)](#11-unicast-comunicacao-1-1)
   - [1.2. Broadcast (1-para-todos)](#12-broadcast-1-para-todos)
@@ -28,8 +28,11 @@
   - [Parte B — Métricas de desempenho](#parte-b--métricas-de-desempenho)
   - [Parte C — Situações-problema](#parte-c--situações-problema)
 - [6. Atividades Praticas](#6-atividades-praticas)
-  - [Atividade 1 — Análise de protocolos com Wireshark](#atividade-1--análise-de-protocolos-com-wireshark)
-  - [Atividade 2 — Investigação do desempenho da rede](#atividade-2--investigação-do-desempenho-da-rede)
+  - [Atividade 1 — Investigação do desempenho da rede](#atividade-1--investigação-do-desempenho-da-rede)
+  - [Atividade 2 — Simulando Broadcast, Unicast e Colisões (Half-Duplex vs Full-Duplex)](#atividade-2--simulando-broadcast-unicast-e-colisões-half-duplex-vs-full-duplex)
+    - [Passo 1: Montando e configurando a topologia](#passo-1-montando-e-configurando-a-topologia)
+    - [Passo 2: Observando Broadcast e Unicast no Modo de Simulação](#passo-2-observando-broadcast-e-unicast-no-modo-de-simulação)
+    - [Passo 3: Analisando o resultado](#passo-3-analisando-o-resultado)
 
 # 1. Formas de comunicação (Unicast, Broadcast e Multicast)
 
@@ -529,43 +532,8 @@ Isso acontece porque, para jogos interativos, a capacidade de transmissão não 
 14. Um usuário relata que, ao acessar um site, a página demora para carregar, mesmo possuindo uma latencia de 20 ms. Quais métricas de desempenho devem ser analisadas para identificar o problema? Justifique.
 
 # 6. Atividades Praticas
-
-## Atividade 1 — Análise de protocolos com Wireshark
-
-Utilize o Wireshark para observar a comunicação do seu computador.
-
-![atividade wireshark](./img/atividade_2_wireshark.jpg)
-
-Procedimento:
-
-1. Instale e abra o Wireshark.
-2. Selecione a interface de rede utilizada.
-3. Inicie a captura.
-4. Acesse um site.
-5. Interrompa a captura.
-6. Identifique os protocolos presentes.
-
-Procure observar:
-
-- Ethernet.
-- IPv4 ou IPv6.
-- TCP ou UDP.
-- DNS.
-- HTTP ou HTTPS.
-
-Responda:
-
-- Quais endereços MAC aparecem na comunicação?
-- Quais endereços IP aparecem?
-- Quais protocolos estão sendo utilizados?
-- Quais portas TCP ou UDP aparecem?
-- É possível identificar informações de diferentes camadas do modelo OSI?
-
-**Observação**: em HTTPS, o conteúdo da aplicação normalmente está criptografado. 
-- Isso não impede a observação dos cabeçalhos de diversos protocolos envolvidos na comunicação.
-- Somente o conteúdo da aplicação (mensagens, páginas web, etc) não é visível.
   
-## Atividade 2 — Investigação do desempenho da rede
+## Atividade 1 — Investigação do desempenho da rede
 
 Utilize o terminal do Windows ou Linux.
 
@@ -606,3 +574,68 @@ Investigue:
 - Alguns roteadores limitam ou bloqueiam respostas às mensagens utilizadas pelo ``traceroute``.
 
 Para fazer essa atividade, pesquise como usar o comando `ping` e `traceroute` no seu sistema operacional.
+
+## Atividade 2 — Simulando Broadcast, Unicast e Colisões (Half-Duplex vs Full-Duplex)
+
+Nesta atividade, utilizaremos o **Cisco Packet Tracer** para visualizar na prática as formas de comunicação (Unicast e Broadcast) e os modos de transmissão (Half-Duplex e Full-Duplex).
+
+Faça o que se pede abaixo.
+
+### Passo 1: Montando e configurando a topologia
+
+1. Abra o Cisco Packet Tracer.
+2. Na área de equipamentos (canto inferior esquerdo), adicione à área de trabalho:
+   1. **1 Switch** (modelo PT-switch, localizado em *Network Devices > Switches*).
+   2. **1 Hub** (modelo PT-Hub, localizado em *Network Devices > Hubs*).
+   3. **6 Computadores** (PC-PT, localizados em *End Devices*).
+3. Ligue os dispositivos utilizando cabos de cobre (*Copper Straight-Through*), conforme a figura acima.
+4. Configure seus endereços IP, conforme figura acima.
+   1. Clique no **PC0** > aba *Config* > *Fast Ethernet* (interface de rede cabeada).
+   2. Configure o seguinte:
+      1. IPv4 Address: `192.168.1.2`
+      2. Subnet Mask: `255.255.255.0` (o Packet Tracer preencherá automaticamente).
+   3. Repita o processo para os demais PCs, utilizando os endereços IP sequenciais:
+      1. **PC1**: IP `192.168.1.3`
+      2. **PC2**: IP `192.168.1.4`
+      3. E assim por diante.
+
+### Passo 2: Observando Broadcast e Unicast no Modo de Simulação
+
+1. No canto inferior direito da tela, mude do modo **Realtime** para o modo **Simulation**. Isso permitirá ver os pacotes (quadros) trafegando passo a passo.
+2. No painel de simulação:
+   1. Clique em *Show All/None* para limpar os filtros 
+   2. Depois em *Edit Filters* e marque apenas **ICMP** (Ping) e **ARP** (assim veremos apenas os pacotes cujo protocolo é ICMP/ping ou arp).
+3. Selecione a ferramenta **Add Simple PDU** (ícone de uma carta fechada no menu superior).
+4. Clique no **PC1** (origem) e depois no **PC2** (destino).
+5. Clique no botão **Play** no painel de simulação e observe:
+   1. **O que acontece primeiro (Broadcast):** O PC1 enviará um pacote **ARP** (verde) para descobrir quem é o **PC2**. O Switch receberá e enviará para **todas** as portas (Broadcast). O **PC2** responderá, e os demais descartarão.
+      1. Entenda o **ARP** como sendo uma forma de "descobrir" o endereço MAC do destinatário, para que a comunicação possa ocorrer de forma mais eficiente.
+   2. **O que acontece depois (Unicast):** Após descobrir o destinatário, o **PC1** enviará o pacote **ICMP** (Ping), que é a mensagem que pedimos para ser enviada usando a ferramenta de **Add Simple PDU** do Packet Tracer. O Switch encaminhará esse pacote **apenas** para o **PC2** (Unicast 1-1).
+      1. Isto é, o switch ja aprendeu aonde está o destino (mapeamento MAC -> porta de saida), durante o processo de ARP, e agora consegue encaminhar o pacote ICMP diretamente para o **PC2**.
+
+**Passo 3: Observando Half-Duplex e Colisões no Hub**
+
+1. Ainda no modo **Simulation**, delete os cenários anteriores clicando em *``Delete``* no painel de cenários (*``Scenários``* - no canto inferior direito do simulador).
+   1. Quando os cenários sao apagados, o Packet Tracer  remove os pacotes que estavam sendo transmitidos (e que estavam em espera).
+2. Vamos forçar uma comunicação simultânea no **Hub**:
+   1.  Pegue a ferramenta **Add Simple PDU** (carta fechada). Clique no **PC3** e depois no **PC4**.
+   2.  Imediatamente (antes de dar o ``Play``), pegue **outra** carta fechada. Clique no **PC4** e depois no **PC3**.
+3. Clique em **Play** na aba de simulação (``Simulation Panel``) e observe atentamente:
+   1. Os dois pacotes chegarão ao Hub ao mesmo tempo.
+   2. O Hub opera em modo **Half-Duplex** e apenas repassa os sinais elétricos. Como os dois transmitem juntos, os sinais se misturam (há **colisao de pacotes**).
+   3. O Packet Tracer exibirá uma animação de "fogo" (colisão). Os pacotes são destruídos e nenhum dos dois consegue se comunicar (Interferência/Broadcast Storm).
+   4. **Colisao/Interferencia**: Seria o equivalente de duas pessoas falando ao mesmo tempo em uma sala, onde ninguém consegue entender o que o outro está dizendo.
+
+### Passo 3: Analisando o resultado
+
+Responda ao que se pede abaixo, em um documento de texto (Word, LibreOffice, Google Docs, etc):
+
+1. Quando o PC1 enviou o primeiro pacote (ARP) através do Switch, a mensagem foi entregue a quantos dispositivos? 
+   1. Qual forma de comunicação (Unicast, Broadcast ou Multicast) isso representa?
+2. Quando o PC1 enviou o pacote ICMP (Ping) logo em seguida, o pacote foi replicado para todas as portas do Switch? 
+   1. Que forma de comunicação é essa?
+3. O que aconteceu fisicamente no Packet Tracer quando o PC3 e o PC4 tentaram transmitir dados pelo Hub exatamente ao mesmo tempo?
+   1. Porque isso aconteceu?
+   2. Isso aconteceria também se o Hub fosse substituído por um Switch? Teste no simulador, e justifique o resultado encontrado.
+4. Com base no evento observado no Hub, podemos afirmar que ele opera em Simplex, Half-Duplex ou Full-Duplex? Justifique relacionando com a teoria estudada.
+5. E no caso do Switch, podemos afirmar que ele opera em Simplex, Half-Duplex ou Full-Duplex? Justifique relacionando com a teoria estudada.

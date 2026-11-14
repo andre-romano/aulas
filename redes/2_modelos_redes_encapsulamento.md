@@ -1,8 +1,8 @@
 
-# Fundamentos de Redes de Computadores - Parte 2
+# Modelos de referência para redes e Encapsulamento
 
 **Sumário**:
-- [Fundamentos de Redes de Computadores - Parte 2](#fundamentos-de-redes-de-computadores---parte-2)
+- [Modelos de referência para redes e Encapsulamento](#modelos-de-referência-para-redes-e-encapsulamento)
 - [1. Modelos de referência para redes](#1-modelos-de-referência-para-redes)
   - [1.1. Por que precisamos de modelos de referência?](#11-por-que-precisamos-de-modelos-de-referência)
   - [1.2. Modelo OSI](#12-modelo-osi)
@@ -29,7 +29,8 @@
   - [Parte A — Modelos OSI e TCP/IP](#parte-a--modelos-osi-e-tcpip)
   - [Parte B — Encapsulamento](#parte-b--encapsulamento)
 - [7. Atividades Praticas](#7-atividades-praticas)
-  - [Atividade 1 — Análise de protocolos com Wireshark](#atividade-1--análise-de-protocolos-com-wireshark)
+  - [Atividade 1 — Análise de protocolos com Cisco Packet Tracer](#atividade-1--análise-de-protocolos-com-cisco-packet-tracer)
+  - [Atividade 2 — Camadas e encapsulamento com Cisco Packet Tracer](#atividade-2--camadas-e-encapsulamento-com-cisco-packet-tracer)
 
 # 1. Modelos de referência para redes
 
@@ -543,14 +544,43 @@ A nomenclatura tradicional é:
 
 ![encapsulamento em roteador e switch](./img/encapsulation_router_switch.jpg)
 
-**Importante**: o endereço MAC de origem e destino do quadro normalmente muda a cada salto, enquanto os endereços IP de origem e destino geralmente permanecem os mesmos durante o encaminhamento (exceto quando ha um operacao de NAT envolvida - veremos isso mais a frente).
-- Isto é, quando um pacote IP atravessa vários roteadores, o endereço MAC de origem muda para representar o MAC do equipamento que esta enviando o quadro.
-- De forma parecida, o endereço MAC de destino do quadro Ethernet muda tambem, para que este quadro possa ser encaminhado corretamente para o proximo salto.
+**Importante**: o endereço MAC de origem e destino do quadro normalmente muda a cada salto (ex: pc0 → switch → pc2), enquanto os endereços IP de origem e destino geralmente permanecem os mesmos durante o encaminhamento (exceto quando ha um operacao de NAT envolvida - veremos isso mais a frente).
+- Isto é, quando um pacote IP atravessa vários switches e roteadores, **o switch remove o cabeçalho Ethernet e adiciona um novo cabeçalho Ethernet**.
+- Nesse novo cabeçalho **endereço MAC de origem muda para representar o MAC do equipamento que esta enviando o quadro**.
+- De forma parecida, o endereço **MAC de destino do quadro Ethernet muda tambem**, para que este quadro possa ser encaminhado corretamente para o proximo salto (ex: **pc0** -> **switch** , terá MAC de origem de **pc0**, e MAC de destino do **switch**).
 - Veremos isso acontecendo no simulador Cisco Packet Tracer, para entender melhor como funciona o processo de encaminhamento de pacotes em uma rede.
 
+![encaminhamento l2](./img/hop-forwarding.svg)
+
 Isso explica por que os endereços MAC e IP possuem finalidades diferentes.
-- O MAC é usado para marcar quem enviou e quem recebera o quadro em um enlace local.
-- O IP é usado para marcar a origem (real, quem de fato iniciou a comunicacao - ou seja, quem criou o pacote) o destino final do pacote, que pode atravessar várias redes e dispositivos intermediários.
+- O MAC é usado para marcar quem enviou e quem recebera o quadro em um enlace local (cabo metalico, fibra, onda de radio, etc.).
+- O IP é usado para marcar a origem (real, quem de fato iniciou a comunicacao - ou seja, quem criou o pacote) o destino final do pacote, e **nao muda durante o encaminhamento dentro de uma mesma rede**.
+- O IP so muda se o pacote precisar atravessar para uma rede diferente, e nesse caso o roteador que faz uma operacao chamada de **NAT (Network Address Translation)** vai alterar o IP de origem do pacote, para que ele possa ser encaminhado corretamente para a rede de destino (veremos esse conceito de NAT mais a frente na disciplina).
+
+De forma similar ao MAC e IP, as portas dos protocolos de transporte (TCP ou UDP) também possuem finalidades especificas.
+- O número da **porta de origem indica qual aplicação enviou o pacote** (ex: Google Chrome, Firefox, cliente de email, vscode, etc.).
+- O número da **porta de destino indica qual aplicação deve receber o pacote** (ex: servidor web, servidor de email, servidor de banco de dados, etc.).
+- **Analogia**: 
+  - o endereço IP de destino seria como uma identificação do prédio (onde um pacote deve ser entregue pelos correios), 
+    - **Quem entrega**: roteador (ou switch, dependendo do caso)
+      - na nossa analogia seria o carteiro.
+  - a porta de destino seria como o número do apartamento (qual aplicação deve receber o pacote dentro do prédio).
+    - **Quem entrega**: sistema operacional do computador (ou seja, o sistema operacional do computador que recebeu o pacote é quem vai entregar o pacote para a aplicação correta, de acordo com a porta de destino).
+      - Na nossa analogia seria o porteiro do prédio, que recebe a correspondência do carteiro e entrega para o apartamento correto.
+
+![exemplo de troca de portas e ip](./img/port-origin-destination.jpg)
+
+Veja o exemplo da imagem acima:
+- Observe o pacote enviado pelo PC da esquerda.
+  - O IP de origem 128.119.91.53 representa o endereço do computador que enviou o pacote (no caso, o PC da esquerda).
+  - A porta de origem 35466 representa a aplicação que enviou o pacote (exemplo, o navegador Google Chrome desse PC de origem).
+  - Ja o IP de destino 74.125.39.99 representa o endereço do computador que deve receber o pacote (no caso, o PC da direita).
+  - A porta de destino 80 representa a aplicação que deve receber o pacote (nesse caso, o servidor web que esta rodando no PC da direita).
+- Agora note que no pacote de resposta enviado pelo PC da direita, o IP de origem e destino foram invertidos, assim como as portas de origem e destino.
+  - O IP de origem 74.125.39.99 representa o endereço do computador que enviou o pacote (no caso, o PC da direita).
+  - A porta de origem 80 representa a aplicação que enviou o pacote (no caso, o servidor web desse PC de origem).
+  - O IP de destino 128.119.91.53 representa o endereço do computador que deve receber o pacote (no caso, o PC da esquerda).
+  - A porta de destino 35466 representa a aplicação que deve receber o pacote (exemplo, o navegador Google Chrome desse PC de destino).
 
 # 6. Exercicios de fixacao
 
@@ -569,33 +599,43 @@ Isso explica por que os endereços MAC e IP possuem finalidades diferentes.
 
 9. Explique o processo de encapsulamento e desencapsulamento.
 10.  Qual é a finalidade dos cabeçalhos adicionados durante o encapsulamento?
-11.  Diferencie segmento, pacote, quadro e bits.
-12.  Por que um roteador precisa reconstruir o quadro recebido antes de encaminhar o pacote por outra interface?
-13.  Qual é a diferença entre os endereços MAC e IP? Por que ambos são necessários?
+11.  O que acontece com os endereços MAC e IP durante o encaminhamento de pacotes em uma rede? 
+     1.   Eles mudam ou permanecem os mesmos? 
+     2.   Quando eles mudam e quando permanecem os mesmos? Explique.
+12.  Diferencie segmento, pacote, quadro e bits.
+13.  Por que um roteador precisa reconstruir o quadro recebido antes de encaminhar o pacote por outra interface?
+14.  Qual é a diferença entre os endereços MAC e IP? Por que ambos são necessários?
+15.  Porque as portas de origem e destino são importantes no transporte de dados entre aplicações?
 
 # 7. Atividades Praticas
 
-## Atividade 1 — Análise de protocolos com Wireshark
+## Atividade 1 — Análise de protocolos com Cisco Packet Tracer
 
-Utilize o Wireshark para observar a comunicação do seu computador.
+Utilize o Cisco Packet Tracer para observar a comunicação do seu computador.
 
-![atividade wireshark](./img/atividade_2_wireshark.jpg)
+![atividade packet tracer](./img/packet_tracer_sniffer.png)
 
 Procedimento:
 
-1. Instale e abra o Wireshark.
-2. Selecione a interface de rede utilizada.
-3. Inicie a captura.
-4. Acesse um site.
-5. Interrompa a captura.
-6. Identifique os protocolos presentes.
+1. Abra o Cisco Packet Tracer.
+2. Construa uma rede simples com **2 PCs**, **1 switch-PT**, **2 sniffers** e **1 Servidor**.
+   1. O sniffer é um dispositivo que permite capturar e analisar pacotes de dados transmitidos na rede.
+   2. Ele captura pacotes de dados que passam por ele, permitindo que você visualize informações detalhadas sobre cada pacote, como endereços IP, endereços MAC, protocolos utilizados, portas de origem e destino, entre outros.
+   3. Porem, ele faz a captura apenas em um dos sentidos da comunicação (ou seja, ele captura apenas os pacotes que passam por ele, mas nao captura os pacotes de resposta que voltam para o dispositivo de origem).
+   4. Por isso voce precisa de 2 sniffers (um captura os pacotes enviados pelos PCs, e outro captura os pacotes enviados pelo Servidor - como mostrado na figura).
+   5. Isso é configurado no simulador, clicando no sniffer e indo para a aba **GUI** -> "Incoming Port" (selecione a porta de entrada, que deseja monitorar os pacotes que chegam).
+3. Configure os endereços IP dos PCs e do Servidor (conforme mostra a figura).
+4. Configure o Servidor para atuar como servidor HTTP (ele ja deve vir configurado de fabrica, apenas verifique se o serviço HTTP esta ativo).
+5. No PC1, abra o navegador e digite o endereço IP do Servidor para acessar a página web.
+6. Verifique se a comunicação foi bem sucedida (a pagina web foi carregada corretamente).
+7. Clique no ícone do **Packet Sniffer** (localizado na parte inferior da tela) para abrir a ferramenta de captura de pacotes.
+8. Observe os pacotes capturados durante a comunicação.
 
 Procure observar:
 
 - Ethernet.
-- IPv4 ou IPv6.
-- TCP ou UDP.
-- DNS.
+- IPv4.
+- TCP.
 - HTTP ou HTTPS.
 
 Responda:
@@ -603,11 +643,46 @@ Responda:
 1. Quais endereços MAC aparecem na comunicação?
 2. Quais endereços IP aparecem?
 3. Quais protocolos estão sendo utilizados?
-4. Quais portas TCP ou UDP aparecem?
-5. Essas portas sao usadas por quais aplicações (HTTP, HTTPS, DNS, etc)?
+4. Quais portas TCP aparecem?
+5. Essas portas sao usadas por quais aplicações (HTTP, DNS, etc)?
 6. É possível identificar informações de diferentes camadas do modelo OSI?
+7. Porque existem vários pacotes TCP sendo enviados para carregar a página web? Pesquise sobre o conceito de **handshake TCP** e explique.
+8. Porque o handshake TCP é necessário para estabelecer a comunicação entre o cliente e o servidor? Qual a sua finalidade?
+9. Que informacoes estao contidas nos cabeçalhos dos protocolos observados? Pesquise sobre os campos de cada protocolo e explique.
+10. Ao final da atividade, salve suas respostas em um documento (Word, Google Docs, etc) e envie para o AVA 
+    1.  Lembre-se de colocar o seu nome e matricula no inicio do documento.
+    2.  Inclua informacoes de outros colegas que participaram da atividade, se a atividade for em grupo/dupla.
 
-**Observação**: em HTTPS, o conteúdo da aplicação normalmente está criptografado. 
-- Isso não impede a observação dos cabeçalhos de diversos protocolos envolvidos na comunicação.
-- Somente o conteúdo da aplicação (mensagens, páginas web, etc) não é visível.
-  
+**IMPORTANTE**: Pacotes **STP (Spanning Tree Protocol)** podem aparecer na captura, mas eles não são relevantes para a análise da comunicação entre o PC e o Servidor. 
+- O STP é utilizado para evitar **loops** em redes com switches, mas não está diretamente relacionado à transmissão de dados entre os dispositivos que você está analisando.
+- Observe que pacotes STP sao gerados pelos switches, e sao processados apenas pelos switches, nao pelos PCs ou Servidor (na ferramenta "**Simulation**" do Cisco Packet Tracer voce pode visualizar o tráfego de pacotes STP melhor).
+- Se desejar, pesquise sobre o STP para entender seu funcionamento, mas não se preocupe em analisá-lo nesta atividade (iremos ver seu funcionamento em uma atividade futura).
+
+## Atividade 2 — Camadas e encapsulamento com Cisco Packet Tracer
+
+Nesta atividade, você vai relacionar a conexão física, os endereços MAC, o papel do switch e o processo de encapsulamento aos modelos OSI e TCP/IP.
+
+Faça o que se pede abaixo:
+
+1. Abra um projeto novo no Cisco Packet Tracer.
+2. Adicione três dispositivos **PC-PT**, 2 **sniffers**, e um **switch-PT**.
+3. Em cada PC, acesse **Config** → **FastEthernet** e anote o endereço MAC exibido. 
+4. Nessa mesma aba, configure os endereços IP dos PCs, conforme imagem acima. 
+5. Escolha o PC0 para enviar uma mensagem para o PC2 (use o modo "**Simulation**" do Cisco Packet Tracer para fazer o envio da mensagem).
+6. Abra os sniffers e observe o processo de encapsulamento e desencapsulamento. Anote os endereços MAC de origem e destino do quadro Ethernet.
+   1. Note que a cada salto (PC0 → Switch → PC2), o endereço MAC de origem e destino do quadro Ethernet muda, conforme explicado no roteiro.
+7. Verifique se eles conferem com os endereços MAC que voce observou nos PCs anteriormente (passo 3).
+8. Use os endereços MAC anotados para completar o quadro abaixo. 
+
+| Etapa | Camada OSI | PDU                           | O que incluir na representação                                |
+| ----- | ---------- | ----------------------------- | ------------------------------------------------------------- |
+| 1     | Aplicação  | Dados (payload)               | Uma mensagem fictícia, como “Olá”                             |
+| 2     | Transporte | Segmento TCP ou datagrama UDP | Indique TCP ou UDP; não informe portas                        |
+| 3     | Rede       | Pacote                        | Indique que existe um cabeçalho IP; não preencha endereços    |
+| 4     | Enlace     | Quadro Ethernet               | MAC de origem do primeiro PC e MAC de destino do segundo PC   |
+| 5     | Física     | Bits                          | Indique que o quadro é transmitido como bits pelo meio físico |
+
+7. Desenhe setas para mostrar a ordem de encapsulamento no PC de origem e a ordem inversa de desencapsulamento no PC de destino.
+8. No desenho da topologia, indique por qual porta do switch o quadro hipotético chegaria e por qual porta deveria seguir para alcançar o PC de destino. 
+9.  Salve o arquivo do Packet Tracer e envie ele junto ao documento com as respostas.
+    1.  Lembre-se de colocar o seu nome e o dos demais integrantes do grupo/dupla, caso a atividade seja realizada em conjunto.

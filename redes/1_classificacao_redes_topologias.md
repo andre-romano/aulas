@@ -1,8 +1,8 @@
 
-# Fundamentos de Redes de Computadores - Parte 1
+# Classificacao de Redes e Topologias
 
 **Sumário**:
-- [Fundamentos de Redes de Computadores - Parte 1](#fundamentos-de-redes-de-computadores---parte-1)
+- [Classificacao de Redes e Topologias](#classificacao-de-redes-e-topologias)
 - [1. Conceitos fundamentais de redes de computadores](#1-conceitos-fundamentais-de-redes-de-computadores)
   - [1.1. O que é uma rede de computadores?](#11-o-que-é-uma-rede-de-computadores)
     - [1.1.1. Exemplo prático: compartilhamento de uma impressora](#111-exemplo-prático-compartilhamento-de-uma-impressora)
@@ -720,16 +720,33 @@ As atividades a seguir foram elaboradas para que você possa aplicar os conceito
 
 Utilize o Cisco Packet Tracer para construir as redes abaixo:
 
-1. Uma rede em estrela.
-2. Uma rede em árvore.
-3. Uma rede em barramento.
+1. Uma rede em estrela (usando 1 switch-PT).
+2. Uma rede em árvore (usando 3 switches-PT, e depois a mesma rede usando 3 hubs-PT).
+3. Uma rede em barramento (usando 1 hub-PT).
+
+Em cada uma, construa uma rede com pelo menos 9 computadores (PCs), usando a faixa de IPs abaixo:
+- 192.168.1.10
+- ate
+- 192.168.1.18
+
+Use um IP diferente por computador, e configure a máscara de sub-rede como
+- 255.255.255.0 (veremos depois o que isso significa).
 
 Para cada rede:
 
 - Desenhe a topologia.
 - Identifique os equipamentos.
 - Explique como os dispositivos estão interconectados.
-- Identifique possíveis pontos únicos de falha.
+- Identifique possíveis **pontos únicos de falha** (equipamentos que, se falharem, afetarão a comunicação da rede).
 - Explique como a comunicação ocorre entre os dispositivos (passo a passo, desde a origem até o destino).
+- O que seria a técnica de "aprendizado de endereços MAC" utilizada pelos switches, e como ela influencia na comunicação entre os dispositivos?
+- Hubs usam esta técnica de aprendizado de endereços MAC? Justifique.
+- Qual a diferença de comportamento entre um hub e um switch quando um computador envia dados por eles?
+
+**DICA**: quando queremos conectar dispositivos iguais (dois switches, dois hubs, dois roteadores, etc), devemos utilizar cabos do tipo **crossover** (no simulador, aparece como *linha preta tracejada*).
+- Quando queremos conectar dispositivos diferentes (um switch e um computador, um roteador e um switch, etc), devemos utilizar cabos do tipo **straight-through** (*linha preta continua* no simulador).
+- Veja a diferença entre os dois tipos de cabos na imagem abaixo:
+
+![tipos de cabos](./img/straight-through-x-crossover.jpg)
 
 

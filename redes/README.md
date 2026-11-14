@@ -11,10 +11,15 @@ Esta página contém as aulas e demais o conteúdos auxiliares da disciplina.
   - [Tutoriais e Conteúdo Complementar](#tutoriais-e-conteúdo-complementar)
 
 ## Guias de Estudo
+
 Material de apoio para estudo da disciplina:
-- [1 - Fundamentos de Redes de Computadores - PARTE 1](./1_fundamentos_parte_1.md)
-- [2 - Fundamentos de Redes de Computadores - PARTE 2](./2_fundamentos_parte_2.md)
-- [3 - Fundamentos de Redes de Computadores - PARTE 3](./2_fundamentos_parte_3.md)
+
+1. [Classificacao de Redes PAN x LAN x MAN x WAN e Topologias](./1_classificacao_redes_topologias.md)
+2. [Modelos de Referencia OSI x IP e Encapsulamento](./2_modelos_redes_encapsulamento.md)
+3. [Formas de Comunicacao, Modos de Transmissao e Métricas de Desempenho](./3_comunicacao_modos_transmissao.md)
+4. [Equipamentos de Rede](./4_equipamentos_de_rede.md)
+5. [Domínios de Colisao x Broadcast e Encaminhamento de Quadros](./5_dominios_bcast_encaminhamento.md)
+6. [Cabeamento e Meios de Comunicacao](./6_cabeamento_meios_comm.md)
 
 ## Projetos
 
@@ -24,9 +29,10 @@ Os seguintes projetos podem ser passados para você no decorrer da disciplina:
 - [Projeto 02 - Aplicação de Chat Cliente-Servidor](./PROJETO_02/)
 
 ## Ferramentas
-- [Download do Cisco Packet Tracer](https://www.netacad.com/resources/lab-downloads?courseLang=en-US)
+- [Cisco Packet Tracer](https://www.netacad.com/resources/lab-downloads?courseLang=en-US)
   - Voce precisará criar uma conta na Cisco Networking Academy para baixar o Packet Tracer.
-- [Download do VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- [Protocol Explorer - Simulador de Protocolos Online](https://protocol-explorer-alpha.vercel.app/)
 
 ## Video-aulas
 
