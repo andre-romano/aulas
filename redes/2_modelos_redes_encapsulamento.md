@@ -476,6 +476,8 @@ Entre essas informações estão:
 ----------------------
 |    Cabeçalho TCP   |
 ----------------------
+|     Cabeçalho IP   |
+----------------------
 | Cabeçalho Ethernet |
 ----------------------
 ```
