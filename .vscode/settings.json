@@ -93,4 +93,5 @@
     "plantuml.previewAutoUpdate": true,
     "git.autofetch": true,
     "diffEditor.ignoreTrimWhitespace": true,
+    "markdown.validate.enabled": true,
 }
