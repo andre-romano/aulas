@@ -301,10 +301,11 @@ $$
 Ou seja, 12,5 megabytes por segundo.
 
 **Atenção**: esse valor é teórico, pois **redes tem várias limitacoes e problemas que podem reduzir a taxa de transferência** de dados, tais como: 
-- Cabeçalhos dos protocolos (ocupam espaço do pacote), 
-- Confirmações (pacotes ACK de protocolos como TCP), 
-- Retransmissões (quando pacotes são perdidos e precisam ser reenviados), 
+- Perdas de pacote,
+- Retransmissões (quando pacotes são perdidos e precisam ser reenviados),
 - E outros problemas e limitações das redes.
+
+Essas limitações fazem com que o **throughput (vazão efetiva)** seja, normalmente, menor do que a **largura de banda nominal (bandwidth)**.
 
 ## 4.2. Throughput (vazão efetiva)
 
