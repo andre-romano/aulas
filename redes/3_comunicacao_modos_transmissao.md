@@ -293,8 +293,9 @@ Isso significa que o enlace possui uma capacidade de transmissão de até 100 mi
 Portanto, para calcular a taxa de transferência de arquivos, é necessário converter bits para bytes.
 
 Considerando uma conexão de $100\ Mbps$, isso corresponde (teoricamente) a:
+
 $$
-\frac{100\ Mbps}{8\ \text{bits / byte}}=12,5\text{ MB/s} 
+\frac{100 Mbps}{8\ \text{bits / byte}}=12,5\text{ MB/s} 
 $$
 
 Ou seja, 12,5 megabytes por segundo.
