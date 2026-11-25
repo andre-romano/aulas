@@ -526,12 +526,13 @@ Isso acontece porque, para jogos interativos, a capacidade de transmissão não 
 9. Por que o jitter pode prejudicar uma videoconferência?
 10. Um computador transmitiu 5.000 pacotes, dos quais 4.850 chegaram ao destino. Calcule a taxa de perda de pacotes.
 11. Uma conexão A possui largura de banda de 200 Mbps, e latência de 200 ms. Outra conexao B possui largura de banda de 50 Mbps e latência de 50 ms. Qual conexão pode ser mais adequada para jogos online? Justifique.
+12. Um usuário enviou um arquivo de 100 MB em 5 segundos. Qual a vazão da conexão em Mbps?
 
 ## Parte C — Situações-problema
 
-12. Durante uma videoconferência, os participantes percebem interrupções no áudio, mesmo possuindo uma conexão com largura de banda elevada. Quais métricas de desempenho devem ser investigadas?
-13. Em uma rede do Instituto Federal, um computador apresenta perda de pacotes de 5% ao acessar um servidor remoto. Quais podem ser as causas dessa perda? Cite pelo menos três.
-14. Um usuário relata que, ao acessar um site, a página demora para carregar, mesmo possuindo uma latencia de 20 ms. Quais métricas de desempenho devem ser analisadas para identificar o problema? Justifique.
+13. Durante uma videoconferência, os participantes percebem interrupções no áudio, mesmo possuindo uma conexão com largura de banda elevada. Quais métricas de desempenho devem ser investigadas?
+14. Em uma rede do Instituto Federal, um computador apresenta perda de pacotes de 5% ao acessar um servidor remoto. Quais podem ser as causas dessa perda? Cite pelo menos três.
+15. Um usuário relata que, ao acessar um site, a página demora para carregar, mesmo possuindo uma latencia de 20 ms. Quais métricas de desempenho devem ser analisadas para identificar o problema? Justifique.
 
 # 6. Atividades Praticas
   
