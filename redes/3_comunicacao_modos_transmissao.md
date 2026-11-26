@@ -460,7 +460,7 @@ A taxa de perda ($L$), em percentual, será:
 $$
 \begin{align}
 L &= \frac{20}{1000}\times100 \\
-      &= 2%
+      &= 2 \%
 \end{align}
 $$
 
