@@ -666,25 +666,22 @@ Nesta atividade, você vai relacionar a conexão física, os endereços MAC, o p
 
 Faça o que se pede abaixo:
 
-1. Abra um projeto novo no Cisco Packet Tracer.
-2. Adicione três dispositivos **PC-PT**, 2 **sniffers**, e um **switch-PT**.
-3. Em cada PC, acesse **Config** → **FastEthernet** e anote o endereço MAC exibido. 
-4. Nessa mesma aba, configure os endereços IP dos PCs, conforme imagem acima. 
-5. Escolha o PC0 para enviar uma mensagem para o PC2 (use o modo "**Simulation**" do Cisco Packet Tracer para fazer o envio da mensagem).
-6. Abra os sniffers e observe o processo de encapsulamento e desencapsulamento. Anote os endereços MAC de origem e destino do quadro Ethernet.
-   1. Note que a cada salto (PC0 → Switch → PC2), o endereço MAC de origem e destino do quadro Ethernet muda, conforme explicado no roteiro.
-7. Verifique se eles conferem com os endereços MAC que voce observou nos PCs anteriormente (passo 3).
-8. Use os endereços MAC anotados para completar o quadro abaixo. 
+1. Construa no papel uma rede com **2 PCs** e **1 switch**.
+2. Configure os endereços IP dos PCs (ex: 192.168.1, 192.168.2, etc).
+3. Pense em uma mensagem fictícia que será enviada do PC de origem para o PC de destino (ex: “Olá”).
+4. Desenhe a topologia da rede no papel, indicando os endereços IP e MAC de cada PC.
+5. Indique no desenho a porta do switch que está conectada a cada PC.
+6. Preencha a tabela abaixo, indicando o que cada camada do modelo OSI adiciona à mensagem fictícia durante o processo de encapsulamento.
+7. Indique também a PDU correspondente a cada camada.
 
-| Etapa | Camada OSI | PDU                           | O que incluir na representação                                |
-| ----- | ---------- | ----------------------------- | ------------------------------------------------------------- |
-| 1     | Aplicação  | Dados (payload)               | Uma mensagem fictícia, como “Olá”                             |
-| 2     | Transporte | Segmento TCP ou datagrama UDP | Indique TCP ou UDP; não informe portas                        |
-| 3     | Rede       | Pacote                        | Indique que existe um cabeçalho IP; não preencha endereços    |
-| 4     | Enlace     | Quadro Ethernet               | MAC de origem do primeiro PC e MAC de destino do segundo PC   |
-| 5     | Física     | Bits                          | Indique que o quadro é transmitido como bits pelo meio físico |
+| Etapa | Camada     | PDU                           | Conteudo                                                                                                                                 |
+| ----- | ---------- | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | Aplicação  | Dados (payload)               | “Olá”                                                                                                                                    |
+| 2     | Transporte | Segmento TCP ou datagrama UDP | Indique TCP ou UDP; informe portas de origem e destino fictícias                                                                         |
+| 3     | Rede       | Pacote                        | Indique que existe um cabeçalho IP; informe os endereços IP de origem e destino                                                          |
+| 4     | Enlace     | Quadro Ethernet               | MAC de origem e MAC de destino (lembre-se que ele mudam a cada salto/transmissao do quadro)                                              |
+| 5     | Física     | Bits                          | Indique como o quadro é transmitido pelo meio físico (ex: luz dentro da fibra óptica, sinais eletricos em um par trançado de cobre, etc) |
 
-7. Desenhe setas para mostrar a ordem de encapsulamento no PC de origem e a ordem inversa de desencapsulamento no PC de destino.
-8. No desenho da topologia, indique por qual porta do switch o quadro hipotético chegaria e por qual porta deveria seguir para alcançar o PC de destino. 
-9.  Salve o arquivo do Packet Tracer e envie ele junto ao documento com as respostas.
-    1.  Lembre-se de colocar o seu nome e o dos demais integrantes do grupo/dupla, caso a atividade seja realizada em conjunto.
+8. Desenhe setas para mostrar a ordem de encapsulamento no PC de origem e a ordem inversa de desencapsulamento, passando pelo switch e pelo PC de destino.
+9. No desenho da topologia, indique por qual porta do switch o quadro hipotético chegaria e por qual porta deveria seguir para alcançar o PC de destino. Considere que o switch já possui a tabela de endereços MAC com as informações corretas (ele já aprendeu os endereços MAC dos PCs).
+10. Tire uma foto e envie para o AVA da disciplina.

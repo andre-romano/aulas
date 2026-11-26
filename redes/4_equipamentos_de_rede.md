@@ -24,9 +24,10 @@
 - [4. Roteadores](#4-roteadores)
   - [4.1. Como funciona o roteamento?](#41-como-funciona-o-roteamento)
   - [4.2. Gateway padrão](#42-gateway-padrão)
-  - [4.3. Tabela de roteamento](#43-tabela-de-roteamento)
-  - [4.4. Roteador residencial](#44-roteador-residencial)
-  - [4.5. Diferença entre switch e roteador](#45-diferença-entre-switch-e-roteador)
+  - [4.3. Exemplo no Cisco Packet Tracer](#43-exemplo-no-cisco-packet-tracer)
+  - [4.4. Tabela de roteamento](#44-tabela-de-roteamento)
+  - [4.5 Roteador residencial (SOHO - Small Office/Home Office)](#45-roteador-residencial-soho---small-officehome-office)
+  - [4.6. Diferença entre switch e roteador](#46-diferença-entre-switch-e-roteador)
 - [5. Access points (pontos de acesso)](#5-access-points-pontos-de-acesso)
   - [5.1. Como funciona um access point?](#51-como-funciona-um-access-point)
   - [5.2. SSID e BSSID](#52-ssid-e-bssid)
@@ -40,10 +41,8 @@
   - [7.3. Firewall não é antivírus!](#73-firewall-não-é-antivírus)
 - [8. Exercícios de fixação e avaliação](#8-exercícios-de-fixação-e-avaliação)
   - [Parte A — Equipamentos de rede](#parte-a--equipamentos-de-rede)
-- [9. Situações-problema](#9-situações-problema)
-  - [9.1. Problemas com o switch](#91-problemas-com-o-switch)
-  - [9.2. Escolha de equipamentos](#92-escolha-de-equipamentos)
-  - [9.3. Diagnóstico de conectividade](#93-diagnóstico-de-conectividade)
+- [9. Atividades práticas](#9-atividades-práticas)
+  - [9.1. Atividade 1 - Configurando Roteadores no Cisco Packet Tracer](#91-atividade-1---configurando-roteadores-no-cisco-packet-tracer)
 
 
 # 1. Placas de rede (NIC)
@@ -159,6 +158,7 @@ Ele **funciona como um repetidor multiporta**, recebendo sinais em uma porta de 
 
 Diferentemente de um switch, o **hub não analisa os endereços MAC** dos quadros para decidir qual porta deve receber os dados.
 - Ele simplesmente repete os sinais recebidos para todas as portas (exceto a de entrada).
+- Isto é, **Hubs operam na camada física (L1)** do modelo OSI, enquanto switches operam na camada de enlace (camada 2).
 
 ![explicacao hubs](./img/hubs_explained.jpg)
 
@@ -230,19 +230,34 @@ O **CSMA/CA** funciona da seguinte forma:
 3. Durante a transmissão, o dispositivo não consegue detectar colisões diretamente, então ele depende de confirmações (pacotes **ACK**) do destinatário para saber se a transmissão foi bem-sucedida.
 4. Se não receber a confirmação, o dispositivo assume que ocorreu uma colisão e tenta retransmitir após outro intervalo de tempo aleatório.
 
+**IMPORTANTE**: O Cisco Packet Tracer não executa os protocolos de prevenção/detecção de colisões (CSMA) em redes com hubs. 
+- Por isso aparecem as colisoes (*"fogo na mensagem"*) no Packet Tracer.
+- Mas podemos observar o funcionamento do CSMA/CD e CSMA/CA em redes reais.
+- Inclusive, redes Wi-Fi utilizam o CSMA/CA, para terem melhor desempenho.
+
 ## 2.4. Por que os hubs praticamente desapareceram?
 
 Os hubs foram substituídos pelos switches porque os switches oferecem vantagens importantes:
 
 - Encaminhamento seletivo de quadros.
+  - Envia os dados apenas para o dispositivo de destino, em vez de enviar uma copia do pacote para todos os equipamentos ligados na rede.
+  - **Analogia**: Imagine que você está em uma sala com várias pessoas e deseja entregar uma mensagem a uma pessoa específica. 
+    - Se você usar um hub, seria como gritar a mensagem para todos na sala, esperando que a pessoa certa ouça e responda.
+    - Se você usar um switch, seria como entregar a mensagem diretamente à pessoa certa (uma vez que o switch ja aprendeu o endereço MAC da pessoa), sem incomodar os outros.
 - Separação dos domínios de colisão por porta.
+  - **Domínio de colisao**: uma área da rede onde os dispositivos compartilham o mesmo meio de transmissão. 
+  - Nessa área pacotes podem colidir (*"fogo na mensagem no Packet Tracer"*) ao transmitir dados simultaneamente, como acontece com Hubs.
+  - No switch, cada porta/interface funciona como um **domínio de colisão separado**, permitindo que os dispositivos conectados a portas diferentes transmitam e recebam dados simultaneamente, sem interferência.
 - Melhor utilização da largura de banda.
+  - So quem precisa receber os dados, recebe os dados. Diferentemente do hub, que envia os dados para todos os dispositivos conectados.
 - Suporte a comunicação full-duplex.
+  - Permite que os dispositivos transmitam e recebam dados simultaneamente, sem colisões (como aconteceria no caso do Hub), aumentando a eficiência da comunicação.
+  - Isto é, cada porta do switch tem um **domínio de colisão separado**.
 - Maior escalabilidade.
 - Melhor desempenho geral.
 
 Atualmente, hubs são importantes principalmente para compreender a evolução das redes Ethernet. 
-- Quase todas as redes modernas utilizam switches, que são mais eficientes e oferecem melhor desempenho.
+- **Quase todas as redes modernas utilizam switches**, que são mais eficientes e oferecem melhor desempenho.
 
 # 3. Switches
 
@@ -286,8 +301,6 @@ Se o computador ``A`` enviar um quadro destinado ao computador ``C``, o switch v
 - Os computadores ``B`` e ``D`` não precisam receber esse quadro.
 - Essa é uma das principais vantagens dos switches em relação aos hubs.
 - Caso o switch ainda nao conheça o endereço MAC de destino, ele encaminhará o quadro para todas as portas (exceto a de entrada), até que aprenda o endereço MAC do dispositivo de destino.
-
-Esse processo de aprendizado será visto em detalhes mais adiante na seção [10. Funcionamento interno dos switches](#10-funcionamento-interno-dos-switches).
   
 ## 3.2. Principais funções dos switches
 
@@ -330,17 +343,29 @@ Características:
 ![switch enterprise](./img/switch_enterprise.jpg)
 
 Permite configurar e administrar funcionalidades da rede.
+- É possivel configurar o switch, seja por:
+  - uma interface web (página web, como fazemos nos roteadores domésticos),
+  - linha de comando (comandos em um terminal),
+  - protocolo específico
+- Para isso, precisamos nos conectar ao switch, utilizando:
+  - Cabo de rede (Ethernet) 
+  - Ou uma conexão serial (que vem identificado no equipamento como **porta COM** ou **USB**).
+
+No Cisco Packet Tracer, podemos simular a configuração de switches gerenciáveis utilizando a interface de linha de comando (CLI):
+1. Clique em um switch gerenciável (ex: switch **2960**).
+2. Clique na aba **CLI**.
+3. Digite os comandos para configurar o switch, como atribuir endereços IP, criar VLANs, configurar portas, etc.
+4. Veja figura abaixo.
+
+![](./img/cisco_switch_cli.jpg)
 
 Entre os recursos possíveis estão:
 
-- VLANs.
-- Spanning Tree (STP).
-- Port Security.
-- QoS.
-- Link Aggregation.
-- SNMP.
+- Definiçao de VLANs.
+- Protocolo STP (Spanning Tree).
+- Protocolo SNMP.
 - Monitoramento de portas.
-- Controle de acesso administrativo.
+- Controle de acesso.
 
 É amplamente utilizado em redes corporativas e institucionais.
 
@@ -378,12 +403,11 @@ Um roteador é um equipamento responsável por encaminhar pacotes IP **entre dif
 Imagine duas redes:
 
 - Rede A: `192.168.1.0/24`.
-- Rede B: `192.168.2.0/24`.
+- Rede B: `10.0.0.0/8`.
 
-Os dispositivos pertencentes à primeira rede não conseguem alcançar diretamente os dispositivos da segunda rede utilizando apenas a comunicação local Ethernet.
-- É necessário um mecanismo de **interconexão de camada 3**.
+Os dispositivos pertencentes à rede ``A`` não conseguem alcançar diretamente os dispositivos da rede ``B``.
+- É necessário um equipamento que  **interconecte eles, através de seus endereços IP, na camada 3**.
 - O roteador realiza essa função.
-- Veremos isso mais detalhadamente no decorrer da disciplina.
 
 ## 4.1. Como funciona o roteamento?
 
@@ -397,23 +421,30 @@ O roteador possui interfaces conectadas às duas redes.
 
 | Portas do roteador | Endereço IP    |
 | ------------------ | -------------- |
-| Porta A            | 192.168.1.1/24 |
-| Porta B            | 192.168.2.1/24 |
+| Porta A            | 192.168.1.0/24 |
+| Porta B            | 10.0.0.0/8     |
 
-Um computador da rede ``A``, com endereço `192.168.1.10`, deseja enviar dados para um servidor da rede ``B``, com endereço `192.168.2.20`.
+Um computador da rede ``A``, com endereço `192.168.1.2`, deseja enviar dados para um servidor da rede ``B``, com endereço `10.0.0.3`.
 
 O processo simplificado é:
 
 1. O computador identifica que o destino está em outra rede.
-2. Encaminha o pacote para um dispositivo chamado de **gateway padrão** (que nesse caso é o roteador).
+   1. Para isso, ele consulta o **IP de rede** e a **máscara de sub-rede**.
+   2. Se o endereço IP de destino não pertencer à mesma rede, ele sabe que precisa encaminhar o pacote para fora da rede local (*"enviar o pacote para alguma interface/porta do roteador"*).
+2. Encaminha o pacote para um dispositivo chamado de **gateway padrão** (que costuma ser o roteador).
+   1. **IMPORTANTE**: 
+      1. O gateway padrão é o dispositivo que irá encaminhar os pacotes para fora da rede local.
+      2. Toda porta do roteador possui um endereço IP, e o gateway padrão é o endereço IP da porta do roteador que está conectada à rede local.
 3. O roteador recebe o quadro Ethernet.
-4. Analisa o endereço IP de destino.
-5. Consulta sua **tabela de roteamento** (que mapeia endereços IP para portas de saída / interfaces).
-6. Identifica a interface de saída (tambem chamada de porta de saída).
-7. Encaminha o pacote para a rede ``B``.
+4. Desencapsula o quadro Ethernet (*"abre o quadro"*), até chegar na camada de rede (camada 3).
+5. Analisa o endereço IP de destino.
+6. Consulta sua **tabela de roteamento** (que mapeia endereços IP para portas de saída / interfaces).
+7. Identifica a interface de saída (tambem chamada de porta de saída).
+8. Encaminha o pacote para a rede de destino (neste exemplo, rede ``B``).
 
-O roteador não precisa conhecer o endereço MAC do servidor `192.168.2.20` em todas as redes. 
-- Ele utiliza o IP para descobrir por qual enlace de saída encaminhar o pacote.
+O roteador não precisa conhecer o endereço MAC do servidor `10.0.0.3`, como acontece com switches. 
+- Isto é, roteadores nao precisam aprender endereços MAC de dispositivos conectados a redes diferentes, pois eles operam na camada 3 (camada de rede) do modelo OSI.
+- Ele utiliza o IP para descobrir por qual enlace de saída (tambem chamado de **porta de saida** ou **interface**) encaminhar o pacote.
 - Esse processo de encaminhamento é chamado de **roteamento**.
 
 ## 4.2. Gateway padrão
@@ -421,9 +452,15 @@ O roteador não precisa conhecer o endereço MAC do servidor `192.168.2.20` em t
 O gateway padrão é o endereço IP do equipamento para o qual um dispositivo envia pacotes destinados a redes que não estão diretamente conectadas a ele.
 - Exemplo:
   - Roteador.
-  - Outro dispositivo que possua endereço IP e desempenhe a função de encaminhamento de pacotes (como um firewall).
-  
+  - Outro dispositivo que possua endereço IP e desempenhe a função de encaminhamento de pacotes (como um firewall, ou ate mesmo um computador).
+
+**ATENCAO**: Qualquer dispositivo capaz de encaminhar pacotes usando endereços IP, desempenha o papel de roteador na rede. 
+- Logo, esse dispositivo atua como gateway padrão da rede.
+
 **IMPORTANTE**: Switches convencionais (L2) não podem ser gateways padrão, pois não possuem a capacidade de encaminhar pacotes entre redes diferentes.
+- Switches nao tem IP, e nao operam na camada 3 (camada de rede - L3) do modelo OSI, portanto nao podem desempenhar a função de **roteamento**.
+- Switches encaminham pacotes usando a tecnica de **repasse** de quadros Ethernet, utilizando endereços MAC (camada 2 - L2) e aprendizado de endereços MAC.
+- Muitos swiches nao sao configuráveis, eles aprendem os endereços MAC através da técnica de **inundação de quadros (flooding)**. Ja a maioria dos roteadores sao configuráveis (definimos o IP da rede e mascara de subrede para cada interface).
 
 **Exemplo**:
 
@@ -438,7 +475,31 @@ Gateway padrão:    192.168.1.1
 Quando o computador deseja acessar um servidor na rede `10.0.0.0/8`, ele encaminha os pacotes ao gateway padrão.
 - O gateway padrão **normalmente é a interface de um roteador** na rede, mas pode ser outro equipamento que desempenhe a função de encaminhamento de camada 3.
 
-## 4.3. Tabela de roteamento
+## 4.3. Exemplo no Cisco Packet Tracer
+
+No Cisco Packet Tracer, considere que temos a seguinte topologia de redes:
+- **Rede A**: `192.168.1.0/24`
+- **Rede B**: `10.0.0.0/8`
+
+![](./img/cisco_router_config.jpg)
+
+Note que cada porta do roteador possui um endereço IP diferente, correspondente à rede à qual está conectada.
+- **Porta GigabitEthernet0 (gig0)**: `192.168.1.1` (conectada à rede A)
+- **Porta GigabitEthernet1 (gig1)**: `10.0.0.1` (conectada à rede B)
+- Alem disso, precisamos também ligar a interface do roteador (ativar a porta).
+
+Para configurar o roteador:
+1. Abra o roteador no Cisco Packet Tracer.
+2. Clique na aba **Config**
+3. Clique na interface desejada (ex: `GigabitEthernet0`).
+4. Ative a interface (clicando em `Port Status` -> `ON`).
+5. Configure o IP de gateway padrão da rede ligada a porta (ex: `192.168.1.1` para a porta `GigabitEthernet0`).
+6. Configure a **Mascara de Subrede** tambem (nesse caso, a rede A é definida por ``192.168.1.0/24``, logo a mascara é `255.255.255.0`).
+   1. Se estiver em dúvida como calcular a máscara de subrede, pesquise sobre conversao de CIDR para máscara de subrede.
+
+![](./img/cisco_router_config_2.jpg)
+
+## 4.4. Tabela de roteamento
 
 Um roteador utiliza uma tabela de roteamento para determinar por onde os pacotes devem ser encaminhados.
 
@@ -449,30 +510,53 @@ Exemplo simplificado:
 | 192.168.1.0/24  | Porta 1                 |
 | 192.168.2.0/24  | Porta 2                 |
 
-## 4.4. Roteador residencial
+## 4.5 Roteador residencial (SOHO - Small Office/Home Office)
 
 ![roteador residencial](./img/router_residential.jpg)
 
-Um roteador residencial normalmente reúne diversas funcionalidades em um único equipamento (ele nao é apenas um roteador, como foi originalmente proposto pela teoria de redes de computadores, mas sim um equipamento multifuncional):
+Um roteador residencial (SOHO) normalmente **reúne diversas funcionalidades em um único equipamento** (ele nao é apenas um roteador, como foi originalmente proposto pela teoria de redes de computadores, mas sim um equipamento multifuncional):
 
 - Roteamento IP.
-- NAT.
-- Firewall.
-- DHCP.
-- Wi-Fi.
 - Switch Ethernet integrado (*"portas LAN"*).
+- Wi-Fi.
+- Protocolo DHCP.
+- Protocolo DNS.
+- Recurso de NAT (veremos mais a frente).
+- Outros recursos, dependendo do fabricante e modelo.
 
-**Atenção**: roteamento, comutação, firewall e acesso wireless são funções diferentes, mesmo quando estão presentes no mesmo dispositivo.
-- Isto é, estes equipamentos, apesar de chamados de roteadores, sao na verdade **equipamentos multifuncionais** que reúnem diversas funções de rede em um único dispositivo.
-- Ser "roteador" é apenas uma das funções que ele desempenha, mas não é a única.
+Seria como se tivessemos um equipamento só que equivale a multiplos outros. 
+- Veja a comparacao abaixo no Cisco Packet Tracer.
+- Do lado esquerdo temos um roteador SOHO, do lado direito temos uma rede equivalente, se cada funcionalidade do SOHO fosse implementada como previsto pela teoria de redes de computadores (um equipamento por função).
 
-## 4.5. Diferença entre switch e roteador
+![](./img/cisco_soho_equivalence.jpg)
+
+Note que DHCP e DNS sao protocolos que rodam em cima do IP, portanto eles nao deveriam ser implementados dentro de equipamentos de rede (que pela teoria de redes, podem operar apenas com protocolos das camadas L2 e L3).
+- Isto é, eles são programas que fornecem **serviços de rede**.
+  - **Exemplo de programas**: 
+    - Dnsmasq (DNS e DHCP), 
+    - Bind (DNS), 
+    - ISC DHCP Server (DHCP).
+- Portanto, esses programas rodam em cima de um sistema operacional (Windows, Linux, MacOS), que pode ter vários programas em execucao.
+- Cada programa pode fornecer um serviço de rede diferente, como por exemplo:
+  - Servidor web (HTTP).
+  - Servidor de email (SMTP, POP3).
+  - Servidor de arquivos (FTP, SMB).
+- Quando um pacote chega em um PC, o sistema operacional envia ele para um desses programas em execucao no PC, usando para isso a **porta de destino** do pacote (ex: porta 80 para HTTP, porta 53 para DNS, porta 67 para DHCP, etc).
+- Logo, todo programa em execução em um PC, precisa de um **protocolo de transporte (TCP ou UDP)** para se comunicar com outros programas.
+  - Esse protocolo de transporte fica localizado na camada de transporte (camada L4 do OSI), logo apos a camada de rede (L3).
+- Assim, **todo protocolo que roda dentro de um programa de computador**, (como o DHCP e DNS) é um **protocolo de aplicação** (camada de aplicação, que no modelo IP é implementada pelas camadas L5-L7 do OSI).
+
+![comparativo modelo ip x osi](./img/ip-vs-osi-model.png)
+
+![encapsulamento em roteador e switch](./img/encapsulation_router_switch.jpg)
+
+## 4.6. Diferença entre switch e roteador
 
 | Característica           | Switch                                             | Roteador                                        |
 | ------------------------ | -------------------------------------------------- | ----------------------------------------------- |
-| Camada principal         | Camada 2                                           | Camada 3                                        |
+| Camada principal         | Camada L2                                          | Camada L3                                       |
 | Endereçamento            | MAC                                                | IP                                              |
-| Encaminhamento           | Quadros (frames)                                   | Pacotes (packets)                               |
+| Encaminhamento (PDU)     | Quadros (frames)                                   | Pacotes (packets)                               |
 | Finalidade               | Interligar dispositivos dentro de UMA MESMA rede   | Interligar redes DIFERENTES                     |
 | Tabela de encaminhamento | CAM (tabela de endereços MAC)                      | Tabela de roteamento                            |
 | Envio de Broadcast       | Encaminha para todos os dispositivos na mesma rede | Não encaminha broadcasts entre redes diferentes |
@@ -673,39 +757,29 @@ Procure resolver as questões sem consultar o material. Elas foram organizadas p
 8. O que é gateway padrão?
 9. Qual é a finalidade de uma tabela de roteamento?
 10. Explique a diferença entre um access point e um roteador wireless.
-11. O que significam SSID e BSSID?
-12. O que é um modem e uma ONU?
-13. Qual é a finalidade de um firewall?
-14. Diferencie firewall de rede e firewall de host. 
-15. Cite um firewall de host e um firewall de rede usados em ambientes corporativos.
-16. Explique a diferença entre firewall e antivírus. 
-17. Cite uma situação em que um firewall poderia impedir a propagação de um malware em uma rede corporativa.
+11. Quais funcionalidades típicas de um roteador SOHO? 
+    1.  Há diferença entre roteador SOHO e roteador comum, previsto pela teoria de redes? Justifique.
+12. O que significam SSID e BSSID?
+13. O que é um modem e uma ONU?
+14. Qual é a finalidade de um firewall?
+17. Explique a diferença entre firewall e antivírus. 
 
-# 9. Situações-problema
+# 9. Atividades práticas
 
-As situações abaixo simulam problemas que podem ocorrer durante a instalação e manutenção de redes.
+## 9.1. Atividade 1 - Configurando Roteadores no Cisco Packet Tracer
 
-## 9.1. Problemas com o switch
+![](./img/cisco_router_config.jpg)
 
-Uma rede possui 20 computadores conectados a um switch.
-
-Quando um computador transmite dados para outro, todos os dispositivos recebem fisicamente os quadros.
-
-Qual equipamento poderia estar sendo utilizado no lugar de um switch? Explique.
-
-Como corrigir o problema para que apenas o computador de destino receba os quadros?
-
-## 9.2. Escolha de equipamentos
-
-Uma escola precisa adquirir equipamentos para um laboratório com 30 computadores, uma impressora de rede e um access point.
-
-Especifique quais equipamentos seriam necessários e justifique suas escolhas.
-- Inclua nessa analise a quantidade de portas, velocidade e tipo de switch, além do tipo de access point.
-- Busque por produtos reais no mercado, e descreva suas características.
-- Faça uma cotação de preços (planilha Excel, Google Sheets, etc), considerando os valores médios encontrados em lojas online.
-
-## 9.3. Diagnóstico de conectividade
-
-Um computador está conectado a um switch, mas não consegue se comunicar com nenhum outro dispositivo.
-
-Descreva uma sequência de verificações físicas e lógicas que você realizaria para diagnosticar o problema.
+1. Abra o Cisco Packet Tracer.
+2. Monte as redes `A` e `B`, conforme a figura acima.
+3. Configure os endereços IP das interfaces do roteador e dos computadores.
+4. Verifique se os computadores da rede ``A`` e ``B`` conseguem se comunicar entre si.
+5. Teste a conectividade utilizando o comando ``ping``.
+   1. Abra um PC 
+   2. Va na aba ``Desktop`` -> `Command Prompt`
+   3. Digite o comando ``ping <endereço IP do outro PC>``.
+   4. **IMPORTANTE**: Se o comando travar, ou nao funcionar, pressione ``Ctrl + C`` para interromper a execução do comando.
+   5. Veja se há resposta (``Reply``) ou se o ping falha (``Request timed out``).
+   6. Qual o tempo de resposta médio (latência média) entre os computadores?
+6. Teste quantos saltos (equipamentos intermediários) existem entre os computadores utilizando o comando ``tracert <endereço IP do outro PC>``.
+   1. **IMPORTANTE**: Se o comando travar, ou nao funcionar, pressione ``Ctrl + C`` para interromper a execução do comando.
