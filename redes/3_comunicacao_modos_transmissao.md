@@ -460,7 +460,15 @@ A taxa de perda ($L$), em percentual, será:
 $$
 \begin{align}
 L &= \frac{20}{1000}\times100 \\
-      &= 2\%
+      &= 2 \%
+\end{align}
+$$
+
+Logo a fórmula para calculo da perda de pacotes (em percentual) é:
+
+$$
+\begin{align}
+L &= \frac{\text{qtd de pacote perdidos}}{\text{total de pacotes enviados}}\times100       
 \end{align}
 $$
 
