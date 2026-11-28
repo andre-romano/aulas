@@ -189,7 +189,7 @@ Há diferentes formas de relacionamentos que conseguimos representar, dependendo
 - **Relacionamento N:N (muitos para muitos)**:
   - O relacionamento N:N é implementado através de uma **tabela de junção**, que contem as FKs para cada tabela conectada. 
   - **Exemplo**:
-    - Um professor leciona em varias turmas, e cada turma possui varios professores
+    - Um professor leciona em varias turmas, e cada turma possui vários professores
     - Relacionamento `Professor` (N) para `Turma` (N) 
     - Devemos criar a tabela ``Professor_Turma`` (para representar o relacionamento **lecionar**)
     - Na tabela ``Professor_Turma``, criamos os atributos `matricula_professor` (FK) e `id_turma` (FK)

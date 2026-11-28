@@ -78,7 +78,7 @@ Entre suas funções estão:
 - Identificar a interface de rede (placa de rede - NIC) por meio de um endereço MAC.  
 - Escolher **encaminhar** (*forward*) ou **descartar** (*drop*) quadros recebidos, com base no endereço MAC de destino.
 - Realizar verificações de integridade dos quadros (algoritmos CRC).
-- Evitar colisoes em redes half-duplex, utilizando o protocolo CSMA.
+- Evitar colisões em redes half-duplex, utilizando o protocolo CSMA.
 - Implementar funcionalidades de aceleração de processamento, dependendo do hardware.
 
 ## 1.2. Endereço MAC da NIC
@@ -100,9 +100,9 @@ Assim placas de mesmo fabricante possuem o mesmo OUI, mas cada placa possui um i
 
 É importante lembrar que um endereço MAC identifica uma interface no contexto do fabricante. Porem, apesar de considerarmos que toda NIC tem um MAC único e bem definido, esse identificador físico nao é imutável do ponto de vista do sistema operacional: 
 - **sistemas operacionais podem permitir sua alteração lógica** (MAC spoofing ou MAC randomization).
-- Essa alteracao é usada para varias finalidades, porem uma das mais comuns é a preservacao da privacidade do usuario, evitando rastreamento de dispositivos em redes sem fio.
+- Essa alteração é usada para varias finalidades, porem uma das mais comuns é a preservação da privacidade do usuário, evitando rastreamento de dispositivos em redes sem fio.
   - Dispositivos Android e iOS, por exemplo, podem gerar endereços MAC aleatórios para cada rede Wi-Fi que o dispositivo se conecta (faça o teste, verifique se o seu aparelho esta configurado para ter essa funcionalidade - abra o menu de configurações da rede Wi-Fi e observe se há a opção de "endereços MAC aleatórios").
-- Outro uso possivel é para interceptar pacotes de uma rede, fingindo ser outro dispositivo (ataque de spoofing, chamado de ``MAC spoofing``).
+- Outro uso possível é para interceptar pacotes de uma rede, fingindo ser outro dispositivo (ataque de spoofing, chamado de ``MAC spoofing``).
   - **Spoof** = fingir, imitar, falsificar.
 
 ## 1.3. Velocidades das placas de rede
@@ -120,19 +120,20 @@ As placas de rede podem operar em diferentes velocidades.
 | 40 Gigabit Ethernet  | 40 Gbps    |
 
 A **velocidade efetiva de comunicação depende de todos os componentes** do enlace (dispositivos, cabos, switches, etc).
-- Isto é, **a velocidade de transmissão será limitada pelo componente mais lento** do caminho.
+- Isto é, **a velocidade de transmissão (vazão, também chamada de throughput) será limitada pelo componente mais lento** do caminho.
 - Por exemplo, se um computador possui uma placa de rede de 1 Gbps e está conectado a um switch de 100 Mbps, a comunicação ficará limitada a 100 Mbps.
+- Do mesmo modo, se eu tiver um cabo de rede de 100 Mbps, mesmo que a placa de rede e o switch suportem 1 Gbps, a comunicação será limitada a 100 Mbps.
 
-Isso acontece porque a conexão precisa negociar uma velocidade compatível com os dois lados.
+Isso acontece porque **a conexão precisa negociar uma velocidade compatível com os dois lados**.
 - Esse processo de negociação é representada no Cisco Packet Tracer pela **"bola laranja"** que aparece na interface de rede quando a conexão está sendo estabelecida (quando conectamos os dispositivos através de cabos, conforme imagem abaixo).
 
-![negociacao de link no cisco](./img/cisco_link_negotiation.png)
+![](./img/cisco_link_negotiation.png)
 
 ## 1.4. Placas de rede cabeadas e wireless
 
 ### 1.4.1. NIC Cabeada
 
-![nic ethernet](./img/nic_ethernet.jpg)
+![](./img/nic_ethernet.jpg)
 
 Utiliza uma interface física para conectar o dispositivo a um cabo de rede.
 
@@ -160,19 +161,19 @@ Diferentemente de um switch, o **hub não analisa os endereços MAC** dos quadro
 - Ele simplesmente repete os sinais recebidos para todas as portas (exceto a de entrada).
 - Isto é, **Hubs operam na camada física (L1)** do modelo OSI, enquanto switches operam na camada de enlace (camada 2).
 
-![explicacao hubs](./img/hubs_explained.jpg)
+![](./img/hubs_explained.jpg)
 
 ## 2.1. Como funciona um hub?
 
 Imagine 4 computadores conectados a 1 hub, como no exemplo abaixo.
 
-![explicacao hubs](./img/hubs_explained.jpg)
+![](./img/hubs_explained.jpg)
 
 Quando o computador A transmite dados para o computador B:
 
 1. O hub recebe os sinais na porta de entrada.
 2. O hub repete os sinais para TODAS as demais portas.
-3. Todos os computadores conectados recebem fisicamente a transmissão (sinais eletricos no fio, neste exemplo).
+3. Todos os computadores conectados recebem fisicamente a transmissão (sinais elétricos no fio, neste exemplo).
 4. O computador cujo endereço corresponde ao destinatário processa o quadro.
 5. Os demais computadores descartam o quadro quando não são seus destinatários (veja exemplo abaixo).
 
@@ -188,7 +189,7 @@ Observe que o hub não sabe qual computador é o destinatário. Essa decisão é
 Encare um hub como sendo um "fio de rede compartilhado" entre todos os dispositivos conectados a ele.
 - Todos os dispositivos conectados a um hub **compartilham o mesmo meio de transmissão** (o mesmo cabo).
 - Logo, se dois dispositivos transmitirem simultaneamente, ocorrerá uma colisão de sinais.
-- Isto é, **todos tem o mesmo domínio de colisão**, e a comunicação precisa ser coordenada para evitar que os sinais se sobreponham (causem interferência, ou colisao).
+- Isto é, **todos tem o mesmo domínio de colisão**, e a comunicação precisa ser coordenada para evitar que os sinais se sobreponham (causem interferência, ou colisão).
 
 ## 2.2. Características dos hubs
 
@@ -216,9 +217,9 @@ O funcionamento simplificado do **CSMA/CD** é:
 5. Aguarda um intervalo de tempo aleatório.
 6. Tenta transmitir novamente.
 
-A ideia por tras do intervalo de tempo aleatório é evitar que os dispositivos colidam novamente ao tentar retransmitir.
-> - *Nao sabemos quando cada dispositivo vai tentar transmitir dados, e nem quanto tempo ele passará enviando informacoes.*
-> - *Logo, esperamos um tempo aleatorio antes de tentar novamente, para que a chance de colisao seja menor.*
+A ideia por trás do intervalo de tempo aleatório é evitar que os dispositivos colidam novamente ao tentar retransmitir.
+> - *Nao sabemos quando cada dispositivo vai tentar transmitir dados, e nem quanto tempo ele passará enviando informações.*
+> - *Logo, esperamos um tempo aleatório antes de tentar novamente, para que a chance de colisão seja menor.*
 
 As redes modernas utilizam switches e comunicação full-duplex, eliminando a necessidade do CSMA/CD.
 - CSMA ainda é utilizado em redes sem fio, mas com algumas diferenças em relação ao CSMA/CD.
@@ -231,7 +232,7 @@ O **CSMA/CA** funciona da seguinte forma:
 4. Se não receber a confirmação, o dispositivo assume que ocorreu uma colisão e tenta retransmitir após outro intervalo de tempo aleatório.
 
 **IMPORTANTE**: O Cisco Packet Tracer não executa os protocolos de prevenção/detecção de colisões (CSMA) em redes com hubs. 
-- Por isso aparecem as colisoes (*"fogo na mensagem"*) no Packet Tracer.
+- Por isso aparecem as colisões (*"fogo na mensagem"*) no Packet Tracer.
 - Mas podemos observar o funcionamento do CSMA/CD e CSMA/CA em redes reais.
 - Inclusive, redes Wi-Fi utilizam o CSMA/CA, para terem melhor desempenho.
 
@@ -245,7 +246,7 @@ Os hubs foram substituídos pelos switches porque os switches oferecem vantagens
     - Se você usar um hub, seria como gritar a mensagem para todos na sala, esperando que a pessoa certa ouça e responda.
     - Se você usar um switch, seria como entregar a mensagem diretamente à pessoa certa (uma vez que o switch ja aprendeu o endereço MAC da pessoa), sem incomodar os outros.
 - Separação dos domínios de colisão por porta.
-  - **Domínio de colisao**: uma área da rede onde os dispositivos compartilham o mesmo meio de transmissão. 
+  - **Domínio de colisão**: uma área da rede onde os dispositivos compartilham o mesmo meio de transmissão. 
   - Nessa área pacotes podem colidir (*"fogo na mensagem no Packet Tracer"*) ao transmitir dados simultaneamente, como acontece com Hubs.
   - No switch, cada porta/interface funciona como um **domínio de colisão separado**, permitindo que os dispositivos conectados a portas diferentes transmitam e recebam dados simultaneamente, sem interferência.
 - Melhor utilização da largura de banda.
@@ -319,17 +320,17 @@ Os switches podem oferecer diferentes funcionalidades:
 
 Nem todos os switches oferecem todas essas funcionalidades.
 - Alguns switches são **simples e não gerenciáveis**, enquanto outros são **gerenciáveis e oferecem recursos avançados**.
-- Switches domesticos geralmente são não gerenciáveis, enquanto switches corporativos costumam ser gerenciáveis.
+- Switches domésticos geralmente são não gerenciáveis, enquanto switches corporativos costumam ser gerenciáveis.
 
 ## 3.3. Switches Não Gerenciáveis x Gerenciáveis
 
 ### 3.3.1. Switch não gerenciável (Unmanaged)
 
-![switch domestico](./img/switch_home.jpg)
+![](./img/switch_home.jpg)
 
 É um equipamento que normalmente funciona sem exigir modificações de configuração.
 - Basta conectar os dispositivos para que a comunicação seja estabelecida.
-- Switches domesticos e de pequenas empresas geralmente são não gerenciáveis.
+- Switches domésticos e de pequenas empresas geralmente são não gerenciáveis.
 
 Características:
 
@@ -343,7 +344,7 @@ Características:
 ![switch enterprise](./img/switch_enterprise.jpg)
 
 Permite configurar e administrar funcionalidades da rede.
-- É possivel configurar o switch, seja por:
+- É possível configurar o switch, seja por:
   - uma interface web (página web, como fazemos nos roteadores domésticos),
   - linha de comando (comandos em um terminal),
   - protocolo específico
@@ -361,7 +362,7 @@ No Cisco Packet Tracer, podemos simular a configuração de switches gerenciáve
 
 Entre os recursos possíveis estão:
 
-- Definiçao de VLANs.
+- Definição de VLANs.
 - Protocolo STP (Spanning Tree).
 - Protocolo SNMP.
 - Monitoramento de portas.
@@ -439,12 +440,12 @@ O processo simplificado é:
 4. Desencapsula o quadro Ethernet (*"abre o quadro"*), até chegar na camada de rede (camada 3).
 5. Analisa o endereço IP de destino.
 6. Consulta sua **tabela de roteamento** (que mapeia endereços IP para portas de saída / interfaces).
-7. Identifica a interface de saída (tambem chamada de porta de saída).
+7. Identifica a interface de saída (também chamada de porta de saída).
 8. Encaminha o pacote para a rede de destino (neste exemplo, rede ``B``).
 
 O roteador não precisa conhecer o endereço MAC do servidor `10.0.0.3`, como acontece com switches. 
 - Isto é, roteadores nao precisam aprender endereços MAC de dispositivos conectados a redes diferentes, pois eles operam na camada 3 (camada de rede) do modelo OSI.
-- Ele utiliza o IP para descobrir por qual enlace de saída (tambem chamado de **porta de saida** ou **interface**) encaminhar o pacote.
+- Ele utiliza o IP para descobrir por qual enlace de saída (também chamado de **porta de saída** ou **interface**) encaminhar o pacote.
 - Esse processo de encaminhamento é chamado de **roteamento**.
 
 ## 4.2. Gateway padrão
@@ -454,13 +455,13 @@ O gateway padrão é o endereço IP do equipamento para o qual um dispositivo en
   - Roteador.
   - Outro dispositivo que possua endereço IP e desempenhe a função de encaminhamento de pacotes (como um firewall, ou ate mesmo um computador).
 
-**ATENCAO**: Qualquer dispositivo capaz de encaminhar pacotes usando endereços IP, desempenha o papel de roteador na rede. 
+**ATENÇÃO**: Qualquer dispositivo capaz de encaminhar pacotes usando endereços IP, desempenha o papel de roteador na rede. 
 - Logo, esse dispositivo atua como gateway padrão da rede.
 
 **IMPORTANTE**: Switches convencionais (L2) não podem ser gateways padrão, pois não possuem a capacidade de encaminhar pacotes entre redes diferentes.
 - Switches nao tem IP, e nao operam na camada 3 (camada de rede - L3) do modelo OSI, portanto nao podem desempenhar a função de **roteamento**.
-- Switches encaminham pacotes usando a tecnica de **repasse** de quadros Ethernet, utilizando endereços MAC (camada 2 - L2) e aprendizado de endereços MAC.
-- Muitos swiches nao sao configuráveis, eles aprendem os endereços MAC através da técnica de **inundação de quadros (flooding)**. Ja a maioria dos roteadores sao configuráveis (definimos o IP da rede e mascara de subrede para cada interface).
+- Switches encaminham pacotes usando a técnica de **repasse** de quadros Ethernet, utilizando endereços MAC (camada 2 - L2) e aprendizado de endereços MAC.
+- Muitos switches nao sao configuráveis, eles aprendem os endereços MAC através da técnica de **inundação de quadros (flooding)**. Ja a maioria dos roteadores sao configuráveis (definimos o IP da rede e mascara de sub-rede para cada interface).
 
 **Exemplo**:
 
@@ -486,7 +487,7 @@ No Cisco Packet Tracer, considere que temos a seguinte topologia de redes:
 Note que cada porta do roteador possui um endereço IP diferente, correspondente à rede à qual está conectada.
 - **Porta GigabitEthernet0 (gig0)**: `192.168.1.1` (conectada à rede A)
 - **Porta GigabitEthernet1 (gig1)**: `10.0.0.1` (conectada à rede B)
-- Alem disso, precisamos também ligar a interface do roteador (ativar a porta).
+- Além disso, precisamos também ligar a interface do roteador (ativar a porta).
 
 Para configurar o roteador:
 1. Abra o roteador no Cisco Packet Tracer.
@@ -494,8 +495,8 @@ Para configurar o roteador:
 3. Clique na interface desejada (ex: `GigabitEthernet0`).
 4. Ative a interface (clicando em `Port Status` -> `ON`).
 5. Configure o IP de gateway padrão da rede ligada a porta (ex: `192.168.1.1` para a porta `GigabitEthernet0`).
-6. Configure a **Mascara de Subrede** tambem (nesse caso, a rede A é definida por ``192.168.1.0/24``, logo a mascara é `255.255.255.0`).
-   1. Se estiver em dúvida como calcular a máscara de subrede, pesquise sobre conversao de CIDR para máscara de subrede.
+6. Configure a **Mascara de Sub-rede** também (nesse caso, a rede A é definida por ``192.168.1.0/24``, logo a mascara é `255.255.255.0`).
+   1. Se estiver em dúvida como calcular a máscara de sub-rede, pesquise sobre conversão de CIDR para máscara de sub-rede.
 
 ![](./img/cisco_router_config_2.jpg)
 
@@ -519,13 +520,13 @@ Um roteador residencial (SOHO) normalmente **reúne diversas funcionalidades em 
 - Roteamento IP.
 - Switch Ethernet integrado (*"portas LAN"*).
 - Wi-Fi.
-- Protocolo DHCP.
-- Protocolo DNS.
+- Protocolo DHCP (usado para atribuir automaticamente endereços IP aos dispositivos da rede).
+- Protocolo DNS (usado para dar nomes às hosts, associando o nome aos endereços IP).
 - Recurso de NAT (veremos mais a frente).
 - Outros recursos, dependendo do fabricante e modelo.
 
-Seria como se tivessemos um equipamento só que equivale a multiplos outros. 
-- Veja a comparacao abaixo no Cisco Packet Tracer.
+Seria como se tivéssemos um equipamento só que equivale a múltiplos outros. 
+- Veja a comparação abaixo no Cisco Packet Tracer.
 - Do lado esquerdo temos um roteador SOHO, do lado direito temos uma rede equivalente, se cada funcionalidade do SOHO fosse implementada como previsto pela teoria de redes de computadores (um equipamento por função).
 
 ![](./img/cisco_soho_equivalence.jpg)
@@ -533,17 +534,26 @@ Seria como se tivessemos um equipamento só que equivale a multiplos outros.
 Note que DHCP e DNS sao protocolos que rodam em cima do IP, portanto eles nao deveriam ser implementados dentro de equipamentos de rede (que pela teoria de redes, podem operar apenas com protocolos das camadas L2 e L3).
 - Isto é, eles são programas que fornecem **serviços de rede**.
   - **Exemplo de programas**: 
-    - Dnsmasq (DNS e DHCP), 
-    - Bind (DNS), 
-    - ISC DHCP Server (DHCP).
-- Portanto, esses programas rodam em cima de um sistema operacional (Windows, Linux, MacOS), que pode ter vários programas em execucao.
-- Cada programa pode fornecer um serviço de rede diferente, como por exemplo:
+    - Dnsmasq (fornece DNS e DHCP), 
+    - Bind (fornece DNS), 
+    - ISC DHCP Server (fornece DHCP).
+- Portanto, **esses programas rodam em cima de um sistema operacional** (Windows, Linux, MacOS), que pode ter vários programas em execução.
+- Cada programa pode fornecer um serviço diferente, como por exemplo:
   - Servidor web (HTTP).
   - Servidor de email (SMTP, POP3).
   - Servidor de arquivos (FTP, SMB).
-- Quando um pacote chega em um PC, o sistema operacional envia ele para um desses programas em execucao no PC, usando para isso a **porta de destino** do pacote (ex: porta 80 para HTTP, porta 53 para DNS, porta 67 para DHCP, etc).
+- Quando um pacote chega em um PC, o sistema operacional envia ele para um desses programas em execução no PC, usando para isso a **porta de destino** do pacote (ex: porta 80 para HTTP, porta 53 para DNS, porta 67 para DHCP, etc).
+  - **Analogia**: 
+    - O **pacote é entregue pelo carteiro (switch ou roteador)** no **prédio (PC, smartphone, tablet, etc)**,
+    - O **porteiro (sistema operacional)** entrega o pacote para o **apartamento correto (programa em execução no PC)**, de acordo com o **número do apartamento (porta de destino do pacote)**.
+  - **Onde cada peça dessa se encaixa na comunicação**:
+    - O conteúdo do pacote, que é o que o programa está interessado, está contido dentro da camada L7 no modelo OSI,
+      - **Lembre-se**: Apesar do modelo OSI separar as camadas L5-L7, na pratica, as redes IP uniram essas camadas em uma única camada maior, chamada de **camada de aplicação** (L4).      
+      - É nessa única **camada de aplicação** do modelo IP, que os programas de diferentes PCs colocam os dados para serem enviados e recebidos entre si.
+    - A porta de destino (número do apartamento) esta dentro da camada L4 (camada de transporte),
+    - O endereço IP do pacote (endereço do prédio) esta dentro da camada L3 (camada de rede),
+    - O endereço MAC do quadro (número de inscrição do prédio - IPTU) esta dentro da camada L2 (camada de enlace) do modelo OSI.
 - Logo, todo programa em execução em um PC, precisa de um **protocolo de transporte (TCP ou UDP)** para se comunicar com outros programas.
-  - Esse protocolo de transporte fica localizado na camada de transporte (camada L4 do OSI), logo apos a camada de rede (L3).
 - Assim, **todo protocolo que roda dentro de um programa de computador**, (como o DHCP e DNS) é um **protocolo de aplicação** (camada de aplicação, que no modelo IP é implementada pelas camadas L5-L7 do OSI).
 
 ![comparativo modelo ip x osi](./img/ip-vs-osi-model.png)
@@ -577,7 +587,7 @@ O access point funciona como uma **ponte entre os meios sem fio e cabeado**.
 
 Considere a seguinte infraestrutura:
 
-![exemplo de rede wifi](./img/wifi-network-example.jpg)
+![](./img/wifi-network-example.jpg)
 
 O funcionamento simplificado é:
 
@@ -604,8 +614,8 @@ Uma mesma rede pode possuir **vários SSIDs**, por exemplo:
 Esses SSIDs podem ser associados a diferentes  políticas de segurança, para controlar o acesso a recursos e maquinas da rede.
 
 Além disso, uma mesma rede pode ter **vários access points**, cada um com seu próprio **BSSID**.
-- Geralmente, se usam varios access points para **aumentar a cobertura da rede sem fio**, especialmente em ambientes grandes (ex: escritórios, escolas, hospitais, centros comerciais).
-- **É possivel ter vários access points com mesmo SSID**, porem eles ainda terao BSSID diferentes.
+- Geralmente, se usam vários access points para **aumentar a cobertura da rede sem fio**, especialmente em ambientes grandes (ex: escritórios, escolas, hospitais, centros comerciais).
+- **É possível ter vários access points com mesmo SSID**, porem eles ainda terão BSSID diferentes.
   - Nesse caso, o dispositivo Wi-Fi irá se conectar ao access point que tiver o sinal mais forte (medido em ``dBm`` ou ``dB``).
   - Consideremos ``0dB`` como o nível de referência (potência máxima). **Quanto mais negativo for o valor, mais fraco é o sinal**.
     - Exemplo: -30dBm é um sinal muito forte, enquanto -90dBm é um sinal muito fraco.
@@ -644,7 +654,7 @@ Isto é, ele é um dispositivo multifuncional que desempenha diversas funções 
 Modem é um equipamento utilizado para **realizar modulação e demodulação de sinais**.
 - **Modulação**: é o processo de converter sinais digitais em sinais analógicos.
 - **Demodulação**: é o processo de converter sinais analógicos em sinais digitais.
-- **Exemplo**: Um modem pode converter sinais digitais de um computador em sinais analógicos que podem ser transmitidos por uma linha telefônica, cabo coaxial, fibra optica, etc.
+- **Exemplo**: Um modem pode converter sinais digitais de um computador em sinais analógicos que podem ser transmitidos por uma linha telefônica, cabo coaxial, fibra óptica, etc.
 
 O nome vem de **modulator-demodulator**.
 
@@ -653,10 +663,10 @@ Historicamente, os modems eram utilizados para transmitir informações digitais
 
 ![exemplo de model](./img/modem.jpg)
 
-O equipamento convertia os dados digitais em sinais apropriados ao meio de transmissão (cabo metálico, fibra optica, etc) 
-- Tambem realizava o processo inverso (demodulação) para receber dados da Internet (na forma de sinais analógicos).
+O equipamento convertia os dados digitais em sinais apropriados ao meio de transmissão (cabo metálico, fibra óptica, etc) 
+- Também realizava o processo inverso (demodulação) para receber dados da Internet (na forma de sinais analógicos).
 
-Atualmente, o termo **modem é utilizado também em equipamentos de acesso à Internet por diferentes tecnologias**, nao apenas para linhas telefonicas.
+Atualmente, o termo **modem é utilizado também em equipamentos de acesso à Internet por diferentes tecnologias**, nao apenas para linhas telefônicas.
 
 Exemplos:
 
@@ -672,7 +682,7 @@ Exemplos:
 
 ONU (Optical Network Unit) é um equipamento utilizado em redes de acesso por fibra óptica.
 - Recebe sinais ópticos (luz visível) e realiza a conversão necessária para sinais digitais (números binários 0s e 1s).
-- Os sinais digitais sao entao usados pela rede para prover conectividade (Internet) a computadores, notebooks, smartphones, televisores, etc.
+- Os sinais digitais sao então usados pela rede para prover conectividade (Internet) a computadores, notebooks, smartphones, televisores, etc.
 
 Em redes **FTTH (Fiber to the Home)**, a **fibra óptica chega até a residência** ou estabelecimento do assinante.
 
@@ -682,7 +692,7 @@ A ONU pode disponibilizar interfaces (portas de rede) como:
 - Wi-Fi, em modelos integrados.
 - Outras interfaces específicas do equipamento.
 
-**IMPORTANTE**: ONU tambem pode ser chamada de **Optical Network Terminal (ONT)**
+**IMPORTANTE**: ONU também pode ser chamada de **Optical Network Terminal (ONT)**
 - **ONT (Optical Network Terminal)**: é um tipo de unidade óptica instalada no lado do assinante, muito similar a ONU.
 - Na prática comercial, ONU e ONT são **termos frequentemente utilizados de maneira intercambiável**, embora existam distinções técnicas dependendo da arquitetura e do contexto de implantação.
 
@@ -710,12 +720,12 @@ Um firewall analisa o tráfego que passa por ele e compara as informações com 
 
 Exemplo de política:
 
-| Origem              | Destino         | Porta    | Ação     |
-| ------------------- | --------------- | -------- | -------- |
-| Rede interna        | Internet        | 443/TCP  | Permitir |
-| Internet            | Servidor Web    | 443/TCP  | Permitir |
-| Internet            | PCs de usuários | Qualquer | Bloquear |
-| Rede administrativa | Servidores      | 22/TCP   | Permitir |
+| Origem              | Destino       | Porta    | Ação     |
+| ------------------- | ------------- | -------- | -------- |
+| Rede interna        | Internet      | 443/TCP  | Permitir |
+| Internet            | Servidor Web  | 443/TCP  | Permitir |
+| Internet            | PCs de máximo | Qualquer | Bloquear |
+| Rede administrativa | Servidores    | 22/TCP   | Permitir |
 
 Essa tabela é apenas um exemplo didático. A implementação real exige regras mais precisas, incluindo controle de estado, interfaces e políticas de exceção.
 

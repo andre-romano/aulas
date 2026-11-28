@@ -1,19 +1,19 @@
 
-# Formas de Comunicacao, Modos de Transmissao e Métricas de Desempenho
+# Formas de Comunicação, Modos de Transmissão e Métricas de Desempenho
 
 **Sumário**:
-- [Formas de Comunicacao, Modos de Transmissao e Métricas de Desempenho](#formas-de-comunicacao-modos-de-transmissao-e-métricas-de-desempenho)
+- [Formas de Comunicação, Modos de Transmissão e Métricas de Desempenho](#formas-de-comunicação-modos-de-transmissão-e-métricas-de-desempenho)
 - [1. Formas de comunicação (Unicast, Broadcast e Multicast)](#1-formas-de-comunicação-unicast-broadcast-e-multicast)
-  - [1.1. Unicast (comunicacao 1-1)](#11-unicast-comunicacao-1-1)
+  - [1.1. Unicast (comunicação 1-1)](#11-unicast-comunicação-1-1)
   - [1.2. Broadcast (1-para-todos)](#12-broadcast-1-para-todos)
   - [1.3. Multicast (1-para-grupo)](#13-multicast-1-para-grupo)
   - [1.4. Comparação entre as modalidades](#14-comparação-entre-as-modalidades)
 - [2. Modos de transmissão (Simplex, Half-Duplex, Full-Duplex)](#2-modos-de-transmissão-simplex-half-duplex-full-duplex)
-  - [2.1. Simplex (uma direcao apenas)](#21-simplex-uma-direcao-apenas)
-  - [2.2. Half-Duplex (duas direcoes, alternadas)](#22-half-duplex-duas-direcoes-alternadas)
-  - [2.3. Full-Duplex (duas direcoes, simultaneas)](#23-full-duplex-duas-direcoes-simultaneas)
+  - [2.1. Simplex (uma direção apenas)](#21-simplex-uma-direção-apenas)
+  - [2.2. Half-Duplex (duas direções, alternadas)](#22-half-duplex-duas-direções-alternadas)
+  - [2.3. Full-Duplex (duas direções, simultâneas)](#23-full-duplex-duas-direções-simultâneas)
   - [3.4. Comparação](#34-comparação)
-  - [3.5. Modo de transmissao x Desempenho das redes](#35-modo-de-transmissao-x-desempenho-das-redes)
+  - [3.5. Modo de transmissão x Desempenho das redes](#35-modo-de-transmissão-x-desempenho-das-redes)
 - [4. Métricas de desempenho de redes](#4-métricas-de-desempenho-de-redes)
   - [4.1. Largura de banda (Bandwidth)](#41-largura-de-banda-bandwidth)
   - [4.2. Throughput (vazão efetiva)](#42-throughput-vazão-efetiva)
@@ -23,8 +23,8 @@
   - [4.5. Perda de pacotes (Packet Loss)](#45-perda-de-pacotes-packet-loss)
   - [4.6. Comparação das métricas de desempenho](#46-comparação-das-métricas-de-desempenho)
   - [4.7. Qual métrica é mais importante?](#47-qual-métrica-é-mais-importante)
-- [5. Exercicios de fixacao](#5-exercicios-de-fixacao)
-  - [Parte A — Comunicacao e modos de transmissão](#parte-a--comunicacao-e-modos-de-transmissão)
+- [5. Exercícios de fixação](#5-exercícios-de-fixação)
+  - [Parte A — Comunicação e modos de transmissão](#parte-a--comunicação-e-modos-de-transmissão)
   - [Parte B — Métricas de desempenho](#parte-b--métricas-de-desempenho)
   - [Parte C — Situações-problema](#parte-c--situações-problema)
 - [6. Atividades Praticas](#6-atividades-praticas)
@@ -43,7 +43,7 @@ As três modalidades fundamentais são:
 - broadcast,
 - multicast.
 
-## 1.1. Unicast (comunicacao 1-1)
+## 1.1. Unicast (comunicação 1-1)
 
 Unicast é a comunicação em que **um emissor transmite informações para um destinatário** específico.
 
@@ -67,14 +67,14 @@ Unicast é a comunicação em que **um emissor transmite informações para um d
 Broadcast é a comunicação em que **um dispositivo transmite uma informação para TODOS** os dispositivos pertencentes a determinado **domínio de broadcast**.
 - **Domínio broadcast**: é o conjunto de dispositivos dentro de uma mesma rede.
 - Normalmente, um **domínio de broadcast é delimitado por roteadores**, que não encaminham broadcasts entre redes diferentes.
-- Isto é, cada rede tem seu proprio domínio de broadcast.
+- Isto é, cada rede tem seu próprio domínio de broadcast.
 - Para enviar um pacote para o domínio de broadcast usamos o **endereço IP de broadcast da rede**.
 
 ![domínio broadcast](./img/broadcast_domain.png)
 
 O IP de broadcast da rede depende de:
 - endereço IP de rede 
-- máscara de subrede
+- máscara de sub-rede
 
 **Exemplo**:
 
@@ -101,7 +101,7 @@ Quando um dispositivo transmite um pacote com este endereço de broadcast, acont
   - Gerar congestionamentos na rede.
 - Broadcast excessivo pode prejudicar o desempenho da rede.
   - Muitos dispositivos conversando entre si, enviando broadcasts, podem gerar um **tempestade de broadcast** (**broadcast storm**).
-  - **Broadcast storm**: ninguem consegue se comunicar, porque todos os dispositivos estão ocupados processando broadcasts.
+  - **Broadcast storm**: ninguém consegue se comunicar, porque todos os dispositivos estão ocupados processando broadcasts.
 
 ## 1.3. Multicast (1-para-grupo)
 
@@ -112,8 +112,8 @@ Multicast é a comunicação em que **um emissor envia informações destinadas 
 Imagine uma instituição transmitindo uma aula ao vivo para um grupo de computadores.
 
 Se a aplicação utilizar multicast, o emissor poderá transmitir um único fluxo destinado ao grupo multicast, e a infraestrutura poderá replicar os dados conforme necessário para alcançar os participantes.
-- Isso é mais rapido do que enviar um pacote individual para cada destinatário (unicast) 
-- Tambem costuma ser melhor do que enviar o mesmo pacote para todos os dispositivos do domínio (broadcast)
+- Isso é mais rápido do que enviar um pacote individual para cada destinatário (unicast) 
+- Também costuma ser melhor do que enviar o mesmo pacote para todos os dispositivos do domínio (broadcast)
   - Podem existir dispositivos que não estão interessados na transmissão, e que não precisam receber os pacotes.
 
 **Características**:
@@ -134,15 +134,15 @@ Se a aplicação utilizar multicast, o emissor poderá transmitir um único flux
 
 ## 1.4. Comparação entre as modalidades
 
-| Característica | Unicast                       | Broadcast                              | Multicast                                             |
-| -------------- | ----------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| Destinatários  | 1                             | Todos                                  | Grupo                                                 |
-| Replicação     | Somente no caminho do destino | Distribuída por todo domínio broadcast | Conforme grupo multicast                              |
-| Uso típico     | Navegação Web                 | Descoberta de rede                     | Distribuição de conteudo comum a um grupo de usuários |
+| Característica | Unicast                       | Broadcast                              | Multicast                                           |
+| -------------- | ----------------------------- | -------------------------------------- | --------------------------------------------------- |
+| Destinatários  | 1                             | Todos                                  | Grupo                                               |
+| Replicação     | Somente no caminho do destino | Distribuída por todo domínio broadcast | Conforme grupo multicast                            |
+| Uso típico     | Navegação Web                 | Descoberta de rede                     | Distribuição de conteúdo comum a um grupo de máximo |
 
 **Atenção**: broadcast e multicast não são a mesma coisa. 
 - No broadcast, **TODOS** os dispositivos do domínio recebem a transmissão. 
-- No multicast, **somente os dispositivos interessados**, que pertencem ao grupo multicast recebem a transmissao.
+- No multicast, **somente os dispositivos interessados**, que pertencem ao grupo multicast recebem a transmissão.
 
 # 2. Modos de transmissão (Simplex, Half-Duplex, Full-Duplex)
 
@@ -150,25 +150,25 @@ Os modos de transmissão descrevem como os dispositivos podem transmitir e receb
 - direção (enviar ou receber)
 - simultaneidade da comunicação (podem transmitir e receber ao mesmo tempo ou não)
 
-## 2.1. Simplex (uma direcao apenas)
+## 2.1. Simplex (uma direção apenas)
 
 No modo simplex, a comunicação acontece em **apenas uma direção**.
-- Nao é possivel enviar e receber ao mesmo tempo (não há comunicação bidirecional).
+- Nao é possível enviar e receber ao mesmo tempo (não há comunicação bidirecional).
 - Um dispositivo **somente** transmite, e o outro **somente** recebe.
 
-![conexao simplex](./img/simplex.jpg)
+![](./img/simplex.jpg)
 
 **Exemplos**:
 
 - Transmissão de rádio.
 - Transmissão de televisão.
 
-## 2.2. Half-Duplex (duas direcoes, alternadas)
+## 2.2. Half-Duplex (duas direções, alternadas)
 
 No modo half-duplex, os dispositivos podem transmitir e receber informações, mas não simultaneamente no mesmo canal.
 - Um dispositivo transmite enquanto o outro recebe, e vice-versa.
 
-![half duplex](./img/half-duplex.jpg)
+![](./img/half-duplex.jpg)
 
 **Exemplo**: Walkie-talkie
 - Quando uma pessoa está falando, a outra precisa aguardar para falar.
@@ -176,35 +176,35 @@ No modo half-duplex, os dispositivos podem transmitir e receber informações, m
 
 **Exemplo 2**: Ponto de acesso Wi-Fi
 - O ponto de acesso Wi-Fi pode transmitir dados para um dispositivo, mas enquanto isso, o dispositivo não consegue transmitir dados para o ponto de acesso.
-- Isso ocorre porque o ponto de acesso e o dispositivo compartilham o mesmo canal de comunicação (frequencia de ondas de radio).
-- O ponto de acesso pode criar um outro canal (frequencia de radio) para se comunicar com outro dispositivo, mas cada canal é half-duplex (ou transmite, ou recebe dados).
+- Isso ocorre porque o ponto de acesso e o dispositivo compartilham o mesmo canal de comunicação (frequência de ondas de radio).
+- O ponto de acesso pode criar um outro canal (frequência de radio) para se comunicar com outro dispositivo, mas cada canal é half-duplex (ou transmite, ou recebe dados).
 - Veja exemplo abaixo:
 
-![wifi half duplex](./img/wifi-half-duplex.jpg)
+![](./img/wifi-half-duplex.jpg)
 
 **Características**:
 
-- Comunicação bidirecional (porem nao simultanea).
+- Comunicação bidirecional (porem nao simultânea).
 - Transmissão alternada (envia, depois recebe, depois envia, e assim por diante).
-- Não permite transmitir e receber simultaneamente pelo mesmo canal (mesmo frequencia de onda).
+- Não permite transmitir e receber simultaneamente pelo mesmo canal (mesmo frequência de onda).
 
-A razao de nao permitir o envio pela mesmo canal (frequencia de onda) é que, se ambos os dispositivos transmitirem ao mesmo tempo, os sinais podem se sobrepor e gerar interferência.
-- Interferencia faz com que os sinais se misturem, e o receptor nao consegue decodificar corretamente a informação (pacote se torna ilegível - vira ruido).
-- Mesma logica de uma sala cheia de pessoas conversando ao mesmo tempo, onde ninguem consegue entender o que o outro esta falando.
+A razão de nao permitir o envio pela mesmo canal (frequência de onda) é que, se ambos os dispositivos transmitirem ao mesmo tempo, os sinais podem se sobrepor e gerar interferência.
+- Interferência faz com que os sinais se misturem, e o receptor nao consegue decodificar corretamente a informação (pacote se torna ilegível - vira ruido).
+- Mesma logica de uma sala cheia de pessoas conversando ao mesmo tempo, onde ninguém consegue entender o que o outro esta falando.
 - Veja exemplo abaixo:
 
-![collisao em wifi](./img/wifi-collision.png)
+![](./img/wifi-collision.png)
 
-Alem da colisao, ondas de radio podem interagir, se destruindo mutuamente, e tornando a comunicacao impossivel:
-![interferencia destrutiva de ondas](./img/wave_destruction_interference.webp)
+Além da colisão, ondas de radio podem interagir, se destruindo mutuamente, e tornando a comunicação impossível:
+![Interferência destrutiva de ondas](./img/wave_destruction_interference.webp)
 
-## 2.3. Full-Duplex (duas direcoes, simultaneas)
+## 2.3. Full-Duplex (duas direções, simultâneas)
 
 No modo full-duplex, os dispositivos conseguem **transmitir e receber dados simultaneamente**.
 
 ![full duplex](./img/full-duplex.jpg)
 
-**Exemplo**: Chamada telefonica
+**Exemplo**: Chamada Telefonica
 - uma pessoa pode falar enquanto escuta a outra (comunicação bidirecional).
 - Ambas as partes podem enviar e receber dados ao mesmo tempo.
 
@@ -224,7 +224,7 @@ A maioria das redes Ethernet modernas permitem conexões full-duplex.
 | Half-duplex | 2 direções (alternadas)  | Walkie-talkie, Wi-Fi |
 | Full-duplex | 2 direções (simultâneas) | Ethernet moderna     |
 
-## 3.5. Modo de transmissao x Desempenho das redes
+## 3.5. Modo de transmissão x Desempenho das redes
 
 Considere uma conexão com capacidade de transmissão de $100\ Mbps$ em cada direção.
 
@@ -235,7 +235,7 @@ Em uma conexão **full-duplex**, é possível simultaneamente:
 Isso não significa que a conexão tenha uma capacidade de 200 Mbps. 
 - A capacidade de transmissão é de 100 Mbps, e é considerada separadamente para cada sentido (100 Mbps para enviar, e 100 Mbps para receber).
 
-Em uma conexao **half-duplex**, a capacidade de transmissão é compartilhada entre os dois sentidos.
+Em uma conexão **half-duplex**, a capacidade de transmissão é compartilhada entre os dois sentidos.
 - Se um dispositivo estiver transmitindo, o outro não consegue transmitir ao mesmo tempo.
 - Portanto, a capacidade de transmissão é de 100 Mbps, mas **não é possível utilizar os dois sentidos ao mesmo tempo**.
 
@@ -300,7 +300,7 @@ $$
 
 Ou seja, 12,5 megabytes por segundo.
 
-**Atenção**: esse valor é teórico, pois **redes tem várias limitacoes e problemas que podem reduzir a taxa de transferência** de dados, tais como: 
+**Atenção**: esse valor é teórico, pois **redes tem várias limitações e problemas que podem reduzir a taxa de transferência** de dados, tais como: 
 - Perdas de pacote,
 - Retransmissões (quando pacotes são perdidos e precisam ser reenviados),
 - E outros problemas e limitações das redes.
@@ -350,7 +350,7 @@ Considere que um arquivo de 120 MB seja transferido em 20 segundos.
 
 Calcule o throughput aproximado da transferência.
 
-**Solucao:**
+**Solução:**
 
 O throughput aproximado ($T$) será:
 
@@ -370,11 +370,11 @@ Latência é o **tempo necessário para que uma informação percorra um determi
 
 Normalmente, é expressa em milissegundos ($ms$).
 
-![exemplo de latencia entre laptop e servidor](./img/latency.jpg)
+![](./img/latency.jpg)
 
 Considere o exemplo acima, no qual um laptop envia uma mensagem para um servidor e receba uma resposta após $30\ ms$.
 - Esse tempo corresponde ao **RTT (Round-Trip Time)**
-- **RTT**: tempo necessario para um pacote ir e voltar ao seu remetente (emissor).
+- **RTT**: tempo necessário para um pacote ir e voltar ao seu remetente (emissor).
 
 É importante diferenciar:
 
@@ -388,7 +388,7 @@ A latência pode ser influenciada por:
 - Distância geográfica 
   - se o cliente estiver muito longe do servidor, a latência será alta.
 - Velocidade de propagação do sinal 
-  - quanto menos cabo for utilizado para conectar dispositivos, mais rapido o sinal se propagará entre eles.
+  - quanto menos cabo for utilizado para conectar dispositivos, mais rápido o sinal se propagará entre eles.
 - Processamento nos equipamentos.
   - Cada equipamento (roteador, switch, firewall, etc) precisa processar os pacotes que passam por ele.
   - Quanto mais equipamentos houver no caminho entre um cliente e servidor, maior será a latência.
@@ -404,7 +404,7 @@ A latência pode ser influenciada por:
   - Latência de 100 ms.
 
 Isso significa que ela possui grande capacidade de transmissão, mas pode apresentar demora significativa para iniciar ou concluir determinadas interações.
-- Conseguimos baixar arquivos rapido, mas nao conseguimos interagir com o servidor rapidamente 
+- Conseguimos baixar arquivos rápido, mas nao conseguimos interagir com o servidor rapidamente 
 - A experiencia do usuário em jogos online, videoconferências, chamadas de audio, etc provavelmente sera ruim.
 
 ## 4.4. Jitter (variação da latência)
@@ -429,7 +429,7 @@ Essa variação pode prejudicar aplicações que dependem da entrega regular dos
 
 Para compensar variações no atraso, algumas aplicações utilizam buffers de reprodução (**jitter buffers**).
 - Esses buffers armazenam temporariamente os pacotes para tentar reproduzir áudio e vídeo de maneira mais regular.
-- Quando a conexao "fica mais lenta" (há jitter), o buffer consegue manter a reprodução do vídeo, audio, etc sem interrupções.
+- Quando a conexão "fica mais lenta" (há jitter), o buffer consegue manter a reprodução do vídeo, audio, etc sem interrupções.
 - **Ex**: buffer do YouTube, buffer do Spotify
 
 ![exemplo de buffer de video](./img/video_buffer.png)
@@ -442,9 +442,9 @@ Para compensar variações no atraso, algumas aplicações utilizam buffers de r
 
 Perda de pacotes **ocorre quando pacotes transmitidos não chegam ao destino** esperado.
 - Pacotes podem ser perdidos por varias razoes:
-  - Corrupcao de dados (colisao na rede ou interferencia), 
+  - Corrupção de dados (colisão na rede ou Interferência), 
   - Foram descartados (devido a congestionamento, filas cheias, etc),
-  - Um enlace de rede pode ter sido desconectado (ou rompido / cortado - **ex**: cabo de fibra optica rompido),
+  - Um enlace de rede pode ter sido desconectado (ou rompido / cortado - **ex**: cabo de fibra óptica rompido),
   - Outras falhas de rede.
 
 Imagine que um computador transmita 1.000 pacotes, mas apenas 980 sejam recebidos.
@@ -481,12 +481,12 @@ As causas podem incluir:
 - Descarte de pacotes em filas.
 - Sobrecarga de equipamentos.
 
-Os efeitos que a perda de pacotes terao em uma aplicacao dependem muito da sua sensibilidade a perdas, e do protocolo de transporte utilizado (TCP ou UDP).
+Os efeitos que a perda de pacotes terão em uma aplicação dependem muito da sua sensibilidade a perdas, e do protocolo de transporte utilizado (TCP ou UDP).
 - **Em TCP**: perdas podem provocar retransmissões, aumentando o tempo de transferência e reduzindo o desempenho.
   - O protocolo TCP tenta enviar os pacotes perdidos de novo, ate que sejam recebidos com sucesso.
 - **Em UDP**: não existe retransmissão automática pelo próprio protocolo. 
   - A aplicação pode simplesmente receber dados incompletos, a menos que implemente mecanismos próprios de recuperação 
-  - Isto é, **no UDP, a responsabilidade de detectar a perda, e pedir a retransmissao é do aplicativo**.
+  - Isto é, **no UDP, a responsabilidade de detectar a perda, e pedir a retransmissão é do aplicativo**.
 
 ## 4.6. Comparação das métricas de desempenho
 
@@ -514,11 +514,11 @@ Depende da aplicação. Considere os três cenários abaixo:
 Por exemplo, um jogador pode preferir uma conexão de 100 Mbps com 15 ms de latência a outra de 500 Mbps com 120 ms de latência.
 
 Isso acontece porque, para jogos interativos, a capacidade de transmissão não é o único fator determinante.
-- Latencia e jitter podem prejudicar muito a experiência do jogador, mesmo que a conexão possua grande capacidade de transmissão.
+- Latência e jitter podem prejudicar muito a experiência do jogador, mesmo que a conexão possua grande capacidade de transmissão.
 
-# 5. Exercicios de fixacao
+# 5. Exercícios de fixação
 
-## Parte A — Comunicacao e modos de transmissão
+## Parte A — Comunicação e modos de transmissão
 
 1. Diferencie unicast, broadcast e multicast. Apresente um exemplo de utilização para cada modalidade.
 2. Um computador transmite uma mensagem de broadcast IPv4. Todos os computadores conectados à Internet receberão essa mensagem? Explique.
@@ -533,14 +533,14 @@ Isso acontece porque, para jogos interativos, a capacidade de transmissão não 
 8. Qual é a diferença entre latência e jitter?
 9. Por que o jitter pode prejudicar uma videoconferência?
 10. Um computador transmitiu 5.000 pacotes, dos quais 4.850 chegaram ao destino. Calcule a taxa de perda de pacotes.
-11. Uma conexão A possui largura de banda de 200 Mbps, e latência de 200 ms. Outra conexao B possui largura de banda de 50 Mbps e latência de 50 ms. Qual conexão pode ser mais adequada para jogos online? Justifique.
+11. Uma conexão A possui largura de banda de 200 Mbps, e latência de 200 ms. Outra conexão B possui largura de banda de 50 Mbps e latência de 50 ms. Qual conexão pode ser mais adequada para jogos online? Justifique.
 12. Um usuário enviou um arquivo de 100 MB em 5 segundos. Qual a vazão da conexão em Mbps?
 
 ## Parte C — Situações-problema
 
 13. Durante uma videoconferência, os participantes percebem interrupções no áudio, mesmo possuindo uma conexão com largura de banda elevada. Quais métricas de desempenho devem ser investigadas?
 14. Em uma rede do Instituto Federal, um computador apresenta perda de pacotes de 5% ao acessar um servidor remoto. Quais podem ser as causas dessa perda? Cite pelo menos três.
-15. Um usuário relata que, ao acessar um site, a página demora para carregar, mesmo possuindo uma latencia de 20 ms. Quais métricas de desempenho devem ser analisadas para identificar o problema? Justifique.
+15. Um usuário relata que, ao acessar um site, a página demora para carregar, mesmo possuindo uma Latência de 20 ms. Quais métricas de desempenho devem ser analisadas para identificar o problema? Justifique.
 
 # 6. Atividades Praticas
   
@@ -622,20 +622,20 @@ Faça o que se pede abaixo.
    1. **O que acontece primeiro (Broadcast):** O PC1 enviará um pacote **ARP** (verde) para descobrir quem é o **PC2**. O Switch receberá e enviará para **todas** as portas (Broadcast). O **PC2** responderá, e os demais descartarão.
       1. Entenda o **ARP** como sendo uma forma de "descobrir" o endereço MAC do destinatário, para que a comunicação possa ocorrer de forma mais eficiente.
    2. **O que acontece depois (Unicast):** Após descobrir o destinatário, o **PC1** enviará o pacote **ICMP** (Ping), que é a mensagem que pedimos para ser enviada usando a ferramenta de **Add Simple PDU** do Packet Tracer. O Switch encaminhará esse pacote **apenas** para o **PC2** (Unicast 1-1).
-      1. Isto é, o switch ja aprendeu aonde está o destino (mapeamento MAC -> porta de saida), durante o processo de ARP, e agora consegue encaminhar o pacote ICMP diretamente para o **PC2**.
+      1. Isto é, o switch ja aprendeu aonde está o destino (mapeamento MAC -> porta de saída), durante o processo de ARP, e agora consegue encaminhar o pacote ICMP diretamente para o **PC2**.
 
 **Passo 3: Observando Half-Duplex e Colisões no Hub**
 
-1. Ainda no modo **Simulation**, delete os cenários anteriores clicando em *``Delete``* no painel de cenários (*``Scenários``* - no canto inferior direito do simulador).
+1. Ainda no modo **Simulation**, delete os cenários anteriores clicando em *``Delete``* no painel de cenários (*``Scenarios``* - no canto inferior direito do simulador).
    1. Quando os cenários sao apagados, o Packet Tracer  remove os pacotes que estavam sendo transmitidos (e que estavam em espera).
 2. Vamos forçar uma comunicação simultânea no **Hub**:
    1.  Pegue a ferramenta **Add Simple PDU** (carta fechada). Clique no **PC3** e depois no **PC4**.
    2.  Imediatamente (antes de dar o ``Play``), pegue **outra** carta fechada. Clique no **PC4** e depois no **PC3**.
 3. Clique em **Play** na aba de simulação (``Simulation Panel``) e observe atentamente:
    1. Os dois pacotes chegarão ao Hub ao mesmo tempo.
-   2. O Hub opera em modo **Half-Duplex** e apenas repassa os sinais elétricos. Como os dois transmitem juntos, os sinais se misturam (há **colisao de pacotes**).
+   2. O Hub opera em modo **Half-Duplex** e apenas repassa os sinais elétricos. Como os dois transmitem juntos, os sinais se misturam (há **colisão de pacotes**).
    3. O Packet Tracer exibirá uma animação de "fogo" (colisão). Os pacotes são destruídos e nenhum dos dois consegue se comunicar (Interferência/Broadcast Storm).
-   4. **Colisao/Interferencia**: Seria o equivalente de duas pessoas falando ao mesmo tempo em uma sala, onde ninguém consegue entender o que o outro está dizendo.
+   4. **colisão/Interferência**: Seria o equivalente de duas pessoas falando ao mesmo tempo em uma sala, onde ninguém consegue entender o que o outro está dizendo.
 
 ### Passo 3: Analisando o resultado
 

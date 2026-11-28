@@ -1,9 +1,9 @@
-# Solucao dos Exercicios - Módulo 3 (Classes Abstratas, Composição e Conceitos avançados)
+# Solução dos Exercícios - Módulo 3 (Classes Abstratas, Composição e Conceitos avançados)
 
 **Sumário**:
-- [Solucao dos Exercicios - Módulo 3 (Classes Abstratas, Composição e Conceitos avançados)](#solucao-dos-exercicios---módulo-3-classes-abstratas-composição-e-conceitos-avançados)
+- [Solução dos Exercícios - Módulo 3 (Classes Abstratas, Composição e Conceitos avançados)](#solução-dos-exercícios---módulo-3-classes-abstratas-composição-e-conceitos-avançados)
   - [Exercicio 1](#exercicio-1)
-  - [Exercicio 2](#exercicio-2)
+  - [Exercício 2](#exercício-2)
   - [Exercicio 3](#exercicio-3)
   - [Exercicio 4](#exercicio-4)
   - [Exercicio 5](#exercicio-5)
@@ -38,7 +38,7 @@ sistema = Sistema(banco)
 
 Isso reduz o acoplamento: `Sistema` passa a depender apenas do contrato de `BancoDeDados` (que poderia até ser uma interface/classe abstrata), permitindo trocar a implementação sem alterar `Sistema`.
 
-## Exercicio 2
+## Exercício 2
 
 Respostas:
 1. **A classe possui alta ou baixa coesão?**
@@ -68,7 +68,7 @@ class UsuarioRepositorio:
 ```
 
 4. **Explique por que sua solução (acima) possui maior coesão.**
-   1. Cada classe agora concentra responsabilidades relacionadas a um único assunto: `Usuario` cuida apenas do que diz respeito ao próprio usuário; `EmailService` cuida apenas de notificação por e-mail; `RelatorioService`, apenas de relatórios; `UsuarioRepositorio`, apenas de persistência. Uma mudança em como os e-mails são enviados, por exemplo, não exige mais tocar na classe `Usuario`.
+   1. Cada classe agora concentra responsabilidades relacionadas a um único assunto: `Usuário` cuida apenas do que diz respeito ao próprio usuário; `EmailService` cuida apenas de notificação por e-mail; `RelatorioService`, apenas de relatórios; `UsuárioRepositorio`, apenas de persistência. Uma mudança em como os e-mails são enviados, por exemplo, não exige mais tocar na classe `Usuário`.
 
 ## Exercicio 3
 

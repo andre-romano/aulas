@@ -1,7 +1,7 @@
-# Cabeamento e Meios de Comunicacao
+# Cabeamento e Meios de Comunicação
 
 **Sumário**:
-- [Cabeamento e Meios de Comunicacao](#cabeamento-e-meios-de-comunicacao)
+- [Cabeamento e Meios de Comunicação](#cabeamento-e-meios-de-comunicação)
 - [1. Meios de transmissão](#1-meios-de-transmissão)
   - [1.1. O que são meios de transmissão?](#11-o-que-são-meios-de-transmissão)
   - [1.2. Como os dados são transmitidos?](#12-como-os-dados-são-transmitidos)
@@ -87,7 +87,7 @@ Por exemplo, em um laboratório de informática, pode ser interessante utilizar 
 
 Já em uma residência, o Wi-Fi pode ser mais conveniente para conectar smartphones e notebooks.
 - A razão é que o Wi-Fi oferece **mobilidade e facilidade de uso**, mesmo que a taxa de transmissão possa ser menor e o meio seja mais suscetível a interferências.
-- **Interferencia**: é a influência de sinais indesejados que podem degradar a qualidade da comunicação.
+- **Interferência**: é a influência de sinais indesejados que podem degradar a qualidade da comunicação.
   - Ex: micro-ondas, telefones sem fio, outros dispositivos eletrônicos, paredes e obstáculos físicos.
 
 ## 1.2. Como os dados são transmitidos?
@@ -117,7 +117,7 @@ Dependendo da tecnologia utilizada, podem ser empregados:
 
 É importante compreender que o meio físico não transporta diretamente conceitos como arquivos, imagens ou mensagens. 
 - **O meio transporta sinais** que representam os dados codificados pelos equipamentos de comunicação.
-- Esses sinais são interpretados pelos equipamentos (computadore, smartphones, etc) como imagens, vídeos, textos ou qualquer outro tipo de informação digital.
+- Esses sinais são interpretados pelos equipamentos (computadores, smartphones, etc) como imagens, vídeos, textos ou qualquer outro tipo de informação digital.
 
 # 2. Cabos de par trançado
 
@@ -136,11 +136,11 @@ Assim, o **entrelaçamento dos fios tem finalidades** importantes:
 - reduzir os efeitos de interferências eletromagnéticas 
 - reduzir a interferência entre os próprios pares do cabo, conhecida como **diafonia (crosstalk)**.
 - Diafonia ocorre pois **cabos com corrente elétrica geram campos magnéticos que podem induzir sinais indesejados** em condutores próximos.
-- Quando entrelacamos os fios, a corrente eletrica que circula em um fio é compensada pela corrente que circula no outro fio do par, reduzindo a interferência (veja figura abaixo).
+- Quando entrelaçamos os fios, a corrente elétrica que circula em um fio é compensada pela corrente que circula no outro fio do par, reduzindo a interferência (veja figura abaixo).
 
 ![](./img/cable-inductance.jpg)
 
-Por conta dessas questoes, **é importante preservar o trançamento dos pares o máximo possível** durante a montagem dos conectores. 
+Por conta dessas questões, **é importante preservar o trançamento dos pares o máximo possível** durante a montagem dos conectores. 
 - Destrançar excessivamente os condutores pode prejudicar o desempenho elétrico do cabo.
 
 ## 2.2. Tipos de cabos de par trançado (UTP e STP)
@@ -163,7 +163,7 @@ Os cabos de par trançado podem possuir diferentes **estruturas de blindagem**:
 
 **Atenção**: a blindagem não elimina todas as interferências. 
 - Mesmo blindados, cabos STP podem sofrer interferências se instalados próximos a fontes de ruído intenso, mesmo se a instalação for correta.
-- Se a instalação for incorreta, ai a imunidade ao ruído pode ser consideravemente comprometida, afetando o funcionamento e até introduzindo problemas elétricos.
+- Se a instalação for incorreta, ai a imunidade ao ruído pode ser consideravelmente comprometida, afetando o funcionamento e até introduzindo problemas elétricos.
 
 **Comparação entre UTP e STP**:
 
@@ -181,7 +181,7 @@ Os cabos de par trançado são **classificados em categorias**, que definem cara
 - Largura de banda do canal.
 - Diafonia (crosstalk).
 - Impedância.
-- Desempenho (frequências de transmissao e recepção).
+- Desempenho (frequências de transmissão e recepção).
 
 **Principais categorias de cabos Ethernet**:
 | Categoria | Frequência | Velocidade máxima | Distancia máxima                  |
@@ -221,7 +221,7 @@ Uma fibra óptica convencional é composta por:
 1. **Núcleo (Core)**: região central por onde a luz se propaga.
 2. **Casca (Cladding)**: camada que possui índice de refração adequado para confinar a luz no núcleo.
 3. **Capa protetora / Revestimento primário (Coating)**: camada protetora do vidro.
-4. **Elementos de proteção**: estruturas adicionais que protegem a fibra contra esforços mecânicos e condições ambientais (ex: revestimentos, armaduras, kevlar, pvc, aço, etc.).
+4. **Elementos de proteção**: estruturas adicionais que protegem a fibra contra esforços mecânicos e condições ambientais (ex: revestimentos, armaduras, Kevlar, pvc, aço, etc.).
 
 ![](./img/fiber-optic.jpg)
 
@@ -263,12 +263,12 @@ O processo simplificado é:
 - Possibilidade de comunicação em grandes distâncias (até alguns km).
 - Imunidade a interferências eletromagnéticas (luz nao é afetada por campos eletromagnéticos, como cabos sao).
 - Isolamento elétrico entre os equipamentos conectados (não há risco de curto-circuito, ou choque elétrico).
-- Menor atenuação em muitas aplicações de longa distância (luz perde pouca potencia durante a transmissão, comparada a sinais eletricos em fios de cobre).
+- Menor atenuação em muitas aplicações de longa distância (luz perde pouca potencia durante a transmissão, comparada a sinais elétricos em fios de cobre).
 - Menor suscetibilidade a interferências elétricas externas (luz não é afetada por variações de tensão ou corrente, como os sinais elétricos em fios de cobre).
 
 **Desvantagens (fibra óptica x fios de cobre)**
 - Alto custo dos equipamentos ópticos.
-- Maior complexidade para manutenção e instalacao (conectores, ferramentas e treinamento especializado).
+- Maior complexidade para manutenção e instalação (conectores, ferramentas e treinamento especializado).
 - Fragilidade relativa do filamento de vidro (pode quebrar facilmente, nao dobra tao bem quanto os fios de cobre - limite de angulo de flexão).
 - Dificuldade de diagnóstico sem instrumentos apropriados (multímetros, testadores de fibra, etc).
 
@@ -280,10 +280,10 @@ As redes sem fio utilizam **ondas eletromagnéticas** para transportar informaç
 
 ![](./img/wireless.jpg)
 
-As ondas eletromagneticas, que transportam informações, trafegam pelo espaço através de **campos elétricos e magnéticos variáveis**.
+As ondas eletromagnéticas, que transportam informações, trafegam pelo espaço através de **campos elétricos e magnéticos variáveis**.
 - Horas o campo elétrico ($E$) é mais intenso, 
 - Horas é o campo magnético ($B$) aquele que está mais intenso.
-- Veja animacao abaixo:
+- Veja animação abaixo:
 
 ![](./img/electromagnetic-wave.gif)
 
@@ -292,7 +292,7 @@ Entre as tecnologias mais conhecidas estão:
 - Bluetooth.
 - Redes celulares (4G, 5G, 6G, etc).
 - Comunicação via satélite.
-- NFC (pagamento por aproximacao no celular/cartao).
+- NFC (pagamento por aproximação no celular/cartão).
 - RFID (identificação por radiofrequência, rastreamento de produtos, etc).
 
 ## 4.1. Frequência e comprimento de onda
@@ -301,7 +301,7 @@ As ondas eletromagnéticas podem ser caracterizadas pela **frequência** e pelo 
 - **Frequência**: indica quantas **oscilações** ocorrem por segundo e é medida em **Hertz (Hz)**.
 - **Comprimento de onda**: representa a distância entre vales ou cristas de um ciclo da onda.
 
-Voces verao esses conceitos com mais detalhes nas disciplinas de física, mas é importante compreender que **quanto maior a frequência ($f$), menor o comprimento de onda ($\lambda$)**:
+Voces verão esses conceitos com mais detalhes nas disciplinas de física, mas é importante compreender que **quanto maior a frequência ($f$), menor o comprimento de onda ($\lambda$)**:
 
 $$
 \lambda = \frac{c}{f} 
@@ -320,13 +320,13 @@ As redes Wi-Fi modernas podem **operar em diferentes faixas de frequência**:
 | Banda   | Características gerais                                                       |
 | ------- | ---------------------------------------------------------------------------- |
 | 2,4 GHz | Maior alcance em muitos ambientes, mas maior congestionamento                |
-| 5 GHz   | Maior quantidade de canais (veja definicao abaixo) e capacidade (velocidade) |
+| 5 GHz   | Maior quantidade de canais (veja definição abaixo) e capacidade (velocidade) |
 | 6 GHz   | Mais canais que 2,4 GHz e 5 GHz, e maior capacidade (velocidade)             |
 
 **Canais**: Cada faixa de frequência é dividida em canais, que são faixas específicas de frequência utilizadas para a transmissão de dados.
 - Uma **mesma banda pode ter múltiplos canais**, 
 - Isso permite que **diferentes redes Wi-Fi operem simultaneamente** sem interferir umas nas outras.
-- Isto é, sem causar perda de pacotes, corrupcao, ou interferencia entre elas.
+- Isto é, sem causar perda de pacotes, corrupção, ou interferência entre elas.
 - **Analogia**: Imagine uma estrada com várias faixas. 
   - Cada faixa representa um canal, e os carros representam os sinais de dados. 
   - Se muitas redes Wi-Fi estiverem usando o mesmo canal (faixa), é como se todos os carros estivessem tentando usar a mesma faixa da estrada ao mesmo tempo, causando congestionamento e atrasos.
@@ -341,7 +341,7 @@ As redes Wi-Fi modernas podem **operar em diferentes faixas de frequência**:
   - Os demais canais (2, 3, 4, 5, 7, 8, 9, 10) **sobrepõem-se** com os canais vizinhos (*"um passa por cima do outro"*).
 - Observe também que cada canal tem uma **largura de banda** de **22 MHz**.
   - **Largura de banda**: representa o tamanho do canal (em frequência).
-  - Ou seja, é quanto da frequencia disponível um canal ocupa para transmitir dados.
+  - Ou seja, é quanto da frequência disponível um canal ocupa para transmitir dados.
   - Veja que nesse exemplo uma rede 2,4 GHz pode usar ondas eletromagnéticas de 2,400 GHz até 2,500 GHz. 
   - Mas note que **cada canal ocupa apenas 22 MHz** dessa faixa.
 
@@ -350,7 +350,7 @@ As redes Wi-Fi modernas podem **operar em diferentes faixas de frequência**:
   - Um canal de 40 MHz na faixa de 2,4 GHz pode interferir com vários canais próximos.
   - Enquanto um canal de 20 MHz tem menos chance de causar interferências.
 
-![](./img/wireless-channel-width.jpeg)
+![](./img/wireless-channel-width.jpg)
 
 **Experimento**: Faça o seguinte teste, abra um aplicativo de scanner de Wi-Fi no seu celular (por exemplo, o "WiFi Analyzer" ou outro similar) 
 - Observe as redes Wi-Fi disponíveis.
@@ -369,30 +369,30 @@ As redes Wi-Fi modernas podem **operar em diferentes faixas de frequência**:
 - Maior compatibilidade com dispositivos antigos.
 - Melhor cobertura (sofre menos atenuação ao atravessar obstáculos).
 
-Essa faixa de frequencia é a usada por tecnologias mais antigas, como o **Wi-Fi 4 (802.11n)** e **Wi-Fi 5 (802.11ac)**.
+Essa faixa de frequência é a usada por tecnologias mais antigas, como o **Wi-Fi 4 (802.11n)** e **Wi-Fi 5 (802.11ac)**.
 - Contudo, ainda é amplamente utilizada em redes domésticas e comerciais (principalmente para redes de internet das coisas - IoT).
 
 **Desvantagens do 2,4 GHz**:
 
-- Maior quantidade de equipamentos concorrendo pela faixa de frequencia (2,4 GHz).
+- Maior quantidade de equipamentos concorrendo pela faixa de frequência (2,4 GHz).
   - Isso pode gerar **congestionamento e interferência** (muitos dispositivos querendo se comunicar ao mesmo tempo)
-  - **Analogia**: sala de aula cheia, com muitos alunos falando ao mesmo tempo, ninguem se escuta (chega ruido e ninguem se entende),
-  - **Ruido = Pacotes corrompidos** consequencia de interferencias no meio (ar, espaco, etc)
-  - **Consequencia**: é preciso enviar a informacao que se perdeu de novo (**retransmissao**) ou esperar o meio ficar livre (**contencao**), o que gera:
-    - Aumento da latencia (demora para receber a resposta)
+  - **Analogia**: sala de aula cheia, com muitos alunos falando ao mesmo tempo, ninguém se escuta (chega ruido e ninguém se entende),
+  - **Ruido = Pacotes corrompidos** consequência de interferências no meio (ar, espaço, etc)
+  - **Consequência**: é preciso enviar a informação que se perdeu de novo (**retransmissão**) ou esperar o meio ficar livre (**contenção**), o que gera:
+    - Aumento da latência (demora para receber a resposta)
     - Redução da taxa de transmissão (menos bits transmitidos por segundo)
 - Menor disponibilidade de canais não sobrepostos (isto é, canais que não interferem entre si).
 - Maior possibilidade de interferência.
-- **Interferencia faz com que o desempenho da rede seja prejudicado**, mesmo que a taxa de transmissão seja relativamente alta.
+- **Interferência faz com que o desempenho da rede seja prejudicado**, mesmo que a taxa de transmissão seja relativamente alta.
   - **Cada vez que um pacote é corrompido (ou perdido), ele precisa ser retransmitido**, o que reduz a eficiência da comunicação.
   - Mesmo se o pacote nao for corrompido ou perdido, cada dispositivo de rede precisa esperar sua vez de transmitir (a rede tem **alta contenção**)
-  - **A contencao aumenta a latencia e reduz a taxa de transmissão** efetiva.
+  - **A contenção aumenta a latência e reduz a taxa de transmissão** efetiva.
 
 ### 4.2.2. Banda de 5 GHz
 
 Surgiu para resolver alguns problemas da banda de 2,4 GHz:
 - Melhor capacidade (maior taxa de transmissão)
-- Menor interferência (menos dispositivos utilizando essa faixa = menos congestionamento e contencao)
+- Menor interferência (menos dispositivos utilizando essa faixa = menos congestionamento e contenção)
 - Maior quantidade de canais disponíveis (mais opções de canais não sobrepostos = menos interferência entre redes Wi-Fi próximas)
 - Alcance limitado (sinais de 5 GHz sofrem mais atenuação ao atravessar obstáculos, como paredes e móveis, comparado a 2,4 GHz).
   - O que pode ser algo positivo em ambientes com muitas redes Wi-Fi próximas, pois reduz a interferência entre elas.
@@ -449,21 +449,21 @@ A segurança da rede sem fio ajuda a impedir acessos não autorizados e a proteg
 - **WPA2** continua sendo uma opção adequada quando WPA3 não está disponível.
 - **WEP** e **WPA** são obsoletos e inseguros; **não devem ser utilizados**.
 
-Em redes domésticas, o modo **Personal** usa uma senha compartilhada (**PSK**), que todos os usuários da rede devem conhecer para ter acesso. 
+Em redes domésticas, o modo **Personal** usa uma senha compartilhada (**PSK**), que todos os máximo da rede devem conhecer para ter acesso. 
 - **Vantagem**: é simples de configurar e não requer servidores (computadores ligados 24h por dia).
-- **Desvantagem**: todos os usuários compartilham a mesma senha, o que dificulta o gerenciamento de acessos individuais.
+- **Desvantagem**: todos os máximo compartilham a mesma senha, o que dificulta o gerenciamento de acessos individuais.
   - Nao sabemos quem tem acesso, quem fez o que dentro da rede, ou se algum usuário está usando a rede de forma não autorizada (senha foi compartilhada com pessoas que não deveriam ter acesso).
 
-Em redes de empresas e instituições, se usa o modo **Enterprise**, que pode autenticar cada usuário individualmente (com Usuario e Senha ou certificados digitais).
+Em redes de empresas e instituições, se usa o modo **Enterprise**, que pode autenticar cada usuário individualmente (com Usuário e Senha ou certificados digitais).
 - Isso facilita o gerenciamento de acessos, permitindo que cada usuário tenha credenciais próprias e que o administrador da rede possa controlar quem tem permissão para se conectar.
-- **Ex**: uma empresa pode revogar o acesso de um funcionário que saiu da empresa, sem precisar alterar a senha de todos os outros usuários.
+- **Ex**: uma empresa pode revogar o acesso de um funcionário que saiu da empresa, sem precisar alterar a senha de todos os outros máximo.
 - **Desvantagem**: requer um servidor de autenticação (ex: RADIUS) e configuração mais complexa.
 
 **Boas práticas**
 - Definir uma senha longa e exclusiva para o Wi-Fi e alterar a senha administrativa padrão do roteador.
   - Senha do roteador é aquela que usamos para acessar a interface de configuração do roteador (ex: `admin` / `admin` ou `admin` / `12345`).
 - Manter o firmware do roteador atualizado.
-  - **Firware**: é o software interno do roteador que controla seu funcionamento.
+  - **Firmware**: é o software interno do roteador que controla seu funcionamento.
   - Atualizações podem corrigir falhas de segurança e melhorar o desempenho.
 - Desativar o **WPS** se não for necessário.
   - **WPS (Wi-Fi Protected Setup)** é um recurso que permite conectar dispositivos à rede Wi-Fi de forma simplificada (sem senha), usando um código de acesso ou pressionando um botão.
@@ -496,7 +496,7 @@ O conector popularmente chamado de **RJ-45** é amplamente **utilizado em cabos 
 ## 5.2. Padrões T568A e T568B
 
 Os padrões T568A e T568B definem a ordem dos condutores no conector Ethernet.
-- Podemos utilizar qualquer um dos dois padrões, desde que **seja o mesmo em ambas as extremidades do cabo** (para cabos diretos - tambem chamados de cabos **Straight-Through**) ou **um padrão em cada extremidade** (para cabos cruzados - chamados de cabos **Crossover**).
+- Podemos utilizar qualquer um dos dois padrões, desde que **seja o mesmo em ambas as extremidades do cabo** (para cabos diretos - também chamados de cabos **Straight-Through**) ou **um padrão em cada extremidade** (para cabos cruzados - chamados de cabos **Crossover**).
 
 ![](./img/ethernet-t568ab.jpg)
 
@@ -513,7 +513,7 @@ A ordem dos fios é:
 | 7    | Branco/Marrom  | Branco/Marrom  |
 | 8    | Marrom         | Marrom         |
 
-É fundamental observar que a numeração dos pinos depende da posicao (orientação) do conector e da face dos contatos (veja imagem abaixo).
+É fundamental observar que a numeração dos pinos depende da posição (orientação) do conector e da face dos contatos (veja imagem abaixo).
 
 ![](./img/ethernet-connector.jpg)
 
@@ -535,7 +535,7 @@ Historicamente, **cabos diretos eram utilizados para conectar dispositivos de ti
 - Roteador e switch.
 - Computador e roteador.
 
-**ATENCAO**: Switch e hub são dispositivos de mesma categoria funcional (*"fazem a mesma coisa"*), portanto, **não se conectam diretamente com cabos diretos**.
+**ATENÇÃO**: Switch e hub são dispositivos de mesma categoria funcional (*"fazem a mesma coisa"*), portanto, **não se conectam diretamente com cabos diretos**.
 
 ## 5.4. Cabo cruzado (Crossover)
 
@@ -560,8 +560,6 @@ Muitos equipamentos atuais possuem suporte a **Auto MDI-X**.
 - Logo, atualmente, é comum **utilizar cabos diretos em praticamente todas as conexões Ethernet convencionais**, DESDE QUE os equipamentos ofereçam essa funcionalidade.
 
 **Atenção**: o **cabo cruzado não é uma categoria de cabo**. É uma configuração de pinagem (T568A em uma ponta, e T568B na outra ponta).
-
-ANDRE: PAREI AQUI
 
 # 6. Montagem e certificação de cabos
 
@@ -596,7 +594,7 @@ A montagem de um cabo Ethernet envolve algumas etapas.
 
 ![](./img/ethernet-cable-stripping.jpg)
 
-É possivel fazer isso com um estilete ou faca, mas é **recomendável utilizar um decapador de cabos**, que permite remover a capa sem danificar os fios internos.
+É possível fazer isso com um estilete ou faca, mas é **recomendável utilizar um decapador de cabos**, que permite remover a capa sem danificar os fios internos.
 - Estilete e faca podem ferir/cortar os fios internos, ou expor fios de maneira irregular (podem causar curto-circuitos), prejudicando a crimpagem e o desempenho do cabo.
 
 ### Etapa 2 — Organização dos pares
@@ -631,18 +629,18 @@ Utilize o alicate de crimpagem para fixar os contatos metálicos nos condutores.
 
 ![](./img/ethernet-crimping-tool.webp)
 
-**IMPORTANTE**: Cabos Ethernet usam conectores **RJ45**, que tambem sao chamados de **8P8C (*8 Position 8 Contact*)**, pois possuem 8 posições e 8 contatos metálicos.
+**IMPORTANTE**: Cabos Ethernet usam conectores **RJ45**, que também sao chamados de **8P8C (*8 Position 8 Contact*)**, pois possuem 8 posições e 8 contatos metálicos.
 - O alicate de crimpagem deve ser adequado para esse tipo de conector.
 
-Cabos telefonicos usam conector RJ11, tambem chamado de **6P6C** (6 Position 6 Contact).
+Cabos telefônicos usam conector RJ11, também chamado de **6P6C** (6 Position 6 Contact).
 - Um mesmo alicate de crimpagem tipicamente pode clipar conectores RJ11 e RJ45.
 - Se atente para o tamanho do conector, pois o **RJ11 é menor** que o RJ45.
 
 ### Etapa 6 — Teste
 
-Utilize um testador para verificar a continuidade dos fios e se o padrao de crimpagem está correto (**Straight-Through** ou **Crossover**)
+Utilize um testador para verificar a continuidade dos fios e se o padrão de crimpagem está correto (**Straight-Through** ou **Crossover**)
   - O testador deve indicar que todos os oito condutores estão conectados corretamente.
-  - Deve acender uma luz ou indicar no display que todos os fios estão OK (veja animacao abaixo).
+  - Deve acender uma luz ou indicar no display que todos os fios estão OK (veja animação abaixo).
   - A ordem que os fios acendem no testador deve corresponder à ordem do padrão escolhido (**Straight-Through** ou **Crossover**).
     - **Relembrando**:
       - **Cabo direto (Straight-Through)**: mesmo padrão em ambas as extremidades.
@@ -659,7 +657,7 @@ Durante a montagem, existem alguns problemas recorrentes como:
 - Excesso de destrançamento.
 - Utilização de conectores incompatíveis (RJ11 em vez de RJ45, por exemplo).
 - Danos aos condutores durante a decapagem.
-- Comprimento acima do especificado (100 metros para cabos UTP - veja tabela da categoria de cabos Ethernet na secao [2.3. Categoria de Cabos Ethernet](#23-categorias-de-cabos-ethernet)).
+- Comprimento acima do especificado (100 metros para cabos UTP - veja tabela da categoria de cabos Ethernet na seção [2.3. Categoria de Cabos Ethernet](#23-categorias-de-cabos-ethernet)).
 - Instalação próxima a fontes intensas de interferência (fontes de radiação eletromagnética, fontes de eletricidade, etc).
 - Mistura inadequada de componentes blindados e não blindados (cabos blindados em equipamentos que nao tem suporte a eles).
 
@@ -718,7 +716,7 @@ Apresente pelo menos 3 possíveis causas e explique como investigaria o problema
 
 Uma empresa instalou cabos UTP próximos a equipamentos industriais que produzem fortes interferências eletromagnéticas.
 
-Os usuários começaram a perceber instabilidade na rede.
+Os máximo começaram a perceber instabilidade na rede.
 
 Que medidas poderiam ser adotadas para resolver o problema?
 
@@ -782,4 +780,4 @@ Realize os seguintes experimentos:
    - Se voce fosse configurar as redes que voce esta observando, quais canais voce escolheria para minimizar a interferência e melhorar a qualidade do sinal de todas elas?
      - Existe uma configuração ideal de canais que minimize a interferência entre todas as redes observadas? Se sim, qual é?
      - Se não, explique o motivo.
-     - Se nao houver uma configuração ideal, explique como voce poderia melhorar a qualidade do sinal das redes observadas (ex: ajuste na banda de frequencia, posicao do roteador, potencia do sinal de cada access point, etc).
+     - Se nao houver uma configuração ideal, explique como voce poderia melhorar a qualidade do sinal das redes observadas (ex: ajuste na banda de frequência, posição do roteador, potencia do sinal de cada access point, etc).

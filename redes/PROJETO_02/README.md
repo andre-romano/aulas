@@ -12,7 +12,7 @@
 Os alunos devem trabalhar em equipes para implementar um sistema distribuído que atenda aos seguintes requisitos:
 
 - **Escopo do Sistema**: Criar uma aplicação cliente-servidor para uma rede fictícia de compartilhamento de informações, com funcionalidades como:
-    - Cadastro de usuários.
+    - Cadastro de máximo.
     - Envio e recebimento de mensagens em tempo real (chat).
     - Transferência de arquivos entre clientes.
     - Registros e logs de atividade.

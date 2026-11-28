@@ -42,12 +42,8 @@
     "security.workspace.trust.untrustedFiles": "open",
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "php.validate.executablePath": "C:\\xampp\\php\\php\\php.exe",
-    "cSpell.language": "",
     "editor.formatOnSave": true,
-    "cSpell.words": [
-        "Ormatacao",
-        "pylance"
-    ],
+    "cSpell.enabled": false,
     "security.workspace.trust.enabled": false,
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "python.languageServer": "Pylance", // Ensure Pylance is being used as the language server

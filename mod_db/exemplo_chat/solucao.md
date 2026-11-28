@@ -1,6 +1,6 @@
-## Solucao - Sistema de Chat On-line (WhatsApp-like)
+## Solução - Sistema de Chat On-line (WhatsApp-like)
 
-A descricao dos requisitos do sistema podem ser encontrados no arquivo [README.md](./README.md).
+A descrição dos requisitos do sistema podem ser encontrados no arquivo [README.md](./README.md).
 
 ### Modelo conceitual (completo)
 
@@ -16,7 +16,7 @@ Abra o arquivo do BrModelo [./modelo_logico.brM3](./modelo_logico.brM3) para mai
  
 #### Exemplos de tabelas
 
-**Destinatario**:
+**Destinatário**:
 | id_destinatario | nome              | nome_arq_foto_perfil |
 | --------------- | ----------------- | -------------------- |
 | 3               | Carlos Alberto    | carlos.jpg           |
@@ -24,7 +24,7 @@ Abra o arquivo do BrModelo [./modelo_logico.brM3](./modelo_logico.brM3) para mai
 | 5               | Josefina Silva    | jsilva.jpg           |
 | 6               | Grupo de ADS      | ads_broca.png        |
 
-**Usuario**:
+**Usuário**:
 | telefone        | id_destinatario |
 | --------------- | --------------- |
 | (71) 98765-4532 | 3               |
@@ -37,13 +37,13 @@ Abra o arquivo do BrModelo [./modelo_logico.brM3](./modelo_logico.brM3) para mai
 | 1   | 6               |
 
 
-**Usuario_Destinatario**:
+**Usuário_Destinatario**:
 | id  | data_hora_envio     | mensagem                      | id_destinatario | telefone_remetente |
 | --- | ------------------- | ----------------------------- | --------------- | ------------------ |
 | 1   | 2025-07-10 07:55:26 | Ola Seu Zé, tudo bem?         | 4               | (75) 91234-5678    |
 | 2   | 2024-02-28 16:41:02 | O que vai cair na prova hoje? | 6               | (71) 98765-4532    |
 
-**Usuario_Grupo**:
+**Usuário_Grupo**:
 | tel_usuario     | id_grupo | eh_administrador |
 | --------------- | -------- | ---------------- |
 | (71) 98765-4532 | 6        | true             |

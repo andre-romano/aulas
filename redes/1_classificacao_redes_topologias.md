@@ -1,8 +1,8 @@
 
-# Classificacao de Redes e Topologias
+# Classificação de Redes e Topologias
 
 **Sumário**:
-- [Classificacao de Redes e Topologias](#classificacao-de-redes-e-topologias)
+- [Classificação de Redes e Topologias](#classificação-de-redes-e-topologias)
 - [1. Conceitos fundamentais de redes de computadores](#1-conceitos-fundamentais-de-redes-de-computadores)
   - [1.1. O que é uma rede de computadores?](#11-o-que-é-uma-rede-de-computadores)
     - [1.1.1. Exemplo prático: compartilhamento de uma impressora](#111-exemplo-prático-compartilhamento-de-uma-impressora)
@@ -49,7 +49,7 @@ Esses dispositivos podem ser:
 - Impressoras.
 - Câmeras de segurança.
 - Roteadores e switches.
-- Televisores, relogios, e outros dispositivos inteligentes (Internet das Coisas - IoT).
+- Televisores, relógios, e outros dispositivos inteligentes (Internet das Coisas - IoT).
 - Dispositivos de automação residencial.
 - Equipamentos de automação industrial.
 
@@ -72,7 +72,7 @@ Portanto, uma rede de computadores permite principalmente:
 2. **Compartilhamento de recursos**: utilização de impressoras, arquivos, armazenamento e conexões de Internet.
 3. **Centralização**: armazenamento e administração de informações em servidores.
 4. **Colaboração**: utilização simultânea de sistemas e documentos.
-5. **Gerenciamento**: administração centralizada dos dispositivos e usuários.
+5. **Gerenciamento**: administração centralizada dos dispositivos e máximo.
 6. **Escalabilidade**: possibilidade de adicionar novos dispositivos e serviços.
 
 ### 1.1.1. Exemplo prático: compartilhamento de uma impressora
@@ -90,7 +90,7 @@ Quando um usuário envia um documento para impressão:
 
 Os demais computadores também podem utilizar a mesma impressora, sem que seja necessário conectar fisicamente cada um deles a ela.
 
-**Atenção**: compartilhar recursos não significa necessariamente que todos os usuários terão acesso irrestrito. 
+**Atenção**: compartilhar recursos não significa necessariamente que todos os máximo terão acesso irrestrito. 
 - É possível estabelecer permissões, autenticação e políticas de segurança 
   - *"quem acessa quais recursos"*
 
@@ -102,7 +102,7 @@ Para que dois ou mais dispositivos consigam trocar informações, alguns element
 | ----------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | Dispositivos finais (*hosts*) | Origem ou destino das informações                                   | Computadores, Smartphones, Laptops, Cameras IP, IoT, etc            |
 | Interfaces de rede (*NIC*)    | Permitem que os dispositivos se conectem à rede                     | Placas de rede, adaptadores Wi-Fi, etc                              |
-| Meio de transmissão           | Transporta os sinais entre os dispositivos                          | Cabos metalicos (Ethernet, Coaxial), ar, fibra óptica, etc          |
+| Meio de transmissão           | Transporta os sinais entre os dispositivos                          | Cabos metálicos (Ethernet, Coaxial), ar, fibra óptica, etc          |
 | Equipamentos intermediários   | Encaminham os dados entre os dispositivos                           | Roteadores, switches, hubs, etc                                     |
 | Protocolos                    | Estabelecem regras para a comunicação                               | TCP/IP, HTTP, HTTPS, etc                                            |
 | Endereço                      | Permite identificar o dispositivo e definir uma rota de comunicação | IPs, MACs, etc                                                      |
@@ -126,7 +126,7 @@ Um protocolo de rede é um conjunto de regras que determina como os dispositivos
 
 Podemos fazer uma analogia com uma conversa entre duas pessoas.
 - Para que uma conversa aconteça, os participantes precisam compartilhar um idioma ou algum mecanismo de interpretação. 
-  - **Ex**: Portugues, Ingles, Libras, etc
+  - **Ex**: Português, Inglês, Libras, etc
 - Também precisam compreender como 
   - iniciar a conversa, 
   - transmitir informações,
@@ -138,7 +138,7 @@ Alguns exemplos:
 
 | Protocolo | Finalidade                                                                                                                                                              |
 | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| IP        | Endereçamento e encaminhamento de pacotes (permitir que um dispositivo defina quem deve receber os pacotes - para entao a rede dizer qual rota o pacote deve percorrer) |
+| IP        | Endereçamento e encaminhamento de pacotes (permitir que um dispositivo defina quem deve receber os pacotes - para então a rede dizer qual rota o pacote deve percorrer) |
 | TCP       | Comunicação confiável entre aplicações (precisa estabelecer uma conexão antes de enviar os dados)                                                                       |
 | UDP       | Comunicação rápida entre aplicações (sem estabelecimento prévio de conexão)                                                                                             |
 | HTTP      | Transferência de conteúdo da Web                                                                                                                                        |
@@ -183,7 +183,7 @@ A tecnologia **Bluetooth** é bastante utilizada nesse tipo de rede, mas não é
 **Características**:
 
 - Pequena área de cobertura (até alguns metros de distância).
-- Baixo consumo energético (o que é otimo para dispositivos móveis, fones de ouvido, IoT, etc).
+- Baixo consumo energético (o que é ótimo para dispositivos móveis, fones de ouvido, IoT, etc).
 - Pode utilizar tecnologias cabeadas ou sem fio.
 
 ## 2.2. LAN - Local Area Network
@@ -303,7 +303,7 @@ As tecnologias utilizadas podem incluir:
 | MAN  | Metropolitana      | < 100 km         | Redes de campi de uma universidade |
 | WAN  | Grandes distâncias | >= 100 km        | Rede entre filiais internacionais  |
 
-![comparacao entre LAN, MAN e WAN](./img/comparison_LAN_MAN_WAN.jpg)
+![](./img/comparison_LAN_MAN_WAN.jpg)
 
 **Importante**: essas classificações são conceituais e **não possuem limites geográficos rígidos** (apesar das distâncias típicas acima). 
 - Uma rede não deixa de ser LAN simplesmente porque ocupa um edifício relativamente grande. 
@@ -328,7 +328,7 @@ Os meios mais comuns são:
 **Vantagens**:
 
 - Maior previsibilidade da comunicação 
-  - Sinais enviados atraves de cabos sao mais estáveis (são menos suscetíveis a ruídos e interferencias).
+  - Sinais enviados através de cabos sao mais estáveis (são menos suscetíveis a ruídos e interferências).
 - Geralmente oferecem baixa latência (atraso na transmissão de dados de um dispositivo a outro).
 - Menor suscetibilidade a interferências de radiofrequência.
 - Boa capacidade de transmissão (velocidade de dados).
@@ -356,7 +356,7 @@ As tecnologias mais conhecidas incluem:
 
 **Vantagens**:
 
-- Mobilidade (dispositivos nao estao limitados ao comprimento do cabo).
+- Mobilidade (dispositivos nao estão limitados ao comprimento do cabo).
 - Facilidade para adicionar dispositivos (não é necessário instalar um cabo para cada dispositivo).
 - Flexibilidade de implantação (não é necessário planejar a instalação de cabos).
 
@@ -368,7 +368,7 @@ As tecnologias mais conhecidas incluem:
   - Como o meio é compartilhado, a comunicação pode ser afetada por congestionamento e colisões de sinais.
   - Isto é, varias dispositivos podem tentar transmitir ao mesmo tempo, causando perda de pacotes e atrasos.
   - **Analogia**: várias pessoas tentando falar ao mesmo tempo em uma sala, o que dificulta a compreensão da mensagem falada.
-  - **Solucao**: controlar quem fala, e quando fala (através de protocolos de acesso ao meio, como CSMA, RTS/CTS, etc).
+  - **Solução**: controlar quem fala, e quando fala (através de protocolos de acesso ao meio, como CSMA, RTS/CTS, etc).
 - Possíveis limitações de cobertura.
   - Ondas de radio podem ter alcance limitado, dependendo da potência do transmissor, da frequência utilizada e das condições ambientais.
   - Equipamentos devem ficar perto do AP ou do roteador para garantir boa qualidade de sinal.
@@ -381,7 +381,7 @@ As tecnologias mais conhecidas incluem:
 | Mobilidade                       | Limitada                           | Elevada                  |
 | Interferências de rádio          | Nao há                             | Alta                     |
 | Instalação                       | Exige cabeamento                   | Exige cobertura wireless |
-| Latência (atraso na comunicacao) | Geralmente menor e mais previsível | Pode variar mais         |
+| Latência (atraso na comunicação) | Geralmente menor e mais previsível | Pode variar mais         |
 
 **Importante**: redes cabeadas não são necessariamente mais rápidas que todas as redes sem fio. 
 - Por exemplo, uma rede Wi-Fi moderna pode apresentar taxas superiores às de uma conexão Ethernet antiga. 
@@ -403,7 +403,7 @@ Na arquitetura cliente-servidor, determinados dispositivos disponibilizam servi�
 **Exemplo**: o **servidor** do Google oferece o serviço Web de busca de informações (usando protocolo HTTP),
 - Todos que acessam o Google solicitam esse serviço (sao **clientes**).
 
-![exemplo de rede cliente servidor](./img/client-server.svg)
+![exemplo de rede cliente servidor](./img/client-server.jpg)
 
 Considere uma escola que utiliza um sistema acadêmico.
 
@@ -431,8 +431,8 @@ Nesse exemplo, os computadores dos funcionários atuam como **clientes** e o **s
   - Isto é um servidor é um **ponto único de falha** (**single point of failure**).
 - Possibilidade de sobrecarga dos servidores.
   - Muitos clientes podem solicitar serviços simultaneamente, o que pode causar lentidão ou indisponibilidade.
-  - **Solucao**: utilizar balanceamento de carga (distribuição de carga entre múltiplos servidores), 
-    - **Problema**: Mais servidores  = Maior custo de implementação e manutenção (mais maquinas para instalar, configurar e dar manutencao).
+  - **Solução**: utilizar balanceamento de carga (distribuição de carga entre múltiplos servidores), 
+    - **Problema**: Mais servidores  = Maior custo de implementação e manutenção (mais maquinas para instalar, configurar e dar manutenção).
 
 ### 2.8.2. Arquitetura ponto a ponto (Peer-to-Peer — P2P)
 
@@ -451,7 +451,7 @@ Imagine três computadores conectados à mesma rede:
 
 Os computadores podem acessar os recursos compartilhados pelos demais, desde que tenham as permissões necessárias.
 
-**Exemplo**: redes BitTorrent utilizam arquitetura P2P para compartilhar arquivos entre os usuários, sem depender de um servidor central.
+**Exemplo**: redes BitTorrent utilizam arquitetura P2P para compartilhar arquivos entre os máximo, sem depender de um servidor central.
 
 **Vantagens**:
 
@@ -474,15 +474,15 @@ Os computadores podem acessar os recursos compartilhados pelos demais, desde que
 | ----------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | Organização       | Descentralizada (qualquer computador fornece serviços)                             | Centralizada (servidores)                                                       |
 | Servidor dedicado | Não é obrigatório                                                                  | Obrigatório                                                                     |
-| Administração     | Distribuída (cada computador com sua configuracao)                                 | Centralizada (um ou mais servidores, com mesma configuracao)                    |
+| Administração     | Distribuída (cada computador com sua configuração)                                 | Centralizada (um ou mais servidores, com mesma configuração)                    |
 | Segurança         | Mais difícil de padronizar                                                         | Mais fácil de centralizar                                                       |
 | Custo inicial     | Geralmente menor                                                                   | Geralmente maior                                                                |
 | Escalabilidade    | Maior (qualquer computador pode ser servidor, nao dependendo de um único servidor) | Menor (servidores podem ficar sobrecarregados se muitos clientes se conectarem) |
 
 **Atenção**: cliente-servidor não significa necessariamente que exista apenas um servidor. 
 - Uma infraestrutura pode possuir vários servidores, cada um responsável por determinado serviço, como DNS, DHCP, arquivos, autenticação e aplicações.
-- Podemos tambem ter vários servidores redundantes, que atuam como backup de outros servidores (se um servidor falhar, outro pode assumir o papel de servidor).
-- Tambem podemos configurar servidores em **load balancing**, que distribuem a carga de trabalho (evitando sobrecarga em um único servidor atendendo diversos clientes).
+- Podemos também ter vários servidores redundantes, que atuam como backup de outros servidores (se um servidor falhar, outro pode assumir o papel de servidor).
+- Também podemos configurar servidores em **load balancing**, que distribuem a carga de trabalho (evitando sobrecarga em um único servidor atendendo diversos clientes).
 
 Também é possível que o mesmo computador atue como cliente em uma comunicação e servidor em outra.
 - **Exemplo**: um computador pode acessar um servidor de arquivos (atuando como cliente) e, ao mesmo tempo, compartilhar uma impressora (atuando como servidor).
@@ -500,20 +500,20 @@ Existem duas perspectivas importantes:
 Essas duas perspectivas não são necessariamente iguais.
 
 Por exemplo, uma rede Ethernet pode possuir **topologia física em estrela**, com todos os computadores conectados a um hub, 
-- Mas todos os dispostivos se comunicam uns com os outros (comunicação lógica do **tipo barramento**)
-- Isto é, todos os computadores estao, internamente, ligados ao mesmo cabo de metal (o barramento lógico), mesmo que pareçam ter cabos diferentes (topologia física em estrela).
+- Mas todos os dispositivos se comunicam uns com os outros (comunicação lógica do **tipo barramento**)
+- Isto é, todos os computadores estão, internamente, ligados ao mesmo cabo de metal (o barramento lógico), mesmo que pareçam ter cabos diferentes (topologia física em estrela).
 - Veja imagem de exemplo abaixo:
 
-![exemplo topologia logica e fisica](./img/logical_physical_topology.png)
+![](./img/logical_physical_topology.png)
 
 ## 3.1. Topologia em barramento (Bus)
 
 Na topologia em barramento, todos os **dispositivos são conectados a um mesmo meio** físico compartilhado, por exemplo:
 - Mesmo cabo coaxial,
 - Mesmo cabo de par trançado (Ethernet),
-- Mesmo canal de rádio (ondas de radio de mesma frequencia de comunicacao, em redes sem fio).
+- Mesmo canal de rádio (ondas de radio de mesma frequência de comunicação, em redes sem fio).
  
-![Network Topology: You Have to Know This Before Building a Network | by NAKIVO | Medium](https://images.openai.com/static-rsc-4/vkMPB2p76d3onDAt8A3SHVIZmNgvKaUrMpOCapl-w8jCCoGsTBq5MuJj2Q6ZvTGSuupDEsaWcYKAfKzgfxAOjoTYKb-enzeMXvaWeRWXjyDkUsBvhv1vJkpwhFyw17HvZ3OMWY0vkMULj6NDvoQL9zIenZFjOY9aaJyXl-mU9VY?purpose=inline)
+![](./img/bar_topology.jpg)
 
 Quando um dispositivo transmite informações, o **sinal percorre o meio compartilhado e é recebido por TODOS** os dispositivos conectados.
 
@@ -542,12 +542,12 @@ Atualmente, essa topologia é pouco utilizada, pois tem desempenho (velocidade, 
 
 Na topologia em estrela, todos os dispositivos são conectados a um equipamento central (**switch**).
 
-![exemplo topologia em estrela](./img/star_topology.jpg)
+![](./img/star_topology.jpg)
 
 Cada computador possui um enlace próprio (cabo, fibra óptica ou outro tipo de conexão) até o equipamento central.
 
-Quando um computador deseja transmitir informações para outro, os dados são enviados pelo switch, que realiza o encaminhamento para o dispsitivo de destino correto.
-- Para isso, o switch descobre quem esta conectado a qual **porta**, para entao enviar os dados por esta porta.
+Quando um computador deseja transmitir informações para outro, os dados são enviados pelo switch, que realiza o encaminhamento para o dispositivo de destino correto.
+- Para isso, o switch descobre quem esta conectado a qual **porta**, para então enviar os dados por esta porta.
 - Isso é feito usando uma **tabela de endereços MAC**, que associa cada dispositivo a uma porta específica do switch.
 - **Analogia**: 
   - Endereço MAC = CPF do dispositivo (nao muda, definido quando ele é fabricado)
@@ -571,7 +571,7 @@ Quando um computador deseja transmitir informações para outro, os dados são e
 - Necessidade de maior quantidade de cabos.
   - Um cabo para cada dispositivo conectado ao switch.
 - Custo associado ao switch e à infraestrutura.
-  - Cada switch tem custo, e a instalação dos cabos em si tambem tem custo (materiais e mão de obra).
+  - Cada switch tem custo, e a instalação dos cabos em si também tem custo (materiais e mão de obra).
 
 **A topologia em estrela é uma das mais utilizadas** em redes modernas.
 
@@ -598,7 +598,7 @@ Dependendo da tecnologia utilizada, a transmissão pode ocorrer em uma ou nas du
 - Alterações na estrutura podem ser mais complexas.
   - Adicionar ou remover um dispositivo pode exigir a interrupção temporária da rede.
 
-Atualmente, essa topologia é pouco utilizada, pois tem maior propenabilidade a falhas e maior complexidade de gerenciamento.
+Atualmente, essa topologia é pouco utilizada, pois tem maior propensão a falhas e maior complexidade de gerenciamento.
 
 ## 3.4. Topologia em malha (Mesh)
 
@@ -639,7 +639,7 @@ Onde:
 - $E$ representa a quantidade de enlaces.
 - $n$ representa a quantidade de dispositivos.
 
-Por exemplo, para interligar 5 dispositivos entre si (de formar que todos possma se comunicar diretamente uns com os outros), precisariamos de 10 enlaces (cabos e interfaces de rede):
+Por exemplo, para interligar 5 dispositivos entre si (de formar que todos possam se comunicar diretamente uns com os outros), precisaríamos de 10 enlaces (cabos e interfaces de rede):
 
 $$ E(5) = \frac{5(5-1)}{2} = 10 $$
 
@@ -659,9 +659,9 @@ A topologia em árvore organiza os dispositivos de forma hierárquica (veja exem
 
 **Vantagens**:
 
-- Boa escalabilidade (facil de expandir).
-- Facilidade para dividir a infraestrutura por setores (departamento de computacao, química, física, etc).
-- Possibilidade de implementar políticas de segurança em diferentes níveis (computacao tem acesso a computadores dos laboratórios, quimica nao tem, e assim por diante).
+- Boa escalabilidade (fácil de expandir).
+- Facilidade para dividir a infraestrutura por setores (departamento de computação, química, física, etc).
+- Possibilidade de implementar políticas de segurança em diferentes níveis (computação tem acesso a computadores dos laboratórios, química nao tem, e assim por diante).
 
 **Desvantagens**:
 

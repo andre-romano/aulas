@@ -1,14 +1,14 @@
 
-# Modulo 5 - Principios SOLID
+# Modulo 5 - Princípios SOLID
 
 **Sumário** 
-- [Modulo 5 - Principios SOLID](#modulo-5---principios-solid)
+- [Modulo 5 - Princípios SOLID](#modulo-5---princípios-solid)
 - [1. Princípios SOLID](#1-princípios-solid)
   - [1.1. S — Single Responsability Principle (SRP ou Princípio da Responsabilidade Única)](#11-s--single-responsability-principle-srp-ou-princípio-da-responsabilidade-única)
   - [1.2. O — Open/Closed Principle (OCP ou Principio Aberto/Fechado)](#12-o--openclosed-principle-ocp-ou-principio-abertofechado)
-  - [1.3. L — Liskov Substitution Principle (LSP ou Principio de Substituicao de Liskov)](#13-l--liskov-substitution-principle-lsp-ou-principio-de-substituicao-de-liskov)
+  - [1.3. L — Liskov Substitution Principle (LSP ou Principio de Substituição de Liskov)](#13-l--liskov-substitution-principle-lsp-ou-principio-de-substituição-de-liskov)
   - [1.4. I — Interface Segregation Principle (ISP ou Principio de Segregacao de Interfaces)](#14-i--interface-segregation-principle-isp-ou-principio-de-segregacao-de-interfaces)
-  - [1.5. D — Dependency Inversion Principle (DIP ou Principio de Inversao de Dependencia)](#15-d--dependency-inversion-principle-dip-ou-principio-de-inversao-de-dependencia)
+  - [1.5. D — Dependency Inversion Principle (DIP ou Principio de Inversão de Dependência)](#15-d--dependency-inversion-principle-dip-ou-principio-de-inversão-de-dependência)
   - [1.6. Resumo dos princípios SOLID](#16-resumo-dos-princípios-solid)
 - [Exercícios para fixação](#exercícios-para-fixação)
   - [Exercício 1](#exercício-1)
@@ -89,7 +89,7 @@ O objetivo não é "ter muitas classes".
 O objetivo é ter **RESPONSABILIDADES BEM DEFINIDAS**.
 - *"Cada classe faz uma tarefa bem feita, e uma somente."*
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 1](#exercício-1)
 
 ## 1.2. O — Open/Closed Principle (OCP ou Principio Aberto/Fechado)
@@ -137,10 +137,10 @@ Agora o sistema pode receber diferentes estratégias de desconto sem modificar o
 
 Essa abordagem descrita acima é a base que norteia **padroes de projeto** de engenharia de software avançados, como o ``Startegy`` (que veremos mais a frente no curso).
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 2](#exercício-2)
 
-## 1.3. L — Liskov Substitution Principle (LSP ou Principio de Substituicao de Liskov)
+## 1.3. L — Liskov Substitution Principle (LSP ou Principio de Substituição de Liskov)
 
 O Princípio da Substituição de Liskov estabelece que **objetos de uma subclasse devem poder substituir objetos da classe-base** sem quebrar as expectativas do programa.
 - Isto é, uma subclasse **tem que ser um tipo de** classe base
@@ -156,7 +156,7 @@ A lição principal é:
 
 > Herança deve preservar o comportamento esperado da classe-pai (interface previamente definida).
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 3](#exercício-3)
 
 ## 1.4. I — Interface Segregation Principle (ISP ou Principio de Segregacao de Interfaces)
@@ -211,10 +211,10 @@ class FuncionarioTrabalhaDirige(TrabalharInterface, DirigirInterface):
         print("Eu dirijo")
 ```
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 4](#exercício-4)
 
-## 1.5. D — Dependency Inversion Principle (DIP ou Principio de Inversao de Dependencia)
+## 1.5. D — Dependency Inversion Principle (DIP ou Principio de Inversão de Dependência)
 
 Módulos de alto nível não devem depender diretamente de implementações concretas.
 - Eles devem **depender de abstrações** (interfaces, classes abstratas, etc).
@@ -258,7 +258,7 @@ Exemplo:
 sistema = Sistema(BancoDeDadosDeTeste())
 ```
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 5](#exercício-5)
 - [Exercício 6](#exercício-6)
 
@@ -276,11 +276,11 @@ sistema = Sistema(BancoDeDadosDeTeste())
     - **Exemplo**: Todo ``Quadrado`` é um ``Retangulo``, mas nem todo ``Retangulo`` é um ``Quadrado``.
 - **I - Interface Segregation Principle (ISP ou Principio de Segregacao de Interfaces)**  
   - *Classes não devem ser obrigados a ter métodos que não sao utilizados*.
-- **D - Dependency Inversion Principle (DIP ou Principio de Inversao de Dependencia)**  
+- **D - Dependency Inversion Principle (DIP ou Principio de Inversão de Dependência)**  
   - Módulos de alto nível não devem depender diretamente de implementações concretas. Eles devem depender de abstrações.
   - *Evitar uso direto de classes concretas, **usar sempre que possivel o polimorfismo** (interfaces, classes abstratas, etc).*
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 7](#exercício-7)
 - [Exercício 8](#exercício-8)
  

@@ -1,8 +1,8 @@
 
-# Modulo 4 - Acoplamento, Coesao e Principios DRY, KISS, YAGNI
+# Modulo 4 - Acoplamento, Coesão e Princípios DRY, KISS, YAGNI
 
 **Sumário** 
-- [Modulo 4 - Acoplamento, Coesao e Principios DRY, KISS, YAGNI](#modulo-4---acoplamento-coesao-e-principios-dry-kiss-yagni)
+- [Modulo 4 - Acoplamento, Coesão e Princípios DRY, KISS, YAGNI](#modulo-4---acoplamento-coesão-e-princípios-dry-kiss-yagni)
   - [1. Acoplamento](#1-acoplamento)
   - [2. Coesão](#2-coesão)
   - [3. Injeção de dependência](#3-injeção-de-dependência)
@@ -38,14 +38,14 @@ Classe D
 Uma pequena alteração pode produzir efeitos em diversas partes do programa.
 
 Buscamos, em geral **BAIXO ACOPLAMENTO**.
-- Isto é, tornar o sistema **menos dependente possível de implementacoes concretas, e mais voltado a interfaces/polimorfismo**.
-- **Reduzir hierarquias grandes** (classe A que herda de B que herda de C e assim sucessivamente), e utilizar **mais composicao**.
+- Isto é, tornar o sistema **menos dependente possível de implementações concretas, e mais voltado a interfaces/polimorfismo**.
+- **Reduzir hierarquias grandes** (classe A que herda de B que herda de C e assim sucessivamente), e utilizar **mais composição**.
 - Composição pode ajudar a reduzir o acoplamento porque permite substituir componentes utilizados por um objeto sem precisar alterar a hierarquia de classes.
 
-**Exercicio de Fixacao**
+**Exercício de Fixação**
 - [Exercicio 1](#exercício-1)
 
-**Codigo com BAIXO ACOPLAMENTO é mais facil de dar manutencao**
+**Código com BAIXO ACOPLAMENTO é mais fácil de dar manutenção**
 
 ## 2. Coesão
 
@@ -54,7 +54,7 @@ Coesão está relacionada à concentração das responsabilidades de um componen
 Uma classe **altamente coesa** possui **responsabilidades relacionadas entre si**.
 - Uma classe com **baixa coesao** possui responsabilidades que nao deveria ter.
 
-Exemplo com BAIXA COESAO:
+Exemplo com BAIXA COESÃO:
 
 ```python
 class ContaBancaria:
@@ -110,7 +110,7 @@ class ContaBancaria:
 ```
 
 Nosso alvo aqui é atingir **ALTA COESAO** em **todas as classes**.
-- Codigo altamente coeso é mais facil de dar manutencao (alterar o codigo, seja pra corrigir bugs ou inserir recursos no sistema)
+- Codigo altamente coeso é mais fácil de dar manutenção (alterar o codigo, seja pra corrigir bugs ou inserir recursos no sistema)
 
 **Exercicio de Fixacao**
 - [Exercicio 2](#exercício-2)
@@ -118,7 +118,7 @@ Nosso alvo aqui é atingir **ALTA COESAO** em **todas as classes**.
 ## 3. Injeção de dependência
 
 A injeção de dependência acontece quando um objeto recebe externamente os componentes de que necessita.
-- Em geral, é um recurso que **facilita o polimorfismo e reuso de codigo**, tornando o código mais facil de dar manutencao.
+- Em geral, é um recurso que **facilita o polimorfismo e reuso de codigo**, tornando o código mais fácil de dar manutenção.
 
 Exemplo:
 
@@ -128,7 +128,7 @@ class Repositorio:
         print("Usuário", usuario, "salvo")
 
 
-class UsuarioService:
+class UsuárioService:
     def __init__(self, repositorio):
         self.repositorio = repositorio
 
@@ -140,16 +140,16 @@ Uso:
 
 ```python
 repositorio = Repositorio()
-service = UsuarioService(repositorio)
+service = UsuárioService(repositorio)
 ```
 
 ``Repositorio`` tem responsabilidade bem definida, servindo para salvar os dados do usuário.
 
-A classe `UsuarioService` não precisa criar seu próprio repositório (melhor usar um que ja existe).
+A classe `UsuárioService` não precisa criar seu próprio repositório (melhor usar um que ja existe).
 
 Isso reduz o acoplamento e melhora coesao.
-- **Baixo Acoplamento**: ``UsuarioService`` chama ``Repositorio`` pra salvar usuario (``UsuarioService`` nao precisa saber como ``Repositorio`` funciona)
-- **Alta Coesao**: `Repositorio` so salva usuario, `UsuarioService` cadastra e chama `Repositorio` pra salvar.
+- **Baixo Acoplamento**: ``UsuárioService`` chama ``Repositorio`` pra salvar usuario (``UsuárioService`` nao precisa saber como ``Repositorio`` funciona)
+- **Alta Coesao**: `Repositorio` so salva usuario, `UsuárioService` cadastra e chama `Repositorio` pra salvar.
 
 **Exercicio de Fixacao**
 - [Exercicio 3](#exercício-3)

@@ -1,4 +1,4 @@
-## Solucao - Sistema de Streaming de Música (Spotify-like)
+## Solução - Sistema de Streaming de Música (Spotify-like)
 
 A descricao dos requisitos do sistema podem ser encontrados no arquivo [README.md](./README.md).
 
@@ -54,7 +54,7 @@ Abra o arquivo do BrModelo [./modelo_logico.brM3](./modelo_logico.brM3) para mai
 | 1   | Gratuita |
 | 2   | Premium  |
 
-**Usuario**:
+**Usuário**:
 | email            | nome             | senha | id_tipo_conta |
 | ---------------- | ---------------- | ----- | ------------- |
 | joao.c@gmail.com | Joao Costa       | 1234  | 1             |

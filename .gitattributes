@@ -18,6 +18,11 @@
 *.jpeg binary linguist-generated=true
 *.gif  binary linguist-generated=true
 *.ico  binary linguist-generated=true
+*.svg  binary linguist-generated=true
+*.pkt  binary linguist-generated=true
+*.pks  binary linguist-generated=true
+*.pkts  binary linguist-generated=true
+*.pka  binary linguist-generated=true
 
 # === Executables and archives ===
 *.exe  binary linguist-generated=true

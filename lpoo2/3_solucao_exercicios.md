@@ -1,8 +1,8 @@
-# Solucao dos Exercicios - Módulo 3 (Classes Abstratas, Composição e Conceitos avançados)
+# Solução dos Exercícios - Módulo 3 (Classes Abstratas, Composição e Conceitos avançados)
 
 **Sumário**:
-- [Solucao dos Exercicios - Módulo 3 (Classes Abstratas, Composição e Conceitos avançados)](#solucao-dos-exercicios---módulo-3-classes-abstratas-composição-e-conceitos-avançados)
-  - [Exercicio 1](#exercicio-1)
+- [Solução dos Exercícios - Módulo 3 (Classes Abstratas, Composição e Conceitos avançados)](#solução-dos-exercícios---módulo-3-classes-abstratas-composição-e-conceitos-avançados)
+  - [Exercício 1](#exercício-1)
   - [Exercício 2](#exercício-2)
   - [Exercício 3](#exercício-3)
   - [Exercício 4](#exercício-4)
@@ -20,7 +20,7 @@
   - [Estudo de caso 2](#estudo-de-caso-2)
   - [Estudo de caso 3](#estudo-de-caso-3)
 
-## Exercicio 1
+## Exercício 1
 
 ```python
 from abc import ABC, abstractmethod
@@ -171,7 +171,7 @@ Iracema
 
 **Por que é agregação:** os objetos `Livro` são criados fora do construtor de `Biblioteca` e apenas adicionados a uma lista interna via `adicionar_livro()`. 
 - `Biblioteca` não controla o ciclo de vida dos livros. Ela só guarda referências a objetos que já existiam antes.
-- Se `Biblioteca` deixar de existir, os livros continuam existindo normalmente (veja a parte final do codigo de solucao).
+- Se `Biblioteca` deixar de existir, os livros continuam existindo normalmente (veja a parte final do codigo de solução).
 - Se fosse **composição**, os livros seriam criados dentro do construtor de `Biblioteca` e deixariam de existir junto com ela.
 
 ## Exercício 4 
@@ -207,12 +207,12 @@ class Computador:
 
 computador = Computador()
 computador.ligar()
-# saida:
+# saída:
 # Lendo dados da memória
 # Processando dados
 
 computador.salvar_dados()
-# saida:
+# saída:
 # Armazenando dados na memória
 
 # podemos acessar processador e memoria diretamente, pois sao atributos publicos de Computador
@@ -311,7 +311,7 @@ computador.armazenar()
 - A **composição**. Para trocar de **Intel** para **AMD** na versão composta, bastou alterar **uma linha** dentro do construtor de `Computador`:
   - `self.processador = ProcessadorIntel()` → `ProcessadorAMD()`
 - Na versão com herança, foi necessário criar uma classe inteiramente nova (`ComputadorIntel` ou `ComputadorAMD`), reimplementando `processar()` **e** `armazenar()` em cada uma, sem conseguir reaproveitar nem "processador" nem "memória" como peças independentes e intercambiáveis:
-  - Isto é, se tivessemos duas memória diferentes (por exemplo, `MemoriaDDR4` e `MemoriaDDR5`), teríamos que criar **quatro classes** diferentes para cobrir todas as combinações possíveis de processador e memória (``IntelDDR4``, ``IntelDDR5``, ``AmdDDR4``, ``AmdDDR5``), enquanto na versão com composição bastaria trocar os objetos passados para o construtor de `Computador`.
+  - Isto é, se tivéssemos duas memória diferentes (por exemplo, `MemoriaDDR4` e `MemoriaDDR5`), teríamos que criar **quatro classes** diferentes para cobrir todas as combinações possíveis de processador e memória (``IntelDDR4``, ``IntelDDR5``, ``AmdDDR4``, ``AmdDDR5``), enquanto na versão com composição bastaria trocar os objetos passados para o construtor de `Computador`.
 
 ## Exercício 5 
 
@@ -465,7 +465,7 @@ print(corrida1.get_motorista().get_nome() == corrida2.get_motorista().get_nome()
 
 ## Estudo de caso 3
 
-**Erro identificado:** `Drone` não guarda de fato um objeto `Motor` — guarda apenas uma `string` (`"eletrico"` ou `"combustao"`) e decide o que imprimir usando `if/elif` dentro de `decolar()`. 
+**Erro identificado:** `Drone` não guarda de fato um objeto `Motor` — guarda apenas uma `string` (`"elétrico"` ou `"combustao"`) e decide o que imprimir usando `if/elif` dentro de `decolar()`. 
 - Isso não é composição: **é uma duplicação de lógica** que deveria estar encapsulada em classes de motor próprias, além de exigir alterar `decolar()` sempre que um novo tipo de motor for criado.
 
 **Código refatorado:**

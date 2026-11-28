@@ -24,7 +24,7 @@
   - [9. Estilo de Arquitetura Cliente-Servidor](#9-estilo-de-arquitetura-cliente-servidor)
     - [2.1. Vantagens e Desvantagens](#21-vantagens-e-desvantagens)
   - [10. Estilo de Arquitetura Peer-to-Peer (P2P)](#10-estilo-de-arquitetura-peer-to-peer-p2p)
-  - [Exercícios de fixacao](#exercícios-de-fixacao)
+  - [Exercícios de fixação](#exercícios-de-fixação)
     - [Exercício 1](#exercício-1)
   - [Exercício 2](#exercício-2)
   - [Exercício 3](#exercício-3)
@@ -60,7 +60,7 @@ Sistema Acadêmico
 
 A arquitetura define como essas partes são organizadas.
 - Porem, há **estilos** e **padrões de arquitetura** diferentes, cada um com suas vantagens e desvantagens.
-- A escolha de um estilo ou padrão de arquitetura depende de varios fatores, como veremos abaixo.
+- A escolha de um estilo ou padrão de arquitetura depende de vários fatores, como veremos abaixo.
 
 ## 2. Estilo de Arquitetura X Padrão Arquitetural X Padrão de projeto
 
@@ -189,7 +189,7 @@ Exemplo:
 Sistema
 │
 ├── Autenticacao
-├── Usuarios
+├── Usuários
 ├── Pagamentos
 ├── Relatorios
 └── Banco de dados
@@ -213,12 +213,12 @@ Cada componente deve possuir **responsabilidades definidas, separadas entre si**
 
 Por exemplo:
 ```python
-class UsuarioService:
+class UsuárioService:
     def cadastrar(self, usuario):
         ...
 ```
 
-Nesse exemplo, o objetivo do componente ``UsuarioService`` é lidar com operações relacionadas ao cadastro.
+Nesse exemplo, o objetivo do componente ``UsuárioService`` é lidar com operações relacionadas ao cadastro.
 
 Não seria uma boa ideia colocar nele:
 - ``gerar_pdf()``
@@ -235,7 +235,7 @@ Uma parte do sistema pode depender de outra.
 
 Exemplo:
 ```text
-UsuarioService
+UsuárioService
       ↓
 Repositorio
       ↓
@@ -243,7 +243,7 @@ Banco de dados
 ```
 
 Quanto mais rígidas forem essas dependências, maior tende a ser o acoplamento.
-- Quanto maior o acoplamento, mais difícil será modificar o sistema (isto é, dar manutencao nele).
+- Quanto maior o acoplamento, mais difícil será modificar o sistema (isto é, dar manutenção nele).
 
 ### 4.4. Interfaces
 
@@ -288,7 +288,7 @@ Dessa forma, sistema depende da abstração ``RepositorioInterface`` e nao das i
 
 > Não existe um estilo ou uma arquitetura universalmente melhores.
 
-A escolha depende de multiplos fatores (tamanho do sistema, equipe, complexidade, requisitos, volume de usuários, necessidade de escalabilidade, integrações, segurança, custo, tempo de desenvolvimento, etc).
+A escolha depende de múltiplos fatores (tamanho do sistema, equipe, complexidade, requisitos, volume de usuários, necessidade de escalabilidade, integrações, segurança, custo, tempo de desenvolvimento, etc).
 
 Um sistema simples pode utilizar **Monólito com Camadas**, enquanto um sistema distribuído de grande escala pode utilizar **Microserviços com Orientacao a Eventos**.
 
@@ -553,7 +553,7 @@ Browser <---------------- Servidor Web <----------
 **Desvantagens**:
 * dependência da rede;
 * servidor pode se tornar gargalo (bottleneck -- uma maquina para atender muitos clientes);
-* problemas de disponibilidade (servidor indisponível) afetam varios clientes.
+* problemas de disponibilidade (servidor indisponível) afetam vários clientes.
 
 
 ## 10. Estilo de Arquitetura Peer-to-Peer (P2P)
@@ -588,7 +588,7 @@ Cada peer pode:
 
 A principal característica é que **não existe necessariamente um servidor central** responsável por todas as operações.
 
-## Exercícios de fixacao
+## Exercícios de fixação
 
 ### Exercício 1
 

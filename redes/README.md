@@ -14,13 +14,14 @@ Esta página contém as aulas e demais o conteúdos auxiliares da disciplina.
 
 Material de apoio para estudo da disciplina:
 
-1. [Classificacao de Redes PAN x LAN x MAN x WAN e Topologias](./1_classificacao_redes_topologias.md)
+1. [Classificação de Redes PAN x LAN x MAN x WAN e Topologias](./1_classificacao_redes_topologias.md)
 2. [Modelos de Referencia OSI x IP e Encapsulamento](./2_modelos_redes_encapsulamento.md)
-3. [Formas de Comunicacao, Modos de Transmissao e Métricas de Desempenho](./3_comunicacao_modos_transmissao.md)
+3. [Formas de Comunicação, Modos de Transmissão e Métricas de Desempenho](./3_comunicacao_modos_transmissao.md)
 4. [Equipamentos de Rede](./4_equipamentos_de_rede.md)
-5. [Endereçamento IP e Subredes](./5_redes.md)
-6. [Domínios de Colisao x Broadcast e Encaminhamento de Quadros](./6_dominios_bcast_encaminhamento.md)
-7. [Cabeamento e Meios de Comunicacao](./7_cabeamento_meios_comm.md)
+5. [Endereçamento IP e Sub-redes](./5_redes.md)
+6. [Domínios de Colisão x Broadcast e Encaminhamento de Quadros](./6_dominios_bcast_encaminhamento.md)
+7. [Serviços de rede e Protocolos Importantes](./7_servicos.md)
+8. [Cabeamento e Meios de Comunicação](./8_cabeamento_meios_comm.md)
 
 ## Projetos
 

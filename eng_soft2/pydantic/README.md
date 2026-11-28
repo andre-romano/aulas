@@ -54,7 +54,7 @@ Um modelo Pydantic é uma classe que herda de `BaseModel`.
 ```python
 from pydantic import BaseModel
 
-class Usuario(BaseModel):
+class Usuário(BaseModel):
     nome: str
     idade: int
     email: str
@@ -63,7 +63,7 @@ class Usuario(BaseModel):
 Ao criar um objeto desse modelo, o Pydantic valida automaticamente os dados:
 
 ```python
-usuario = Usuario(
+usuario = Usuário(
     nome="Ana",
     idade=25,
     email="ana@email.com"
@@ -79,7 +79,7 @@ Se algum campo tiver tipo inválido, uma exceção será lançada.
 ### **Exemplo de Erro de Validação**
 
 ```python
-Usuario(
+Usuário(
     nome="Carlos",
     idade="vinte",
     email="carlos@email.com"
@@ -102,7 +102,7 @@ Esse mecanismo evita que dados inválidos cheguem às camadas internas do sistem
 O Pydantic tenta converter tipos quando possível:
 
 ```python
-usuario = Usuario(
+usuario = Usuário(
     nome="Maria",
     idade="30",
     email="maria@email.com"
@@ -186,7 +186,7 @@ class Endereco(BaseModel):
     rua: str
     cidade: str
 
-class Usuario(BaseModel):
+class Usuário(BaseModel):
     nome: str
     endereco: Endereco
 ```
@@ -194,7 +194,7 @@ class Usuario(BaseModel):
 Uso:
 
 ```python
-usuario = Usuario(
+usuario = Usuário(
     nome="João",
     endereco={
         "rua": "Rua A",

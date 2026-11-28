@@ -26,5 +26,5 @@ O sistema permite que usuários acessem, escutem e gerenciem um vasto catálogo 
 - O sistema deve registrar o histórico de reprodução para futuras análises e relatórios.
 - Nao podem existir usuários diferentes com mesmo email.
 
-### Solucao
-Os modelos conceitual e lógico do sistema podem ser encontrados no arquivo [solucao.md](./solucao.md).
+### Solução
+Os modelos conceitual e lógico do sistema podem ser encontrados no arquivo [solução.md](./solucao.md).

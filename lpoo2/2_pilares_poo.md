@@ -23,13 +23,13 @@
   - [Exercício 4](#exercício-4)
   - [Exercício 5](#exercício-5)
   - [Exercício 6](#exercício-6)
-- [Estudos de caso (para fixacao do conteudo)](#estudos-de-caso-para-fixacao-do-conteudo)
+- [Estudos de caso (para fixação do conteúdo)](#estudos-de-caso-para-fixação-do-conteúdo)
   - [Estudo de caso 1](#estudo-de-caso-1)
   - [Estudo de caso 2](#estudo-de-caso-2)
   - [Estudo de caso 3](#estudo-de-caso-3)
   - [Estudo de caso 4](#estudo-de-caso-4)
   - [Estudo de caso 5](#estudo-de-caso-5)
-- [Solucao dos Exercicios](#solucao-dos-exercicios)
+- [Solução dos Exercícios](#solução-dos-exercícios)
 
 
 # 1. Os 4 pilares da POO
@@ -146,7 +146,7 @@ Exemplo:
 - `Gato` é um ``Animal``
 - `Vaca` é um ``Animal``
 
-Em Python teriamos:
+Em Python teríamos:
 ```python
 class Animal:
     def __init__(self, nome):
@@ -246,7 +246,7 @@ Chamando construtor de Aluno...
 Note que:
 - ``Aluno.__init__()`` chama `Pessoa.__init__()` 
 - somente depois dessa chamada que o construtor de `Aluno` faz as outras operacoes (como ``self.matricula = matricula``)
-- Essa ordem é IMPORTANTE, pois é RECOMENDÁVEL **chamar o construtor da classe pai** ANTES de fazer **qualquer operacao** no contrutor da **classe filha**.
+- Essa ordem é IMPORTANTE, pois é RECOMENDÁVEL **chamar o construtor da classe pai** ANTES de fazer **qualquer operação** no contrutor da **classe filha**.
 
 
 # 4. Interfaces e Polimorfismo
@@ -466,7 +466,7 @@ aluno1.cumprimentar()
 
 Observe que `aluno1`, por ser um objeto da classe `Aluno`, pode usar o metodo ``cumprimentar()``.
 - `cumprimentar()` por sua vez, consegue acessar o atributo ``self._nome`` que foi definido na classe ``Pessoa``.
-- Esse acesso a `_nome` so foi possivel porque ele esta definido como **atributo protegido** (atraves do uso do `_` na frente do nome do atributo)
+- Esse acesso a `_nome` so foi possivel porque ele esta definido como **atributo protegido** (através do uso do `_` na frente do nome do atributo)
 
 ### Atributo privado (``__nome_do_atributo``)
 
@@ -667,7 +667,7 @@ As subclasses devem sobrescrever ``calcular_beneficio()``
 
 Crie objetos de ambas as classes e teste os métodos.
 
-Faça ``print()`` onde for necessario para testar seus metodos e classes.
+Faça ``print()`` onde for necessário para testar seus metodos e classes.
 
 Verifique se o método ``mostrar_dados()`` funciona corretamente para ambas as subclasses.
 
@@ -774,7 +774,7 @@ Identifique as assertivas corretas (explique e justifique suas respostas):
 
 **IV.** Abstração e Encapsulamento são exatamente a mesma coisa, apenas com nomes diferentes.
 
-# Estudos de caso (para fixacao do conteudo)
+# Estudos de caso (para fixação do conteúdo)
 
 Cada estudo de caso abaixo apresenta um código com problemas. Assim, para cada estudo de caso proposto, faça o que se pede abaixo:
 
@@ -879,14 +879,14 @@ print("Produto:", item.produto,"- Preco: ", item.preco_unitario, " - Quantidade:
 
 ## Estudo de caso 4 
 ```python
-class Usuario:
+class Usuário:
     def __init__(self, nome, tipo_plano, minutos_assistidos):
         self.nome = nome
         self.tipo_plano = tipo_plano
         self.minutos_assistidos = minutos_assistidos
 
 
-usuario1 = Usuario("Bianca", "premium", 340)
+usuario1 = Usuário("Bianca", "premium", 340)
 
 if usuario1.tipo_plano == "premium":
     limite = 10000
@@ -964,7 +964,7 @@ Responda:
    3. Encapsulamento
    4. Abstração
 
-# Solucao dos Exercicios
+# Solução dos Exercícios
 
-A solucao dos exercicios e estudos de caso estao disponiveis no arquivo [`2_solucao_exercicios.md`](./2_solucao_exercicios.md) que acompanha este material.
+A solução dos exercícios e estudos de caso estao disponiveis no arquivo [`2_solucao_exercicios.md`](./2_solucao_exercicios.md) que acompanha este material.
 

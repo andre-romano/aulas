@@ -23,7 +23,7 @@
 
 ## 1. O que é Programação Orientada a Objetos?
 
-Antes de falar de classe e objetos, é importante entender primeiro o que é **programacao orientada a objetos**.
+Antes de falar de classe e objetos, é importante entender primeiro o que é **programação orientada a objetos**.
 
 Programação Orientada a Objetos (POO) é um paradigma de programação no qual o sistema é estruturado a partir de objetos, que representam entidades do domínio do problema.
 
@@ -64,12 +64,12 @@ calcular_media()
 
 ## 2. Mapa mental
 
-A programacao orientada a objetos (POO) é uma área que demanda vários conceitos e abstracoes, que iremos investigar nessa disciplina.
+A programação orientada a objetos (POO) é uma área que demanda vários conceitos e abstrações, que iremos investigar nessa disciplina.
 
 Em particular, nossa enfase estará nos assuntos de DESIGN para baixo, conforme mapa mental abaixo:
 
 ```text
-PROGRAMÇÃO ORIENTADA A OBJETOS
+PROGRAMAÇÃO ORIENTADA A OBJETOS
 │
 ├── Classes
 │   ├── Atributos
@@ -106,7 +106,7 @@ PROGRAMÇÃO ORIENTADA A OBJETOS
 │   ├── Repositório
 │   └── ...
 │
-└── PADROES DE PROJETO
+└── PADRÕES DE PROJETO
     ├── Strategy
     ├── Builder
     ├── DAO
@@ -114,7 +114,7 @@ PROGRAMÇÃO ORIENTADA A OBJETOS
     └──  ...
 ```
 
-Mas antes de adentrarmos nesses tópicos mais avancados de design e projeto de software, precisamos primeiro revisitar conceitos básicos da disciplina (Classes, Objetos, Herança, etc).
+Mas antes de adentrarmos nesses tópicos mais avançados de design e projeto de software, precisamos primeiro revisitar conceitos básicos da disciplina (Classes, Objetos, Herança, etc).
 
 ## 3. Classe e objeto
 
@@ -144,12 +144,12 @@ Aluno("Pedro")
 ```
 
 Todos são objetos da classe `Aluno`. 
-- Logo todos tem informacões como `nome` , `matricula` , e `email` 
-- O que vai mudar de um objeto para outro é o conteudo dessas informacõees 
+- Logo todos tem informações como `nome` , `matricula` , e `email` 
+- O que vai mudar de um objeto para outro é o conteúdo dessas informações 
   - **Ex:** ``Aluno("João")`` tem ``nome = "João"``
   - **Ex:** ``Aluno("Maria")`` tem ``nome = "Maria"``
-  - Isto é `Aluno("Joao")` != `Aluno("Maria")` (os objetos sao diferentes, e portanto armazenam informacões diferentes)
-- Todos os objetos tem EXATAMENTE os mesmos metodos `matricular()`, e `calcular_media()`
+  - Isto é `Aluno("Joao")` != `Aluno("Maria")` (os objetos sao diferentes, e portanto armazenam informações diferentes)
+- Todos os objetos tem EXATAMENTE os mesmos métodos `matricular()`, e `calcular_media()`
 
 ### 3.1. Criando uma classe em Python
 
@@ -206,7 +206,7 @@ Embora seja possível fazer isso em Python, normalmente preferimos inicializar o
 
 ### 4.1 Atributos de objetos diferentes
 
-Objetos diferentes armazenam informacões diferentes. 
+Objetos diferentes armazenam informações diferentes. 
 - Isto é, o **estado** que está armazenado nos atributos do objeto é diferente. 
 
 Exemplo:
@@ -286,7 +286,7 @@ print(aluno2.idade)
 print(aluno2.matricula)
 ```
 
-**IMPORANTE**: A notacao ``nome_do_objeto.atributo`` permite que acessemos os dados armazenados nesse atributo do objeto `nome_do_objeto`
+**IMPORTANTE**: A notação ``nome_do_objeto.atributo`` permite que acessemos os dados armazenados nesse atributo do objeto `nome_do_objeto`
 
 Exemplo:
 
@@ -357,7 +357,7 @@ Eletrônicos
 ```
 
 Ambos podem acessar o atributo definido na classe. 
-- Note que **se qualquer objeto alterar o atributo de classe, essa alteracao ocorre para todos os outros objetos** tambem (pois o atributo de classe é compartilhado por todos os objetos)
+- Note que **se qualquer objeto alterar o atributo de classe, essa alteração ocorre para todos os outros objetos** também (pois o atributo de classe é compartilhado por todos os objetos)
 
 Exemplo:
 
@@ -430,7 +430,7 @@ aluno.calcular_media()
 
 é um **método**.
 
-Veja que TODO METODO deve ser chamado pelo seu nome, seguido de parenteses, podendo ter dentro deles algum **parametro**. 
+Veja que TODO MÉTODO deve ser chamado pelo seu nome, seguido de parenteses, podendo ter dentro deles algum **parâmetro**. 
 
 Exemplo:
 
@@ -480,7 +480,7 @@ Foram criadas: 2 pessoas
 
 O parâmetro `cls` representa a classe.
 
-Normalmente **usamos metodos de classe** quando temos algum **comportamento que nao depende do estado do objeto** (dados armazenados no atributo).
+Normalmente **usamos métodos de classe** quando temos algum **comportamento que nao depende do estado do objeto** (dados armazenados no atributo).
 - No exemplo acima, o total de pessoas (``Pessoa.quantidade`) nao depende de uma pessoa em especifico.
 - Pelo contrario, ele conta quantas pessoas foram criadas no sistema.
 
@@ -609,7 +609,7 @@ média < 5  → Reprovado
 
 ### Exercício 4
 
-Antes de executar o codigo abaixo, leia-o e escreva, no papel ou em um comentário, qual será a saída impressa. Só depois rode o código para conferir.
+Antes de executar o código abaixo, leia-o e escreva, no papel ou em um comentário, qual será a saída impressa. Só depois rode o código para conferir.
 
 ```python
 class Aluno:

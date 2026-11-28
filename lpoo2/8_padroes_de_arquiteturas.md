@@ -50,7 +50,7 @@ Sistema Acadêmico
 
 A arquitetura define como essas partes são organizadas.
 - Porem, há **estilos** e **padrões de arquitetura** diferentes, cada um com suas vantagens e desvantagens.
-- A escolha de um estilo ou padrão de arquitetura depende de varios fatores, como veremos abaixo.
+- A escolha de um estilo ou padrão de arquitetura depende de vários fatores, como veremos abaixo.
 
 ## 2. Estilo de Arquitetura X Padrão Arquitetural X Padrão de projeto
 
@@ -230,7 +230,7 @@ Banco de dados
 ```
 
 Quanto mais rígidas forem essas dependências, maior tende a ser o acoplamento.
-- Quanto maior o acoplamento, mais difícil será modificar o sistema (isto é, dar manutencao nele).
+- Quanto maior o acoplamento, mais difícil será modificar o sistema (isto é, dar manutenção nele).
 
 ### 4.4. Interfaces
 
@@ -302,9 +302,9 @@ Controller
  Model   
 ```
 
-Convencao de nomes:
+Convenção de nomes:
 - **Model**: classes que representam dados e regras de negócio, com o sufixo ``Model`` ou ``Modelo`` (em português).
-- **View**: classes que fornecem a representação visual da tela para o Usuario, com o sufixo ``View`` ou ``Visao`` (em português).
+- **View**: classes que fornecem a representação visual da tela para o Usuário, com o sufixo ``View`` ou ``Visao`` (em português).
 - **Controller**: classes que recebem ações do usuário e coordenam a operação, com o sufixo ``Controller``, `Ctrl` ou ``Controlador`` (em português).
   
 Exemplo:
@@ -404,7 +404,7 @@ class TarefasModel:
         self._tarefas: list[TarefaModel] = []
 
     # criamos o metodo pra evitar de repetir o mesmo codigo de 
-    # validacao de indice em varios metodos (principio DRY - 
+    # validacao de indice em vários metodos (principio DRY - 
     # Don't Repeat Yourself - Nao Se Repita, em portugues).
     def __validar_indice(self, indice: int):        
         if indice < 0 or indice >= len(self._tarefas):
@@ -556,4 +556,4 @@ Analise o código acima e responda as perguntas abaixo:
 8. Onde mora a interação com o usuário? 
    - Todos os ``input()`` e ``print()`` do sistema estão concentrados em ``TarefasView``. O que aconteceria com a testabilidade e a manutenção do sistema se, em vez disso, esses comandos estivessem espalhados dentro de ``TarefasController`` ou de ``TarefasModel``? Dê um exemplo concreto de problema que isso causaria.
 9. Considere que você precisa adicionar uma nova funcionalidade: ``editar a descrição de uma tarefa existente (opção "6" do menu)``. 
-   - Escreva o código necessário em cada uma das 3 classes (``TarefasModel``, ``TarefasView``, ``TarefasController``), criando metodos se necessario. Em seguida, justifique e explique suas escolhas. Não é permitido que ``TarefasView`` acesse a lista ``self._tarefas`` diretamente (violacao de encapsulamento), nem que ``TarefasModel`` contenha qualquer ``print()`` ou ``input()`` (violacao do princípio da responsabilidade única e da arquitetura MVC).
+   - Escreva o código necessário em cada uma das 3 classes (``TarefasModel``, ``TarefasView``, ``TarefasController``), criando metodos se necessário. Em seguida, justifique e explique suas escolhas. Não é permitido que ``TarefasView`` acesse a lista ``self._tarefas`` diretamente (violacao de encapsulamento), nem que ``TarefasModel`` contenha qualquer ``print()`` ou ``input()`` (violacao do princípio da responsabilidade única e da arquitetura MVC).

@@ -9,7 +9,7 @@
   - [2.10. Evite "Valores Mágicos"](#210-evite-valores-mágicos)
   - [2.11. Tipagem de variáveis (type hints)](#211-tipagem-de-variáveis-type-hints)
     - [2.11.1. Configurando VSCode para detectar type hints](#2111-configurando-vscode-para-detectar-type-hints)
-  - [2.12. Nunca retornar variaveis mutáveis (listas, dicionarios, sets, etc) diretamente](#212-nunca-retornar-variaveis-mutáveis-listas-dicionarios-sets-etc-diretamente)
+  - [2.12. Nunca retornar variáveis mutáveis (listas, dicionários, sets, etc) diretamente](#212-nunca-retornar-variáveis-mutáveis-listas-dicionários-sets-etc-diretamente)
 - [Exercícios para fixação](#exercícios-para-fixação)
   - [Exercício 1](#exercício-1)
     - [Exercício 1-A](#exercício-1-a)
@@ -76,7 +76,7 @@ except ValueError as excecao:
     print(excecao)
 ```
 
-Existem varias classes de excecoes que podem ser usadas em um programa:
+Existem varias classes de exceções que podem ser usadas em um programa:
 - **RuntimeError**: para indicar erros durante a execução;
 - **ValueError**: para indicar valores inválidos;
 - **TypeError**: para indicar operações envolvendo tipos inadequados;
@@ -84,7 +84,7 @@ Existem varias classes de excecoes que podem ser usadas em um programa:
 
 Sempre que possível, utilize uma exceção mais específica.
 
-**Exercicios de Fixacao**:
+**Exercícios de Fixação**:
 - [Exercício 1-A](#exercício-1-a)
 
 ## 2.8. Ausencia de testes no código
@@ -126,7 +126,7 @@ assert calculadora.somar(-2, 2) == 0
 
 Por isso, reduzir dependências e utilizar abstrações pode facilitar a criação de testes.
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 1-B](#exercício-1-b)
 
 ## 2.9. Duplicação de código
@@ -171,7 +171,7 @@ for preco, quantidade in dados:
 
 O objetivo é **eliminar duplicação relevante**, especialmente quando existe uma **mesma regra de negócio repetida**.
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 2-A](#exercício-2-a)
 
 ## 2.10. Evite "Valores Mágicos"
@@ -210,7 +210,7 @@ desconto = salario * PERCENTUAL_DESCONTO
 Isso deixa mais evidente o significado dos valores utilizados. 
 - Isso vale para números, strings, booleanos e quaisquer outros tipos de dados.
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 2-B](#exercício-2-b)
 
 ## 2.11. Tipagem de variáveis (type hints)
@@ -319,10 +319,10 @@ Para configurar o VSCode para detectar e exibir warnings relacionados a type hin
    1. ``Python › Analysis: Diagnostic Mode`` e selecione a opção `workspace`
    2. ``Python › Analysis: Type Checking Mode`` e selecione a opção `standard`
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 3-A](#exercício-3-a)
 
-## 2.12. Nunca retornar variaveis mutáveis (listas, dicionarios, sets, etc) diretamente
+## 2.12. Nunca retornar variáveis mutáveis (listas, dicionários, sets, etc) diretamente
 
 Quando um método retorna diretamente uma referência para um atributo mutável (lista, dicionário, set, etc.), quem recebe esse retorno passa a poder **alterar o estado interno do objeto sem passar por nenhum método da classe** (quebrando o encapsulamento).
 
@@ -374,7 +374,7 @@ print(turma.get_alunos())  # ['Ana'] -- Turma não foi afetada
 A mesma lógica se aplica a dicionários (`dict(self._dados)`) e a sets (`set(self._itens)`). 
 - O princípio geral é: **um objeto só deve ser alterado através dos métodos que a própria classe expõe** para essa finalidade, **nunca por acesso direto** a uma estrutura interna retornada.
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 3-B](#exercício-3-b)
 
 # Exercícios para fixação
@@ -454,7 +454,7 @@ class CarrinhoCompras:
 ### Exercício 3-A
 Responda:
 1. Identifique: 
-   1. quais metodos nao tem *type hints* em suas assinaturas;    
+   1. quais métodos nao tem *type hints* em suas assinaturas;    
 2. Reescreva `CarrinhoCompras`, fazendo o seguinte:
    1. adicionando *type hints* em todos os parâmetros e retornos (use `list[tuple[str, float]]` para representar a lista de itens)   
 

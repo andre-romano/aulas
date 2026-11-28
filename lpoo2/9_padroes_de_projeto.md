@@ -46,7 +46,7 @@ Considere um problema:
 > Precisamos permitir diferentes formas de desconto.
 
 
-Uma solução seria usar varios `if`:
+Uma solução seria usar vários `if`:
 
 ```python
 def calcular_desconto(tipo, valor):
@@ -247,9 +247,9 @@ print(relatorio.gerar())
 - **Objetivo**: Separar a lógica de criação dos objetos da lógica que utiliza esses objetos.
 - **Vantagem:** Quem utiliza o objeto não precisa conhecer necessariamente como ele é construído.
 - **Desvantagem:** Metodo fabrica precisa conhecer todas as classes concretas que podem ser criadas, o que pode gerar acoplamento.
-  - **Solucao**: Podemos utilizar o padrão **Abstract Factory** (ver descrição abaixo) para criar famílias de objetos relacionados, evitando acoplamento.
+  - **Solução**: Podemos utilizar o padrão **Abstract Factory** (ver descrição abaixo) para criar famílias de objetos relacionados, evitando acoplamento.
 
-**Exercicios de Fixacao**:
+**Exercícios de Fixação**:
 - [Exercício 1](#exercício-1)
 
 ### 5.2. Singleton
@@ -259,7 +259,7 @@ O **Singleton** garante que **exista apenas uma instância** de determinado obje
 Exemplo:
 
 ```python
-class Configuracao:
+class Configuração:
     _instance = None
 
     # metodo estatico que cria e retorna a unica instancia da classe    
@@ -270,10 +270,10 @@ class Configuracao:
         return cls._instance
 
 # note que podemos chamar get_instance() sem 
-# precisar de um objeto da classe Configuracao 
+# precisar de um objeto da classe Configuração 
 # (chamamos o metodo direto do nome da classe)
-a = Configuracao.get_instance()
-b = Configuracao.get_instance()
+a = Configuração.get_instance()
+b = Configuração.get_instance()
 
 # deve retornar True, pois a e b são a mesma instância
 # (mesmo objeto na memória)
@@ -287,7 +287,7 @@ Ter um único objeto (ou ponto de acesso) é útil para objetos que representam 
 - etc
 
 **IMPORTANTE 3**: O método `get_instance()` é um **Factory Method** que cria e retorna a única instância da classe.
-- Essa tecnica pode ser utilizada em outras linguagens, como **Java** e **C#**, que possuem métodos estáticos (que no python sao escritos usando `@classmethod` ou `@staticmethod`).
+- Essa técnica pode ser utilizada em outras linguagens, como **Java** e **C#**, que possuem métodos estáticos (que no python sao escritos usando `@classmethod` ou `@staticmethod`).
 
 #### 5.2.1. Porque e Quando usar o padrao Singleton?
 
@@ -302,7 +302,7 @@ Portanto utilize Singleton apenas quando **for realmente necessário**:
 
 Muitas vezes, **injeção de dependência** é uma solução melhor.
 
-**Exercicios de Fixacao**:
+**Exercícios de Fixação**:
 - [Exercício 3](#exercício-3)
  
 ## 6. Padrões Estruturais
@@ -347,7 +347,7 @@ class ConversorFacade:
         print(f"Definindo codecs de audio e video: {audio_codec}, {video_codec}")
 
     # note que o metodo converter() é o unico metodo publico da classe.
-    # ele tambem possui valores padrao para os parametros, atraves do = 
+    # ele tambem possui valores padrao para os parametros, através do = 
     # isso tambem facilita o uso do metodo pelo usuario
     def converter(self, arquivo: str, formato: str = "mp4", audio_codec: str = "mp3", video_codec: str = "h264"):
         self.__ler(arquivo)
@@ -361,10 +361,10 @@ facade.converter("video.mp4")
 ```
 
 O **usuário conhece uma interface simples** de uso.
-- **Metodos privados escondem a complexidade** do subsistema.
-- **Poucos metodos publicos são expostos**, facilitando o uso e a manutenção do código.
+- **Métodos privados escondem a complexidade** do subsistema.
+- **Poucos métodos públicos são expostos**, facilitando o uso e a manutenção do código.
 
-**Exercicios de Fixacao**:
+**Exercícios de Fixação**:
 - [Exercício 4](#exercício-4)
  
 ## 7. Padrões Comportamentais
@@ -427,7 +427,7 @@ Resultado:
   - **Contexto**: ``Pedido``
   - **Estratégia**: ``DescontoVIP`` ou ``DescontoNormal``
 
-**Exercicios de Fixacao**:
+**Exercícios de Fixação**:
 - [Exercício 5](#exercício-5)
 
 ### 7.2. Observer
@@ -497,7 +497,7 @@ nota.adicionar(ResponsavelSubscriber())
 nota.notificar(8.5)
 ```
 
-**Exercicios de Fixacao**:
+**Exercícios de Fixação**:
 - [Exercício 6](#exercício-6)
 
 ### 7.3. State
@@ -576,12 +576,12 @@ pedido.processar() # permanece em EstadoEntregue
 
 Note que cada estado é responsável por definir o próximo estado do pedido, permitindo que o comportamento do objeto mude dinamicamente conforme seu estado interno.
 
-**Exercicios de Fixacao**:
+**Exercícios de Fixação**:
 - [Exercício 7](#exercício-7)
 
 ## 8. Como reconhecer padrões no código
 
-Um bom exercício é aprender a fazer as perguntas certas, para identificar quando usar cada padrao:
+Um bom exercício é aprender a fazer as perguntas certas, para identificar quando usar cada padrão:
 - **Factory Method**: Existe uma lógica centralizada para criar objetos diferentes?
 - **Singleton**: Existe a necessidade de controlar uma única instância de uma classe?
 - **Facade**: Existe um subsistema complexo que poderia ter uma interface mais simples?
@@ -589,7 +589,7 @@ Um bom exercício é aprender a fazer as perguntas certas, para identificar quan
 - **Observer**: Vários objetos precisam ser avisados quando algo acontece? 
 - **State**: O comportamento de um objeto muda dependendo do estado do objeto?
 
-**Exercicios de Fixacao**:
+**Exercícios de Fixação**:
 - [Exercício 8](#exercício-8)
 - [Exercício 9](#exercício-9)
 - [Exercício 10](#exercício-10)
@@ -679,7 +679,7 @@ class Sistema:
 
 ## Exercício 6
 
-Crie um sistema que notifique o usuario por varios meios de comunicacao, como:
+Crie um sistema que notifique o usuario por vários meios de comunicacao, como:
 - ``Email``
 - ``Log``
 - ``SMS``

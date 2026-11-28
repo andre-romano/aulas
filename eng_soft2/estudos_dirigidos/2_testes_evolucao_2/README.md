@@ -34,7 +34,7 @@ def test_validar_senha():
 
 **Contexto:** Implemente um sistema simples de empréstimo de livros com as classes:
 - `Biblioteca` (gerencia livros e empréstimos)
-- `Usuario` (representa um usuário)
+- `Usuário` (representa um usuário)
 - `Livro` (representa um livro)
 
 **Tarefa:**
@@ -43,7 +43,7 @@ class Livro:
     def __init__(self, titulo, autor, copias):
         pass  # Implemente
 
-class Usuario:
+class Usuário:
     def __init__(self, nome):
         pass  # Implemente
 

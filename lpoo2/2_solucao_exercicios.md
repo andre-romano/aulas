@@ -1,14 +1,14 @@
-# Solucao dos Exercicios - Módulo 2 (Pilares de POO)
+# Solução dos Exercícios - Módulo 2 (Pilares de POO)
 
 **Sumário**:
-- [Solucao dos Exercicios - Módulo 2 (Pilares de POO)](#solucao-dos-exercicios---módulo-2-pilares-de-poo)
-  - [Exercicio 1](#exercicio-1)
-  - [Exercicio 2](#exercicio-2)
-  - [Exercicio 3](#exercicio-3)
-  - [Exercicio 4](#exercicio-4)
-  - [Exercicio 5](#exercicio-5)
-  - [Exercicio 6](#exercicio-6)
-- [Solucao dos Estudos de Caso](#solucao-dos-estudos-de-caso)
+- [Solução dos Exercícios - Módulo 2 (Pilares de POO)](#solução-dos-exercícios---módulo-2-pilares-de-poo)
+  - [Exercício 1](#exercício-1)
+  - [Exercício 2](#exercício-2)
+  - [Exercício 3](#exercício-3)
+  - [Exercício 4](#exercício-4)
+  - [Exercício 5](#exercício-5)
+  - [Exercício 6](#exercício-6)
+- [Solução dos Estudos de Caso](#solução-dos-estudos-de-caso)
   - [Estudo de caso 1](#estudo-de-caso-1)
   - [Estudo de caso 2](#estudo-de-caso-2)
   - [Estudo de caso 3](#estudo-de-caso-3)
@@ -22,7 +22,7 @@
     - [6. Justificativa](#6-justificativa)
 
 
-## Exercicio 1
+## Exercício 1
 
 Código para a solução do exercício 1:
 ```python
@@ -75,7 +75,7 @@ Respostas:
 4. As classes filhas tem acesso aos atributos definidos na classe pai? Explique e justifique.
    - Sim. Como ``_nome`` e ``_salario`` são protegidos (e não privados), ``Professor`` e ``Tecnico``, por serem subclasses de ``Funcionario``, podem acessá-los diretamente (``self._nome``, ``self._salario``) dentro de seus próprios métodos, como visto em ``calcular_beneficio()``. Isto é, atributos protegidos podem ser usados pela própria classe e por suas subclasses, mas não podem ser acessados por outras classes e códigos externos.
 
-## Exercicio 2
+## Exercício 2
 
 Código para a solução do exercício 2:
 
@@ -113,7 +113,7 @@ for veiculo in veiculos:
     print(nome_classe, "- Litros consumidos:", veiculo.calcular_consumo(km), "L")
 ```
 
-## Exercicio 3
+## Exercício 3
 
 Código para a solução do exercício 3:
 
@@ -153,7 +153,7 @@ tecnico.mostrar_dados()
 print("Benefício:", tecnico.calcular_beneficio())
 ```
 
-## Exercicio 4
+## Exercício 4
 
 ```python
 class Funcionario:
@@ -191,7 +191,7 @@ professor.mostrar_dados()
 tecnico.mostrar_dados()
 ```
 
-## Exercicio 5
+## Exercício 5
 
 ```python
 class Funcionario:
@@ -242,7 +242,7 @@ for funcionario in funcionarios:
     print("---")
 ```
 
-## Exercicio 6
+## Exercício 6
 
 Considerando o código abaixo (conforme consta no exercício):
 ```python
@@ -288,7 +288,7 @@ class Conta:
         if 0 < valor_em_reais*100 <= self.__saldo_em_centavos:
             self.__saldo_em_centavos -= int(valor_em_reais * 100)
 
-    # necessario getter pra pegar o saldo em reais (ja que saldo agora é armazenado como atributo privado)
+    # necessário getter pra pegar o saldo em reais (ja que saldo agora é armazenado como atributo privado)
     def get_saldo(self):
         return self.__saldo_em_centavos / 100
 ```
@@ -298,7 +298,7 @@ class Conta:
 - A abstração se refere a **esconder detalhes de implementação** e mostrar apenas a interface necessária para o usuário da classe. 
 - O encapsulamento, por outro lado, se refere a **proteger os dados internos** da classe, controlando o acesso a eles através de métodos públicos (**getters/setters**) e definindo níveis de acesso (público, protegido, privado).
 
-# Solucao dos Estudos de Caso
+# Solução dos Estudos de Caso
 
 ## Estudo de caso 1
 
@@ -476,7 +476,7 @@ class PlanoBasico(Plano):
     def obter_limite(self):
         return 300
 
-class Usuario:
+class Usuário:
     def __init__(self, nome, tipo_plano):
         self.__nome = nome
         # default para plano básico, caso o tipo_plano passado seja inválido
@@ -502,7 +502,7 @@ class Usuario:
         return self.__tipo_plano.calcular_minutos_restantes(minutos_assistidos)
 
 
-usuario1 = Usuario("Bianca", PlanoPremium())
+usuario1 = Usuário("Bianca", PlanoPremium())
 minutos_assistidos = 300
 minutos_restantes = usuario1.calcular_minutos_restantes(minutos_assistidos)
 

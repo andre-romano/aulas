@@ -18,5 +18,5 @@ O sistema oferece funcionalidades para gerenciamento de usuários, vídeos, gên
 - Um usuário pode assistir a vários vídeos (filmes ou episódios) e retomar de onde parou.
 - As avaliações dos videos são registradas por vídeo e por usuário.
 
-### Solucao
-- Os modelos conceitual e lógico do sistema podem ser encontrados no arquivo [solucao.md](./solucao.md).
+### Solução
+- Os modelos conceitual e lógico do sistema podem ser encontrados no arquivo [solução.md](./solucao.md).

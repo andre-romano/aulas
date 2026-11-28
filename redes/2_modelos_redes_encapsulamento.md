@@ -25,7 +25,7 @@
   - [5.3. O que acontece no destino? Desencapsulamento!](#53-o-que-acontece-no-destino-desencapsulamento)
   - [5.4. Por que o encapsulamento é importante?](#54-por-que-o-encapsulamento-é-importante)
   - [5.5 PDU — Protocol Data Unit](#55-pdu--protocol-data-unit)
-- [6. Exercicios de fixacao](#6-exercicios-de-fixacao)
+- [6. Exercícios de fixação](#6-exercícios-de-fixação)
   - [Parte A — Modelos OSI e TCP/IP](#parte-a--modelos-osi-e-tcpip)
   - [Parte B — Encapsulamento](#parte-b--encapsulamento)
 - [7. Atividades Praticas](#7-atividades-praticas)
@@ -81,7 +81,7 @@ Cada camada possui responsabilidades específicas e interage com as camadas adja
 ### Camada 1 — Física (Physical)
 
 A camada física é responsável pela **transmissão dos bits através do meio** físico.
-- *"Como enviar dados (bits) em um cabo metálico, fibra optica, etc?"*
+- *"Como enviar dados (bits) em um cabo metálico, fibra óptica, etc?"*
 
 Ela trata das características elétricas, ópticas, mecânicas e de sinalização necessárias para transmitir informações.
 
@@ -91,7 +91,7 @@ Entre suas responsabilidades estão:
 - Conectores.
 - Sinalização elétrica e óptica.
 - Frequências e modulação.
-  - **Modulacao**: quantos bits podem ser transmitidos simultaneamente.
+  - **Modulação**: quantos bits podem ser transmitidos simultaneamente.
 - Taxas de transmissão.
   - **Taxa de transmissão**: quantos bits podem ser transmitidos por segundo.
 - Temporização dos sinais.
@@ -102,25 +102,25 @@ Muitos desses assuntos são abordados em disciplinas de física, eletrônica e t
 
 **Exemplo de uso**:
 
-- Quando um computador envia dados por um **cabo Ethernet**, a camada física é responsável por transformar os bits em sinais elétricos apropriados para transmissão pelo cabo metalico de pares trançados (veja imagem abaixo).
+- Quando um computador envia dados por um **cabo Ethernet**, a camada física é responsável por transformar os bits em sinais elétricos apropriados para transmissão pelo cabo metálico de pares trançados (veja imagem abaixo).
 
-![cabo ethernet](./img/ethernet_cable_twisted_pair.jpg)
+![](./img/ethernet_cable_twisted_pair.jpg)
 
 **Unidade de dados**: bits.
 - A camada física **transmite uma sequencia de bits**, ate terminar a mensagem enviada (que chamamos de **frame** ou **quadro**).
-- Para isso sao usados bits de sincronizacao, que permitem ao receptor identificar o inicio (**start bit**) e o fim da mensagem (**stop bit**).
+- Para isso sao usados bits de sincronização, que permitem ao receptor identificar o inicio (**start bit**) e o fim da mensagem (**stop bit**).
 - Veja imagem ilustrativa abaixo.
 
-![envio de bits assincrono](./img/asynchronous-transmission.webp)
+![](./img/asynchronous-transmission.webp)
 
 ### Camada 2 — Enlace (Data Link)
 
-A camada de enlace é responsável pela comunicação entre dispositivos diretamente conectados por um enlace (link - formado por cabos, fibra óptica, etc que estao ligado entre placas de rede).
+A camada de enlace é responsável pela comunicação entre dispositivos diretamente conectados por um enlace (link - formado por cabos, fibra óptica, etc que estão ligado entre placas de rede).
 - Para isso, a camada de enlace organiza os dados em **quadros** (**frames**).
-- **Quadro**: Menor unidade de dados tratada pela camada de enlace. É uma sequencia de bits que contem informacoes de controle (protocolos) e dados da aplicacao (**carga útil** ou **payload**).
-  - Os protocolos sao armazenados no **cabecalho** do quadro, que contem informacoes de controle, como enderecos MAC de origem e destino, tipo do protocolo transportado, etc (veja imagem abaixo).
+- **Quadro**: Menor unidade de dados tratada pela camada de enlace. É uma sequencia de bits que contem informações de controle (protocolos) e dados da aplicação (**carga útil** ou **payload**).
+  - Os protocolos sao armazenados no **cabeçalho** do quadro, que contem informações de controle, como endereços MAC de origem e destino, tipo do protocolo transportado, etc (veja imagem abaixo).
 
-![frame ethernet](./img/ethernet-frame.jpg)
+![](./img/ethernet-frame.jpg)
 
 Entre suas funções estão:
 
@@ -212,7 +212,7 @@ Os dois principais protocolos são **TCP** e **UDP**.
 - Possui menor sobrecarga de protocolo.
   - Isso significa que o cabeçalho do UDP é menor do que o cabeçalho do TCP, resultando em menos bytes de controle sendo transmitidos.
   - Logo, a **velocidade de transmissão pode ser maior** (pois temos menos dados pra enviar), 
-  - Alem disso, como ele nao oferece nenhum serviço de confiabilidade, ele exige menos processamento (CPU, memoria, etc) para enviar e receber dados.
+  - Além disso, como ele nao oferece nenhum serviço de confiabilidade, ele exige menos processamento (CPU, memoria, etc) para enviar e receber dados.
 - É utilizado por **aplicações que podem se beneficiar de menor latência** ou de mecanismos próprios de recuperação.
 
 **Exemplo**:
@@ -290,7 +290,7 @@ Ela permite que aplicações utilizem os recursos da rede sem precisar implement
 **Exemplo**:
 
 Quando um usuário digita o endereço de um site no navegador, a aplicação utiliza serviços e protocolos de rede para localizar o servidor e solicitar o conteúdo.
-- O servidor entao envia a pagina da Web usando o protocolo HTTP (Hypertext Transfer Protocol).
+- O servidor então envia a pagina da Web usando o protocolo HTTP (Hypertext Transfer Protocol).
 
 **Unidade de dados**: carga útil (payload).
 
@@ -306,7 +306,7 @@ Quando um usuário digita o endereço de um site no navegador, a aplicação uti
 | 2      | Enlace       | Comunicação por enlaces e quadros       | quadro (frame)                                        |
 | 1      | Física       | Transmissão de bits                     | bits                                                  |
 
-![pdus no modelo osi](./img/pdu_osi.png)
+![](./img/pdu_osi.png)
 
 Uma maneira de memorizar a sequência é começar pela camada física, responsável por transportar os bits, e avançar até a camada de aplicação, que oferece os serviços utilizados pelos programas.
 
@@ -341,8 +341,8 @@ Seu principal protocolo é o IP.
 
 **Exemplos**:
 
-- IPv4 (IP versao 4 - endereços IP tem 32 bits).
-- IPv6 (IP versao 6 - endereços IP tem 128 bits).
+- IPv4 (IP versão 4 - endereços IP tem 32 bits).
+- IPv6 (IP versão 6 - endereços IP tem 128 bits).
 - ICMP (Internet Control Message Protocol - usado para diagnostico de redes, como no comando ``ping``).
 
 ### Camada 3 -- Camada de transporte (Transport)
@@ -356,7 +356,7 @@ Exemplos:
 
 ### Camada 4 -- Camada de aplicação (Application)
 
-Disponibiliza serviços fornecidos pelas aplicações (contem a mensagens da aplicação, na forma de **carga útil**, tambem chamada de **payload**).
+Disponibiliza serviços fornecidos pelas aplicações (contem a mensagens da aplicação, na forma de **carga útil**, também chamada de **payload**).
 
 **Exemplos**:
 
@@ -442,7 +442,7 @@ Entre as informações incluídas estão:
 
 - Endereço IP de origem.
 - Endereço IP de destino.
-- Outras informacoes do protocolo IP.
+- Outras informações do protocolo IP.
 
 **Pacote IP** (agora temos um pacote de fato):
 ```text
@@ -465,7 +465,7 @@ Entre essas informações estão:
 
 - Endereço MAC de origem.
 - Endereço MAC de destino.
-- Outras informacoes do protocolo.
+- Outras informações do protocolo.
 
 **Quadro Ethernet** (agora temos um quadro, pronto para ser transmitido pelo meio físico):
 ```text
@@ -485,14 +485,14 @@ Entre essas informações estão:
 **5\. Camada física**
 
 O quadro Ethernet é convertido em sinais e transmitido pelo meio físico, na forma de:
-- Eletricidade (cabos métalicos), 
+- Eletricidade (cabos metálicos), 
 - Luz (fibra óptica), 
 - Ondas de rádio (Wi-Fi), 
 - etc
 
-**Visao geral do processo de encapsulamento**:
+**Visão geral do processo de encapsulamento**:
 
-![encapsulamento e desencapsulamento](./img/encapsulation.jpg)
+![](./img/encapsulation.jpg)
 
 ## 5.3. O que acontece no destino? Desencapsulamento!
 
@@ -546,18 +546,18 @@ A nomenclatura tradicional é:
 
 ![encapsulamento em roteador e switch](./img/encapsulation_router_switch.jpg)
 
-**Importante**: o endereço MAC de origem e destino do quadro normalmente muda a cada salto (ex: pc0 → switch → pc2), enquanto os endereços IP de origem e destino geralmente permanecem os mesmos durante o encaminhamento (exceto quando ha um operacao de NAT envolvida - veremos isso mais a frente).
+**Importante**: o endereço MAC de origem e destino do quadro normalmente muda a cada salto (ex: pc0 → switch → pc2), enquanto os endereços IP de origem e destino geralmente permanecem os mesmos durante o encaminhamento (exceto quando ha um operação de NAT envolvida - veremos isso mais a frente).
 - Isto é, quando um pacote IP atravessa vários switches e roteadores, **o switch remove o cabeçalho Ethernet e adiciona um novo cabeçalho Ethernet**.
 - Nesse novo cabeçalho **endereço MAC de origem muda para representar o MAC do equipamento que esta enviando o quadro**.
-- De forma parecida, o endereço **MAC de destino do quadro Ethernet muda tambem**, para que este quadro possa ser encaminhado corretamente para o proximo salto (ex: **pc0** -> **switch** , terá MAC de origem de **pc0**, e MAC de destino do **switch**).
+- De forma parecida, o endereço **MAC de destino do quadro Ethernet muda também**, para que este quadro possa ser encaminhado corretamente para o proximo salto (ex: **pc0** -> **switch** , terá MAC de origem de **pc0**, e MAC de destino do **switch**).
 - Veremos isso acontecendo no simulador Cisco Packet Tracer, para entender melhor como funciona o processo de encaminhamento de pacotes em uma rede.
 
-![encaminhamento l2](./img/hop-forwarding.svg)
+![encaminhamento l2](./img/hop-forwarding.jpg)
 
 Isso explica por que os endereços MAC e IP possuem finalidades diferentes.
-- O MAC é usado para marcar quem enviou e quem recebera o quadro em um enlace local (cabo metalico, fibra, onda de radio, etc.).
-- O IP é usado para marcar a origem (real, quem de fato iniciou a comunicacao - ou seja, quem criou o pacote) o destino final do pacote, e **nao muda durante o encaminhamento dentro de uma mesma rede**.
-- O IP so muda se o pacote precisar atravessar para uma rede diferente, e nesse caso o roteador que faz uma operacao chamada de **NAT (Network Address Translation)** vai alterar o IP de origem do pacote, para que ele possa ser encaminhado corretamente para a rede de destino (veremos esse conceito de NAT mais a frente na disciplina).
+- O MAC é usado para marcar quem enviou e quem recebera o quadro em um enlace local (cabo metálico, fibra, onda de radio, etc.).
+- O IP é usado para marcar a origem (real, quem de fato iniciou a comunicação - ou seja, quem criou o pacote) o destino final do pacote, e **nao muda durante o encaminhamento dentro de uma mesma rede**.
+- O IP so muda se o pacote precisar atravessar para uma rede diferente, e nesse caso o roteador que faz uma operação chamada de **NAT (Network Address Translation)** vai alterar o IP de origem do pacote, para que ele possa ser encaminhado corretamente para a rede de destino (veremos esse conceito de NAT mais a frente na disciplina).
 
 De forma similar ao MAC e IP, as portas dos protocolos de transporte (TCP ou UDP) também possuem finalidades especificas.
 - O número da **porta de origem indica qual aplicação enviou o pacote** (ex: Google Chrome, Firefox, cliente de email, vscode, etc.).
@@ -584,7 +584,7 @@ Veja o exemplo da imagem acima:
   - O IP de destino 128.119.91.53 representa o endereço do computador que deve receber o pacote (no caso, o PC da esquerda).
   - A porta de destino 35466 representa a aplicação que deve receber o pacote (exemplo, o navegador Google Chrome desse PC de destino).
 
-# 6. Exercicios de fixacao
+# 6. Exercícios de fixação
 
 ## Parte A — Modelos OSI e TCP/IP
 
@@ -650,10 +650,10 @@ Responda:
 6. É possível identificar informações de diferentes camadas do modelo OSI?
 7. Porque existem vários pacotes TCP sendo enviados para carregar a página web? Pesquise sobre o conceito de **handshake TCP** e explique.
 8. Porque o handshake TCP é necessário para estabelecer a comunicação entre o cliente e o servidor? Qual a sua finalidade?
-9. Que informacoes estao contidas nos cabeçalhos dos protocolos observados? Pesquise sobre os campos de cada protocolo e explique.
+9. Que informações estão contidas nos cabeçalhos dos protocolos observados? Pesquise sobre os campos de cada protocolo e explique.
 10. Ao final da atividade, salve suas respostas em um documento (Word, Google Docs, etc) e envie para o AVA 
     1.  Lembre-se de colocar o seu nome e matricula no inicio do documento.
-    2.  Inclua informacoes de outros colegas que participaram da atividade, se a atividade for em grupo/dupla.
+    2.  Inclua informações de outros colegas que participaram da atividade, se a atividade for em grupo/dupla.
 
 **IMPORTANTE**: Pacotes **STP (Spanning Tree Protocol)** podem aparecer na captura, mas eles não são relevantes para a análise da comunicação entre o PC e o Servidor. 
 - O STP é utilizado para evitar **loops** em redes com switches, mas não está diretamente relacionado à transmissão de dados entre os dispositivos que você está analisando.
@@ -674,13 +674,13 @@ Faça o que se pede abaixo:
 6. Preencha a tabela abaixo, indicando o que cada camada do modelo OSI adiciona à mensagem fictícia durante o processo de encapsulamento.
 7. Indique também a PDU correspondente a cada camada.
 
-| Etapa | Camada     | PDU                           | Conteudo                                                                                                                                 |
+| Etapa | Camada     | PDU                           | Conteúdo                                                                                                                                 |
 | ----- | ---------- | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | 1     | Aplicação  | Dados (payload)               | “Olá”                                                                                                                                    |
 | 2     | Transporte | Segmento TCP ou datagrama UDP | Indique TCP ou UDP; informe portas de origem e destino fictícias                                                                         |
 | 3     | Rede       | Pacote                        | Indique que existe um cabeçalho IP; informe os endereços IP de origem e destino                                                          |
-| 4     | Enlace     | Quadro Ethernet               | MAC de origem e MAC de destino (lembre-se que ele mudam a cada salto/transmissao do quadro)                                              |
-| 5     | Física     | Bits                          | Indique como o quadro é transmitido pelo meio físico (ex: luz dentro da fibra óptica, sinais eletricos em um par trançado de cobre, etc) |
+| 4     | Enlace     | Quadro Ethernet               | MAC de origem e MAC de destino (lembre-se que ele mudam a cada salto/transmissão do quadro)                                              |
+| 5     | Física     | Bits                          | Indique como o quadro é transmitido pelo meio físico (ex: luz dentro da fibra óptica, sinais elétricos em um par trançado de cobre, etc) |
 
 8. Desenhe setas para mostrar a ordem de encapsulamento no PC de origem e a ordem inversa de desencapsulamento, passando pelo switch e pelo PC de destino.
 9. No desenho da topologia, indique por qual porta do switch o quadro hipotético chegaria e por qual porta deveria seguir para alcançar o PC de destino. Considere que o switch já possui a tabela de endereços MAC com as informações corretas (ele já aprendeu os endereços MAC dos PCs).

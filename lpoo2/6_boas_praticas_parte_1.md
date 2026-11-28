@@ -83,7 +83,7 @@ class BancoService:
 
 Essa divisão facilita a manutenção, pois pode-se alterar uma classe específica sem afetar as outras.
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 1-A](#exercício-1a)
 
 ## 2.2. Herança excessiva
@@ -120,7 +120,7 @@ class Animal:
 
 O objetivo não é eliminar a herança, mas utilizá-la quando ela representar adequadamente uma relação de especialização.
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 1-B](#exercício-1b)
 
 ## 2.3. Métodos gigantes
@@ -248,7 +248,7 @@ class Sistema:
         self.email.enviar(pedido)
 ```
 
-**Exercicios de Fixacao - Métodos gigantes**: 
+**Exercícios de Fixação - Métodos gigantes**: 
 - [Exercício 2](#exercício-2)
 
 ## 2.4. Condicionais excessivas
@@ -329,7 +329,7 @@ O calculo de ``preco_final`` não precisa saber qual classe concreta ele esta us
 
 Essa ideia é exatamente o que o padrão de projeto **Strategy** sugere (como veremos mais a frente na disciplina).
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 3](#exercício-3)
 
 ## 2.5. Nomes sem semântica (sem significado)
@@ -373,7 +373,7 @@ Convenções de nomenclatura são importantes para manter a consistência do có
 - **Constantes**: *UPPER_CASE* 
   - **Exemplo**: `TAXA_DESCONTO`, `MAX_USUARIOS`, `URL_BASE`
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 4](#exercício-4)
 
 ## 2.6. Comentários óbvios
@@ -394,7 +394,7 @@ idade = 20
 
 **Comentários** são mais úteis quando **explicam uma decisão que não está clara** apenas pela leitura do código.
 
-**Exercicios de Fixacao**: 
+**Exercícios de Fixação**: 
 - [Exercício 4](#exercício-4)
 
 ## Exercício 1

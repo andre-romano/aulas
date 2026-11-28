@@ -1,7 +1,7 @@
-# Endereçamento IPv4 e Subredes (subnetting)
+# Endereçamento IPv4 e Sub-redes (subnetting)
 
 **Sumário**:
-- [Endereçamento IPv4 e Subredes (subnetting)](#endereçamento-ipv4-e-subredes-subnetting)
+- [Endereçamento IPv4 e Sub-redes (subnetting)](#endereçamento-ipv4-e-sub-redes-subnetting)
 - [1. O que é um endereço IP?](#1-o-que-é-um-endereço-ip)
 - [2. Estrutura de um endereço IPv4](#2-estrutura-de-um-endereço-ipv4)
   - [2.1. Conversão de binário para decimal](#21-conversão-de-binário-para-decimal)
@@ -25,8 +25,8 @@
   - [7.3. NAT: tradução de endereços](#73-nat-tradução-de-endereços)
 - [8. Exercícios de fixação](#8-exercícios-de-fixação)
 - [9. Atividades práticas](#9-atividades-práticas)
-  - [9.1. Atividade prática 1 - Conectando e Configurando Subredes no Packet Tracer](#91-atividade-prática-1---conectando-e-configurando-subredes-no-packet-tracer)
-  - [9.2. Atividade prática 2 - Subredes](#92-atividade-prática-2---subredes)
+  - [9.1. Atividade prática 1 - Conectando e Configurando Sub-redes no Packet Tracer](#91-atividade-prática-1---conectando-e-configurando-sub-redes-no-packet-tracer)
+  - [9.2. Atividade prática 2 - Sub-redes](#92-atividade-prática-2---sub-redes)
 
 O endereçamento IP é um dos fundamentos das redes de computadores. Enquanto os equipamentos de camada 2, como switches, permitem a comunicação entre dispositivos de uma mesma rede local, o protocolo IP possibilita a comunicação entre redes diferentes.
 - **Lembrete**: 
@@ -57,7 +57,7 @@ Imagine uma instituição de ensino com vários computadores, impressoras e serv
 No exemplo abaixo, todos os dispositivos da rede A pertencem a faixa de endereços definida por 192.168.1.0/24.
 - Essa faixa vai do IP ``192.168.1.0`` ao IP ``192.168.1.255`` (veremos depois porque).
 
-Observe que os dispositivos que estao na mesma rede (por exemplo, a rede A) possuem **endereços IP diferentes**, mas compartilham a mesma rede lógica.
+Observe que os dispositivos que estão na mesma rede (por exemplo, a rede A) possuem **endereços IP diferentes**, mas compartilham a mesma rede lógica.
 - Isto é, todos os endereços IP da rede A pertencem à mesma faixa de endereços.
 - Todos podem se comunicar entre si usando somente o switch (endereços MAC), sem a necessidade de um roteador.
 
@@ -67,7 +67,7 @@ Ja a rede B pertence a faixa de endereços definida por 10.0.0.0/8.
 - Essa faixa vai do IP ``10.0.0.0`` ao IP ``10.255.255.255``.
 
 Se um PC da rede ``A`` tentar se comunicar com outro PC da rede ``B``, ele não conseguirá fazer isso diretamente, pois estão em redes diferentes. 
-- Nesse caso, será necessário enviar o pacote para um roteador, que encaminhará ele para a rede correta (interface de saida correta).
+- Nesse caso, será necessário enviar o pacote para um roteador, que encaminhará ele para a rede correta (interface de saída correta).
 - Nesse caso, o roteador receberá o pacote da rede ``A`` pela porta ``gig0/0``, e encaminhará para a rede ``B`` pela porta ``gig0/1``.
 
 **ATENÇÃO**:
@@ -91,7 +91,7 @@ O endereço IP é diferente do endereço MAC:
 | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | Identificador de camada 2 (enlace)                                                            | Endereço lógico de camada 3 (rede)                           |
 | Associado à interface de rede (MAC)                                                           | Configurado na interface (IP)                                |
-| Usado na comunicação dentro do enlace local (de uma máquina para outra, no mesmo cabo/enalce) | Usado para comunicação entre redes (passando por roteadores) |
+| Usado na comunicação dentro do enlace local (de uma máquina para outra, no mesmo cabo/enlace) | Usado para comunicação entre redes (passando por roteadores) |
 | Exemplo: `00:1A:2B:3C:4D:5E`                                                                  | Exemplo: `192.168.1.10`                                      |
 
 Um computador pode **manter o mesmo endereço MAC** (que é definido pelo fabricante da placa de rede) **ao se conectar a redes distintas**.
@@ -115,7 +115,7 @@ Para facilitar a leitura humana, **esses 32 bits são divididos em 4 grupos de 8
 
 **Exemplo**: 
 - **Endereço IPv4**: 192.168.1.10
-- **Representação binária**: 11000000 . 10101000 . 00000001 . 00001010 (veremos como fazer essa conversão de decimal para binario adiante).
+- **Representação binária**: 11000000 . 10101000 . 00000001 . 00001010 (veremos como fazer essa conversão de decimal para binário adiante).
 
 4 octetos × 8 bits = 32 bits.
 
@@ -140,7 +140,7 @@ Existem ao todo $2^{32}$ = **4.294.967.296 endereços IPv4 possíveis**.
 Se considerarmos que existem pelo menos 8 bilhões de pessoas no mundo, e que cada pessoa possui pelo menos 1 dispositivo conectado à internet (computador, celular, tablet, etc), **não temos IPs suficientes para todo mundo**.
 - **Solução**: o IPv6, que utiliza endereços de 128 bits, permitindo $2^{128}$ endereços possíveis.
 - Se for feito o calculo, $2^{128}$ é um número tão grande que é praticamente impossível de imaginar.
-- Esse numero é tão grande que, **se cada átomo do universo tivesse um endereço IPv6, todos os átomos do universo teriam um endereço IPv6 e ainda sobrariam endereços** disponíveis.
+- Esse número é tão grande que, **se cada átomo do universo tivesse um endereço IPv6, todos os átomos do universo teriam um endereço IPv6 e ainda sobrariam endereços** disponíveis.
 
 Contudo, a mesma teoria que aprenderemos sobre endereçamento IPv4 também se aplica ao IPv6, com algumas poucas diferenças.
 - Por isso, é importante aprender o IPv4 primeiro, antes de estudar o IPv6.
@@ -160,7 +160,7 @@ Para converter um número binário em decimal, devemos considerar o **valor posi
 
 **Exemplo**:
 
-Seja o número binário $1100\ 0000_2$. Para convertê-lo em decimal, devemos **somar os valores das posições que possuem bit 1**, usando os índices de cada posicao.
+Seja o número binário $1100\ 0000_2$. Para convertê-lo em decimal, devemos **somar os valores das posições que possuem bit 1**, usando os índices de cada posição.
 
 ```text
 Índice: 7 6 5 4 3 2 1 0
@@ -257,7 +257,7 @@ $$
 
 # 3. Máscara de sub-rede
 
-Vimos a representação binária na secao anterior, porque números binários são fundamentais para o cálculo de sub-redes!
+Vimos a representação binária na seção anterior, porque números binários são fundamentais para o cálculo de sub-redes!
 
 A **máscara de sub-rede** determina:
 - **qual parte de um endereço IPv4 identifica a rede**,
@@ -293,7 +293,7 @@ Máscara:
 Observe que os **primeiros 24 bits são 1**. 
 - Portanto, os primeiros 24 bits identificam a rede, enquanto os últimos 8 identificam o host.
 
-Isto é, cada dispositivo que pertence a rede deve ter um IP diferente dos demais, e parte do IP que mudará será somente aquela que tem os bits 0 da mascara de subrede.
+Isto é, cada dispositivo que pertence a rede deve ter um IP diferente dos demais, e parte do IP que mudará será somente aquela que tem os bits 0 da mascara de sub-rede.
 - No exemplo anterior, somente o final do IP (último octeto) poderá variar, pois os primeiros 3 octetos são fixos (bits 1 da máscara).
 - Os IPs abaixo todos pertencem à mesma rede, pois possuem os mesmos 24 bits iniciais (os bits 1 da máscara):
   - ``192.168.1.0``
@@ -317,7 +317,7 @@ IP:
 Máscara: 
 255.255.255.0
 
-Em binário teriamos:
+Em binário teríamos:
 
 IP:
 11000000.10101000.00000001.00000000
@@ -333,12 +333,12 @@ A mesma rede pode ser representada pela notação CIDR da seguinte forma:
 
 O `/24` indica que **os primeiros 24 bits da máscara sao bits 1**.
 - Logo, os **primeiros 24 bits** de um endereço IP definem a **parte de rede**.
-- Isto é, é possivel ter $2^{24}$ redes diferentes.
-- Como esses 24 bits estao nos 3 primeiros octetos, cada rede será representada pelos números que aparecerem nesses 3 octetos.
+- Isto é, é possível ter $2^{24}$ redes diferentes.
+- Como esses 24 bits estão nos 3 primeiros octetos, cada rede será representada pelos números que aparecerem nesses 3 octetos.
   - **Ex**: 
     - `192.168.1.0/24` define uma rede,
     - `192.168.2.0/24` é outra rede,
-    - `192.168.3.0/24` tambem é outra rede,
+    - `192.168.3.0/24` também é outra rede,
     - $\cdots$
     - `192.168.255.0/24` é outra rede,
     - O proximo IP começa no octeto seguinte:
@@ -418,7 +418,7 @@ O `-2` na fórmula é porque **dois endereços IP são reservados** (tem uma fin
 2. O **endereço de broadcast** (define um endereço que podemos usar para enviar pacotes para TODOS OS HOSTS da rede, em broadcast)
    1. O **endereço de broadcast** é o último endereço da rede, e tem **todos os bits de host iguais a 1**.
 
-**Exemplo**: Seja uma rede com prefixo ``/24``, quantos endereços IP estao disponíveis para hosts?
+**Exemplo**: Seja uma rede com prefixo ``/24``, quantos endereços IP estão disponíveis para hosts?
 
 $$
 \begin{align}
@@ -432,7 +432,7 @@ H &= 2^8 - 2 \\
 $$
 
 
-**Exemplo**: Seja uma rede com prefixo ``/26``, quantos endereços IP estao disponíveis para hosts?
+**Exemplo**: Seja uma rede com prefixo ``/26``, quantos endereços IP estão disponíveis para hosts?
 
 $$
 \begin{align}
@@ -445,10 +445,10 @@ H &= 2^6 - 2 \\
 \end{align}
 $$
 
-**IMPORANTE**: Redes com prefixo `/31` ou `/32` são especiais, e não podem ser utilizadas para endereçar hosts, pois **não há endereços disponíveis (utilizáveis)**. 
+**IMPORTANTE**: Redes com prefixo `/31` ou `/32` são especiais, e não podem ser utilizadas para endereçar hosts, pois **não há endereços disponíveis (utilizáveis)**. 
 - Veja o porque no calculo abaixo.
 
-**Exemplo**: Seja uma rede com prefixo `/31`, quantos endereços IP estao disponíveis para hosts?
+**Exemplo**: Seja uma rede com prefixo `/31`, quantos endereços IP estão disponíveis para hosts?
 
 $$
 \begin{align}
@@ -461,11 +461,11 @@ H &= 2^1 - 2 \\
 \end{align}
 $$
 
-Logo, nao seria possivel conectar nenhum host nessa rede, pois nao há endereços IP disponíveis.
-- Logo essa rede nao tem uso real (pois ninguem pode se conectar nela).
+Logo, nao seria possível conectar nenhum host nessa rede, pois nao há endereços IP disponíveis.
+- Logo essa rede nao tem uso real (pois ninguém pode se conectar nela).
 - Mesmo raciocínio se aplica na rede `/32` (vide exemplo abaixo).
 
-**Exemplo**: Seja uma rede com prefixo `/32`, quantos endereços IP estao disponíveis para hosts?
+**Exemplo**: Seja uma rede com prefixo `/32`, quantos endereços IP estão disponíveis para hosts?
 
 $$
 \begin{align}
@@ -488,7 +488,7 @@ $$
 R = 2^{CIDR}
 $$
 
-**Exemplo**: Em uma rede com prefixo ``/24``, quantas redes é possivel construir?
+**Exemplo**: Em uma rede com prefixo ``/24``, quantas redes é possível construir?
 
 $$
 \begin{align}
@@ -520,7 +520,7 @@ Para converter o prefixo CIDR em máscara, devemos:
 
 Colocamos os 7 bits 1 no início da máscara, e completamos com 0:
 ```
-Máscara de subrede:
+Máscara de sub-rede:
 1111 1110 . 0000 0000 . 0000 0000 . 0000 0000
 ```
 
@@ -530,7 +530,7 @@ Convertendo os octetos para decimal, temos:
 254.0.0.0
 ```
 
-Para facilitar o calculo de binário para decimal, você pode dividir os octetos, um em cada linha, e fazer o calculo deles separamente.
+Para facilitar o calculo de binário para decimal, você pode dividir os octetos, um em cada linha, e fazer o calculo deles separadamente.
 - Isto é, colocamos os 7 bits 1 no início da máscara, e completamos com 0:
 
 ```
@@ -540,7 +540,7 @@ Para facilitar o calculo de binário para decimal, você pode dividir os octetos
 0000 0000     
 ```
 
-Agora fazemos a conversao binária em decimal de cada octeto:
+Agora fazemos a conversão binária em decimal de cada octeto:
 
 ```
 1111 1110.    2^7 + 2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 0*2^0 
@@ -557,7 +557,7 @@ Teremos o seguinte resultado:
 0000 0000.    0
 0000 0000     0
 
-Logo a máscara de subrede é:
+Logo a máscara de sub-rede é:
 254.0.0.0
 ```
 
@@ -605,7 +605,7 @@ TODO: mostrar calculo aqui
 
 # 5. Classes de endereços IPv4
 
-Historicamente, os endereços IPv4 nao possuiam CIDR.
+Historicamente, os endereços IPv4 nao possuíam CIDR.
 - Eles eram distribuídos por um sistema chamado **endereçamento baseado em classes (classful)**.
 
 Nesse modelo, os endereços eram divididos em **classes A, B, C, D e E**.
@@ -617,16 +617,16 @@ Atualmente, o sistema de classes foi **substituído pelo CIDR (Classless Inter-D
 
 Mesmo assim, conhecer as classes históricas ajuda a compreender a evolução do endereçamento IP.
 
-| Classe | CIDR | Máscara de subrede | Uso            |
-| ------ | ---- | ------------------ | -------------- |
-| A      | /8   | 255.0.0.0          | Redes grandes  |
-| B      | /16  | 255.255.0.0        | Redes médias   |
-| C      | /24  | 255.255.255.0      | Redes pequenas |
+| Classe | CIDR | Máscara de sub-rede | Uso            |
+| ------ | ---- | ------------------- | -------------- |
+| A      | /8   | 255.0.0.0           | Redes grandes  |
+| B      | /16  | 255.255.0.0         | Redes médias   |
+| C      | /24  | 255.255.255.0       | Redes pequenas |
 
 **Observações**:
 
 - O endereço `127.0.0.0/8` é reservado para **loopback**.
-  - Isto é, é um IP usado quando precisamos manda um pacote **de um progrma dentro de um PC para outro, dentro do mesmo PC** 
+  - Isto é, é um IP usado quando precisamos manda um pacote **de um programa dentro de um PC para outro, dentro do mesmo PC** 
   - *loop* = volta 
   - *back* = retorno
 - O bloco `0.0.0.0/8` é um IP especial, reservado, que nao pode ser usado.
@@ -635,7 +635,7 @@ Mesmo assim, conhecer as classes históricas ajuda a compreender a evolução do
 **Porque usar CIDR?**
 - Permite uma melhor utilização dos recursos de endereçamento IP, evitando desperdício de endereços.
 - Isto é, temos poucos endereços IPv4.
-- O CIDR permite controlar quantos IPs usamos para cada rede (IPs disponiveis para hosts, para cada rede), e quantas redes podemos criar.
+- O CIDR permite controlar quantos IPs usamos para cada rede (IPs disponíveis para hosts, para cada rede), e quantas redes podemos criar.
 
 # 6. Subnetting: divisão de uma rede em sub-redes
 
@@ -727,10 +727,10 @@ Note que:
   - **Ex**: ``192.168.1.0``
 - E termina no endereço de broadcast
   - **Ex**: ``192.168.1.63``
-- Logo temos uma faixa de endereços que compoem a sub-rede, que vai do IP de rede ate o de broadcast.
+- Logo temos uma faixa de endereços que compõem a sub-rede, que vai do IP de rede ate o de broadcast.
   - **Ex**: ``192.168.1.0`` a ``192.168.1.63`` 
     - Podemos escrever como uma faixa de IPs `192.168.1.0 - 63`
-    - Ou entao usando o CIDR da subrede `192.168.1.0/26`
+    - Ou então usando o CIDR da sub-rede `192.168.1.0/26`
 - E a proxima rede começa no próximo endereço, logo depois do endereço de broadcast.
   - **Ex**: ``192.168.1.64``
 
@@ -801,7 +801,7 @@ $$
 Em que $N$ é a quantidade de endereços necessários para dispositivos.
 - No nosso exemplo, $N=27$.
 
-**Atenção**: ao calcular a necessidade, inclua todos os equipamentos que precisam de endereçamento IP naquela sub-rede, e não apenas os computadores dos usuários.
+**Atenção**: ao calcular a necessidade, inclua todos os equipamentos que precisam de endereçamento IP naquela sub-rede, e não apenas os computadores dos máximo.
 - Roteadores precisam de IPs, por exemplo, e switches gerenciáveis também.
 - Servidores, assim como PCs, também precisam de IPs.
 
@@ -824,22 +824,22 @@ Normalmente, são utilizados em interfaces de roteadores conectadas à Internet 
 - `1.1.1.1`
 
 Quando acessamos um site, estamos acessando um IP público, que é o endereço do servidor que hospeda o site.
-- Quando a solicitacao chega ao servidor, ele responde usando o protocolo de aplicacao Web HTTP ou HTTPS.
+- Quando a solicitação chega ao servidor, ele responde usando o protocolo de aplicação Web HTTP ou HTTPS.
 
 ## 7.2. Endereços privados
 
 Os endereços privados são destinados à **utilização em redes internas**, como residências, empresas, escolas e laboratórios.
-- Eles não são alcançaveis diretamente pela Internet pública.
-- Isto é, mesmo que alguem conheça seu IP privado, ele nao conseguirá se comunicar com sua maquina através da Internet, sem que haja uma configuracao especial para isso (chamada de NAT).
+- Eles não são alcançáveis diretamente pela Internet pública.
+- Isto é, mesmo que alguém conheça seu IP privado, ele nao conseguirá se comunicar com sua maquina através da Internet, sem que haja uma configuração especial para isso (chamada de NAT).
 
 Uma entidade internacional controla quais endereços IP podem ser utilizados como privados e quais devem ser públicos.
 - O nome dessa entidade é **IANA (Internet Assigned Numbers Authority)**.
-- A IANA usa documentos, criados pela comunidade de pesqusiadores de rede, para definir esses endereços privados e públicos.
+- A IANA usa documentos, criados pela comunidade de pesquisadores de rede, para definir esses endereços privados e públicos.
 - Esses documentos sao chamados de **RFC (Request for Comments)**.
 
 A RFC 1918 define três blocos privados:
 
-| Bloco privado    | Máscara     | Quantidade de IPs disponiveis para hosts |
+| Bloco privado    | Máscara     | Quantidade de IPs disponíveis para hosts |
 | ---------------- | ----------- | ---------------------------------------- |
 | `10.0.0.0/8`     | 255.0.0.0   | 16.777.216                               |
 | `172.16.0.0/12`  | 255.240.0.0 | 1.048.576                                |
@@ -854,7 +854,7 @@ Exemplos de endereços privados:
 ```
 
 Um computador doméstico pode possuir o endereço privado `192.168.1.100`, enquanto o roteador possui um endereço público na interface conectada à Internet.
-- Se houver necessidade do computador domestico se comunicar com a Internet, o roteador fará a tradução do endereço privado para o endereço público, usando um recurso chamado de **NAT (Network Address Translation)**.
+- Se houver necessidade do computador doméstico se comunicar com a Internet, o roteador fará a tradução do endereço privado para o endereço público, usando um recurso chamado de **NAT (Network Address Translation)**.
 
 ## 7.3. NAT: tradução de endereços
 
@@ -877,10 +877,10 @@ Para permitir que dispositivos com endereços privados acessem a Internet, norma
 1. Qual a estrutura de um endereço IPv4? 
    1. O que seria um octeto?
    2. Quantos bits há em um IPv4?
-2. Como definir uma rede IPv4? Qual o papel do IP de rede e máscara de subrede nisso?
+2. Como definir uma rede IPv4? Qual o papel do IP de rede e máscara de sub-rede nisso?
    1. O que é um endereço de rede?
    2. O que é um endereço de broadcast?
-3. Seja uma rede com CIDR `/19`, quantos endereços IP estao disponíveis para hosts?
+3. Seja uma rede com CIDR `/19`, quantos endereços IP estão disponíveis para hosts?
    1. E quantas redes podemos construir com esse prefixo?
 4. Qual o CIDR de uma rede com máscara `255.255.240.0`?
 5. Qual a faixa de endereços de uma rede IPv4 `192.168.1.0/27`?
@@ -893,17 +893,17 @@ Para permitir que dispositivos com endereços privados acessem a Internet, norma
 
 # 9. Atividades práticas
 
-## 9.1. Atividade prática 1 - Conectando e Configurando Subredes no Packet Tracer
+## 9.1. Atividade prática 1 - Conectando e Configurando Sub-redes no Packet Tracer
 
 ![](./img/cisco_router_exercise.jpg)
 
-Monte e configure a topologia acima, com 2 subredes interligadas por um roteador, seguindo os passos abaixo:
-1. Calcule a mascara de subrede equivalente ao CIDR `/25`.
+Monte e configure a topologia acima, com 2 sub-redes interligadas por um roteador, seguindo os passos abaixo:
+1. Calcule a mascara de sub-rede equivalente ao CIDR `/25`.
 2. Abra o roteador, e configure as interfaces com os IPs e máscaras corretas.
    1. Abra o roteador, e clique na aba `Config` -> `GigabitEthernet0/0`.
-   2. Configure o IP e a máscara de subrede da interface do roteador, e habilite a interface clicando em `Port Status` -> `On` (veja imagem abaixo).
+   2. Configure o IP e a máscara de sub-rede da interface do roteador, e habilite a interface clicando em `Port Status` -> `On` (veja imagem abaixo).
    3. Repita o processo para a outra interface do roteador (`GigabitEthernet0/1`).
-   4. **LEMBRETE**: O IP que será usado no roteador tem que ser um IP válido dentro da faixa de endereços de cada subrede configurada.
+   4. **LEMBRETE**: O IP que será usado no roteador tem que ser um IP válido dentro da faixa de endereços de cada sub-rede configurada.
       1. **Nao pode ser IP de rede ou broadcast**.
 
 ![](./img/cisco_router_config_example.jpg)
@@ -912,17 +912,17 @@ Monte e configure a topologia acima, com 2 subredes interligadas por um roteador
    
 ![](./img/cisco_pc_config_ip.png)
 
-4. Configure tambem o gateway padrão de cada PC, que deve ser igual ao IP do roteador na subrede onde o PC está inserido (veja imagem abaixo).
+4. Configure também o gateway padrão de cada PC, que deve ser igual ao IP do roteador na sub-rede onde o PC está inserido (veja imagem abaixo).
 
 ![](./img/cisco_pc_config_gateway.jpg)
    
-5. Teste a comunicacao entre os PCs de redes diferentes (ex: ``PC0`` e ``PC3``), usando a ferramenta de mensagem (simbolo de carta fechada) do Packet Tracer, no modo ``Simulation``.
+5. Teste a comunicação entre os PCs de redes diferentes (ex: ``PC0`` e ``PC3``), usando a ferramenta de mensagem (simbolo de carta fechada) do Packet Tracer, no modo ``Simulation``.
 6. O que ocorre?
    1. O switch envia uma mensagem broadcast de ARP para descobrir o MAC address do destino?
    2. Ela atravessa para a outra rede?
    3. Quem responde à ela?
    4. Depois da resposta ao ARP, o que ocorre?
-   5. O roteador tambem faz ARP para descobrir o MAC address do destino?
+   5. O roteador também faz ARP para descobrir o MAC address do destino?
    6. Porque precisamos configurar o gateway padrão nos PCs?
    7. O que significa o roteador ser o gateway padrão de uma rede?
    8. Quantos IPs no total podem existir em cada rede configurada?
@@ -931,32 +931,32 @@ Monte e configure a topologia acima, com 2 subredes interligadas por um roteador
    11. Qual a faixa de endereços IP utilizáveis para hosts em cada rede configurada?
 7. Agora, modifique o seguinte:
    1. Configure o IP da interface `gig0/1` do roteador para ``192.168.1.128``
-   2. O Cisco aceitou essa configuracao acima? O que aconteceu? Explique.
+   2. O Cisco aceitou essa configuração acima? O que aconteceu? Explique.
    3. O que o IP `192.168.1.128` representa na rede `B`?
    4. E se você tentar configurar o IP `192.168.1.128` em um dos PCs da rede `B`? O que acontece? Explique.
       1. Agora tente com o IP `192.168.1.255`. O que acontece? Explique.
 
-## 9.2. Atividade prática 2 - Subredes
+## 9.2. Atividade prática 2 - Sub-redes
 
 Monte a topologia em árvore abaixo, com:
 - 1 roteador,
-- 2 subredes, 
+- 2 sub-redes, 
 - cada uma com 1 PC e 1 servidor, ambos conectados a um switch.
 - Os servidores devem rodar o protocolo HTTP, para que seja possível acessar o servidor via navegador do PC.
 
 ![](./img/cisco_router_exercise_2.jpg)
 
-Escolha o maior prefixo CIDR que consiga comportar os 2 PCs em cada subrede.
+Escolha o maior prefixo CIDR que consiga comportar os 2 PCs em cada sub-rede.
 
-1. Teste a comunicacao entre o PC e servidor da mesma subrede.
+1. Teste a comunicação entre o PC e servidor da mesma sub-rede.
    1. Use a ferramenta de carta do Packet Tracer, no modo ``Simulation``
    2. Em seguida, use o comando `ping` na aba ``Desktop`` -> ``Command Prompt`` do PC.  
-2. Teste a comunicacao entre os PCs de subredes diferentes (do mesmo jeito que foi feito no passo anterior).
+2. Teste a comunicação entre os PCs de sub-redes diferentes (do mesmo jeito que foi feito no passo anterior).
 3. Teste se o PC de uma rede consegue acessar o servidor da outra rede, usando o navegador do PC (aba ``Desktop`` -> ``Web Browser``).
 4. O que ocorre?
    1. O que acontece quando o PC tenta acessar o servidor da outra rede?
-   2. O que o roteador faz para permitir a comunicacao entre as redes?
-   3. Qual mascara de subrede foi configurada? Ela é a mesma para as duas redes? Por que?
+   2. O que o roteador faz para permitir a comunicação entre as redes?
+   3. Qual mascara de sub-rede foi configurada? Ela é a mesma para as duas redes? Por que?
    4. O que acontece se você tentar configurar o mesmo IP em dois dispositivos diferentes da mesma rede? Teste e explique.
    5. E se tentar configurar um IP que nao pertence à rede do dispositivo? O que acontece? Teste e explique.
-   6. E se tentar conectar mais dispositivos do que o suportado pela mascara de subrede? O que acontece? Teste e explique.
+   6. E se tentar conectar mais dispositivos do que o suportado pela mascara de sub-rede? O que acontece? Teste e explique.

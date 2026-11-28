@@ -32,7 +32,7 @@
 Um **domínio de colisão é uma região da rede na qual transmissões simultâneas podem provocar colisões**, em tecnologias que utilizam um meio compartilhado com esse comportamento.
 - **Exemplo**: hubs, meios sem fio (wireless) disponibilizados por access points
 
-![dominio de colisao](./img/collision-domain-hub.jpg)
+![](./img/collision-domain-hub.jpg)
 
 ## 1.1. Domínios de colisão em hubs
 
@@ -57,7 +57,7 @@ Isso permite que cada dispositivo utilize o enlace sem disputar o meio com os de
 # 2. Domínio de broadcast
 
 Um domínio de broadcast é a **região da rede na qual um quadro Ethernet de broadcast pode ser distribuído**.
-- Em uma rede com switches convencionais, os dispositivos pertencentes ao mesmo domínio de broadcast (se eles se encontram na mesma VLAN - por enquanto considere que todos estao na mesma VLAN).
+- Em uma rede com switches convencionais, os dispositivos pertencentes ao mesmo domínio de broadcast (se eles se encontram na mesma VLAN - por enquanto considere que todos estão na mesma VLAN).
 
 ![](./img/broadcast_domain.png)
 
@@ -65,7 +65,7 @@ Note que o domínio de broadcast é diferente do domínio de colisão.
 - Um domínio de colisão é uma região da rede na qual transmissões simultâneas podem provocar colisões.
 - Um domínio de broadcast é uma região da rede na qual um quadro de broadcast pode ser distribuído.
 
-Observe tambem que:
+Observe também que:
 - O domínio de broadcast é **igual ou maior que o domínio de colisão**.
   - Um domínio de colisão é limitado a um enlace físico (um cabo, ou um par de cabos), enquanto o domínio de broadcast pode abranger vários enlaces e dispositivos conectados a um switch.
 - **Roteadores separam domínios de broadcast**, pois não encaminham broadcasts entre interfaces (portas).
@@ -89,7 +89,7 @@ Considere um roteador interligando duas redes:
 Um broadcast enviado na LAN ``A`` não será automaticamente encaminhado para a LAN ``B`` pelo roteador.
 - Assim, roteadores controlam a propagação de broadcasts e a comunicação entre diferentes redes.
 - Isso é importante para evitar congestionamento de rede (muitos pacotes transitando na rede) e melhorar a eficiência da comunicação.
-- Tambem serve como mecanismo de segurança, pois impede que broadcasts de uma rede alcancem outra rede sem autorização.
+- Também serve como mecanismo de segurança, pois impede que broadcasts de uma rede alcancem outra rede sem autorização.
 
 ## 2.2. VLANs em Switches e domínios de broadcast
 
@@ -116,7 +116,7 @@ Considere o seguinte exemplo no Packet Tracer com 6 PCs conectados a um switch, 
 ![](./img/cisco_vlan.png)
 
 Para configurar VLANs em um switch, faça o seguinte:
-1. Clique no switch (use o switch ``2960`` ao inves do ``switch-PT``).
+1. Clique no switch (use o switch ``2960`` ao invés do ``switch-PT``).
 2. Aguarde ele iniciar (isso pode levar alguns segundos - voce pode acompanhar o progresso na aba ``CLI``).
    1. Enquanto ele nao inciar, voce nao conseguirá acessar a aba ``Config`` (seja paciente).
 3. Clique na aba ``Config``.
@@ -141,12 +141,12 @@ Para configurar VLANs em um switch, faça o seguinte:
 
 ## 2.3. Comparação hub x switch sem VLAN x switch com VLAN x roteador
 
-| Equipamento         | Domínios de colisão                                    | Domínios de broadcast                                                     |
-| ------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------- |
-| Hub                 | 1 somente (para todas as portas)                       | 1 somente                                                                 |
-| Switch L2 sem VLANs | 1 por porta física (N domínios em switch com N portas) | 1 somente                                                                 |
-| Switch L2 com VLANs | 1 por porta física (N domínios em switch com N portas) | 1 por VLAN (se ha N VLANs, ha N domínios broadcast)                       |
-| Roteador            | Não encaminha broadcast                                | 1 domínio para cada interface de rede (N interfaces, N domínios brodcast) |
+| Equipamento         | Domínios de colisão                                    | Domínios de broadcast                                                      |
+| ------------------- | ------------------------------------------------------ | -------------------------------------------------------------------------- |
+| Hub                 | 1 somente (para todas as portas)                       | 1 somente                                                                  |
+| Switch L2 sem VLANs | 1 por porta física (N domínios em switch com N portas) | 1 somente                                                                  |
+| Switch L2 com VLANs | 1 por porta física (N domínios em switch com N portas) | 1 por VLAN (se ha N VLANs, ha N domínios broadcast)                        |
+| Roteador            | Não encaminha broadcast                                | 1 domínio para cada interface de rede (N interfaces, N domínios broadcast) |
 
 # 3. Funcionamento interno dos switches
 
@@ -231,12 +231,12 @@ O switch não sabe em qual porta o destinatário está conectado.
 ![](./img/cisco_switch_flooding_3.png)
 
 Quando o dispositivo de destino responder, o switch poderá aprender seu endereço MAC e a respectiva porta.
-  - Ja este procedimento é chamado de **MAC address learning** (tambem chamado de **aprendizado de endereços MAC**).
+  - Ja este procedimento é chamado de **MAC address learning** (também chamado de **aprendizado de endereços MAC**).
 
 ![](./img/cisco_switch_flooding_2.png)
 
 No Cisco Packet Tracer, podemos ver a tabela de endereços MAC do switch da seguinte forma:
-1. Clique na ferramenta ``Ispect`` (imagem de uma lupa).
+1. Clique na ferramenta ``Inspect`` (imagem de uma lupa).
 2. Clique no switch.
 3. Clique no menu ``MAC Table``.
    
@@ -253,14 +253,14 @@ Nessa figura acima, o switch ja aprendeu os endereços MAC dos computadores cone
 - **Broadcast**: quadro destinado a todos os dispositivos do domínio de broadcast.
   - O switch encaminha o quadro para todas as portas, exceto a de entrada.
 - **Unknown unicast**: quadro unicast cujo endereço MAC de destino ainda não é conhecido pelo switch.
-  - O switch tambem envia o quadro para todas as portas, exceto a de entrada, **POREM** ele faz isso SOMENTE para tentar descobrir a porta correta (e aprender o endereço MAC).
+  - O switch também envia o quadro para todas as portas, exceto a de entrada, **POREM** ele faz isso SOMENTE para tentar descobrir a porta correta (e aprender o endereço MAC).
 - **Known unicast**: quadro cujo endereço MAC de destino está presente na tabela.
   - O switch encaminha o quadro **apenas** para a porta correta, sem enviar para todas as portas.
 
 ## 3.4. Tabela CAM de Switches
 
 **CAM (Content Addressable Memory)** é uma tecnologia de memória que permite pesquisar informações pelo conteúdo armazenado (MAC, por exemplo).
-- Nos switches, a expressão **tabela CAM** é frequentemente utilizada para designar a estrutura que armazena associações entre endereços MAC e portas (essa estrutura tambem pode ser chamada de **tabela de endereços MAC**).
+- Nos switches, a expressão **tabela CAM** é frequentemente utilizada para designar a estrutura que armazena associações entre endereços MAC e portas (essa estrutura também pode ser chamada de **tabela de endereços MAC**).
 
 Uma entrada típica contém:
 - Endereço MAC.
@@ -302,7 +302,7 @@ Os switches podem utilizar diferentes estratégias para encaminhar quadros.
 
 **Como funciona**:
 1. O switch recebe o **quadro completo**,
-2. So depois disso, ele verifica sua integridade (se houve erros de transmissão / corrupcao de dados),
+2. So depois disso, ele verifica sua integridade (se houve erros de transmissão / corrupção de dados),
 3. E, se tudo estiver certo, ele o encaminha.
 
 **Vantagens**:
@@ -310,7 +310,7 @@ Os switches podem utilizar diferentes estratégias para encaminhar quadros.
 - Permite verificar erros.
 - Descarta quadros inválidos.
 
-Atualmente, **store-and-forward** é a estratégia mais comumemente usada em switches modernos.
+Atualmente, **store-and-forward** é a estratégia mais comumente usada em switches modernos.
 
 ### 3.7.2. Cut-Through (encaminhamento imediato)
 
@@ -336,7 +336,7 @@ Procure resolver as questões sem consultar o material. Elas foram organizadas p
 5.  Qual é a relação entre VLANs e domínios de broadcast?
 6.  Como um switch aprende os endereços MAC dos dispositivos?
 7.  O que acontece quando um switch recebe um quadro destinado a um endereço MAC desconhecido?
-8.  Porque o flooding é necessario para o funcionamento correto de um switch?
+8.  Porque o flooding é necessário para o funcionamento correto de um switch?
 9.  Qual é a finalidade da tabela CAM?
 10. Explique a diferença entre Store-and-Forward e Cut-Through.
 
@@ -352,7 +352,7 @@ A equipe de TI percebe um volume elevado de tráfego de broadcast.
 
 Que alternativas de projeto poderiam ser utilizadas para reduzir a propagação desse tráfego?
 
-Quais seriam as consequencias de cada alternativa?
+Quais seriam as consequências de cada alternativa?
 
 ## 5.2. Problema de encaminhamento em switch
 
@@ -381,8 +381,8 @@ Conecte **4 laptops** ao **1 switch-PT** no Packet Tracer, e configure endereço
 2. Em seguida, tente enviar pacotes do ``Laptop0`` para o ``Laptop1``.
 3. Observe a tabela MAC novamente e identifique se houve alguma mudança.
    1. Anote o endereço MAC do ``Laptop0`` e a porta associada.
-   2. Verique que a porta associada é definida quando você conectou o ``Laptop0`` ao switch (na ferramenta de conexao de cabo `Copper Staight Through`).
-   3. Se voce usar a ferramenta de conexao automática (que tem uma imagem de raio), o switch atribui automaticamente a porta de acordo com a ordem de conexão dos dispositivos 
+   2. Verifique que a porta associada é definida quando você conectou o ``Laptop0`` ao switch (na ferramenta de conexão de cabo `Copper Straight Through`).
+   3. Se voce usar a ferramenta de conexão automática (que tem uma imagem de raio), o switch atribui automaticamente a porta de acordo com a ordem de conexão dos dispositivos 
       1. o primeiro conectado recebe a porta 0, 
       2. o segundo recebe a porta 1, 
       3. e assim por diante.

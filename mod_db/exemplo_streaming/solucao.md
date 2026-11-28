@@ -1,4 +1,4 @@
-## Solucao - Sistema de Streaming de Video
+## Solução - Sistema de Streaming de Video
 
 A descricao dos requisitos do sistema podem ser encontrados no arquivo [README.md](./README.md).
 
@@ -75,7 +75,7 @@ Abra o arquivo do BrModelo [./modelo_logico.brM3](./modelo_logico.brM3) para mai
 | 21  | Hino Nacional   | 00:44:00 | 10           |
 | 22  | Striking Vipers | 01:01:00 | 14           |
 
-**Usuario**:
+**Usuário**:
 | email           | senha | data_nascimento | nome                |
 | --------------- | ----- | --------------- | ------------------- |
 | carla@gmail.com | senha | 1975-03-30      | Carla Perez         |
@@ -107,23 +107,23 @@ Abra o arquivo do BrModelo [./modelo_logico.brM3](./modelo_logico.brM3) para mai
 | 1        | 5         |
 | 1        | 1         |
 
-**Usuario_Avalia_Filme**:
+**Usuário_Avalia_Filme**:
 | email_usuario   | id_video | nota |
 | --------------- | -------- | ---- |
 | carla@gmail.com | 1        | 10   |
 | didi@bol.com.br | 1        | 2    |
 
-**Usuario_Avalia_Serie**:
+**Usuário_Avalia_Serie**:
 | email_usuario   | id_video | nota |
 | --------------- | -------- | ---- |
 | didi@bol.com.br | 2        | 8    |
 
-**Usuario_Assiste_Filme**:
+**Usuário_Assiste_Filme**:
 | email_usuario   | id_video | duracao_assistida |
 | --------------- | -------- | ----------------- |
 | didi@bol.com.br | 1        | 00:35:05          |
 
-**Usuario_Assiste_Episodio**:
+**Usuário_Assiste_Episodio**:
 | email_usuario   | id_episodio | duracao_assistida |
 | --------------- | ----------- | ----------------- |
 | carla@gmail.com | 21          | 00:21:47          |

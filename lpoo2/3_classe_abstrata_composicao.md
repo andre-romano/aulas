@@ -4,32 +4,32 @@
 **Sumário**
 - [Modulo 3 - Classes Abstratas, Composição e Conceitos avançados](#modulo-3---classes-abstratas-composição-e-conceitos-avançados)
 - [1. Classes abstratas](#1-classes-abstratas)
-- [2. Associacao, Agregacao e Composição](#2-associacao-agregacao-e-composição)
+- [2. Associação, Agregação e Composição](#2-associação-agregação-e-composição)
   - [2.1. Associação](#21-associação)
   - [2.2. Agregação](#22-agregação)
-  - [2.3. Composicao](#23-composicao)
-    - [2.3.1. Composicao X Herança](#231-composicao-x-herança)
-  - [2.4. Composicao X Agregacao x Associacao](#24-composicao-x-agregacao-x-associacao)
+  - [2.3. Composição](#23-composição)
+    - [2.3.1. Composição X Herança](#231-composição-x-herança)
+  - [2.4. Composição X Agregação x Associação](#24-composição-x-agregação-x-associação)
 - [Exercícios para fixação](#exercícios-para-fixação)
-  - [Exercicio 1](#exercicio-1)
-  - [Exercicio 2](#exercicio-2)
-  - [Exercicio 3](#exercicio-3)
+  - [Exercício 1](#exercício-1)
+  - [Exercício 2](#exercício-2)
+  - [Exercício 3](#exercício-3)
   - [Exercício 4](#exercício-4)
     - [Exercício 4-A](#exercício-4-a)
     - [Exercício 4-B](#exercício-4-b)
     - [Exercício 4-C](#exercício-4-c)
-  - [Exercicio 5](#exercicio-5)
-  - [Exercicio 6](#exercicio-6)
-  - [Exercicio 7](#exercicio-7)
-  - [Exercicio 8](#exercicio-8)
-    - [Exercicio 8-A](#exercicio-8-a)
-    - [Exercicio 8-B](#exercicio-8-b)
-    - [Exercicio 8-C](#exercicio-8-c)
-- [Estudos de caso para fixacao](#estudos-de-caso-para-fixacao)
+  - [Exercício 5](#exercício-5)
+  - [Exercício 6](#exercício-6)
+  - [Exercício 7](#exercício-7)
+  - [Exercício 8](#exercício-8)
+    - [Exercício 8-A](#exercício-8-a)
+    - [Exercício 8-B](#exercício-8-b)
+    - [Exercício 8-C](#exercício-8-c)
+- [Estudos de caso para fixação](#estudos-de-caso-para-fixação)
   - [Estudo de caso 1](#estudo-de-caso-1)
   - [Estudo de caso 2](#estudo-de-caso-2)
   - [Estudo de caso 3](#estudo-de-caso-3)
-- [Solucao dos Exercicios](#solucao-dos-exercicios)
+- [Solução dos Exercícios](#solução-dos-exercícios)
 
 # 1. Classes abstratas
 
@@ -86,16 +86,16 @@ class Cavalo(Animal):
 
 # a linha abaixo da erro no Python 
 # (Cavalo nao implementou o metodo emitir_som(), logo Cavalo, assim como Animal, 
-# tambem é uma classe abstrata e nao pode ter objetos sendo criados)
+# também é uma classe abstrata e nao pode ter objetos sendo criados)
 cavalo = Cavalo()
 ```
 
-**Exercicios para fixação**:
-- [Exercicio 1](#exercicio-1)
-- [Exercicio 5](#exercicio-5)
+**Exercícios para fixação**:
+- [Exercício 1](#Exercício-1)
+- [Exercício 5](#Exercício-5)
 - [Estudo de caso 1](#estudo-de-caso-1)
 
-# 2. Associacao, Agregacao e Composição
+# 2. Associação, Agregação e Composição
 
 ## 2.1. Associação
 
@@ -134,13 +134,13 @@ disciplina = Disciplina("Banco de Dados", professor_carlos)
 Note que `professor_carlos` é um objeto criado fora do construtor de ``Disciplina``, e existe de forma independente dela. 
 - Se o objeto `disciplina` deixar de existir, ``professor_carlos`` continua existindo.
 
-**Exercicios para fixação**:
-- [Exercicio 2](#exercicio-2)
+**Exercícios para fixação**:
+- [Exercício 2](#Exercício-2)
 - [Estudo de caso 2](#estudo-de-caso-2)
 
 ## 2.2. Agregação
 
-Agregação é uma tipo de Associacao em que **TEMOS VARIOS** objetos independentes relacionados.
+Agregação é uma tipo de Associação em que **TEMOS VÁRIOS** objetos independentes relacionados.
 
 Exemplo:
 
@@ -169,16 +169,16 @@ class Departamento:
         self.professores.append(professor)
 ```
 
-**Exercicios para fixação**:
-- [Exercicio 3](#exercicio-3)
+**Exercícios para fixação**:
+- [Exercício 3](#Exercício-3)
 
-## 2.3. Composicao
+## 2.3. Composição
 
-**Composição** é uma Agregacao na qual os objetos se relacionam de forma dependente.
+**Composição** é uma Agregação na qual os objetos se relacionam de forma dependente.
 - Isto é, um objeto esta contido dentro de outro, e ele so existe em virtude do outro objeto
 
-Em outras palavras, **Composicao** significa construir objetos utilizando outros objetos dentro deles, *como se fossem atributos*. Isto é:
-- Composicao define uma relacao **"TEM UM"**
+Em outras palavras, **Composição** significa construir objetos utilizando outros objetos dentro deles, *como se fossem atributos*. Isto é:
+- Composição define uma relação **"TEM UM"**
 
 Exemplo: Suponha que temos a seguinte estrutura de classes abaixo.
 
@@ -228,7 +228,7 @@ Motor ligado
 Freiando
 ```
 
-Observe que poderiamos inclusive trocar o tipo de motor ou rodas, sem precisar mudar muita coisa no codigo:
+Observe que poderiamos inclusive trocar o tipo de motor ou rodas, sem precisar mudar muita coisa no código:
 
 ```python
 class MotorV3:
@@ -251,16 +251,16 @@ class Carro:
         self.rodas.freiar()
 ```
 
-**Exercicios para fixação**:
-- [Exercicio 4 - Parte A](#exercício-4-a)
-- [Exercicio 4 - Parte B](#exercício-4-b)
+**Exercícios para fixação**:
+- [Exercício 4 - Parte A](#exercício-4-a)
+- [Exercício 4 - Parte B](#exercício-4-b)
 - [Estudo de caso 3](#estudo-de-caso-3)
 
-### 2.3.1. Composicao X Herança
+### 2.3.1. Composição X Herança
 
-Veja que é **Composicao** diferente de **Herança**, pois:
-- **Composicao** é uma relacao **"TEM UM"**
-- **Herança** pressupoe a relacao **"É UM TIPO DE"**
+Veja que é **Composição** diferente de **Herança**, pois:
+- **Composição** é uma relação **"TEM UM"**
+- **Herança** pressupõe a relação **"É UM TIPO DE"**
 
 Exemplo:
 
@@ -274,7 +274,7 @@ Escrito de outra forma, temos que:
 - **Carro é um Veiculo**
 - **Moto é um Veiculo**
 
-Para imitar o cenario de composicao que tinhamos antes, precisariamos fazer:
+Para imitar o cenário de Composição que tínhamos antes, precisaríamos fazer:
 
 ```python
 from abc import ABC, abstractmethod
@@ -322,10 +322,10 @@ Carro ligado
 Carro freiando
 ```
 
-Note que para cada tipo de veiculo (``Carro``, ``Moto``, etc) precisariamos implementar um metodo ``ligar()`` e ``freiar()``.
-- Se tivessemos usado Composicao, nao precisariamos implementar esses metodos pra cada tipo de veiculo.
-- Poderiamos ter criado implementacoes de ``Motor``, ``Rodas``, etc para cada tipo de veiculo (com metodos `ligar()` e `freiar()` proprios).
-- Em geral, **composicao permite reutilizar código mais facilmente do que herança**.
+Note que para cada tipo de veiculo (``Carro``, ``Moto``, etc) precisaríamos implementar um método ``ligar()`` e ``freiar()``.
+- Se tivéssemos usado Composição, nao precisaríamos implementar esses métodos pra cada tipo de veiculo.
+- Poderiamos ter criado implementações de ``Motor``, ``Rodas``, etc para cada tipo de veiculo (com métodos `ligar()` e `freiar()` próprios).
+- Em geral, **Composição permite reutilizar código mais facilmente do que herança**.
 
 Exemplo:
 ```python
@@ -359,18 +359,18 @@ class Veiculo:
         self.rodas.freiar()
 ```
 
-**IMPORTANTE**: Herança tambem gera hierarquias de classes que podem ser complexas, o que dificulta alteracoes de código nas classes pai (superclasses).
-- Imagine que tivessemos a seguinte herança:
+**IMPORTANTE**: Herança também gera hierarquias de classes que podem ser complexas, o que dificulta alterações de código nas classes pai (superclasses).
+- Imagine que tivéssemos a seguinte herança:
 - `Veiculo` -> `VeiculoTerrestre` -> `Carro`
-- Se eu precisasse alterar um pedaco de codigo em `Veiculo`, essa alteracao poderia afetar todas as classes que herdam dele (`VeiculoTerrestre`, `Carro`, etc), o que poderia gerar serios problemas.
-- Por isso, via de regra, é mais facil construir um sistema grande usando **Composicao** do que usando **Heranças**
+- Se eu precisasse alterar um pedaco de código em `Veiculo`, essa alteração poderia afetar todas as classes que herdam dele (`VeiculoTerrestre`, `Carro`, etc), o que poderia gerar sérios problemas.
+- Por isso, via de regra, é mais fácil construir um sistema grande usando **Composição** do que usando **Heranças**
 
-**Exercicios de Fixacao**:
-- [Exercicio 4 - Parte C](#exercício-4-c)
+**Exercícios de Fixação**:
+- [Exercício 4 - Parte C](#exercício-4-c)
 
-## 2.4. Composicao X Agregacao x Associacao
+## 2.4. Composição X Agregação x Associação
 
-**Composicao** requer que um objeto so existe se o outro existir (um objeto controla o ciclo de vida do outro).
+**Composição** requer que um objeto so existe se o outro existir (um objeto controla o ciclo de vida do outro).
 
 Exemplo:
 
@@ -387,22 +387,22 @@ class Carro:
 carro = Carro()
 ```
 
-Se o objeto ``carro`` deixar de existir, `self.motor` dentro dele tambem deixa de existir.
+Se o objeto ``carro`` deixar de existir, `self.motor` dentro dele também deixa de existir.
 
-Ja na **Agregacao** e **Associacao** a diferença esta na **quantidade de objetos relacionados**:
-- **Agregacao** envolve MULTIPLOS OBJETOS relacionados
-- **Associacao** envolve UM OBJETO relacionado
+Ja na **Agregação** e **Associação** a diferença esta na **quantidade de objetos relacionados**:
+- **Agregação** envolve MÚLTIPLOS OBJETOS relacionados
+- **Associação** envolve UM OBJETO relacionado
 
 ![](./img/association_aggregation_composition.jpg)
 
-**Exercicios de fixacao**:
-- [Exercicio 6](#exercicio-6)
-- [Exercicio 7](#exercicio-7)
-- [Exercicio 8](#exercicio-8)
+**Exercícios de fixação**:
+- [Exercício 6](#Exercício-6)
+- [Exercício 7](#Exercício-7)
+- [Exercício 8](#Exercício-8)
 
 # Exercícios para fixação
 
-## Exercicio 1
+## Exercício 1
 
 Crie uma classe abstrata ``FormaGeometrica`` com um método abstrato ``calcular_area()``. 
 
@@ -415,7 +415,7 @@ Tente instanciar ``FormaGeometrica`` diretamente e descreva o que aconteceu.
 Crie uma terceira classe, ``Triangulo``, que herda de ``FormaGeometrica`` mas não implementa ``calcular_area()``. 
 - Tente instanciar `Triangulo` e explique o que ocorreu.
 
-## Exercicio 2
+## Exercício 2
 
 Baseado no exemplo ``Professor`` / ``Disciplina``, crie as classes:
 - ``Medico``
@@ -426,14 +426,14 @@ Considere que ``Consulta`` recebe um ``Medico`` já existente em seu construtor.
 Mostre, com código, que o objeto ``Medico`` pode ser criado antes da consulta e continua existindo normalmente mesmo se o objeto ``Consulta`` deixar de existir.
 - Para isso, atribua `None` ao objeto ``consulta`` e mostre que ainda é possivel acessar dados do objeto `medico`.
 
-## Exercicio 3
+## Exercício 3
 
 Baseado no exemplo ``Departamento``/``Professor``, crie:
 - classe ``Biblioteca`` com uma lista interna de objetos ``Livro`` e um método ``adicionar_livro()``. 
 
 Explique, em texto, por que essa relação é uma ``Agregação``.
 
-Explique tambem o que aconteceria com os objetos ``Livro`` se o objeto ``Biblioteca`` fosse removido do programa?
+Explique também o que aconteceria com os objetos ``Livro`` se o objeto ``Biblioteca`` fosse removido do programa?
 
 ## Exercício 4
 
@@ -458,7 +458,7 @@ Em seguida, responda ao que se pede abaixo:
 1. Se um objeto ``computador`` deixar de existir, o que acontece com os objetos ``processador`` e ``memoria`` guardados dentro dele? Estude o conceito de "ciclo de vida" de Associação, Agregação e Composição para justificar sua resposta.
 
 ### Exercício 4-C
-Refaça o exercicio anterior, agora usando **herança** ao inves de **composicao**:
+Refaça o Exercício anterior, agora usando **herança** ao invés de **Composição**:
 - Crie uma superclasse abstrata ``Computador`` com os métodos abstratos: 
   - ``processar()``
   - ``armazenar()`` 
@@ -467,9 +467,9 @@ Refaça o exercicio anterior, agora usando **herança** ao inves de **composicao
 Depois responda: 
 1. Qual abordagem (composição ou herança) permitiu trocar a implementação do processador alterando menos código? Por quê?
 
-## Exercicio 5
+## Exercício 5
 
-Seja o codigo abaixo:
+Seja o código abaixo:
 ```python
 from abc import ABC, abstractmethod
 
@@ -496,9 +496,9 @@ Identifique quais assertivas abaixo sao Verdadeiras (V) e quais sao falsas (F). 
 
 **IV.** Um método abstrato define um "contrato" que as subclasses concretas são obrigadas a implementar.
 
-## Exercicio 6
+## Exercício 6
 
-Seja o codigo abaixo:
+Seja o código abaixo:
 
 ```python
 class Motorista:
@@ -526,11 +526,11 @@ Identifique quais assertivas abaixo sao Verdadeiras (V) e quais sao falsas (F). 
 
 **IV.** Esse é um exemplo de composição, pois ``Corrida`` "tem um" ``Motorista``.
 
-## Exercicio 7
+## Exercício 7
 
-A tabela abaixo contem termos e definicoes de conceitos de programação orientada a objetos, porem os termos estao relacionados com definicoes incorretas.
+A tabela abaixo contem termos e definições de conceitos de programação orientada a objetos, porem os termos estão relacionados com definições incorretas.
 
-Reorganizea a tabela abaixo, associando cada termo da coluna A com sua definição correta, na coluna B.
+Reorganize a tabela abaixo, associando cada termo da coluna A com sua definição correta, na coluna B.
 
 | Termo                   | Definição                                                                                                                                 |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -545,11 +545,11 @@ Reorganizea a tabela abaixo, associando cada termo da coluna A com sua definiç�
 | 9. Ciclo de vida        | i) Método sem implementação, definido em uma classe abstrata, que atua como um "contrato" a ser cumprido pelas subclasses.                |
 | 10. ``@abstractmethod`` | j) Tipo de associação envolvendo vários objetos relacionados, que continuam existindo mesmo se o "todo" deixar de existir.                |
 
-## Exercicio 8
+## Exercício 8
 
 Para cada trecho abaixo, escreva exatamente o que aparece na tela (ou o comportamento/erro esperado), na ordem correta.
 
-### Exercicio 8-A
+### Exercício 8-A
 ```python
 from abc import ABC, abstractmethod
 
@@ -568,7 +568,7 @@ print(sensor.detectar())
 sensor_generico = Sensor()
 ```
 
-### Exercicio 8-B
+### Exercício 8-B
 ```python
 class AltoFalanteBluetooth:
     def emitir_som(self):
@@ -592,7 +592,7 @@ caixa1.tocar_musica()
 caixa2.tocar_musica()
 ```
 
-### Exercicio 8-C
+### Exercício 8-C
 ```python
 class Jogador:
     def __init__(self, nome):
@@ -629,7 +629,7 @@ time1 = None
 print(jogador1.to_string())
 ```
 
-# Estudos de caso para fixacao
+# Estudos de caso para fixação
 
 Para cada estudo de caso: 
 - (a) identifique o(s) problema(s); 
@@ -686,13 +686,13 @@ class Drone:
         self.tipo_motor = tipo_motor
 
     def decolar(self):
-        if self.tipo_motor == "eletrico":
+        if self.tipo_motor == "elétrico":
             print("Motor elétrico girando")
         elif self.tipo_motor == "combustao":
             print("Motor a combustão girando")
 
 
-drone1 = Drone("eletrico")
+drone1 = Drone("elétrico")
 drone1.decolar()
 ```
 
@@ -700,6 +700,6 @@ drone1.decolar()
 - O que precisaria mudar para que ``Drone`` guardasse um objeto ``Motor`` de verdade (como ``MotorEletrico`` ou ``MotorCombustao``, cada um com seu próprio método ``girar()``), em vez de uma string indicando o tipo? 
 - Refatore usando composição + polimorfismo, de forma que ``decolar()`` nunca precise de ``if/elif``.
 
-# Solucao dos Exercicios
+# Solução dos Exercícios
 
-A solucao dos exercicios e estudos de caso estao disponiveis no arquivo [`3_solucao_exercicios.md`](./3_solucao_exercicios.md) que acompanha este material.
+A solução dos exercícios e estudos de caso estão disponiveis no arquivo [`3_solucao_exercicios.md`](./3_solucao_exercicios.md) que acompanha este material.

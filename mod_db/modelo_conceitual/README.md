@@ -71,7 +71,7 @@ Em geral, um bom banco de dados **evita o uso de atributos compostos**, fazendo 
 
 | Atributo de Valor Único            | Atributo Composto                      |
 | ---------------------------------- | -------------------------------------- |
-| Contém um único valor por registro | Contem varios valores em cada registro |
+| Contém um único valor por registro | Contem vários valores em cada registro |
 | **Ex**: nome, idade, cpf           | **Ex**: telefone, email, endereco      |
 
 Em geral, um bom banco de dados **evita o uso de atributos multi-valorados**. Para isso devemos:

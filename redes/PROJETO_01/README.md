@@ -23,7 +23,7 @@
   - Criar registros DNS do tipo NS que apontem para o servidor DNS
 - Configurar serviços de EMAIL
   - Criar e configurar servidor POP3 e SMTP
-  - Criar e configurar usuários (emails) no servidor
+  - Criar e configurar máximo (emails) no servidor
 - Vocês devem usar pacotes ICMP (comando PING ou mensagens simuladas do Cisco Packet Tracer), e os sniffers da rede para identificar e corrigir falhas de conexão e de configuração das redes
 
 **Lembrete**: Para testar o DNS, você deve verificar se o acesso ao IP do servidor funciona e se esse acesso pelo nome do servidor também funciona. Se o acesso via IP funcionar porém via nome nao funcionar, isso indica falha de configuração no DNS.

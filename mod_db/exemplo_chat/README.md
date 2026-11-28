@@ -5,9 +5,9 @@
 **Funcionalidades:**
 
 - Cadastro de usuários (telefone, nome, nome_arquivo_foto_perfil)
-- Envio de mensagens de texto (id, data_hora_envio, origem, destinatario, mensagem)
-- Criação de grupos de conversa (nome do grupo,usuarios)
-- Adição e remoção de membros em grupos (usuario, eh_administrador)
+- Envio de mensagens de texto (id, data_hora_envio, origem, destinatário, mensagem)
+- Criação de grupos de conversa (nome do grupo, usuários)
+- Adição e remoção de membros em grupos (usuário, eh_administrador)
 - Histórico completo de mensagens entre usuários e dentro de grupos
 
 **Condições e Restrições:**
@@ -19,5 +19,5 @@
 - Cada mensagem deve estar associada a um remetente.
 - O telefone do usuário deve ser único no sistema.
 
-### Solucao
+### Solução
 Os modelos conceitual e lógico do sistema podem ser encontrados no arquivo [solucao.md](./solucao.md).

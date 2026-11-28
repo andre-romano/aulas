@@ -230,7 +230,7 @@ Um sistema para gerenciar a reserva de quartos de um hotel.
 - Cadastro de quartos (número do quarto, andar, comodidades, status)
 - Cadastro de comodidades dos quartos (nome, descricao)
   - **Ex**: TV, frigobar, ar-condicionado, etc
-- Cadastro de tipos de quartos (tipo, configuracao de camas, capacidade maxima de hospedes, preço)
+- Cadastro de tipos de quartos (tipo, configuração de camas, capacidade maxima de hospedes, preço)
 - Cadastro de hóspedes (nome, endereço, telefone, email)
 - Registro de reserva (quarto, hóspede, data de reserva, data de entrada, data de saída)
 - Relatórios de ocupação de quartos e de reservas, por período e por tipo informados pelo usuário.
@@ -304,7 +304,7 @@ Um sistema para gerenciar a manutenção de veículos em uma oficina mecânica.
 - Cadastro de peças    (nome, custo de compra, custo de venda)
 - Cadastro de clientes (nome, endereço, telefone)
 - Cadastro de serviços (nome, custo, tempo medio de execucao)
-- Registro de ordens de serviço (veículo, cliente, serviço, data_hora de entrada, data_hora de saida, status)
+- Registro de ordens de serviço (veículo, cliente, serviço, data_hora de entrada, data_hora de saída, status)
 - Relatórios de receita bruta, de serviços realizados, e de manutenção por veículo e por período.
 
 **Condições e Restrições:**
@@ -319,7 +319,7 @@ Um sistema para gerenciar a manutenção de veículos em uma oficina mecânica.
     - ``OrdensServico.status =`` 'ORÇAMENTO', 'AUTORIZADA', 'EM EXECUÇÃO', ou 'FINALIZADA'
     - `custo_compra < custo_venda` em `pecas`
     - `placa` e `chassi` devem ser atributos determinantes, nao nulos
-    - ``data_hora_entrada <= data_hora_saida`` (quando data_saida for preenchida)
+    - ``data_hora_entrada <= data_hora_saida`` (quando data_saída for preenchida)
     - Demais restrições / condições do seu projeto
 
 ### 9. Sistema de Gestão de Imóveis
@@ -332,13 +332,13 @@ Um sistema para gerenciar a venda e locação de imóveis.
 - Cadastro de corretores (CRECI, nome, endereço, telefones)
 - Cadastro de inquilinos/compradores (nome, endereço, telefones, faixa de valor procurada, bairros de interesse)
 - Agenda de visitacao (inquilino ou comprador, imovel, data da visita, hora da visita, corretor)
-- Cadastro de contratos de venda e locação (operacao, imovel, proprietario, inquilino ou comprador, valor da operacao, data, status)
+- Cadastro de contratos de venda e locação (operação, imovel, proprietario, inquilino ou comprador, valor da operação, data, status)
 - Relatórios de imóveis disponíveis e ocupados, e de pagamentos de aluguel
 
 **Condições e Restrições:**
 - Lembre-se de incluir as restrições de integridade, domínio e demais condições do seu projeto, conforme necessário. Seguem alguns exemplos ilustrativos abaixo.
   - **Ex**:     
-    - ``Contratos.operacao`` é igual a LOCACAO ou VENDA.
+    - ``Contratos.operação`` é igual a LOCACAO ou VENDA.
     - ``Contratos.valor > 0`` e esse atributo é um número fracionário.
     - ``Contratos.status`` é igual a CONTRATO ABERTO, ou CONTRATO EFETIVADO.
     - ``Imoveis.status`` é igual a DISPONIVEL, ou INDISPONIVEL.
@@ -394,7 +394,7 @@ Um sistema para gerenciar membros e treinos em uma academia.
     - ``PlanoMensalidade.custo > 0`` 
     - ``PlanoTreino.duracao >= 1`` do tipo DATA.  
     - ``AtribuicaoPlanoMembro.data >= HOJE()``.  
-    - ``ExerciciosTreino.series >= 1`` e ``ExerciciosTreino.repeticoes >= 1``.  
+    - ``ExercíciosTreino.series >= 1`` e ``ExercíciosTreino.repeticoes >= 1``.  
     - O aluno nao pode registrar frequencia (entrar na academia) se ele estiver INATIVO (inadimplente, ou com cadastro desativado).
     - Demais restrições / condições do seu projeto
 
@@ -406,7 +406,7 @@ Um sistema para gerenciar eventos, incluindo cadastro de eventos, participantes 
 - Cadastro de eventos (nome, data_hora de inicio, data_hora de fim, local, descrição, custo do ingresso)
 - Cadastro de local (nome, endereco, capacidade maxima de pessoas)
 - Cadastro de participantes (nome, email, telefone)
-- Registro de inscrições em eventos (participante, evento, politica de reembolso, data de inscricao, data de cancelamento)
+- Registro de inscrições em eventos (participante, evento, politica de reembolso, data de inscrição, data de cancelamento)
 - Cadastro de politica de reembolso (nome, percentual reembolsado, antecedencia minima)
 - Controle de presença nos eventos (participante, evento)
 - Relatórios de eventos, participantes inscritos, percentual de cancelamentos, e ocupação do espaço (qtd de inscritos vs capacidade total do espaço)
@@ -420,7 +420,7 @@ Um sistema para gerenciar eventos, incluindo cadastro de eventos, participantes 
     - ``Eventos.data_hora_inicio <= Eventos.data_hora_fim``
     - O DB deve rejeitar múltiplos registros de PRESENÇA de um mesmo participante em um mesmo evento.
       - Isto é, nao podemos ter dois registros com as mesmas informações (participante, evento, PRESENTE).
-    - O registros de PRESENÇA de um participante que cancelou sua inscricao (`InscricaoEventos.data_cancelamento <> NULL`).
+    - O registros de PRESENÇA de um participante que cancelou sua inscrição (`InscricaoEventos.data_cancelamento <> NULL`).
     - Demais restrições / condições do seu projeto
     
 ### 13. Sistema de Gestão de Transportadora
@@ -431,7 +431,7 @@ Um sistema para gerenciar entregas e frotas de uma transportadora.
 - Cadastro de veículos (marca, modelo, ano, placa, quilometragem, capacidade maxima em kg, status)
 - Cadastro de motoristas (CNH, nome, telefone, categoria da habilitacao, status)
 - Cadastro de enderecos (rua, numero, complemento, bairro, cidade, estado)
-- Registro de entregas (veículo, motorista, endereco origem, endereco destino, data_hora de saida, data_hora de chegada, carga em kg, custo, status)
+- Registro de entregas (veículo, motorista, endereco origem, endereco destino, data_hora de saída, data_hora de chegada, carga em kg, custo, status)
 - Relatório de entregas pro período
 - Relatório de disponibilidade de motoristas e de veículos por período
 
@@ -441,7 +441,7 @@ Um sistema para gerenciar entregas e frotas de uma transportadora.
     - ``Veiculo.status`` = DISPONÍVEL, EM MANUTENÇÃO, ou INDISPONÍVEL
     - ``Motorista.status`` = DISPONIVEL, ou INDISPONIVEL.  
     - ``Entrega.status`` = A CAMINHO, ou ENTREGUE.
-    - ``Entrega.data_hora_saida = AGORA()`` com tipo DATETIME.
+    - ``Entrega.data_hora_saída = AGORA()`` com tipo DATETIME.
     - ``Entrega.data_hora_chegada >= AGORA()`` com tipo DATETIME.
     - ``Motorista.categoriaCNH`` = A, B, C, D ou E
     - ``Veiculo.status = INDISPONÍVEL`` quando: 

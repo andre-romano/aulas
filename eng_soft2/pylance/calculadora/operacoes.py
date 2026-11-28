@@ -2,7 +2,7 @@ def somar(a: str, b: int) -> str:
     return a + b
 
 
-def subtrair(a: int, b: float) -> int:
+def subtrair(a: int, b: float) -> float:
     return a - b
 
 
